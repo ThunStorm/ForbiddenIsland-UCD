@@ -1,11 +1,8 @@
 package com.esr.utils;
 
-import javafx.scene.media.Media;
-import javafx.util.Duration;
 import sun.audio.AudioPlayer;
 import sun.audio.AudioStream;
 
-import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
 

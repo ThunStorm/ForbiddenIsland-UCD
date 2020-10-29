@@ -12,15 +12,17 @@ public class ConsolePanel {
     private Box configBox = Box.createVerticalBox();
     private Box logBox = Box.createHorizontalBox();
     private JPanel actionPanel = new JPanel();
+
     private JTextArea logs = new JTextArea();
+    private JButton startGame = new JButton("Start");
     private JButton moveTo = new JButton("Move To");
     private JButton liftOff = new JButton("Lift Off");
     private JButton shoreUp = new JButton("Shore Up");
     private JButton passTo = new JButton("Pass To");
     private JButton capture = new JButton("Capture");
+    private JButton discard = new JButton("Discard");
     private JButton nextStep = new JButton("Next");
     private JButton clearSlt = new JButton("Clear");
-    private JButton startGame = new JButton("Start");
 //    private int numOfPlayers;
 
 
@@ -32,7 +34,7 @@ public class ConsolePanel {
         consolePanel.add(infoPanel);
         consolePanel.add(Box.createVerticalStrut(5));
         consolePanel.add(configBox);
-        consolePanel.add(Box.createVerticalStrut(15));
+        consolePanel.add(Box.createVerticalStrut(5));
         consolePanel.add(logBox);
         consolePanel.add(actionPanel);
         consolePanel.add(Box.createVerticalGlue());
@@ -47,21 +49,6 @@ public class ConsolePanel {
         logs.append(string);
     }
 
-    public void InfoPanel() {
-        TitledBorder info = new TitledBorder("Info");
-        JLabel INFO1 = new JLabel();
-        INFO1.setFont(new Font(null, Font.BOLD, 13));
-        INFO1.setText("<html>FORBIDDEN<br>&nbsp;&nbsp;&nbsp;ISLAND<br></html>");
-        JLabel INFO2 = new JLabel();
-        INFO2.setFont(new Font(null, Font.BOLD, 10));
-        INFO2.setText("<html>CREATED BY:<br>ESR TEAM</html>");
-        infoPanel.add(INFO1);
-        infoPanel.add(INFO2);
-        infoPanel.setBorder(info);
-        infoPanel.setPreferredSize(new Dimension(95, 100));
-    }
-
-
     public void ConfigBox() {
         Box keyBox = Box.createHorizontalBox();
         TitledBorder config = new TitledBorder("Config");
@@ -71,9 +58,7 @@ public class ConsolePanel {
         for (int i = 2; i < 5; i++) {
             numOfPlayerCB.addItem(Integer.toString(i));
         }
-//        if (numOfPlayerCB.getSelectedItem() != "----Num----") {
-//            numOfPlayers = Integer.valueOf((Integer) numOfPlayerCB.getSelectedItem());
-//        }
+
         startGame.addActionListener(e -> {
             if (numOfPlayerCB.getSelectedItem() != "----Num----") {
 //                System.out.println(numOfPlayerCB.getSelectedItem());
@@ -103,7 +88,7 @@ public class ConsolePanel {
         TitledBorder logBorder = new TitledBorder("Logs");
         logBox.add(scrollPane);
         logBox.setBorder(logBorder);
-        logBox.setPreferredSize(new Dimension(95, 570));
+        logBox.setPreferredSize(new Dimension(95, 580));
     }
 
     public void ActionPanel() {
@@ -115,9 +100,24 @@ public class ConsolePanel {
         actionPanel.add(shoreUp);
         actionPanel.add(passTo);
         actionPanel.add(capture);
+        actionPanel.add(discard);
         actionPanel.add(nextStep);
-        actionPanel.add(clearSlt);
+//        actionPanel.add(clearSlt);
         actionPanel.setPreferredSize(new Dimension(95, 180));
+    }
+
+    public void InfoPanel() {
+        TitledBorder info = new TitledBorder("Info");
+        JLabel INFO1 = new JLabel();
+        INFO1.setFont(new Font(null, Font.BOLD, 13));
+        INFO1.setText("<html>FORBIDDEN<br>&nbsp;&nbsp;&nbsp;ISLAND<br></html>");
+        JLabel INFO2 = new JLabel();
+        INFO2.setFont(new Font(null, Font.BOLD, 10));
+        INFO2.setText("<html>CREATED BY:<br>ESR TEAM</html>");
+        infoPanel.add(INFO1);
+        infoPanel.add(INFO2);
+        infoPanel.setBorder(info);
+        infoPanel.setPreferredSize(new Dimension(95, 100));
     }
     //    public JButton getStartButton() {
 //        return startGame;

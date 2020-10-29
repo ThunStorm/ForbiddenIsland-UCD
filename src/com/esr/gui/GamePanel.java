@@ -16,7 +16,7 @@ public class GamePanel {
     private BoardPanel boardPanel;
     private TreasurePanel treasurePanel;
     private FloodPanel floodPanel;
-    private Subject subject;
+//    private Subject subject;
 
     public GamePanel() {
 
@@ -32,13 +32,9 @@ public class GamePanel {
         gamePanel.add(floodPanel.getFloodPanel(), BorderLayout.EAST);
         gamePanel.add(treasurePanel.getTreasurePanel(), BorderLayout.WEST);
         gamePanel.add(boardPanel.getBoard(), BorderLayout.CENTER);
-
         tileCards = boardPanel.getTileCards();
         treasureCards = treasurePanel.getTreasureCards();
         update();
-
-//        setUpPanels();
-//        System.out.println(tileCards.get(3).toString() + treasureCards.get(1).toString());
     }
 
     public JPanel getGamePanel() {
