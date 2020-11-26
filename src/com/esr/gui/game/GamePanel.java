@@ -1,7 +1,8 @@
-package com.esr.gui;
+package com.esr.gui.game;
 
-import com.esr.service.observer.Observer;
-import com.esr.service.observer.Subject;
+import com.esr.adventurer.Adventurer;
+import com.esr.gui.game.*;
+import com.esr.gui.updater.TileUpdater;
 
 import javax.swing.*;
 import java.awt.*;
@@ -9,20 +10,24 @@ import java.util.ArrayList;
 
 public class GamePanel {
     private JPanel gamePanel;
-    private ArrayList<JButton> tileCards;
+    private ArrayList<Integer> tileOrder;
+    private ArrayList<Adventurer> adventurers;
     private ArrayList<JButton> treasureCards;
     private PlayerPanel playerPanelUp;
     private PlayerPanel playerPanelDown;
     private BoardPanel boardPanel;
     private TreasurePanel treasurePanel;
     private FloodPanel floodPanel;
+    private TileUpdater tileUpdater;
+    private int NumOfPlayers;
 //    private Subject subject;
 
-    public GamePanel() {
-
+    public GamePanel(ArrayList<Integer> tileOrder, ArrayList<Adventurer> adventurers) {
+        this.tileOrder = tileOrder;
+        this.adventurers = adventurers;
         gamePanel = new JPanel();
-        playerPanelUp = new PlayerPanel();
-        playerPanelDown = new PlayerPanel();
+        playerPanelUp = new PlayerPanel(adventurers);
+        playerPanelDown = new PlayerPanel(adventurers);
         boardPanel = new BoardPanel();
         treasurePanel = new TreasurePanel();
         floodPanel = new FloodPanel();
@@ -32,20 +37,22 @@ public class GamePanel {
         gamePanel.add(floodPanel.getFloodPanel(), BorderLayout.EAST);
         gamePanel.add(treasurePanel.getTreasurePanel(), BorderLayout.WEST);
         gamePanel.add(boardPanel.getBoard(), BorderLayout.CENTER);
-        tileCards = boardPanel.getTileCards();
-        treasureCards = treasurePanel.getTreasureCards();
-        update();
+        init();
     }
 
     public JPanel getGamePanel() {
         return gamePanel;
     }
 
-    public void update() {
-        playerPanelUp.setUpPlayerPanel();
-        playerPanelDown.setUpPlayerPanel();
-        boardPanel.setBoardBTN();
+    public void init() {
+
+        playerPanelDown.setUpPlayerPanel(Math.min(adventurers.size(), 2), 0);
+        playerPanelUp.setUpPlayerPanel(Math.max(adventurers.size() - 2,0), 2);
+
+        boardPanel.setBoardBTN(tileOrder, adventurers);
         floodPanel.setUpFloodCard();
         treasurePanel.SetUpTreasureCard();
+        tileUpdater = new TileUpdater(boardPanel.getTileCards());
+        treasureCards = treasurePanel.getTreasureCards();
     }
 }

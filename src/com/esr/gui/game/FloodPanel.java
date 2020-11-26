@@ -1,4 +1,4 @@
-package com.esr.gui;
+package com.esr.gui.game;
 
 import com.esr.utils.CommonUtils;
 import com.esr.utils.Constant;

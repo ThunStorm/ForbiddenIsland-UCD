@@ -1,10 +1,12 @@
-package com.esr.gui;
+package com.esr.gui.console;
 
 import com.esr.utils.Audio;
+import com.esr.utils.Map;
 
 import javax.swing.*;
 import javax.swing.border.TitledBorder;
 import java.awt.*;
+import java.util.ArrayList;
 
 public class ConsolePanel {
     private Box consolePanel = Box.createVerticalBox();
@@ -12,21 +14,21 @@ public class ConsolePanel {
     private Box configBox = Box.createVerticalBox();
     private Box logBox = Box.createHorizontalBox();
     private JPanel actionPanel = new JPanel();
-
-    private JTextArea logs = new JTextArea();
-    private JButton startGame = new JButton("Start");
-    private JButton moveTo = new JButton("Move To");
-    private JButton liftOff = new JButton("Lift Off");
-    private JButton shoreUp = new JButton("Shore Up");
-    private JButton passTo = new JButton("Pass To");
-    private JButton capture = new JButton("Capture");
-    private JButton discard = new JButton("Discard");
-    private JButton nextStep = new JButton("Next");
-    private JButton clearSlt = new JButton("Clear");
+    private JTextArea logs;
+    private ArrayList<JButton> consoleButtons = new ArrayList<>();
+    private int[] configuration = new int[]{0, 0};
 //    private int numOfPlayers;
 
-
-    public ConsolePanel() {
+    public ConsolePanel(JTextArea logs) {
+        this.logs = logs;
+        consoleButtons.add(new JButton("Start"));
+        consoleButtons.add(new JButton("Move To"));
+        consoleButtons.add(new JButton("Lift Off"));
+        consoleButtons.add(new JButton("Shore Up"));
+        consoleButtons.add(new JButton("Pass To"));
+        consoleButtons.add(new JButton("Capture"));
+        consoleButtons.add(new JButton("Next"));
+        consoleButtons.add(new JButton("Clear"));
         InfoPanel();
         ConfigBox();
         LogBox();
@@ -41,41 +43,39 @@ public class ConsolePanel {
         consolePanel.setPreferredSize(new Dimension(95, 950));
     }
 
-    public Box getConsolePanel() {
-        return consolePanel;
-    }
-
-    public void updateLogs(String string) {
-        logs.append(string);
-    }
-
     public void ConfigBox() {
         Box keyBox = Box.createHorizontalBox();
         TitledBorder config = new TitledBorder("Config");
 
         JComboBox<Object> numOfPlayerCB = new JComboBox<>();
-        numOfPlayerCB.addItem("----Num----");
+        numOfPlayerCB.addItem("----NUM----");
         for (int i = 2; i < 5; i++) {
             numOfPlayerCB.addItem(Integer.toString(i));
         }
-
-        startGame.addActionListener(e -> {
-            if (numOfPlayerCB.getSelectedItem() != "----Num----") {
-//                System.out.println(numOfPlayerCB.getSelectedItem());
-                updateLogs("abcdefg hijklmn opq rst uvw xyz\n");
-                Audio.BGM.LoopPlay();
-                startGame.setEnabled(false);
+        JComboBox<Object> difficultyCB = new JComboBox<>();
+        difficultyCB.addItem("---LEVEL---");
+        for (int i = 1; i < 6; i++) {
+            difficultyCB.addItem(Integer.toString(i));
+        }
+        consoleButtons.get(0).addActionListener(e -> {
+            if (numOfPlayerCB.getSelectedItem() != "----NUM----" && difficultyCB.getSelectedItem() != "---LEVEL---") {
+                logs.append("Start Game");
+//                Audio.BGM.LoopPlay(176);
+                consoleButtons.get(0).setEnabled(false);
+                Map.setUpMatchers();
+//                configuration[0] = (int)numOfPlayerCB.getSelectedItem();
+//                configuration[1] = (int)difficultyCB.getSelectedItem();
                 ///////////////////////////////////////////////////
             }
         });
-
         keyBox.add(Box.createHorizontalGlue());
-        keyBox.add(startGame);
+        keyBox.add(consoleButtons.get(0));
         configBox.add(numOfPlayerCB);
+        configBox.add(difficultyCB);
         configBox.add(Box.createVerticalStrut(2));
         configBox.add(keyBox);
         configBox.setBorder(config);
-        configBox.setPreferredSize(new Dimension(95, 80));
+        configBox.setPreferredSize(new Dimension(95, 120));
 
     }
 
@@ -88,21 +88,21 @@ public class ConsolePanel {
         TitledBorder logBorder = new TitledBorder("Logs");
         logBox.add(scrollPane);
         logBox.setBorder(logBorder);
-        logBox.setPreferredSize(new Dimension(95, 580));
+        logBox.setPreferredSize(new Dimension(95, 540));
     }
 
     public void ActionPanel() {
         TitledBorder action = new TitledBorder("Action");
         GridLayout gridLayout = new GridLayout(7, 1, 0, 2);
         actionPanel.setLayout(gridLayout);
-        actionPanel.add(moveTo);
-        actionPanel.add(liftOff);
-        actionPanel.add(shoreUp);
-        actionPanel.add(passTo);
-        actionPanel.add(capture);
-        actionPanel.add(discard);
-        actionPanel.add(nextStep);
-//        actionPanel.add(clearSlt);
+        actionPanel.add(consoleButtons.get(1));
+        actionPanel.add(consoleButtons.get(2));
+        actionPanel.add(consoleButtons.get(3));
+        actionPanel.add(consoleButtons.get(4));
+        actionPanel.add(consoleButtons.get(5));
+        actionPanel.add(consoleButtons.get(6));
+        actionPanel.add(consoleButtons.get(7));
+//        actionPanel.add(consoleButtons.get(8));
         actionPanel.setPreferredSize(new Dimension(95, 180));
     }
 
@@ -119,11 +119,11 @@ public class ConsolePanel {
         infoPanel.setBorder(info);
         infoPanel.setPreferredSize(new Dimension(95, 100));
     }
-    //    public JButton getStartButton() {
-//        return startGame;
-//    }
-//
-//    public int getNumOfPlayerCB() {
-//        return numOfPlayers;
-//    }
+    public int[] getConfiguration(){ return configuration;}
+
+    public Box getConsolePanel() {
+        return consolePanel;
+    }
+
+    public ArrayList<JButton> getConsoleButtons(){return consoleButtons;}
 }

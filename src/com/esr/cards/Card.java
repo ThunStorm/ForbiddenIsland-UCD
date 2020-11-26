@@ -3,13 +3,21 @@ package com.esr.cards;
 public abstract class Card {
     protected boolean isFront = false;
     protected boolean isDiscarded = false;
-    protected int x, y;
+    protected int id;
 
-    public int getX() {
-        return x;
+    public Card(int id) {
+        this.id = id;
     }
 
-    public int getY() {
-        return y;
+    public int getId() {
+        return id;
+    }
+
+    public boolean isFront() {
+        return isFront;
+    }
+
+    public boolean isDiscarded() {
+        return isDiscarded;
     }
 }

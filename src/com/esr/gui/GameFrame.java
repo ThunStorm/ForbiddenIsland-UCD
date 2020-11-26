@@ -1,10 +1,20 @@
 package com.esr.gui;
 
-import com.esr.service.observer.Subject;
+import com.esr.adventurer.*;
+import com.esr.cards.handcards.HandCard;
+import com.esr.gui.console.ConsolePanel;
+import com.esr.gui.game.GamePanel;
+import com.esr.gui.updater.LogAgent;
+import com.esr.utils.Audio;
 import com.esr.utils.Constant;
+import com.esr.utils.Map;
+import com.sun.org.apache.xml.internal.security.Init;
 
 import javax.swing.*;
 import java.awt.*;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
 
 
 public class GameFrame extends JFrame {
@@ -14,7 +24,13 @@ public class GameFrame extends JFrame {
     private ConsolePanel consolePanel;
     private JPanel jGamePanel;
     private Box consoleBoxPanel;
+    private JTextArea logs;
+    private LogAgent logAgent;
 
+    private ArrayList<JButton> consoleButtons;
+    private ArrayList<JButton> tileCards;
+    private ArrayList<JButton> treasureCards;
+    private int[] configuration;
 
     public GameFrame(String title) throws HeadlessException {
         super(title);
@@ -26,32 +42,49 @@ public class GameFrame extends JFrame {
 
         this.setLayout(new BorderLayout(5, 5));
         this.setBounds((screenWidth - Constant.FRAME_WIDTH) / 2, (screenHeight - Constant.FRAME_HEIGHT) / 2, Constant.FRAME_WIDTH, Constant.FRAME_HEIGHT);
+
         Init();
 //        test();
-//        System.out.println(this.getBounds());
-
     }
 
-    public void Init() {
-        gamePanel = new GamePanel();
-        consolePanel = new ConsolePanel();
+    public void Init(){
+        logAgent = new LogAgent();
+        consolePanel = new ConsolePanel(logAgent.getLogs());
+///////////////////////////////////////////////////////////////////////////////////////////////////
+        ArrayList<Integer> tilesOrder = new ArrayList<>();
+        for (int i = 0; i < 24; i++) {
+            tilesOrder.add(i);
+        }
+        Collections.shuffle(tilesOrder);
+//        System.out.println(tilesOrder);
+        int[] pos = new int[]{tilesOrder.indexOf(8), tilesOrder.indexOf(9), tilesOrder.indexOf(10), tilesOrder.indexOf(11)};
+
+        ArrayList<Adventurer> adventurers = new ArrayList<>();
+        adventurers.add(new Diver(0, pos[0]));
+        adventurers.add(new Engineer(1, pos[1]));
+        adventurers.add(new Explorer(2, pos[2]));
+        adventurers.add(new Messenger(3, pos[3]));
+//        for (int i = configuration[1]; i < 4; i++) {
+//            adventurers.remove(adventurers.size() - 1);
+//        }
+//        System.out.println("AVRS: " + adventurers);
+
+///////////////////////////////////////////////////////////////////////////////////////////////////
+        gamePanel = new GamePanel(tilesOrder, adventurers);
+
+
         jGamePanel = gamePanel.getGamePanel();
         consoleBoxPanel = consolePanel.getConsolePanel();
+
         this.add(consoleBoxPanel, BorderLayout.EAST);
         this.add(jGamePanel, BorderLayout.CENTER);
+
+        consoleButtons = consolePanel.getConsoleButtons();
+
         //the size AudioData object is limited under 1 MB when looped play;
 //        Audio.BGM.LoopPlay();
+
+
     }
 
-//    public void test() {
-//        JButton startGame = consolePanel.getStartButton();
-//        int numOfPlayer = consolePanel.getNumOfPlayerCB();
-//        startGame.addActionListener(e -> {
-////                logs.append("abcdefg hijklmn opq rst uvw xyz\n");
-////                Audio.BGM.LoopPlay();
-//            startGame.setEnabled(false);
-////                subject.notifyAllObservers();
-//            gamePanel.update();
-//        });
-//    }
 }

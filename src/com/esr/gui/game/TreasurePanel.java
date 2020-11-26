@@ -1,4 +1,4 @@
-package com.esr.gui;
+package com.esr.gui.game;
 
 import com.esr.utils.CommonUtils;
 import com.esr.utils.Constant;
@@ -41,7 +41,7 @@ public class TreasurePanel {
         for (int i = 0; i < 2; i++) {
             treasureCards.add(new JButton());
             treasureCards.get(i).setPreferredSize(treasureCardSize);
-            treasureCards.get(i).setIcon(new ImageIcon(CommonUtils.getImage("HandCards/" + Integer.toString(i + 1) + "5.png", Constant.TREASURE_WIDTH, Constant.TREASURE_HEIGHT, 270d)));
+            treasureCards.get(i).setIcon(new ImageIcon(CommonUtils.getImage("HandCards/" + Integer.toString(i + 1) + ".png", Constant.TREASURE_WIDTH, Constant.TREASURE_HEIGHT, 270d)));
 //            treasureCard.setIcon(new ImageIcon(CommonUtils.getImage("HandCards/25.png",Constant.TREASURE_WIDTH,Constant.TREASURE_HEIGHT)));
             treasureCardPile.add(treasureCards.get(i));
             setWaterMeter(1);

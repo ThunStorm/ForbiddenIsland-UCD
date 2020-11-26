@@ -27,12 +27,12 @@ public enum Audio {
         }
     }
 
-    public void LoopPlay() {
-        CommonUtils.task(176, () -> {
+    public void LoopPlay(int sec) {
+        CommonUtils.task(sec, () -> {
             try {
                 InputStream resourceAsStream = Audio.class.getClassLoader().getResourceAsStream("com/esr/resources/audio/" + name);
                 AudioStream as = new AudioStream(resourceAsStream);
-                System.out.println(as.getLength());
+//                System.out.println(as.getLength());
                 AudioPlayer.player.start(as);
 //            player.getPlayerState().getGameLevel().add();
             } catch (IOException e) {

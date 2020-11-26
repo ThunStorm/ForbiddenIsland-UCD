@@ -5,9 +5,9 @@ public enum TreasureFigurines {
     Wind("The Statue of the Wind"),
     Fire("The Crystal of Fire"),
     Ocean("The Ocean’s Chalice");
+
     private String name;
     TreasureFigurines(String name){
         this.name = name;
     }
-
 }

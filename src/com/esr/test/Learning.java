@@ -1,4 +1,6 @@
 package com.esr.test;
+import java.util.Scanner;
+
 //
 //import javax.swing.*;
 //import java.awt.*;
