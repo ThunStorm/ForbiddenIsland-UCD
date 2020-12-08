@@ -1,6 +1,6 @@
 package com.esr.gui.game;
 
-import com.esr.adventurer.Adventurer;
+import com.esr.service.game.component.adventurer.Adventurer;
 import com.esr.utils.CommonUtils;
 import com.esr.utils.Constant;
 

@@ -5,7 +5,7 @@ import java.awt.*;
 public abstract class Constant {
 
     public static boolean TIMER_STOP_ON_OFF = false;//Main switch of all timers. All timers stop when this turns to ture
-    public final static int FRAME_WIDTH = 1050;//主窗体宽
+    public final static int FRAME_WIDTH = 1080;//主窗体宽
     public final static int FRAME_HEIGHT = 950;//主窗体高
 
 
@@ -21,6 +21,8 @@ public abstract class Constant {
     public final static int BOARD_HEIGHT = 700;
     public final static int WATER_METER_WIDTH = 120;
     public final static int WATER_METER_HEIGHT = 350;
+    public final static int CONSOLE_WIDTH = 125;
+    public final static int CONSOLE_HEIGHT = 950;
 
     public final static int ELEMENT_SIZE = 24;//素材原始尺寸
     public final static String RESOURCES_PATH = "src/com/esr/resources/image/";//资源加载路径头

@@ -1,4 +1,4 @@
-package com.esr.cards;
+package com.esr.service.game.component.cards;
 
 public class FloodCard extends Card{
     private int order;

@@ -9,17 +9,17 @@ import javax.swing.*;
  * @Version 1.0
  **/
 public class LogAgent {
-    private JTextArea logs;
+    private static JTextArea logs;
 
     public LogAgent() {
-        this.logs = new JTextArea();
+        logs = new JTextArea();
     }
 
     public JTextArea getLogs() {
         return logs;
     }
 
-    public void logMessenger(String log){
+    public static void logMessenger(String log){
         logs.append(log);
     }
 }

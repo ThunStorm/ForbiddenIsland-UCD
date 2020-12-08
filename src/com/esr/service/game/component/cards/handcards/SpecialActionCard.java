@@ -1,6 +1,4 @@
-package com.esr.cards.handcards;
-
-import com.esr.cards.handcards.HandCard;
+package com.esr.service.game.component.cards.handcards;
 
 /**
  * @Description

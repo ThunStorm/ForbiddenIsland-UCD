@@ -1,6 +1,8 @@
 package com.esr.gui.console;
 
+import com.esr.gui.updater.LogAgent;
 import com.esr.utils.Audio;
+import com.esr.utils.Constant;
 import com.esr.utils.Map;
 
 import javax.swing.*;
@@ -40,7 +42,7 @@ public class ConsolePanel {
         consolePanel.add(logBox);
         consolePanel.add(actionPanel);
         consolePanel.add(Box.createVerticalGlue());
-        consolePanel.setPreferredSize(new Dimension(95, 950));
+        consolePanel.setPreferredSize(new Dimension(Constant.CONSOLE_WIDTH, Constant.CONSOLE_HEIGHT));
     }
 
     public void ConfigBox() {
@@ -59,7 +61,7 @@ public class ConsolePanel {
         }
         consoleButtons.get(0).addActionListener(e -> {
             if (numOfPlayerCB.getSelectedItem() != "----NUM----" && difficultyCB.getSelectedItem() != "---LEVEL---") {
-                logs.append("Start Game");
+                LogAgent.logMessenger("Game Start !\n");
 //                Audio.BGM.LoopPlay(176);
                 consoleButtons.get(0).setEnabled(false);
                 Map.setUpMatchers();

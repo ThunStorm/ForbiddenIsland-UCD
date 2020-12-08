@@ -1,7 +1,6 @@
 package com.esr.gui.game;
 
-import com.esr.adventurer.Adventurer;
-import com.esr.gui.game.*;
+import com.esr.service.game.component.adventurer.Adventurer;
 import com.esr.gui.updater.TileUpdater;
 
 import javax.swing.*;

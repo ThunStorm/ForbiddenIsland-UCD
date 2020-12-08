@@ -1,6 +1,6 @@
 package com.esr.gui.game;
 
-import com.esr.adventurer.Adventurer;
+import com.esr.service.game.component.adventurer.Adventurer;
 import com.esr.gui.widgets.JPanelBG;
 import com.esr.gui.widgets.TwoLayeredIcon;
 import com.esr.utils.CommonUtils;

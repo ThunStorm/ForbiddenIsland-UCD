@@ -1,4 +1,4 @@
-package com.esr.cards;
+package com.esr.service.game.component.cards;
 
 import com.esr.utils.Map;
 

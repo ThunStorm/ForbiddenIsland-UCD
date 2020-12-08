@@ -1,6 +1,6 @@
-package com.esr.adventurer;
+package com.esr.service.game.component.adventurer;
 
-import com.esr.cards.handcards.HandCard;
+import com.esr.service.game.component.cards.handcards.HandCard;
 
 import java.util.ArrayList;
 

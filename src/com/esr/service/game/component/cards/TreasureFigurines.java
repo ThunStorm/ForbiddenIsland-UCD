@@ -1,4 +1,4 @@
-package com.esr.cards;
+package com.esr.service.game.component.cards;
 
 public enum TreasureFigurines {
     Earth("The Earth Stone"),

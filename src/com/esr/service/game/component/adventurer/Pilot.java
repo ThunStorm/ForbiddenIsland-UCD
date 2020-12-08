@@ -1,4 +1,4 @@
-package com.esr.adventurer;
+package com.esr.service.game.component.adventurer;
 
 /**
  * @Description

@@ -22,9 +22,10 @@ public class TileUpdater {
 //        System.out.println(this.tileCards);
         for (JButton tileCard:this.tileCards) {
             tileCard.addActionListener(e -> {
-                System.out.println("ButtonIDX: " + tileCards.indexOf(tileCard));
-                System.out.println("Which matches to " + Arrays.toString(Map.coordinatesMatcher.get(tileCards.indexOf(tileCard))));
-                System.out.println("Which inversely matches to " + Map.numberMatcher.get(Arrays.toString(Map.coordinatesMatcher.get(tileCards.indexOf(tileCard)))));
+//                LogAgent.logMessenger("ButtonIDX: " + tileCards.indexOf(tileCard) + "\n");
+                LogAgent.logMessenger("Eng Move to" + Arrays.toString(Map.coordinatesMatcher.get(tileCards.indexOf(tileCard))) + "\n");
+//                LogAgent.logMessenger("Which matches to " + Arrays.toString(Map.coordinatesMatcher.get(tileCards.indexOf(tileCard))) + "\n");
+//                System.out.println("Which inversely matches to " + Map.numberMatcher.get(Arrays.toString(Map.coordinatesMatcher.get(tileCards.indexOf(tileCard)))));
 //                System.out.println("tostring" + String.valueOf(new int[]{2, 3}));
             });
         }
