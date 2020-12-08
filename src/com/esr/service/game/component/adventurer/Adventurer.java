@@ -10,6 +10,8 @@ public abstract class Adventurer {
     protected int pos;
     protected String name;
     protected ArrayList<HandCard> handCards = new ArrayList<>();
+    protected int actionNum;
+    protected static final int maxActionNum = 3;
 
     public Adventurer(int order, int pos) {
         this.order = order;
