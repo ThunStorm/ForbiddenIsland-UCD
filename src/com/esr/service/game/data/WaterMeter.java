@@ -8,6 +8,7 @@ package com.esr.service.game.data;
  **/
 public class WaterMeter {
     private int waterLevel;
+    private String img;
 
     public WaterMeter(int waterLevel) {
         this.waterLevel = waterLevel;
@@ -19,5 +20,9 @@ public class WaterMeter {
 
     public int getWaterLevel() {
         return waterLevel;
+    }
+
+    public String getImg() {
+        return "/WaterMeter/" + waterLevel + ".png";
     }
 }

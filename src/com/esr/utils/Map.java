@@ -1,7 +1,9 @@
 package com.esr.utils;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
+import java.util.List;
 
 /**
  * @Description
@@ -10,7 +12,10 @@ import java.util.HashMap;
  * @Version 1.0
  **/
 public abstract class Map {
-    public final static int[] layOut = new int[]{1, 2, 5, 6, 7, 12, 25, 30, 31, 32, 35, 36};
+//    public final static int[] layOut = new int[]{1, 2, 5, 6, 7, 12, 25, 30, 31, 32, 35, 36};
+    public final static ArrayList<Integer> blankLayout = new ArrayList<Integer>(){{
+        add(0);add(1);add(4);add(5);add(6);add(11);add(24);add(29);add(30);add(31);add(34);add(35);
+    }};
     public final static int rows = 6;
     public final static int cols = 6;
     public final static HashMap<Integer, int[]> coordinatesMatcher = new HashMap<>();
@@ -74,6 +79,8 @@ public abstract class Map {
         adventurerMatcher.put(4, "Messenger");
         adventurerMatcher.put(5, "Navigator");
         adventurerMatcher.put(6, "Pilot");
+
+
     }
 }
 

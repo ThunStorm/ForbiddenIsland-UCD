@@ -7,9 +7,8 @@ package com.esr.service.game.component.adventurer;
  * @Version 1.0
  **/
 public class Navigator extends Adventurer{
-    public Navigator(int order, int pos) {
-        super(order, pos);
-        this.name = "Navigator";
+    public Navigator(int order) {
+        super(order, "Navigator");
         this.id = 4;
     }
 }

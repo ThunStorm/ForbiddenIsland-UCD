@@ -1,32 +1,28 @@
 package com.esr.gui.game;
 
-import com.esr.service.game.component.adventurer.Adventurer;
-import com.esr.gui.updater.TileUpdater;
-
 import javax.swing.*;
 import java.awt.*;
 import java.util.ArrayList;
 
 public class GamePanel {
+    public static ArrayList<JButton> playerPawnList;
+    public static ArrayList<JButton> p1HandCards;
+    public static ArrayList<JButton> p2HandCards;
+    public static ArrayList<JButton> p3HandCards;
+    public static ArrayList<JButton> p4HandCards;
+
     private JPanel gamePanel;
-    private ArrayList<Integer> tileOrder;
-    private ArrayList<Adventurer> adventurers;
-    private ArrayList<JButton> treasureCards;
     private PlayerPanel playerPanelUp;
     private PlayerPanel playerPanelDown;
     private BoardPanel boardPanel;
     private TreasurePanel treasurePanel;
     private FloodPanel floodPanel;
-    private TileUpdater tileUpdater;
-    private int NumOfPlayers;
 //    private Subject subject;
 
-    public GamePanel(ArrayList<Integer> tileOrder, ArrayList<Adventurer> adventurers) {
-        this.tileOrder = tileOrder;
-        this.adventurers = adventurers;
+    public GamePanel() {
         gamePanel = new JPanel();
-        playerPanelUp = new PlayerPanel(adventurers);
-        playerPanelDown = new PlayerPanel(adventurers);
+        playerPanelUp = new PlayerPanel();
+        playerPanelDown = new PlayerPanel();
         boardPanel = new BoardPanel();
         treasurePanel = new TreasurePanel();
         floodPanel = new FloodPanel();
@@ -36,22 +32,21 @@ public class GamePanel {
         gamePanel.add(floodPanel.getFloodPanel(), BorderLayout.EAST);
         gamePanel.add(treasurePanel.getTreasurePanel(), BorderLayout.WEST);
         gamePanel.add(boardPanel.getBoard(), BorderLayout.CENTER);
-        init();
+
+        playerPawnList = new ArrayList<>();
+        playerPawnList.add(playerPanelDown.getP1Pawn());
+        playerPawnList.add(playerPanelDown.getP2Pawn());
+        playerPawnList.add(playerPanelUp.getP1Pawn());
+        playerPawnList.add(playerPanelUp.getP2Pawn());
+
+        p1HandCards = playerPanelDown.getP1HandCards();
+        p2HandCards = playerPanelDown.getP2HandCards();
+        p3HandCards = playerPanelUp.getP1HandCards();
+        p4HandCards = playerPanelUp.getP2HandCards();
     }
 
     public JPanel getGamePanel() {
         return gamePanel;
     }
 
-    public void init() {
-
-        playerPanelDown.setUpPlayerPanel(Math.min(adventurers.size(), 2), 0);
-        playerPanelUp.setUpPlayerPanel(Math.max(adventurers.size() - 2,0), 2);
-
-        boardPanel.setBoardBTN(tileOrder, adventurers);
-        floodPanel.setUpFloodCard();
-        treasurePanel.SetUpTreasureCard();
-        tileUpdater = new TileUpdater(boardPanel.getTileCards());
-        treasureCards = treasurePanel.getTreasureCards();
-    }
 }

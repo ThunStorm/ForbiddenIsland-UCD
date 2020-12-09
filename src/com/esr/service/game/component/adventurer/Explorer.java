@@ -7,9 +7,9 @@ package com.esr.service.game.component.adventurer;
  * @Version 1.0
  **/
 public class Explorer extends Adventurer{
-    public Explorer(int order, int pos) {
-        super(order, pos);
-        this.name = "Explorer";
+    public Explorer(int order) {
+        super(order, "Explorer");
         this.id = 2;
+
     }
 }

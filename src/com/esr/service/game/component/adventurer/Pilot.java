@@ -7,9 +7,8 @@ package com.esr.service.game.component.adventurer;
  * @Version 1.0
  **/
 public class Pilot extends Adventurer{
-    public Pilot(int order, int pos) {
-        super(order, pos);
-        this.name = "Pilot";
+    public Pilot(int order) {
+        super(order, "Pilot");
         this.id = 5;
     }
 }

@@ -7,9 +7,8 @@ package com.esr.service.game.component.adventurer;
  * @Version 1.0
  **/
 public class Messenger extends Adventurer{
-    public Messenger(int order, int pos) {
-        super(order, pos);
-        this.name = "Messenger";
+    public Messenger(int order) {
+        super(order, "Messenger");
         this.id = 3;
     }
 }

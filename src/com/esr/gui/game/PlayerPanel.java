@@ -1,6 +1,5 @@
 package com.esr.gui.game;
 
-import com.esr.service.game.component.adventurer.Adventurer;
 import com.esr.utils.CommonUtils;
 import com.esr.utils.Constant;
 
@@ -10,40 +9,38 @@ import java.util.ArrayList;
 
 public class PlayerPanel {
 
-    private Dimension adventurerSize = new Dimension(Constant.ADVENTURER_WIDTH, Constant.ADVENTURER_HEIGHT);
-    private Box duoPlayerPanel = Box.createHorizontalBox();
-    private ArrayList<Adventurer> adventurers;
-    private int flag;
     Player player1;
     Player player2;
+    private Dimension adventurerSize = new Dimension(Constant.ADVENTURER_WIDTH, Constant.ADVENTURER_HEIGHT);
+    private Box duoPlayerPanel = Box.createHorizontalBox();
 
-    public PlayerPanel(ArrayList<Adventurer> adventurers) {
-        this.adventurers = adventurers;
-        ArrayList<Player> players = new ArrayList<>();
+    public PlayerPanel() {
         player1 = new Player();
         player2 = new Player();
-        duoPlayerPanel.add(player1.getPlayer());
+        duoPlayerPanel.add(player1.playerPanel);
         duoPlayerPanel.add(Box.createHorizontalStrut(10));
-        duoPlayerPanel.add(player2.getPlayer());
-    }
-    public void setUpPlayerPanel(int Num, int flag){
-        this.flag = flag;
-        switch (Num){
-            case 0:
-                break;
-            case 1:
-                player1.setUpPlayer(flag);
-                break;
-            case 2:
-                player1.setUpPlayer(flag);
-                player2.setUpPlayer(flag + 1);
-                break;
-        }
+        duoPlayerPanel.add(player2.playerPanel);
     }
 
+    public JButton getP1Pawn(){
+        return player1.pawn;
+    }
+
+    public ArrayList<JButton> getP1HandCards(){
+        return player1.handCards;
+    }
+
+    public JButton getP2Pawn(){
+        return player2.pawn;
+    }
+
+    public ArrayList<JButton> getP2HandCards(){
+        return player2.handCards;
+    }
     public Box getDuoPlayerPanel() {
         return duoPlayerPanel;
     }
+
 
     public class Player {
         private JPanel playerPanel = new JPanel(new BorderLayout(3, 0));
@@ -51,7 +48,7 @@ public class PlayerPanel {
         private JButton pawn;
         private ArrayList<JButton> handCards = new ArrayList<>();
 
-        public Player(){
+        public Player() {
             pawn = new JButton();
             pawn.setPreferredSize(adventurerSize);
             playerPanel.add(pawn, BorderLayout.WEST);
@@ -64,20 +61,9 @@ public class PlayerPanel {
             playerPanel.setPreferredSize(new Dimension(440, 120));
         }
 
-        public void setUpPlayer(int idxOfAdventurers) {
-            pawn.setIcon(new ImageIcon(CommonUtils.getImage("Pawns/" + adventurers.get(idxOfAdventurers).getName()+".png")));
-//        System.out.println(pawn.getIcon());
-            for (int i = 0; i < 5; i++) {
-                handCards.get(i).setIcon(new ImageIcon(CommonUtils.getImage("HandCards/"+ ((int) (Math.random() * 6))+".png", Constant.ADVENTURER_WIDTH, Constant.ADVENTURER_HEIGHT)));
-//                handCards.get(i).setAlignmentX(SwingConstants.CENTER);
-            }
-        }
-
         public JPanel getPlayer() {
             return playerPanel;
         }
-
     }
-
 
 }

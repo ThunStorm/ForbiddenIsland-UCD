@@ -1,28 +1,32 @@
 package com.esr.gui.console;
 
+import com.esr.gui.game.TreasurePanel;
 import com.esr.gui.updater.LogAgent;
-import com.esr.utils.Audio;
+import com.esr.service.game.Game;
+import com.esr.service.game.GameData;
+import com.esr.utils.CommonUtils;
 import com.esr.utils.Constant;
-import com.esr.utils.Map;
 
 import javax.swing.*;
 import javax.swing.border.TitledBorder;
 import java.awt.*;
 import java.util.ArrayList;
+import java.util.Objects;
 
 public class ConsolePanel {
+    public static ArrayList<JButton> consoleButtons = new ArrayList<>();
+    public static JComboBox<Object> numOfPlayerCB = new JComboBox<>();
+    public static JComboBox<Object> difficultyCB = new JComboBox<>();
+
     private Box consolePanel = Box.createVerticalBox();
     private JPanel infoPanel = new JPanel();
     private Box configBox = Box.createVerticalBox();
     private Box logBox = Box.createHorizontalBox();
     private JPanel actionPanel = new JPanel();
     private JTextArea logs;
-    private ArrayList<JButton> consoleButtons = new ArrayList<>();
-    private int[] configuration = new int[]{0, 0};
-//    private int numOfPlayers;
 
-    public ConsolePanel(JTextArea logs) {
-        this.logs = logs;
+    public ConsolePanel() {
+        this.logs = LogAgent.logs;
         consoleButtons.add(new JButton("Start"));
         consoleButtons.add(new JButton("Move To"));
         consoleButtons.add(new JButton("Lift Off"));
@@ -49,12 +53,11 @@ public class ConsolePanel {
         Box keyBox = Box.createHorizontalBox();
         TitledBorder config = new TitledBorder("Config");
 
-        JComboBox<Object> numOfPlayerCB = new JComboBox<>();
         numOfPlayerCB.addItem("----NUM----");
         for (int i = 2; i < 5; i++) {
             numOfPlayerCB.addItem(Integer.toString(i));
         }
-        JComboBox<Object> difficultyCB = new JComboBox<>();
+
         difficultyCB.addItem("---LEVEL---");
         for (int i = 1; i < 6; i++) {
             difficultyCB.addItem(Integer.toString(i));
@@ -64,10 +67,8 @@ public class ConsolePanel {
                 LogAgent.logMessenger("Game Start !\n");
 //                Audio.BGM.LoopPlay(176);
                 consoleButtons.get(0).setEnabled(false);
-                Map.setUpMatchers();
-//                configuration[0] = (int)numOfPlayerCB.getSelectedItem();
-//                configuration[1] = (int)difficultyCB.getSelectedItem();
-                ///////////////////////////////////////////////////
+                Game NewGame = new Game(Integer.parseInt((String) Objects.requireNonNull(numOfPlayerCB.getSelectedItem())), Integer.parseInt((String) Objects.requireNonNull(difficultyCB.getSelectedItem())));
+                TreasurePanel.waterMeter.setIcon(new ImageIcon(CommonUtils.getImage(GameData.getWaterMeterImg(), Constant.WATER_METER_WIDTH, Constant.WATER_METER_HEIGHT)));
             }
         });
         keyBox.add(Box.createHorizontalGlue());
@@ -121,11 +122,8 @@ public class ConsolePanel {
         infoPanel.setBorder(info);
         infoPanel.setPreferredSize(new Dimension(95, 100));
     }
-    public int[] getConfiguration(){ return configuration;}
-
     public Box getConsolePanel() {
         return consolePanel;
     }
 
-    public ArrayList<JButton> getConsoleButtons(){return consoleButtons;}
 }

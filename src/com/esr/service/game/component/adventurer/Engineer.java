@@ -8,9 +8,8 @@ package com.esr.service.game.component.adventurer;
  **/
 public class Engineer extends Adventurer{
 
-    public Engineer(int order, int pos) {
-        super(order, pos);
-        this.name = "Engineer";
+    public Engineer(int order) {
+        super(order, "Engineer");
         this.id = 1;
     }
 

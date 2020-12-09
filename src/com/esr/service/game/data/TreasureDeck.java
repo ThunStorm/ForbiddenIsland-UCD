@@ -13,30 +13,41 @@ public class TreasureDeck {
     private ArrayList<Integer> treasureDeck;
     private ArrayList<Integer> discardPile;
     private ArrayList<Integer> displayedCards;
+    private ArrayList<Integer> NTreasureCards;
     private int displayNum = 2;
 
     public TreasureDeck() {
         treasureDeck = new ArrayList<>();
         discardPile = new ArrayList<>();
         displayedCards = new ArrayList<>();
-        for (int i = 0; i < 24; i++) {
+        NTreasureCards = new ArrayList<>();
+        for (int i = 0; i < 28; i++) {
             treasureDeck.add(i);
         }
         Collections.shuffle(treasureDeck);
 //        System.out.println(floodDeck);
     }
 
-    public ArrayList<Integer> getNTreasure(){
+    public ArrayList<Integer> getDisplayedCards(){
         displayedCards.clear();
-        displayedCards.addAll(treasureDeck.subList(0,this.displayNum));
+        displayedCards.addAll(treasureDeck.subList(0, displayNum));
+        if (displayNum > 0) {
+            treasureDeck.subList(0, displayNum).clear();
+        }
         return displayedCards;
     }
 
-    public void Discard(){
-        for (int i = 0; i < displayNum; i++) {
-            discardPile.add(treasureDeck.get(0));
-            treasureDeck.remove(0);
+    public ArrayList<Integer> getNTreasureCards(int n) {
+        NTreasureCards.clear();
+        NTreasureCards.addAll(treasureDeck.subList(0, n));
+        if (n > 0) {
+            treasureDeck.subList(0, n).clear();
         }
+        return NTreasureCards;
+    }
+
+    public void Discard(int treasureID){
+        discardPile.add(treasureID);
     }
 
     public void PutBack(){

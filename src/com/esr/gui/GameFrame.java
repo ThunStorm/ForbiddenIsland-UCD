@@ -1,9 +1,12 @@
 package com.esr.gui;
 
+import com.esr.gui.updater.UpdaterAgent;
+import com.esr.service.game.GameData;
 import com.esr.service.game.component.adventurer.*;
 import com.esr.gui.console.ConsolePanel;
 import com.esr.gui.game.GamePanel;
 import com.esr.gui.updater.LogAgent;
+import com.esr.utils.CommonUtils;
 import com.esr.utils.Constant;
 
 import javax.swing.*;
@@ -19,13 +22,6 @@ public class GameFrame extends JFrame {
     private ConsolePanel consolePanel;
     private JPanel jGamePanel;
     private Box consoleBoxPanel;
-    private JTextArea logs;
-    private LogAgent logAgent;
-
-    private ArrayList<JButton> consoleButtons;
-    private ArrayList<JButton> tileCards;
-    private ArrayList<JButton> treasureCards;
-    private int[] configuration;
 
     public GameFrame(String title) throws HeadlessException {
         super(title);
@@ -43,8 +39,10 @@ public class GameFrame extends JFrame {
     }
 
     public void Init(){
-        logAgent = new LogAgent();
-        consolePanel = new ConsolePanel(logAgent.getLogs());
+        LogAgent logAgent = new LogAgent();
+
+
+        consolePanel = new ConsolePanel();
 ///////////////////////////////////////////////////////////////////////////////////////////////////
         ArrayList<Integer> tilesOrder = new ArrayList<>();
         for (int i = 0; i < 24; i++) {
@@ -55,18 +53,13 @@ public class GameFrame extends JFrame {
         int[] pos = new int[]{tilesOrder.indexOf(8), tilesOrder.indexOf(9), tilesOrder.indexOf(10), tilesOrder.indexOf(11)};
 
         ArrayList<Adventurer> adventurers = new ArrayList<>();
-        adventurers.add(new Diver(0, pos[0]));
-        adventurers.add(new Engineer(1, pos[1]));
-        adventurers.add(new Explorer(2, pos[2]));
-        adventurers.add(new Messenger(3, pos[3]));
-//        for (int i = configuration[1]; i < 4; i++) {
-//            adventurers.remove(adventurers.size() - 1);
-//        }
-//        System.out.println("AVRS: " + adventurers);
+        adventurers.add(new Diver(0));
+        adventurers.add(new Engineer(1));
+        adventurers.add(new Explorer(2));
+        adventurers.add(new Messenger(3));
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
-        gamePanel = new GamePanel(tilesOrder, adventurers);
-
+        gamePanel = new GamePanel();
 
         jGamePanel = gamePanel.getGamePanel();
         consoleBoxPanel = consolePanel.getConsolePanel();
@@ -74,7 +67,8 @@ public class GameFrame extends JFrame {
         this.add(consoleBoxPanel, BorderLayout.EAST);
         this.add(jGamePanel, BorderLayout.CENTER);
 
-        consoleButtons = consolePanel.getConsoleButtons();
+//        consoleButtons = consolePanel.getConsoleButtons();
+
 
         //the size AudioData object is limited under 1 MB when looped play;
 //        Audio.BGM.LoopPlay();

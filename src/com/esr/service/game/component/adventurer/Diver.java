@@ -7,9 +7,8 @@ package com.esr.service.game.component.adventurer;
  * @Version 1.0
  **/
 public class Diver extends Adventurer{
-    public Diver(int order, int pos) {
-        super(order, pos);
-        this.name = "Diver";
+    public Diver(int order) {
+        super(order, "Diver");
         this.id = 0;
     }
 }

@@ -1,4 +1,0 @@
-Treasure x 5
-Helicopter x 3
-Sandbag x 2
-WaterRise x 3
