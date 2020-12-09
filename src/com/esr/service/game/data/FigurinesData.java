@@ -23,4 +23,6 @@ public class FigurinesData {
     public TreasureFigurines captureFigurine(){
         return treasureFigurines.get(0);
     }
+
+    // sunk func
 }

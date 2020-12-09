@@ -26,9 +26,6 @@ public class BoardUpdater implements IUpdater {
             BoardPanel.tileCards.get(i).setIcon(new ImageIcon(CommonUtils.getImage("/Tiles/" + img.get(i) + ".png", Constant.TILE_WIDTH, Constant.TILE_HEIGHT)));
         }
         for (int i = 0; i < GameData.getAdventurers().length; i++) {
-//            if (GameData.getTilesArray().contains(GameData.getAdventurers()[i].getId()+8)){
-//                BoardPanel.tileCards.get(GameData.getTilesArray().indexOf(GameData.getAdventurers()[i].getId()+8)).setIcon(new TwoLayeredIcon(new ImageIcon(CommonUtils.getImage("/Pawns/" + GameData.getAdventurers()[i].getName() + ".png", Constant.TILE_WIDTH, Constant.TILE_HEIGHT)), BoardPanel.tileCards.get(GameData.getTilesArray().indexOf(GameData.getAdventurers()[i].getId()+8)).getIcon()));
-//            }
             BoardPanel.tileCards.get(GameData.getAdventurers()[i].getPos()).setIcon(new TwoLayeredIcon(new ImageIcon(CommonUtils.getImage("/Pawns/" + GameData.getAdventurers()[i].getName() + ".png", Constant.TILE_WIDTH, Constant.TILE_HEIGHT)), BoardPanel.tileCards.get(GameData.getTilesArray().indexOf(GameData.getAdventurers()[i].getId()+8)).getIcon()));
         }
     }

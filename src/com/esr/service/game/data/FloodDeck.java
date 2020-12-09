@@ -47,6 +47,7 @@ public class FloodDeck {
         discardPile.clear();
     }
 
+// add function to detect the number of the rest of card
     public void PutBack(){
         Collections.shuffle(discardPile);
         floodDeck.clear();

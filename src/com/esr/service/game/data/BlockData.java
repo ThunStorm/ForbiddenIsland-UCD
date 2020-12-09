@@ -10,7 +10,7 @@ public class BlockData {
     private int tileId;
     private TileStatus status;
     private String img;
-    private int playerID = 0;
+    private int playerID = -1;
     private boolean isExist;
 
     public BlockData(int tileId, int playerID, boolean isExist) {

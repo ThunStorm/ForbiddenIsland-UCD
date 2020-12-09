@@ -30,8 +30,8 @@ public abstract class Adventurer {
     public void setPos(int x, int y){
         this.x = x;
         this.y = y;
-        System.out.println(this.getClass().getName());
-        System.out.println(this.x + " " + this.y);
+//        System.out.println(this.getClass().getName());
+//        System.out.println(this.x + " " + this.y);
     }
 
     public void setMove(int x1, int y1){

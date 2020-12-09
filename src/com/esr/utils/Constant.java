@@ -24,11 +24,7 @@ public abstract class Constant {
     public final static int CONSOLE_WIDTH = 125;
     public final static int CONSOLE_HEIGHT = 950;
 
-    public final static int ELEMENT_SIZE = 24;//素材原始尺寸
-    public final static String RESOURCES_PATH = "src/com/esr/resources/image/";//资源加载路径头
-
-    public final static int GROUND_CACHE_COUNT = 10;//地面组缓存个数
-    public final static int GROUND_LEVEL_BASE_LINE = 350;//地面基础线
+    public final static String RESOURCES_PATH = "src/com/esr/resources/image/";
 
 
 }

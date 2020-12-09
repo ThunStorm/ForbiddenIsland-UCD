@@ -1,13 +1,10 @@
 package com.esr.service.game;
 
 import com.esr.service.game.component.adventurer.*;
-import com.esr.service.game.component.cards.Tile;
-import com.esr.service.game.component.cards.TreasureFigurines;
 import com.esr.service.game.data.*;
 import com.esr.utils.Map;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Collections;
 
 /**
@@ -88,7 +85,6 @@ public class GameData {
         }
 
         for (Adventurer adventurer : adventurers) {
-//            adventurer.setHandCards(treasureDeck.getNTreasureCards(2));
             adventurer.setHandCards(treasureDeck.getNNoRiseCards(2));
         }
 
@@ -124,6 +120,7 @@ public class GameData {
         return adventurers;
     }
 
-
-
+    public static FigurinesData getFigurinesData() {
+        return figurinesData;
+    }
 }

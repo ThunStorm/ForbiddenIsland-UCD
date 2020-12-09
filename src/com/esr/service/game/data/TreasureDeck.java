@@ -31,14 +31,14 @@ public class TreasureDeck {
 //        System.out.println(floodDeck);
     }
 
-    public ArrayList<Integer> getDisplayedCards(){
-        displayedCards.clear();
-        displayedCards.addAll(treasureDeck.subList(0, displayNum));
-        if (displayNum > 0) {
-            treasureDeck.subList(0, displayNum).clear();
-        }
-        return displayedCards;
-    }
+//    public ArrayList<Integer> getDisplayedCards(){
+//        displayedCards.clear();
+//        displayedCards.addAll(treasureDeck.subList(0, displayNum));
+//        if (displayNum > 0) {
+//            treasureDeck.subList(0, displayNum).clear();
+//        }
+//        return displayedCards;
+//    }
 
     public ArrayList<Integer> getNTreasureCards(int n) {
         NTreasureCards.clear();
@@ -72,11 +72,11 @@ public class TreasureDeck {
         discardPile.add(treasureID);
     }
 
-    public void PutBack2Deck(){
-        Collections.shuffle(discardPile);
-        treasureDeck.addAll(discardPile);
-        discardPile.clear();
-    }
+//    public void PutBack2Deck(){
+//        Collections.shuffle(discardPile);
+//        treasureDeck.addAll(discardPile);
+//        discardPile.clear();
+//    }
 
     public void PutBack(){
         Collections.shuffle(discardPile);
@@ -84,4 +84,6 @@ public class TreasureDeck {
         treasureDeck.addAll(discardPile);
         discardPile.clear();
     }
+
+    //needed to check the number of the rest of cards
 }

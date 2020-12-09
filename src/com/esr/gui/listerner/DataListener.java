@@ -6,5 +6,5 @@ package com.esr.gui.listerner;
  * @Date 2020/12/9
  * @Version 1.0
  **/
-public class DataListerner {
+public class DataListener {
 }

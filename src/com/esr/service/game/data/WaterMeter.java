@@ -12,6 +12,7 @@ public class WaterMeter {
 
     public WaterMeter(int waterLevel) {
         this.waterLevel = waterLevel;
+        this.img = "/WaterMeter/" + waterLevel + ".png";
     }
 
     public void WaterRise(){
@@ -23,6 +24,6 @@ public class WaterMeter {
     }
 
     public String getImg() {
-        return "/WaterMeter/" + waterLevel + ".png";
+        return img;
     }
 }
