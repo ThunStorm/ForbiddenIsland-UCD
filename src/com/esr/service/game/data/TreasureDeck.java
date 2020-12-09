@@ -1,5 +1,8 @@
 package com.esr.service.game.data;
 
+import com.esr.gui.updater.TreasureUpdater;
+import com.esr.service.game.component.cards.handcards.TreasureCard;
+
 import java.util.ArrayList;
 import java.util.Collections;
 
@@ -46,8 +49,33 @@ public class TreasureDeck {
         return NTreasureCards;
     }
 
+    public ArrayList<Integer> getNNoRiseCards(int n) {
+        NTreasureCards.clear();
+        int count = 0;
+        for (int i = 0; i < treasureDeck.size(); i++) {
+            if (treasureDeck.get(0) >= 25 && treasureDeck.get(0) <= 27){
+                Discard(treasureDeck.get(0));
+            }
+            else {
+                NTreasureCards.add(treasureDeck.get(0));
+                count ++;
+            }
+            treasureDeck.remove(0);
+            if (count >= n){
+                break;
+            }
+        }
+        return NTreasureCards;
+    }
+
     public void Discard(int treasureID){
         discardPile.add(treasureID);
+    }
+
+    public void PutBack2Deck(){
+        Collections.shuffle(discardPile);
+        treasureDeck.addAll(discardPile);
+        discardPile.clear();
     }
 
     public void PutBack(){

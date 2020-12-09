@@ -26,56 +26,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2b919aec-5efd-45b2-b528-0ea4fbe9c6b5" name="Default Changelist" comment="rewrite GUI &amp; fix bugs">
-      <change afterPath="$PROJECT_DIR$/src/com/esr/gui/listerner/Controllers.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/esr/gui/listerner/DataListerner.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/esr/gui/updater/BoardUpdater.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/esr/gui/updater/FloodUpdater.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/esr/gui/updater/PlayerUpdater.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/esr/gui/updater/UpdaterAgent.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/esr/service/base/IExecuter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/esr/gui/GameFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/esr/gui/GameFrame.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/esr/gui/console/ConsolePanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/esr/gui/console/ConsolePanel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/esr/gui/game/BoardPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/esr/gui/game/BoardPanel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/esr/gui/game/FloodPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/esr/gui/game/FloodPanel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/esr/gui/game/GamePanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/esr/gui/game/GamePanel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/esr/gui/game/PlayerPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/esr/gui/game/PlayerPanel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/esr/gui/game/TreasurePanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/esr/gui/game/TreasurePanel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/esr/gui/updater/KeysListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/esr/gui/updater/TreasureUpdater.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/esr/gui/updater/LogAgent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/esr/gui/updater/LogAgent.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/esr/gui/updater/TileUpdater.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/esr/resources/image/HandCards/0.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/esr/resources/image/HandCards/1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/esr/resources/image/HandCards/2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/esr/resources/image/HandCards/3.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/esr/resources/image/HandCards/4.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/esr/resources/image/HandCards/5.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/esr/resources/image/HandCards/6.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/esr/resources/image/HandCards/Num.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/esr/resources/image/HandCards/Treasure Deck.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/esr/resources/image/Treasures/The Crystal of Fire/3.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/esr/resources/image/Treasures/The Crystal of Fire/33.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/esr/resources/image/Treasures/The Earth Stone/2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/esr/resources/image/Treasures/The Earth Stone/22.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/esr/resources/image/Treasures/The Ocean’s Chalice/4.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/esr/resources/image/Treasures/The Ocean’s Chalice/44.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/esr/resources/image/Treasures/The Statue of the Wind/1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/esr/resources/image/Treasures/The Statue of the Wind/11.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/esr/service/base/IUpdater.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/esr/service/base/IUpdater.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/esr/service/game/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/esr/service/game/Game.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/esr/service/game/GameData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/esr/service/game/GameData.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/esr/service/game/Initialisation.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/esr/service/game/component/adventurer/Adventurer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/esr/service/game/component/adventurer/Adventurer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/esr/service/game/component/adventurer/Diver.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/esr/service/game/component/adventurer/Diver.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/esr/service/game/component/adventurer/Engineer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/esr/service/game/component/adventurer/Engineer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/esr/service/game/component/adventurer/Explorer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/esr/service/game/component/adventurer/Explorer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/esr/service/game/component/adventurer/Messenger.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/esr/service/game/component/adventurer/Messenger.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/esr/service/game/component/adventurer/Navigator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/esr/service/game/component/adventurer/Navigator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/esr/service/game/component/adventurer/Pilot.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/esr/service/game/component/adventurer/Pilot.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/esr/service/game/data/BlockData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/esr/service/game/data/BlockData.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/esr/service/game/data/TreasureDeck.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/esr/service/game/data/TreasureDeck.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/esr/service/game/data/WaterMeter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/esr/service/game/data/WaterMeter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/esr/utils/Map.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/esr/utils/Map.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -243,7 +196,7 @@
       <workItem from="1606566622017" duration="2550000" />
       <workItem from="1607386465754" duration="5184000" />
       <workItem from="1607394575947" duration="5491000" />
-      <workItem from="1607425346155" duration="38655000" />
+      <workItem from="1607425346155" duration="40039000" />
     </task>
     <task id="LOCAL-00001" summary="Build DataLayer">
       <created>1607400232334</created>
@@ -259,7 +212,14 @@
       <option name="project" value="LOCAL" />
       <updated>1607426128582</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="rewrite GUI &amp; fix bugs">
+      <created>1607489926211</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1607489926211</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -303,22 +263,22 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="740" y="274" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1607454895664" />
-    <state width="1877" height="166" key="GridCell.Tab.0.bottom" timestamp="1607489811174">
+    <state width="1877" height="166" key="GridCell.Tab.0.bottom" timestamp="1607490048401">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="166" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1607489811174" />
-    <state width="1877" height="166" key="GridCell.Tab.0.center" timestamp="1607489811173">
+    <state width="1877" height="166" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1607490048401" />
+    <state width="1877" height="166" key="GridCell.Tab.0.center" timestamp="1607490048400">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="166" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1607489811173" />
-    <state width="1877" height="166" key="GridCell.Tab.0.left" timestamp="1607489811173">
+    <state width="1877" height="166" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1607490048400" />
+    <state width="1877" height="166" key="GridCell.Tab.0.left" timestamp="1607490048400">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="166" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1607489811173" />
-    <state width="1877" height="166" key="GridCell.Tab.0.right" timestamp="1607489811173">
+    <state width="1877" height="166" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1607490048400" />
+    <state width="1877" height="166" key="GridCell.Tab.0.right" timestamp="1607490048400">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="166" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1607489811173" />
+    <state width="1877" height="166" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1607490048400" />
     <state width="1877" height="348" key="GridCell.Tab.1.bottom" timestamp="1607461238977">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -351,10 +311,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="92" y="92" width="1736" height="856" key="ShowDiffWithBranchDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1606516011967" />
-    <state x="540" y="286" key="Vcs.Push.Dialog.v2" timestamp="1607426138657">
+    <state x="540" y="286" key="Vcs.Push.Dialog.v2" timestamp="1607489937451">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="540" y="286" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1607426138657" />
+    <state x="540" y="286" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1607489937451" />
     <state x="658" y="411" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD" timestamp="1607394657445">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

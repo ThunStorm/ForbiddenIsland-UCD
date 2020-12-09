@@ -83,7 +83,8 @@ public class GameData {
         }
 
         for (Adventurer adventurer : adventurers) {
-            adventurer.setHandCards(treasureDeck.getNTreasureCards(2));
+//            adventurer.setHandCards(treasureDeck.getNTreasureCards(2));
+            adventurer.setHandCards(treasureDeck.getNNoRiseCards(2));
         }
 
     }
