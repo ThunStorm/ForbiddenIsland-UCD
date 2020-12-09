@@ -18,8 +18,6 @@ public abstract class Adventurer {
     protected String pawnImg;
     protected ArrayList<Integer> handCards;
     protected ArrayList<TreasureFigurines> capturedFigurines;
-    protected int actionNum;
-    protected static final int maxActionNum = 3;
 
     public Adventurer(int order, String name) {
         this.order = order;
