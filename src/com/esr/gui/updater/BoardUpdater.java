@@ -1,7 +1,13 @@
 package com.esr.gui.updater;
 
+import com.esr.gui.game.BoardPanel;
+import com.esr.gui.widgets.TwoLayeredIcon;
 import com.esr.service.base.IUpdater;
+import com.esr.service.game.GameData;
+import com.esr.utils.CommonUtils;
+import com.esr.utils.Constant;
 
+import javax.swing.*;
 import java.util.ArrayList;
 
 /**
@@ -11,25 +17,29 @@ import java.util.ArrayList;
  * @Version 1.0
  **/
 public class BoardUpdater implements IUpdater {
-    @Override
-    public void guiUpdate(ArrayList<String> img) {
 
+    public BoardUpdater(ArrayList<Integer> img) {
+        for (int i = 0; i < BoardPanel.tileCards.size(); i++) {
+            BoardPanel.tileCards.get(i).setEnabled(true);
+            BoardPanel.tileCards.get(i).setVisible(true);
+            BoardPanel.tileCards.get(i).setIcon(new ImageIcon(CommonUtils.getImage("/Tiles/" + img.get(i) + ".png", Constant.TILE_WIDTH, Constant.TILE_HEIGHT)));
+        }
+        for (int i = 0; i < GameData.getAdventurers().length; i++) {
+            if (GameData.getTilesArray().contains(GameData.getAdventurers()[i].getId()+8)){
+                BoardPanel.tileCards.get(GameData.getTilesArray().indexOf(GameData.getAdventurers()[i].getId()+8)).setIcon(new TwoLayeredIcon(new ImageIcon(CommonUtils.getImage("/Pawns/" + GameData.getAdventurers()[i].getName() + ".png", Constant.TILE_WIDTH, Constant.TILE_HEIGHT)), BoardPanel.tileCards.get(GameData.getTilesArray().indexOf(GameData.getAdventurers()[i].getId()+8)).getIcon()));
+            }
+        }
+    }
+
+    @Override
+    public void guiUpdate(ArrayList<Integer> img) {
+        //need to consider the length change later, move this to constructor
+//        System.out.println(img);
+//        for (int i = 0; i < BoardPanel.tileCards.size(); i++) {
+//            BoardPanel.tileCards.get(i).setEnabled(true);
+//            BoardPanel.tileCards.get(i).setVisible(true);
+//            BoardPanel.tileCards.get(i).setIcon(new ImageIcon(CommonUtils.getImage("/Tiles/" + img.get(i) + ".png", Constant.TILE_WIDTH, Constant.TILE_HEIGHT)));
+//        }
     }
 }
 
-
-//if (iterator.hasNext()){
-//        int itr = iterator.next();
-////                    System.out.println(itr);
-//        tileCard.setIcon(new ImageIcon(CommonUtils.getImage("/Tiles/" + itr + ".png", Constant.TILE_WIDTH, Constant.TILE_HEIGHT)));
-//        for (Adventurer adventurer : adventurers) {
-//        if((adventurer.getId() + 8) == itr){
-////                            System.out.println("Name: "+adventurer.getName()+", pos: "+adventurer.getPos()+", ITR: "+itr);
-//        tileCard.setIcon(new TwoLayeredIcon(new ImageIcon(CommonUtils.getImage("/Pawns/" + adventurer.getName()+ ".png", Constant.TILE_WIDTH, Constant.TILE_HEIGHT)), tileCard.getIcon()));
-//        }
-//        }
-//        tileCards.add(tileCard);
-//        }
-//        else{
-//        System.out.println("Error and later program this exception part");
-//        }

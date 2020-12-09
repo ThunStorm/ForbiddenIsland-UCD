@@ -13,35 +13,37 @@ import java.util.ArrayList;
  * @Version 1.0
  **/
 public class UpdaterAgent {
-    private BoardUpdater boardUpdater;
-    private FloodUpdater floodUpdater;
-    private PlayerUpdater playerUpdater;
-    private TreasureUpdater treasureUpdater;
+    private static BoardUpdater boardUpdater;
+    private static FloodUpdater floodUpdater;
+    private static PlayerUpdater playerUpdater;
+    private static TreasureUpdater treasureUpdater;
 
     public UpdaterAgent() {
         ArrayList<String> pawnImg = new ArrayList<>();
         for (Adventurer adventurer : GameData.getAdventurers()) {
             pawnImg.add(adventurer.getPawnImg());
         }
-        this.boardUpdater = new BoardUpdater();
-        this.floodUpdater = new FloodUpdater();
-        this.playerUpdater = new PlayerUpdater(pawnImg);
-        this.treasureUpdater = new TreasureUpdater();
+        boardUpdater = new BoardUpdater(GameData.getTilesArray());
+        floodUpdater = new FloodUpdater();
+        playerUpdater = new PlayerUpdater(pawnImg);
+        treasureUpdater = new TreasureUpdater();
     }
 
-    public BoardUpdater getBoardUpdater() {
+    public static BoardUpdater getBoardUpdater() {
         return boardUpdater;
     }
 
-    public FloodUpdater getFloodUpdater() {
+    public static FloodUpdater getFloodUpdater() {
         return floodUpdater;
     }
 
-    public PlayerUpdater getPlayerUpdater() {
+    public static PlayerUpdater getPlayerUpdater() {
         return playerUpdater;
     }
 
-    public TreasureUpdater getTreasureUpdater() {
+    public static TreasureUpdater getTreasureUpdater() {
         return treasureUpdater;
     }
+
+    public int getUpdaterID(){ return 1;}
 }

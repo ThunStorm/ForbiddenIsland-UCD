@@ -1,7 +1,11 @@
 package com.esr.gui.updater;
 
+import com.esr.gui.game.BoardPanel;
 import com.esr.gui.game.GamePanel;
+import com.esr.gui.widgets.TwoLayeredIcon;
 import com.esr.service.base.IUpdater;
+import com.esr.service.game.Game;
+import com.esr.service.game.GameData;
 import com.esr.utils.CommonUtils;
 import com.esr.utils.Constant;
 
@@ -23,7 +27,8 @@ public class PlayerUpdater implements IUpdater {
     }
 
     @Override
-    public void guiUpdate(ArrayList<String> img) {
+    public void guiUpdate(ArrayList<Integer> img) {
+
 
     }
 
@@ -34,19 +39,3 @@ public class PlayerUpdater implements IUpdater {
         }
     }
 }
-
-
-
-
-
-//    public void setUpPlayer(int idxOfAdventurers) {
-//        pawn.setIcon(new ImageIcon(CommonUtils.getImage("Pawns/" + adventurers.get(idxOfAdventurers).getName() + ".png")));
-////            pawn.setIcon(null);
-////        System.out.println(pawn.getIcon());
-//        for (int i = 0; i < 5; i++) {
-//            handCards.get(i).setIcon(new ImageIcon(CommonUtils.getImage("HandCards/" + ((int) (Math.random() * 6)) + ".png", Constant.ADVENTURER_WIDTH, Constant.ADVENTURER_HEIGHT)));
-////                handCards.get(i).setAlignmentX(SwingConstants.CENTER);
-//        }
-//    }
-//
-

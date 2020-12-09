@@ -1,13 +1,13 @@
 package com.esr.service.game;
 
 import com.esr.service.game.component.adventurer.*;
-import com.esr.service.game.data.BlockData;
-import com.esr.service.game.data.FloodDeck;
-import com.esr.service.game.data.TreasureDeck;
-import com.esr.service.game.data.WaterMeter;
+import com.esr.service.game.component.cards.Tile;
+import com.esr.service.game.component.cards.TreasureFigurines;
+import com.esr.service.game.data.*;
 import com.esr.utils.Map;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collections;
 
 /**
@@ -17,18 +17,22 @@ import java.util.Collections;
  * @Version 1.0
  **/
 public class GameData {
-    private BlockData[][] Board;
-    private FloodDeck floodDeck;
-    private TreasureDeck treasureDeck;
+    private static BlockData[][] Board;
+    private static ArrayList<Integer> Tiles;
+    private static FloodDeck floodDeck;
+    private static TreasureDeck treasureDeck;
     private static WaterMeter waterMeter;
     private static Adventurer[] adventurers;
+    private static FigurinesData figurinesData;
 
     public GameData(int numOfPlayers, int waterLevel) {
+        Tiles = new ArrayList<>();
         floodDeck = new FloodDeck();
         treasureDeck = new TreasureDeck();
         waterMeter = new WaterMeter(waterLevel);
+        figurinesData = new FigurinesData();
         Map.setUpMatchers();
-
+        
         adventurers = new Adventurer[numOfPlayers];
         ArrayList<Integer> tileID = new ArrayList<>();
         for (int i = 0; i < 24; i++) { tileID.add(i); }
@@ -66,7 +70,7 @@ public class GameData {
         int tileIdx = 0;
         for (int i = 0; i < 6; i++) {
             for (int j = 0; j < 6; j++) {
-                if (Map.blankLayout.contains(i)) {
+                if (Map.blankLayout.contains(i * 6 + j)) {
                     Board[i][j] = new BlockData(false);
                 }
                 else {
@@ -77,6 +81,7 @@ public class GameData {
                     else {
                         Board[i][j] = new BlockData(tileID.get(tileIdx), true);
                     }
+                    Tiles.add(tileID.get(tileIdx));
                     tileIdx ++;
                 }
             }
@@ -89,15 +94,25 @@ public class GameData {
 
     }
 
-    public BlockData getBoard(int x, int y) {
+    public void setBoard(BlockData[][] board) {
+        Board = board;
+    }
+
+    public void setTiles(ArrayList<Integer> tiles) {
+        Tiles = tiles;
+    }
+
+    public static ArrayList<Integer> getTilesArray(){ return Tiles; }
+
+    public static BlockData getBoard(int x, int y) {
         return Board[x][y];
     }
 
-    public FloodDeck getFloodDeck() {
+    public static FloodDeck getFloodDeck() {
         return floodDeck;
     }
 
-    public TreasureDeck getTreasureDeck() {
+    public static TreasureDeck getTreasureDeck() {
         return treasureDeck;
     }
 
@@ -108,6 +123,7 @@ public class GameData {
     public static Adventurer[] getAdventurers() {
         return adventurers;
     }
+
 
 
 }

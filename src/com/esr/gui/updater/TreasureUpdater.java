@@ -17,9 +17,9 @@ import java.util.ArrayList;
 public class TreasureUpdater implements IUpdater {
 
     @Override
-    public void guiUpdate(ArrayList<String> img) {
-        for (int i = 0; i < 2; i++) {
-            TreasurePanel.treasureCards.get(i).setIcon(new ImageIcon(CommonUtils.getImage(img.get(i), Constant.TREASURE_WIDTH, Constant.TREASURE_HEIGHT, 270d)));
+    public void guiUpdate(ArrayList<Integer> img) {
+        for (int i = 0; i < img.size(); i++) {
+            TreasurePanel.treasureCards.get(i).setIcon(new ImageIcon(CommonUtils.getImage("/TreasureCards/" + img.get(i) + ".png", Constant.TREASURE_WIDTH, Constant.TREASURE_HEIGHT, 270d)));
         }
     }
 }
