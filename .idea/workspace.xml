@@ -26,15 +26,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2b919aec-5efd-45b2-b528-0ea4fbe9c6b5" name="Default Changelist" comment="Finish Initialisation">
-      <change afterPath="$PROJECT_DIR$/src/com/esr/service/game/data/FigurinesData.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/esr/gui/updater/BoardUpdater.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/esr/gui/updater/BoardUpdater.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/esr/gui/updater/FloodUpdater.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/esr/gui/updater/FloodUpdater.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/esr/gui/updater/PlayerUpdater.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/esr/gui/updater/PlayerUpdater.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/esr/gui/updater/TreasureUpdater.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/esr/gui/updater/TreasureUpdater.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/esr/gui/updater/UpdaterAgent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/esr/gui/updater/UpdaterAgent.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/esr/service/base/IUpdater.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/esr/service/base/IUpdater.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/esr/service/game/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/esr/service/game/Game.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/esr/service/game/GameData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/esr/service/game/GameData.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/esr/service/game/component/adventurer/Adventurer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/esr/service/game/component/adventurer/Adventurer.java" afterDir="false" />
     </list>
@@ -125,19 +118,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
-      <option name="arquillianRunConfiguration">
-        <value>
-          <option name="containerStateName" value="" />
-        </value>
-      </option>
-      <option name="TEST_OBJECT" value="CLASS" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="FloodDeckTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="FI-game-UCD-IDEA" />
       <extension name="coverage">
@@ -207,7 +187,8 @@
       <workItem from="1607386465754" duration="5184000" />
       <workItem from="1607394575947" duration="5491000" />
       <workItem from="1607425346155" duration="40134000" />
-      <workItem from="1607518871880" duration="7545000" />
+      <workItem from="1607518871880" duration="8424000" />
+      <workItem from="1607533725691" duration="4069000" />
     </task>
     <task id="LOCAL-00001" summary="Build DataLayer">
       <created>1607400232334</created>
@@ -237,7 +218,14 @@
       <option name="project" value="LOCAL" />
       <updated>1607491379187</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Finish Initialisation">
+      <created>1607527072423</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1607527072423</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -283,22 +271,22 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="740" y="274" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1607454895664" />
-    <state width="1877" height="158" key="GridCell.Tab.0.bottom" timestamp="1607526661835">
+    <state width="1877" height="336" key="GridCell.Tab.0.bottom" timestamp="1607540647392">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="158" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1607526661835" />
-    <state width="1877" height="158" key="GridCell.Tab.0.center" timestamp="1607526661835">
+    <state width="1877" height="336" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1607540647392" />
+    <state width="1877" height="336" key="GridCell.Tab.0.center" timestamp="1607540647392">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="158" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1607526661835" />
-    <state width="1877" height="158" key="GridCell.Tab.0.left" timestamp="1607526661835">
+    <state width="1877" height="336" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1607540647392" />
+    <state width="1877" height="336" key="GridCell.Tab.0.left" timestamp="1607540647392">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="158" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1607526661835" />
-    <state width="1877" height="158" key="GridCell.Tab.0.right" timestamp="1607526661835">
+    <state width="1877" height="336" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1607540647392" />
+    <state width="1877" height="336" key="GridCell.Tab.0.right" timestamp="1607540647392">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="158" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1607526661835" />
+    <state width="1877" height="336" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1607540647392" />
     <state width="1877" height="348" key="GridCell.Tab.1.bottom" timestamp="1607491392708">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -331,18 +319,18 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="92" y="92" width="1736" height="856" key="ShowDiffWithBranchDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1606516011967" />
-    <state x="540" y="286" key="Vcs.Push.Dialog.v2" timestamp="1607491384635">
+    <state x="540" y="286" key="Vcs.Push.Dialog.v2" timestamp="1607527092692">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="540" y="286" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1607491384635" />
+    <state x="540" y="286" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1607527092692" />
     <state x="658" y="411" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD" timestamp="1607394657445">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="658" y="411" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD/0.0.1920.1040@0.0.1920.1040" timestamp="1607394657445" />
-    <state x="763" y="432" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1607526614399">
+    <state x="763" y="432" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1607536568968">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="763" y="432" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1920.1040@0.0.1920.1040" timestamp="1607526614399" />
+    <state x="763" y="432" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1920.1040@0.0.1920.1040" timestamp="1607536568968" />
     <state x="499" y="255" width="921" height="642" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2" timestamp="1607461249651">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -367,11 +355,6 @@
           <properties class="java.lang.IndexOutOfBoundsException" package="java.lang" />
           <option name="timeStamp" value="4" />
         </breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/com/esr/service/game/GameData.java</url>
-          <line>45</line>
-          <option name="timeStamp" value="3" />
-        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
     <watches-manager>

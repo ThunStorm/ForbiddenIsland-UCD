@@ -2,8 +2,10 @@ package com.esr.service.game.component.adventurer;
 
 import com.esr.service.game.component.cards.TreasureFigurines;
 import com.esr.service.game.component.cards.handcards.HandCard;
+import com.esr.utils.Map;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 
 public abstract class Adventurer {
     protected int id;
@@ -30,6 +32,8 @@ public abstract class Adventurer {
     public void setPos(int x, int y){
         this.x = x;
         this.y = y;
+        System.out.println(this.getClass().getName());
+        System.out.println(this.x + " " + this.y);
     }
 
     public void setMove(int x1, int y1){
@@ -66,6 +70,10 @@ public abstract class Adventurer {
 
     public int getY(){
         return y;
+    }
+
+    public int getPos(){
+        return Map.numberMatcher.get(Arrays.toString(new int[]{this.x, this.y}));
     }
 
     public String getName() {

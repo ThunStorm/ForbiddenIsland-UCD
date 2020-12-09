@@ -6,6 +6,7 @@ import com.esr.service.base.IUpdater;
 import com.esr.service.game.GameData;
 import com.esr.utils.CommonUtils;
 import com.esr.utils.Constant;
+import com.esr.utils.Map;
 
 import javax.swing.*;
 import java.util.ArrayList;
@@ -25,9 +26,10 @@ public class BoardUpdater implements IUpdater {
             BoardPanel.tileCards.get(i).setIcon(new ImageIcon(CommonUtils.getImage("/Tiles/" + img.get(i) + ".png", Constant.TILE_WIDTH, Constant.TILE_HEIGHT)));
         }
         for (int i = 0; i < GameData.getAdventurers().length; i++) {
-            if (GameData.getTilesArray().contains(GameData.getAdventurers()[i].getId()+8)){
-                BoardPanel.tileCards.get(GameData.getTilesArray().indexOf(GameData.getAdventurers()[i].getId()+8)).setIcon(new TwoLayeredIcon(new ImageIcon(CommonUtils.getImage("/Pawns/" + GameData.getAdventurers()[i].getName() + ".png", Constant.TILE_WIDTH, Constant.TILE_HEIGHT)), BoardPanel.tileCards.get(GameData.getTilesArray().indexOf(GameData.getAdventurers()[i].getId()+8)).getIcon()));
-            }
+//            if (GameData.getTilesArray().contains(GameData.getAdventurers()[i].getId()+8)){
+//                BoardPanel.tileCards.get(GameData.getTilesArray().indexOf(GameData.getAdventurers()[i].getId()+8)).setIcon(new TwoLayeredIcon(new ImageIcon(CommonUtils.getImage("/Pawns/" + GameData.getAdventurers()[i].getName() + ".png", Constant.TILE_WIDTH, Constant.TILE_HEIGHT)), BoardPanel.tileCards.get(GameData.getTilesArray().indexOf(GameData.getAdventurers()[i].getId()+8)).getIcon()));
+//            }
+            BoardPanel.tileCards.get(GameData.getAdventurers()[i].getPos()).setIcon(new TwoLayeredIcon(new ImageIcon(CommonUtils.getImage("/Pawns/" + GameData.getAdventurers()[i].getName() + ".png", Constant.TILE_WIDTH, Constant.TILE_HEIGHT)), BoardPanel.tileCards.get(GameData.getTilesArray().indexOf(GameData.getAdventurers()[i].getId()+8)).getIcon()));
         }
     }
 

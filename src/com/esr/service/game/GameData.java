@@ -34,9 +34,9 @@ public class GameData {
         Map.setUpMatchers();
         
         adventurers = new Adventurer[numOfPlayers];
-        ArrayList<Integer> tileID = new ArrayList<>();
-        for (int i = 0; i < 24; i++) { tileID.add(i); }
-        Collections.shuffle(tileID);
+
+        for (int i = 0; i < 24; i++) { Tiles.add(i); }
+        Collections.shuffle(Tiles);
 
         ArrayList<Integer> playerList = new ArrayList<>();
         for (int i = 0; i < 6; i++) { playerList.add(i); }
@@ -74,14 +74,14 @@ public class GameData {
                     Board[i][j] = new BlockData(false);
                 }
                 else {
-                    if (players.contains(tileID.get(tileIdx))){
-                        Board[i][j] = new BlockData(tileID.get(tileIdx), tileID.get(tileIdx), true);
-                        adventurers[players.indexOf(tileID.get(tileIdx))].setPos(i, j);
+                    if (players.contains(Tiles.get(tileIdx) - 8)){
+                        Board[i][j] = new BlockData(Tiles.get(tileIdx), Tiles.get(tileIdx) - 8, true);
+                        adventurers[players.indexOf(Tiles.get(tileIdx) - 8)].setPos(i, j);
                     }
                     else {
-                        Board[i][j] = new BlockData(tileID.get(tileIdx), true);
+                        Board[i][j] = new BlockData(Tiles.get(tileIdx), true);
                     }
-                    Tiles.add(tileID.get(tileIdx));
+//                    Tiles.add(tileID.get(tileIdx));
                     tileIdx ++;
                 }
             }
