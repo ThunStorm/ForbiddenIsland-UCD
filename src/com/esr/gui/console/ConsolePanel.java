@@ -64,13 +64,14 @@ public class ConsolePanel {
         }
         consoleButtons.get(0).addActionListener(e -> {
             if (numOfPlayerCB.getSelectedItem() != "----NUM----" && difficultyCB.getSelectedItem() != "---LEVEL---") {
-                LogAgent.logMessenger("Game Start !\n");
+                LogAgent.logMessenger("Game Start !");
 //                Audio.BGM.LoopPlay(176);
                 consoleButtons.get(0).setEnabled(false);
                 Game NewGame = new Game(Integer.parseInt((String) Objects.requireNonNull(numOfPlayerCB.getSelectedItem())), Integer.parseInt((String) Objects.requireNonNull(difficultyCB.getSelectedItem())));
                 TreasurePanel.waterMeter.setIcon(new ImageIcon(CommonUtils.getImage(GameData.getWaterMeterImg(), Constant.WATER_METER_WIDTH, Constant.WATER_METER_HEIGHT)));
             }
         });
+
         keyBox.add(Box.createHorizontalGlue());
         keyBox.add(consoleButtons.get(0));
         configBox.add(numOfPlayerCB);

@@ -20,6 +20,6 @@ public class LogAgent {
     }
 
     public static void logMessenger(String log){
-        logs.append(log);
+        logs.append(log + '\n');
     }
 }

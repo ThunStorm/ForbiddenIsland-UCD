@@ -54,4 +54,13 @@ public class FloodDeck {
         floodDeck.addAll(discardPile);
         discardPile.clear();
     }
+
+    private void checkAvailability(int n){
+        if (floodDeck.size() < n){
+            Collections.shuffle(discardPile);
+            floodDeck.addAll(discardPile);
+            discardPile.clear();
+        }
+    }
+
 }

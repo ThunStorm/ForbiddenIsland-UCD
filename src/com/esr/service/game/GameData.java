@@ -14,8 +14,8 @@ import java.util.Collections;
  * @Version 1.0
  **/
 public class GameData {
-    private static BlockData[][] Board;
-    private static ArrayList<Integer> Tiles;
+    private static BoardData board;
+    private static ArrayList<Integer> tiles;
     private static FloodDeck floodDeck;
     private static TreasureDeck treasureDeck;
     private static WaterMeter waterMeter;
@@ -23,17 +23,12 @@ public class GameData {
     private static FigurinesData figurinesData;
 
     public GameData(int numOfPlayers, int waterLevel) {
-        Tiles = new ArrayList<>();
+        Map.setUpMatchers();
         floodDeck = new FloodDeck();
         treasureDeck = new TreasureDeck();
         waterMeter = new WaterMeter(waterLevel);
         figurinesData = new FigurinesData();
-        Map.setUpMatchers();
-        
         adventurers = new Adventurer[numOfPlayers];
-
-        for (int i = 0; i < 24; i++) { Tiles.add(i); }
-        Collections.shuffle(Tiles);
 
         ArrayList<Integer> playerList = new ArrayList<>();
         for (int i = 0; i < 6; i++) { playerList.add(i); }
@@ -63,46 +58,25 @@ public class GameData {
             }
         }
 
-        Board = new BlockData[6][6];
-        int tileIdx = 0;
-        for (int i = 0; i < 6; i++) {
-            for (int j = 0; j < 6; j++) {
-                if (Map.blankLayout.contains(i * 6 + j)) {
-                    Board[i][j] = new BlockData(false);
-                }
-                else {
-                    if (players.contains(Tiles.get(tileIdx) - 8)){
-                        Board[i][j] = new BlockData(Tiles.get(tileIdx), Tiles.get(tileIdx) - 8, true);
-                        adventurers[players.indexOf(Tiles.get(tileIdx) - 8)].setPos(i, j);
-                    }
-                    else {
-                        Board[i][j] = new BlockData(Tiles.get(tileIdx), true);
-                    }
-//                    Tiles.add(tileID.get(tileIdx));
-                    tileIdx ++;
-                }
-            }
-        }
+        tiles = new ArrayList<>();
+        for (int i = 0; i < 24; i++) { tiles.add(i); }
+        Collections.shuffle(tiles);
+        board = new BoardData(players, tiles);
 
         for (Adventurer adventurer : adventurers) {
             adventurer.setHandCards(treasureDeck.getNNoRiseCards(2));
         }
-
     }
 
-    public void setBoard(BlockData[][] board) {
-        Board = board;
+    public static BoardData getBoard() { return board; }
+
+    public static void setTiles(ArrayList<Integer> tiles) {
+        GameData.tiles = tiles;
     }
 
-    public void setTiles(ArrayList<Integer> tiles) {
-        Tiles = tiles;
-    }
+    public static ArrayList<Integer> getTilesArray(){ return tiles; }
 
-    public static ArrayList<Integer> getTilesArray(){ return Tiles; }
-
-    public static BlockData getBoard(int x, int y) {
-        return Board[x][y];
-    }
+    public Blocks getBoard(int x, int y) { return board.getTile(x, y); }
 
     public static FloodDeck getFloodDeck() {
         return floodDeck;
@@ -120,7 +94,5 @@ public class GameData {
         return adventurers;
     }
 
-    public static FigurinesData getFigurinesData() {
-        return figurinesData;
-    }
+    public static FigurinesData getFigurinesData() { return figurinesData; }
 }

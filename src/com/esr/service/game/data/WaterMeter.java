@@ -17,6 +17,7 @@ public class WaterMeter {
 
     public void WaterRise(){
         waterLevel += 1;
+        img = "/WaterMeter/" + waterLevel + ".png";
     }
 
     public int getWaterLevel() {

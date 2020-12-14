@@ -15,14 +15,14 @@ import java.util.Collections;
 public class TreasureDeck {
     private ArrayList<Integer> treasureDeck;
     private ArrayList<Integer> discardPile;
-    private ArrayList<Integer> displayedCards;
     private ArrayList<Integer> NTreasureCards;
-    private int displayNum = 2;
+//    private ArrayList<Integer> displayedCards;
+//    private int displayNum = 2;
 
     public TreasureDeck() {
         treasureDeck = new ArrayList<>();
         discardPile = new ArrayList<>();
-        displayedCards = new ArrayList<>();
+//        displayedCards = new ArrayList<>();
         NTreasureCards = new ArrayList<>();
         for (int i = 0; i < 28; i++) {
             treasureDeck.add(i);
@@ -31,16 +31,8 @@ public class TreasureDeck {
 //        System.out.println(floodDeck);
     }
 
-//    public ArrayList<Integer> getDisplayedCards(){
-//        displayedCards.clear();
-//        displayedCards.addAll(treasureDeck.subList(0, displayNum));
-//        if (displayNum > 0) {
-//            treasureDeck.subList(0, displayNum).clear();
-//        }
-//        return displayedCards;
-//    }
-
     public ArrayList<Integer> getNTreasureCards(int n) {
+        checkAvailability(n);
         NTreasureCards.clear();
         NTreasureCards.addAll(treasureDeck.subList(0, n));
         if (n > 0) {
@@ -50,6 +42,7 @@ public class TreasureDeck {
     }
 
     public ArrayList<Integer> getNNoRiseCards(int n) {
+        checkAvailability(n);
         NTreasureCards.clear();
         int count = 0;
         for (int i = 0; i < treasureDeck.size(); i++) {
@@ -72,17 +65,20 @@ public class TreasureDeck {
         discardPile.add(treasureID);
     }
 
-//    public void PutBack2Deck(){
-//        Collections.shuffle(discardPile);
-//        treasureDeck.addAll(discardPile);
-//        discardPile.clear();
-//    }
-
+// useless
     public void PutBack(){
         Collections.shuffle(discardPile);
         treasureDeck.clear();
         treasureDeck.addAll(discardPile);
         discardPile.clear();
+    }
+
+    private void checkAvailability(int n){
+        if (treasureDeck.size() < n){
+            Collections.shuffle(discardPile);
+            treasureDeck.addAll(discardPile);
+            discardPile.clear();
+        }
     }
 
     //needed to check the number of the rest of cards
