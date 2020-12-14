@@ -25,41 +25,7 @@
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2b919aec-5efd-45b2-b528-0ea4fbe9c6b5" name="Default Changelist" comment="Interim report 1210">
-      <change afterPath="$PROJECT_DIR$/src/com/esr/service/game/data/BoardData.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/Software Engineering Project - Forbidden Island.docx" beforeDir="false" afterPath="$PROJECT_DIR$/docs/Software Engineering Project - Forbidden Island.docx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/FI-game-UCD-IDEA/com/esr/service/game/Game.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/FI-game-UCD-IDEA/com/esr/service/game/Game.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/FI-game-UCD-IDEA/com/esr/service/game/GameData.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/FI-game-UCD-IDEA/com/esr/service/game/GameData.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/FI-game-UCD-IDEA/com/esr/service/game/WinOrLose.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/FI-game-UCD-IDEA/com/esr/service/game/data/BlockData.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/FI-game-UCD-IDEA/com/esr/service/game/data/FloodDeck.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/FI-game-UCD-IDEA/com/esr/service/game/data/FloodDeck.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/FI-game-UCD-IDEA/com/esr/service/game/data/TreasureDeck.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/FI-game-UCD-IDEA/com/esr/service/game/data/TreasureDeck.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/FI-game-UCD-IDEA/com/esr/service/game/data/WaterMeter.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/FI-game-UCD-IDEA/com/esr/service/game/data/WaterMeter.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/FI-game-UCD-IDEA/com/esr/service/observer/MoveObserver.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/FI-game-UCD-IDEA/com/esr/service/observer/Observer.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/FI-game-UCD-IDEA/com/esr/service/observer/ObserverPatternDemo.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/FI-game-UCD-IDEA/com/esr/service/observer/Subject.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/FI-game-UCD-IDEA/com/esr/utils/Constant.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/FI-game-UCD-IDEA/com/esr/utils/Constant.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/esr/gui/console/ConsolePanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/esr/gui/console/ConsolePanel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/esr/gui/listerner/Controllers.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/esr/gui/listerner/Controllers.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/esr/gui/listerner/DataListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/esr/gui/listerner/DataListener.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/esr/gui/updater/LogAgent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/esr/gui/updater/LogAgent.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/esr/service/game/Exception/ExceptionType.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/esr/service/game/Exception/GameException.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/esr/service/game/Exception/Lose.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/esr/service/game/Exception/TileProblem.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/esr/service/game/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/esr/service/game/Game.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/esr/service/game/GameData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/esr/service/game/GameData.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/esr/service/game/data/BlockData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/esr/service/game/data/Blocks.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/esr/service/game/data/FloodDeck.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/esr/service/game/data/FloodDeck.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/esr/service/game/data/TreasureDeck.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/esr/service/game/data/TreasureDeck.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/esr/service/game/data/WaterMeter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/esr/service/game/data/WaterMeter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/esr/service/observer/MoveObserver.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/esr/service/observer/Observer.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/esr/service/observer/ObserverPatternDemo.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/esr/service/observer/Subject.java" beforeDir="false" />
-    </list>
+    <list default="true" id="2b919aec-5efd-45b2-b528-0ea4fbe9c6b5" name="Default Changelist" comment="optimise GameData" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -253,7 +219,7 @@
       <workItem from="1607554340572" duration="1319000" />
       <workItem from="1607613681739" duration="2086000" />
       <workItem from="1607888919176" duration="8055000" />
-      <workItem from="1607951533669" duration="3952000" />
+      <workItem from="1607951533669" duration="4268000" />
     </task>
     <task id="LOCAL-00001" summary="Build DataLayer">
       <created>1607400232334</created>
@@ -297,7 +263,14 @@
       <option name="project" value="LOCAL" />
       <updated>1607555062384</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="optimise GameData">
+      <created>1607955809941</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1607955809941</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -321,7 +294,8 @@
     <MESSAGE value="rules update(treasure card init)" />
     <MESSAGE value="Finish Initialisation" />
     <MESSAGE value="Interim report 1210" />
-    <option name="LAST_COMMIT_MESSAGE" value="Interim report 1210" />
+    <MESSAGE value="optimise GameData" />
+    <option name="LAST_COMMIT_MESSAGE" value="optimise GameData" />
   </component>
   <component name="WindowStateProjectService">
     <state x="586" y="198" key="#Inspections" timestamp="1607907503160">
@@ -352,22 +326,22 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="740" y="274" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1607454895664" />
-    <state width="1877" height="190" key="GridCell.Tab.0.bottom" timestamp="1607955493399">
+    <state width="1877" height="190" key="GridCell.Tab.0.bottom" timestamp="1607955749060">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="190" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1607955493399" />
-    <state width="1877" height="190" key="GridCell.Tab.0.center" timestamp="1607955493399">
+    <state width="1877" height="190" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1607955749060" />
+    <state width="1877" height="190" key="GridCell.Tab.0.center" timestamp="1607955749060">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="190" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1607955493399" />
-    <state width="1877" height="190" key="GridCell.Tab.0.left" timestamp="1607955493399">
+    <state width="1877" height="190" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1607955749060" />
+    <state width="1877" height="190" key="GridCell.Tab.0.left" timestamp="1607955749060">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="190" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1607955493399" />
-    <state width="1877" height="190" key="GridCell.Tab.0.right" timestamp="1607955493399">
+    <state width="1877" height="190" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1607955749060" />
+    <state width="1877" height="190" key="GridCell.Tab.0.right" timestamp="1607955749060">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="190" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1607955493399" />
+    <state width="1877" height="190" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1607955749060" />
     <state width="1877" height="348" key="GridCell.Tab.1.bottom" timestamp="1607491392708">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -400,10 +374,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="92" y="92" width="1736" height="856" key="ShowDiffWithBranchDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1606516011967" />
-    <state x="540" y="286" key="Vcs.Push.Dialog.v2" timestamp="1607555068519">
+    <state x="540" y="286" key="Vcs.Push.Dialog.v2" timestamp="1607955839380">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="540" y="286" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1607555068519" />
+    <state x="540" y="286" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1607955839380" />
     <state x="658" y="411" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD" timestamp="1607394657445">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
