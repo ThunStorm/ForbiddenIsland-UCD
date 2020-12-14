@@ -1,8 +1,8 @@
 package com.esr.service.game;
 
 import com.esr.gui.game.GamePanel;
-//import com.esr.gui.listerner.Controllers;
-//import com.esr.gui.listerner.DataListener;
+import com.esr.gui.listerner.Controllers;
+import com.esr.gui.listerner.DataListener;
 import com.esr.gui.updater.UpdaterAgent;
 
 import java.util.ArrayList;
@@ -16,14 +16,14 @@ import java.util.ArrayList;
 public class Game {
     public GameData gameData;
     public UpdaterAgent updaterAgent;
-//    public DataListener dataListener;
-//    public Controllers controllers;
+    public DataListener dataListener;
+    public Controllers controllers;
 
     public Game(int numOfPlayers, int waterLevel) {
         gameData = new GameData(numOfPlayers, waterLevel);
         updaterAgent = new UpdaterAgent();
-//        dataListener = new DataListener();
-//        controllers = new Controllers();
+        dataListener = new DataListener();
+        controllers = new Controllers();
 
         if (numOfPlayers == 4){
             UpdaterAgent.getPlayerUpdater().handCardUpdater(GamePanel.p1HandCards,  GameData.getAdventurers()[0].getHandCards());
