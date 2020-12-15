@@ -27,36 +27,6 @@
   <component name="ChangeListManager">
     <list default="true" id="2b919aec-5efd-45b2-b528-0ea4fbe9c6b5" name="Default Changelist" comment="fix idx error">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/FI-game-UCD-IDEA/com/esr/gui/console/ConsolePanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/FI-game-UCD-IDEA/com/esr/gui/console/ConsolePanel.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/FI-game-UCD-IDEA/com/esr/gui/updater/BoardUpdater.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/FI-game-UCD-IDEA/com/esr/gui/updater/BoardUpdater.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/FI-game-UCD-IDEA/com/esr/gui/updater/FloodUpdater.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/FI-game-UCD-IDEA/com/esr/gui/updater/FloodUpdater.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/FI-game-UCD-IDEA/com/esr/gui/updater/PlayerUpdater.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/FI-game-UCD-IDEA/com/esr/gui/updater/PlayerUpdater.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/FI-game-UCD-IDEA/com/esr/gui/updater/TreasureUpdater.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/FI-game-UCD-IDEA/com/esr/gui/updater/TreasureUpdater.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/FI-game-UCD-IDEA/com/esr/service/base/IUpdater.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/FI-game-UCD-IDEA/com/esr/service/base/IUpdater.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/FI-game-UCD-IDEA/com/esr/service/game/Game.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/FI-game-UCD-IDEA/com/esr/service/game/Game.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/FI-game-UCD-IDEA/com/esr/service/game/GameData.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/FI-game-UCD-IDEA/com/esr/service/game/GameData.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/FI-game-UCD-IDEA/com/esr/service/game/data/Blocks.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/FI-game-UCD-IDEA/com/esr/service/game/data/BoardData.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/FI-game-UCD-IDEA/com/esr/service/game/data/BoardData.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/FI-game-UCD-IDEA/com/esr/service/game/data/FloodDeck.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/FI-game-UCD-IDEA/com/esr/service/game/data/FloodDeck.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/FI-game-UCD-IDEA/com/esr/utils/Map.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/FI-game-UCD-IDEA/com/esr/utils/Map.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/esr/gui/console/ConsolePanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/esr/gui/console/ConsolePanel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/esr/gui/listener/Controllers.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/esr/gui/listener/Controllers.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/esr/gui/listener/DataListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/esr/gui/listener/DataListener.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/esr/gui/updater/BoardUpdater.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/esr/gui/updater/BoardUpdater.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/esr/gui/updater/FloodUpdater.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/esr/gui/updater/FloodUpdater.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/esr/gui/updater/PlayerUpdater.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/esr/gui/updater/PlayerUpdater.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/esr/gui/updater/TreasureUpdater.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/esr/gui/updater/TreasureUpdater.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/esr/gui/widgets/TwoLayeredIcon.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/esr/gui/widgets/TwoLayeredIcon.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/esr/service/base/IUpdater.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/esr/service/base/IUpdater.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/esr/service/game/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/esr/service/game/Game.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/esr/service/game/GameData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/esr/service/game/GameData.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/esr/service/game/component/adventurer/Adventurer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/esr/service/game/component/adventurer/Adventurer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/esr/service/game/data/Blocks.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/esr/service/game/data/Block.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/esr/service/game/data/BoardData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/esr/service/game/data/BoardData.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/esr/service/game/data/FloodDeck.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/esr/service/game/data/FloodDeck.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/esr/utils/Audio.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/esr/utils/Audio.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/esr/utils/Constant.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/esr/utils/Constant.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/esr/utils/Map.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/esr/utils/Map.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -142,17 +112,6 @@
       <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
       <RunnerSettings RunnerId="Run" />
       <ConfigurationWrapper RunnerId="Run" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
-      <option name="arquillianRunConfiguration">
-        <value>
-          <option name="containerStateName" value="" />
-        </value>
-      </option>
-      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -253,6 +212,7 @@
       <workItem from="1607959315350" duration="13594000" />
       <workItem from="1607995000655" duration="2170000" />
       <workItem from="1608032174846" duration="25630000" />
+      <workItem from="1608074541502" duration="21000" />
     </task>
     <task id="LOCAL-00001" summary="Build DataLayer">
       <created>1607400232334</created>
