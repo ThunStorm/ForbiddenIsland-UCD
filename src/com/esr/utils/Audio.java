@@ -17,7 +17,11 @@ public enum Audio {
     BGM("Bgm.wav"),
     TTO("3-2-1.wav"),
     GO("Go.wav"),
-    FAILURE("Failure");
+    PLAYER1("Player 1.wav"),
+    PLAYER2("Player 2.wav"),
+    PLAYER3("Player 3.wav"),
+    PLAYER4("Player 4.wav"),
+    FAILURE("Failure.wav");
 
     private String name;
 

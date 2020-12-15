@@ -26,16 +26,16 @@ public class PlayerUpdater implements IUpdater {
         }
     }
 
-    @Override
-    public void guiUpdate(ArrayList<Integer> img) {
-
-
-    }
 
     public void handCardUpdater(ArrayList<JButton> handCards, ArrayList<Integer> img){
         for (int i = 0; i < img.size(); i++) {
             handCards.get(i).setIcon(new ImageIcon(CommonUtils.getImage("/TreasureCards/" + img.get(i) + ".png", Constant.ADVENTURER_WIDTH, Constant.ADVENTURER_HEIGHT)));
             handCards.get(i).setAlignmentX(SwingConstants.CENTER);
         }
+    }
+
+    @Override
+    public void guiUpdate() {
+
     }
 }

@@ -10,14 +10,14 @@ import java.util.ArrayList;
  * @Date 2020/12/8
  * @Version 1.0
  **/
-public class Blocks {
-    private int tileId;
+public class Block {
+    private int tileId = -1;
     private TileStatus status;
     private String img;
     private boolean isExist;
     private ArrayList<Integer> adventurersOnBoard;
 
-    public Blocks(int tileId, int playerID, boolean isExist) {
+    public Block(int tileId, int playerID, boolean isExist) {
         this.adventurersOnBoard = new ArrayList<>();
         this.tileId = tileId;
         this.status = TileStatus.Normal;
@@ -26,14 +26,15 @@ public class Blocks {
         this.isExist = isExist;
     }
 
-    public Blocks(int tileId, boolean isExist){
+    public Block(int tileId, boolean isExist){
+        this.adventurersOnBoard = new ArrayList<>();
         this.tileId = tileId;
         this.status = TileStatus.Normal;
         this.img = "/Tiles/" + tileId + ".png";
         this.isExist = isExist;
     }
 
-    public Blocks(boolean isExist){
+    public Block(boolean isExist){
         this.isExist = isExist;
     }
 
@@ -41,11 +42,9 @@ public class Blocks {
         this.adventurersOnBoard.add(playerID);
     }
 
-    public int MoveOff(Adventurer adventurer){
-        int adventurerId =  adventurer.getId();
-        int playerOut = adventurersOnBoard.get(adventurerId);
-        adventurersOnBoard.remove((Integer) adventurerId);
-        return adventurerId;
+    public void MoveOff(Adventurer adventurer){
+        int playerOut = adventurersOnBoard.get(adventurersOnBoard.indexOf(adventurer.getId()));
+        adventurersOnBoard.remove((Integer) adventurer.getId());
     }
 
     public boolean CanPassTo(Adventurer sender, Adventurer receiver){
@@ -87,13 +86,11 @@ public class Blocks {
         return status;
     }
 
-    public String getImg() {
-        return img;
-    }
+    public String getImg() { return img;}
 
     public boolean isExist() {
         return isExist;
     }
 
-    public ArrayList<Integer> getPlayerID(){ return adventurersOnBoard; }
+    public ArrayList<Integer> getPlayerOnBoard(){ return adventurersOnBoard; }
 }

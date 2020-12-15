@@ -73,14 +73,12 @@ public abstract class Map {
         numberMatcher.put(Arrays.toString(new int[]{5, 2}), 22);
         numberMatcher.put(Arrays.toString(new int[]{5, 3}), 23);
 
-        adventurerMatcher.put(1, "Diver");
-        adventurerMatcher.put(2, "Engineer");
-        adventurerMatcher.put(3, "Explorer");
-        adventurerMatcher.put(4, "Messenger");
-        adventurerMatcher.put(5, "Navigator");
-        adventurerMatcher.put(6, "Pilot");
-
-
+        adventurerMatcher.put(0, "Diver");
+        adventurerMatcher.put(1, "Engineer");
+        adventurerMatcher.put(2, "Explorer");
+        adventurerMatcher.put(3, "Messenger");
+        adventurerMatcher.put(4, "Navigator");
+        adventurerMatcher.put(5, "Pilot");
     }
 }
 

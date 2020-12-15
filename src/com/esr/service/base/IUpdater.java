@@ -9,5 +9,6 @@ import java.util.ArrayList;
  * @Version 1.0
  **/
 public interface IUpdater {
-    void guiUpdate(ArrayList<Integer> img);
+//    void guiUpdate(ArrayList<Integer> img);
+    void guiUpdate();
 }

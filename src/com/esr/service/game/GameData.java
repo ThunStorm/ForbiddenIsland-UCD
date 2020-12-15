@@ -1,5 +1,6 @@
 package com.esr.service.game;
 
+import com.esr.gui.updater.UpdaterAgent;
 import com.esr.service.game.component.adventurer.*;
 import com.esr.service.game.data.*;
 import com.esr.utils.Map;
@@ -22,6 +23,7 @@ public class GameData {
     private static Adventurer[] adventurers;
     private static ArrayList<Integer> tiles;
     private static FigurinesData figurinesData;
+//    private static ArrayList<Integer> nextTileNo;
 
     public GameData(int numOfPlayers, int waterLevel) {
         Map.setUpMatchers();
@@ -30,6 +32,7 @@ public class GameData {
         waterMeter = new WaterMeter(waterLevel);
         figurinesData = new FigurinesData();
         adventurers = new Adventurer[numOfPlayers];
+//        nextTileNo = new ArrayList<>();
 
         ArrayList<Integer> playerList = new ArrayList<>();
         for (int i = 0; i < 6; i++) { playerList.add(i); }
@@ -69,31 +72,42 @@ public class GameData {
         }
     }
 
-    public static void setTiles(ArrayList<Integer> tiles) {
-        GameData.tiles = tiles;
+    public static void nextTile(int[] coords){
+        Boolean isNearY = ((adventurers[Game.getRoundNum()].getX() == coords[0]) && (Math.abs(adventurers[Game.getRoundNum()].getY() - coords[1]) == 1));
+        Boolean isNearX = ((adventurers[Game.getRoundNum()].getY() == coords[1]) && (Math.abs(adventurers[Game.getRoundNum()].getX() - coords[0]) == 1));
+        if ((isNearX || isNearY) && (board.getTile(coords[0], coords[1]).isExist())){
+            adventurers[Game.getRoundNum()].setMove(coords[0],coords[1]);
+            board.setCanMove(true);
+        }
+        else {
+            System.out.println("This tile is unselectable!");
+            board.setCanMove(false);
+        }
+    }
+    public static void moveTo(){
+        board.getTile(adventurers[Game.getRoundNum()].getX(),adventurers[Game.getRoundNum()].getY()).MoveOff(adventurers[Game.getRoundNum()]);
+        adventurers[Game.getRoundNum()].Move();
+        board.getTile(adventurers[Game.getRoundNum()].getX(), adventurers[Game.getRoundNum()].getY()).MoveOnto(adventurers[Game.getRoundNum()].getId());
     }
 
     public static BoardData getBoard() { return board; }
 
-    public Blocks getBoard(int x, int y) { return board.getTile(x, y); }
-
     public static ArrayList<Integer> getTilesArray(){ return tiles; }
 
-    public static FloodDeck getFloodDeck() {
-        return floodDeck;
-    }
+    public static FloodDeck getFloodDeck() { return floodDeck; }
 
-    public static TreasureDeck getTreasureDeck() {
-        return treasureDeck;
-    }
+    public static TreasureDeck getTreasureDeck() { return treasureDeck; }
 
-    public static String getWaterMeterImg() {
-        return waterMeter.getImg();
-    }
+    public static String getWaterMeterImg() { return waterMeter.getImg(); }
 
-    public static Adventurer[] getAdventurers() {
-        return adventurers;
-    }
+    public static int getWaterMeterLevel(){ return waterMeter.getWaterLevel(); }
+
+    public static Adventurer[] getAdventurers() { return adventurers; }
 
     public static FigurinesData getFigurinesData() { return figurinesData; }
+
+    public static void setTiles(ArrayList<Integer> tiles) {
+        GameData.tiles = tiles;
+    }
+
 }

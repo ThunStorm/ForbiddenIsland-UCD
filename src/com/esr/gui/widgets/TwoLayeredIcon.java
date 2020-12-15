@@ -16,7 +16,7 @@ public class TwoLayeredIcon implements Icon {
     public TwoLayeredIcon(Icon top, Icon bottom, int scaledX) {
         this.top = top;
         this.bottom = bottom;
-        this.scaledX = scaledX * 3;
+        this.scaledX = scaledX * 6;
     }
 
     public int getIconHeight() {

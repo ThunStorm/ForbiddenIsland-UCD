@@ -2,6 +2,7 @@ package com.esr.service.game.component.adventurer;
 
 import com.esr.service.game.component.cards.TreasureFigurines;
 import com.esr.service.game.component.cards.handcards.HandCard;
+import com.esr.service.game.data.FigurinesData;
 import com.esr.utils.Map;
 
 import java.util.ArrayList;
@@ -60,6 +61,10 @@ public abstract class Adventurer {
 
     public void setCapturedFigurines(ArrayList<TreasureFigurines> capturedFigurines) {
         this.capturedFigurines = capturedFigurines;
+    }
+
+    public ArrayList<TreasureFigurines> getFigurines(){
+        return capturedFigurines;
     }
 
     public String getPawnImg(){ return pawnImg; }

@@ -14,7 +14,6 @@ public abstract class Constant {
     public final static int FRAME_WIDTH = 1080;//主窗体宽
     public final static int FRAME_HEIGHT = 950;//主窗体高
 
-
     public final static int ADVENTURER_WIDTH = 73;
     public final static int ADVENTURER_HEIGHT = 116;
     public final static int FLOOD_WIDTH = 120;

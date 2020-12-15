@@ -2,6 +2,7 @@ package com.esr.gui.updater;
 
 import com.esr.gui.game.TreasurePanel;
 import com.esr.service.base.IUpdater;
+import com.esr.service.game.GameData;
 import com.esr.utils.CommonUtils;
 import com.esr.utils.Constant;
 
@@ -15,11 +16,11 @@ import java.util.ArrayList;
  * @Version 1.0
  **/
 public class TreasureUpdater implements IUpdater {
-
     @Override
-    public void guiUpdate(ArrayList<Integer> img) {
-        for (int i = 0; i < img.size(); i++) {
-            TreasurePanel.treasureCards.get(i).setIcon(new ImageIcon(CommonUtils.getImage("/TreasureCards/" + img.get(i) + ".png", Constant.TREASURE_WIDTH, Constant.TREASURE_HEIGHT, 270d)));
-        }
+    public void guiUpdate() {
+        TreasurePanel.treasureCards.get(0).setIcon(new ImageIcon((CommonUtils.getImage("/TreasureCards/"
+                + GameData.getTreasureDeck().getNTreasureCards(2).get(0) + ".png", Constant.TREASURE_WIDTH, Constant.TREASURE_HEIGHT, 270d))));
+        TreasurePanel.treasureCards.get(1).setIcon(new ImageIcon((CommonUtils.getImage("/TreasureCards/"
+                + GameData.getTreasureDeck().getNTreasureCards(2).get(1) + ".png", Constant.TREASURE_WIDTH, Constant.TREASURE_HEIGHT, 270d))));
     }
 }

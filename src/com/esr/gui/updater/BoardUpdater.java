@@ -4,7 +4,7 @@ import com.esr.gui.game.BoardPanel;
 import com.esr.gui.widgets.TwoLayeredIcon;
 import com.esr.service.base.IUpdater;
 import com.esr.service.game.GameData;
-import com.esr.service.game.component.cards.Tile;
+import com.esr.service.game.data.Block;
 import com.esr.utils.CommonUtils;
 import com.esr.utils.Constant;
 import com.esr.utils.Map;
@@ -30,35 +30,37 @@ public class BoardUpdater implements IUpdater {
             BoardPanel.tileCards.get(i).setIcon(new ImageIcon(CommonUtils.getImage("/Tiles/" + img.get(i) + ".png", Constant.TILE_WIDTH, Constant.TILE_HEIGHT)));
         }
         for (int i = 0; i < GameData.getAdventurers().length; i++) {
-            BoardPanel.tileCards.get(GameData.getAdventurers()[i].getPos()).setIcon(new TwoLayeredIcon(new ImageIcon(CommonUtils.getImage("/Pawns/" + GameData.getAdventurers()[i].getName() + ".png", Constant.TILE_WIDTH, Constant.TILE_HEIGHT)), BoardPanel.tileCards.get(Tiles.indexOf(GameData.getAdventurers()[i].getId()+9)).getIcon()));
+            BoardPanel.tileCards.get(GameData.getAdventurers()[i].getPos()).setIcon(new TwoLayeredIcon(new ImageIcon(CommonUtils.getImage(GameData.getAdventurers()[i].getPawnImg(), Constant.TILE_WIDTH, Constant.TILE_HEIGHT)), BoardPanel.tileCards.get(Tiles.indexOf(GameData.getAdventurers()[i].getId()+9)).getIcon()));
         }
     }
 
     @Override
-    public void guiUpdate(ArrayList<Integer> img) {
-        // [1, 3, 600, -7] -> sink[1 and 3],remove[6], shore[7]
-        for (int imgNo : img){
-            if (imgNo > 0 && imgNo < 99){
-                BoardPanel.tileCards.get(Tiles.indexOf(imgNo)).setIcon(new ImageIcon(CommonUtils.getImage("/SubmersedTiles/" + imgNo + ".png", Constant.TILE_WIDTH, Constant.TILE_HEIGHT)));
-            }
-            else if (imgNo >= 100) {
-                BoardPanel.tileCards.get(Tiles.indexOf(imgNo % 100)).setVisible(false);
-                BoardPanel.tileCards.get(Tiles.indexOf(imgNo % 100)).setEnabled(false);
-            }
-            else {
-                BoardPanel.tileCards.get(Tiles.indexOf(Math.abs((imgNo)))).setIcon(new ImageIcon(CommonUtils.getImage("/Tiles/" + imgNo + ".png", Constant.TILE_WIDTH, Constant.TILE_HEIGHT)));
+    public void guiUpdate() {
+        int idx = 0;
+        for (Block[] blocks : GameData.getBoard().getTileMap()){
+            for (Block block : blocks){
+                if (block.isExist()){
+                    BoardPanel.tileCards.get(idx).setIcon(new ImageIcon(CommonUtils.getImage(block.getImg(), Constant.TILE_WIDTH, Constant.TILE_HEIGHT)));
+                }
+                else if (!block.isExist() && (block.getTileId() != -1)){
+                    BoardPanel.tileCards.get(idx).setVisible(false);
+                    BoardPanel.tileCards.get(idx).setEnabled(false);
+                }
+                else { idx--; }
+                idx++;
             }
         }
         for (int i = 0; i < GameData.getAdventurers().length; i++) {
-            BoardPanel.tileCards.get(GameData.getAdventurers()[i].getPos()).setIcon(new TwoLayeredIcon(new ImageIcon(CommonUtils.getImage("/Pawns/" + GameData.getAdventurers()[i].getName() + ".png", Constant.TILE_WIDTH, Constant.TILE_HEIGHT)), BoardPanel.tileCards.get(Tiles.indexOf(GameData.getAdventurers()[i].getId()+9)).getIcon()));
+
+            for (int j = 0; j < GameData.getBoard().getTile(GameData.getAdventurers()[i].getX(),GameData.getAdventurers()[i].getY()).getPlayerOnBoard().size(); j++){
+                BoardPanel.tileCards.get(GameData.getAdventurers()[i].getPos()).setIcon(
+                        new TwoLayeredIcon(new ImageIcon(CommonUtils.getImage("/Pawns/"
+                                + Map.adventurerMatcher.get(GameData.getBoard().getTile(GameData.getAdventurers()[i].getX(),GameData.getAdventurers()[i].getY()).getPlayerOnBoard().get(j))
+                                + ".png", Constant.TILE_WIDTH, Constant.TILE_HEIGHT)),
+                                BoardPanel.tileCards.get(GameData.getAdventurers()[i].getPos()).getIcon(), j));
+            }
         }
-        //need to consider the length change later, move this to constructor
-//        System.out.println(img);
-//        for (int i = 0; i < BoardPanel.tileCards.size(); i++) {
-//            BoardPanel.tileCards.get(i).setEnabled(true);
-//            BoardPanel.tileCards.get(i).setVisible(true);
-//            BoardPanel.tileCards.get(i).setIcon(new ImageIcon();
-//        }
     }
+
 }
 

@@ -65,7 +65,7 @@ public class ConsolePanel {
         }
         consoleButtons.get(0).addActionListener(e -> {
             if (numOfPlayerCB.getSelectedItem() != "----NUM----" && difficultyCB.getSelectedItem() != "---LEVEL---") {
-                LogAgent.logMessenger("Game Start !");
+                LogAgent.logMessenger("[Game Initialisation]");
                 if (Constant.AUDIO_ON_OFF){
                     Audio.GO.Play();
                     Audio.BGM.LoopPlay(176);
