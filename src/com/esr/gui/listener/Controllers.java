@@ -1,4 +1,4 @@
-package com.esr.gui.listerner;
+package com.esr.gui.listener;
 
 import com.esr.gui.console.ConsolePanel;
 import com.esr.gui.updater.LogAgent;

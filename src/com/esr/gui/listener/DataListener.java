@@ -1,9 +1,10 @@
-package com.esr.gui.listerner;
+package com.esr.gui.listener;
 
 import com.esr.gui.game.BoardPanel;
 import com.esr.gui.game.GamePanel;
 import com.esr.gui.game.TreasurePanel;
 import com.esr.gui.updater.LogAgent;
+import com.esr.service.game.GameData;
 import com.esr.utils.Map;
 import sun.management.Agent;
 
@@ -29,6 +30,7 @@ public class DataListener {
         for (JButton tile : BoardPanel.tileCards) {
             tile.addActionListener(e -> {
                 LogAgent.logMessenger(Arrays.toString(Map.coordinatesMatcher.get(BoardPanel.tileCards.indexOf(tile))));
+                GameData.getBoard().getTile(Map.coordinatesMatcher.get(BoardPanel.tileCards.indexOf(tile))[0],Map.coordinatesMatcher.get(BoardPanel.tileCards.indexOf(tile))[1]);
             });
         }
     }

@@ -37,18 +37,18 @@ public class Blocks {
         this.isExist = isExist;
     }
 
-    public void moveOnto(int playerID) {
+    public void MoveOnto(int playerID) {
         this.adventurersOnBoard.add(playerID);
     }
 
-    public int moveOff(Adventurer adventurer){
+    public int MoveOff(Adventurer adventurer){
         int adventurerId =  adventurer.getId();
         int playerOut = adventurersOnBoard.get(adventurerId);
         adventurersOnBoard.remove((Integer) adventurerId);
         return adventurerId;
     }
 
-    public boolean canPassTo(Adventurer sender, Adventurer receiver){
+    public boolean CanPassTo(Adventurer sender, Adventurer receiver){
         return adventurersOnBoard.contains(sender.getId()) && adventurersOnBoard.contains(receiver.getId());
     }
 

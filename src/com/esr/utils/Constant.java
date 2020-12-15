@@ -1,10 +1,16 @@
 package com.esr.utils;
 
-import java.awt.*;
-
+/**
+ * @Description
+ * @Author William
+ * @Date 2020/12/8
+ * @Version 1.0
+ **/
 public abstract class Constant {
 
     public static boolean TIMER_STOP_ON_OFF = false;//Main switch of all timers. All timers stop when this turns to ture
+    public static boolean AUDIO_ON_OFF = false;
+
     public final static int FRAME_WIDTH = 1080;//主窗体宽
     public final static int FRAME_HEIGHT = 950;//主窗体高
 

@@ -7,6 +7,12 @@ import javax.swing.*;
 import java.awt.*;
 import java.util.ArrayList;
 
+/**
+ * @Description
+ * @Author William
+ * @Date 2020/12/8
+ * @Version 1.0
+ **/
 public class FloodPanel {
     private Dimension floodCardSize = new Dimension(Constant.FLOOD_WIDTH, Constant.FLOOD_HEIGHT);
     public static ArrayList<JButton> floodCards;

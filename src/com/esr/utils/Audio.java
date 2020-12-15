@@ -5,10 +5,19 @@ import sun.audio.AudioStream;
 
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.Objects;
 
+/**
+ * @Description
+ * @Author William
+ * @Date 2020/12/8
+ * @Version 1.0
+ **/
 public enum Audio {
-    BGM("bgm.wav"),
-    Start("start.wav");
+    BGM("Bgm.wav"),
+    TTO("3-2-1.wav"),
+    GO("Go.wav"),
+    FAILURE("Failure");
 
     private String name;
 
@@ -17,10 +26,10 @@ public enum Audio {
     }
 
     public void Play() {
-        AudioStream as = null;
+        AudioStream as;
         try {
             InputStream resourceAsStream = Audio.class.getClassLoader().getResourceAsStream("com/esr/resources/audio/" + name);
-            as = new AudioStream(resourceAsStream);
+            as = new AudioStream(Objects.requireNonNull(resourceAsStream));
             AudioPlayer.player.start(as);
         } catch (IOException e) {
             e.printStackTrace();
@@ -31,7 +40,7 @@ public enum Audio {
         CommonUtils.task(sec, () -> {
             try {
                 InputStream resourceAsStream = Audio.class.getClassLoader().getResourceAsStream("com/esr/resources/audio/" + name);
-                AudioStream as = new AudioStream(resourceAsStream);
+                AudioStream as = new AudioStream(Objects.requireNonNull(resourceAsStream));
 //                System.out.println(as.getLength());
                 AudioPlayer.player.start(as);
 //            player.getPlayerState().getGameLevel().add();

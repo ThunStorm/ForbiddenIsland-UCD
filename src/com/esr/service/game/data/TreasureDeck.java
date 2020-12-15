@@ -32,7 +32,7 @@ public class TreasureDeck {
     }
 
     public ArrayList<Integer> getNTreasureCards(int n) {
-        checkAvailability(n);
+        CheckAvailability(n);
         NTreasureCards.clear();
         NTreasureCards.addAll(treasureDeck.subList(0, n));
         if (n > 0) {
@@ -42,7 +42,7 @@ public class TreasureDeck {
     }
 
     public ArrayList<Integer> getNNoRiseCards(int n) {
-        checkAvailability(n);
+        CheckAvailability(n);
         NTreasureCards.clear();
         int count = 0;
         for (int i = 0; i < treasureDeck.size(); i++) {
@@ -73,7 +73,7 @@ public class TreasureDeck {
         discardPile.clear();
     }
 
-    private void checkAvailability(int n){
+    private void CheckAvailability(int n){
         if (treasureDeck.size() < n){
             Collections.shuffle(discardPile);
             treasureDeck.addAll(discardPile);

@@ -7,6 +7,12 @@ import javax.swing.*;
 import java.awt.*;
 import java.util.ArrayList;
 
+/**
+ * @Description
+ * @Author William
+ * @Date 2020/12/8
+ * @Version 1.0
+ **/
 public class PlayerPanel {
 
     Player player1;

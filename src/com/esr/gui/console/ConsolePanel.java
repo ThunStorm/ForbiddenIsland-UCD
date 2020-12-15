@@ -4,6 +4,7 @@ import com.esr.gui.game.TreasurePanel;
 import com.esr.gui.updater.LogAgent;
 import com.esr.service.game.Game;
 import com.esr.service.game.GameData;
+import com.esr.utils.Audio;
 import com.esr.utils.CommonUtils;
 import com.esr.utils.Constant;
 
@@ -65,7 +66,10 @@ public class ConsolePanel {
         consoleButtons.get(0).addActionListener(e -> {
             if (numOfPlayerCB.getSelectedItem() != "----NUM----" && difficultyCB.getSelectedItem() != "---LEVEL---") {
                 LogAgent.logMessenger("Game Start !");
-//                Audio.BGM.LoopPlay(176);
+                if (Constant.AUDIO_ON_OFF){
+                    Audio.GO.Play();
+                    Audio.BGM.LoopPlay(176);
+                }
                 consoleButtons.get(0).setEnabled(false);
                 Game NewGame = new Game(Integer.parseInt((String) Objects.requireNonNull(numOfPlayerCB.getSelectedItem())), Integer.parseInt((String) Objects.requireNonNull(difficultyCB.getSelectedItem())));
                 TreasurePanel.waterMeter.setIcon(new ImageIcon(CommonUtils.getImage(GameData.getWaterMeterImg(), Constant.WATER_METER_WIDTH, Constant.WATER_METER_HEIGHT)));

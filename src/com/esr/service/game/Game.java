@@ -1,8 +1,8 @@
 package com.esr.service.game;
 
 import com.esr.gui.game.GamePanel;
-import com.esr.gui.listerner.Controllers;
-import com.esr.gui.listerner.DataListener;
+import com.esr.gui.listener.Controllers;
+import com.esr.gui.listener.DataListener;
 import com.esr.gui.updater.UpdaterAgent;
 
 import java.util.ArrayList;
@@ -14,6 +14,7 @@ import java.util.ArrayList;
  * @Version 1.0
  **/
 public class Game {
+    private static int roundNum = 0;
     public GameData gameData;
     public UpdaterAgent updaterAgent;
     public DataListener dataListener;
@@ -43,12 +44,25 @@ public class Game {
 
         UpdaterAgent.getTreasureUpdater().guiUpdate(GameData.getTreasureDeck().getNTreasureCards(2));
         UpdaterAgent.getFloodUpdater().guiUpdate(GameData.getFloodDeck().getNFlood(6));
+
+        //Start to sink
+        GameData.getBoard().sinkTile(GameData.getFloodDeck().getNFlood(6));
+        GameData.getFloodDeck().Discard();
+
 ////        After operations
 //        GameData.getFloodDeck().Discard();
-
-
-
-
     }
 
+    public void MainGame(){
+
+
+
+        roundNum ++;
+        roundNum = roundNum % 4;
+    }
+
+
+    public static int getRoundNum() {
+        return roundNum;
+    }
 }

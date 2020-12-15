@@ -12,6 +12,12 @@ import java.awt.*;
 import java.util.ArrayList;
 import java.util.Iterator;
 
+/**
+ * @Description
+ * @Author William
+ * @Date 2020/12/8
+ * @Version 1.0
+ **/
 public class BoardPanel {
     public static ArrayList<JButton> tileCards = new ArrayList<>();
 

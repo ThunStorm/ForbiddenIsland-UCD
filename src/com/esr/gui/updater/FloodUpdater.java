@@ -1,8 +1,6 @@
 package com.esr.gui.updater;
 
 import com.esr.gui.game.FloodPanel;
-import com.esr.gui.game.GamePanel;
-import com.esr.gui.game.TreasurePanel;
 import com.esr.service.base.IUpdater;
 import com.esr.utils.CommonUtils;
 import com.esr.utils.Constant;

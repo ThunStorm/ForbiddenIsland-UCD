@@ -13,13 +13,15 @@ public class FloodDeck {
     private ArrayList<Integer> floodDeck;
     private ArrayList<Integer> discardPile;
     private ArrayList<Integer> displayedCards;
+    private ArrayList<Integer> removedFloodCard;
     private int displayNum;
 
     public FloodDeck() {
         floodDeck = new ArrayList<>();
         discardPile = new ArrayList<>();
         displayedCards = new ArrayList<>();
-        for (int i = 0; i < 24; i++) {
+        removedFloodCard = new ArrayList<>();
+        for (int i = 1; i <= 24; i++) {
             floodDeck.add(i);
         }
         Collections.shuffle(floodDeck);
@@ -27,6 +29,7 @@ public class FloodDeck {
 
     public ArrayList<Integer> getNFlood(int displayNum){
         this.displayNum = displayNum;
+        CheckAvailability(this.displayNum);
         displayedCards.clear();
         displayedCards.addAll(floodDeck.subList(0,this.displayNum));
         return displayedCards;
@@ -37,6 +40,8 @@ public class FloodDeck {
             discardPile.add(floodDeck.get(0));
             floodDeck.remove(0);
         }
+        System.out.println("DP: " + discardPile);
+        System.out.println("FD: " + floodDeck);
     }
 
     public void PutBack2Top(){
@@ -47,7 +52,6 @@ public class FloodDeck {
         discardPile.clear();
     }
 
-// add function to detect the number of the rest of card
     public void PutBack(){
         Collections.shuffle(discardPile);
         floodDeck.clear();
@@ -55,7 +59,12 @@ public class FloodDeck {
         discardPile.clear();
     }
 
-    private void checkAvailability(int n){
+    public void RemoveFloodCard(int removedTile){
+        removedFloodCard.add(floodDeck.get(removedTile));
+        floodDeck.remove((Integer) removedTile);
+    }
+
+    private void CheckAvailability(int n){
         if (floodDeck.size() < n){
             Collections.shuffle(discardPile);
             floodDeck.addAll(discardPile);

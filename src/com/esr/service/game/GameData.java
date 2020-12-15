@@ -14,12 +14,13 @@ import java.util.Collections;
  * @Version 1.0
  **/
 public class GameData {
+
     private static BoardData board;
-    private static ArrayList<Integer> tiles;
-    private static FloodDeck floodDeck;
     private static TreasureDeck treasureDeck;
+    private static FloodDeck floodDeck;
     private static WaterMeter waterMeter;
     private static Adventurer[] adventurers;
+    private static ArrayList<Integer> tiles;
     private static FigurinesData figurinesData;
 
     public GameData(int numOfPlayers, int waterLevel) {
@@ -59,7 +60,7 @@ public class GameData {
         }
 
         tiles = new ArrayList<>();
-        for (int i = 0; i < 24; i++) { tiles.add(i); }
+        for (int i = 1; i <= 24; i++) { tiles.add(i); }
         Collections.shuffle(tiles);
         board = new BoardData(players, tiles);
 
@@ -68,15 +69,15 @@ public class GameData {
         }
     }
 
-    public static BoardData getBoard() { return board; }
-
     public static void setTiles(ArrayList<Integer> tiles) {
         GameData.tiles = tiles;
     }
 
-    public static ArrayList<Integer> getTilesArray(){ return tiles; }
+    public static BoardData getBoard() { return board; }
 
     public Blocks getBoard(int x, int y) { return board.getTile(x, y); }
+
+    public static ArrayList<Integer> getTilesArray(){ return tiles; }
 
     public static FloodDeck getFloodDeck() {
         return floodDeck;
