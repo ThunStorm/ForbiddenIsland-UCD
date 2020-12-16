@@ -17,6 +17,7 @@ public class BoardData {
     private ArrayList<Integer> tiles;
     private ArrayList<Integer> sunkList;
     private boolean canMove;
+    private boolean canShoreUp;
 
     public BoardData(ArrayList<Integer> players, ArrayList<Integer> tiles) {
         this.tiles = tiles;
@@ -58,6 +59,8 @@ public class BoardData {
     }
 
     public boolean isCanMove() { return canMove; }
-
     public void setCanMove(boolean canMove) { this.canMove = canMove; }
+
+    public boolean isCanShoreUp(){ return canShoreUp;}
+    public void setCanShoreUp(boolean canShoreUp){this.canShoreUp = canShoreUp;}
 }

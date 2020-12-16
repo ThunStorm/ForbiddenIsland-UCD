@@ -6,6 +6,7 @@ import com.esr.gui.updater.UpdaterAgent;
 import com.esr.service.game.Game;
 import com.esr.service.game.GameData;
 import com.esr.service.game.component.adventurer.Adventurer;
+import com.esr.service.game.component.adventurer.Engineer;
 import com.esr.service.game.component.cards.TreasureFigurines;
 import com.esr.service.game.data.Block;
 import com.esr.service.game.data.FigurinesData;
@@ -40,9 +41,9 @@ public class Controllers {
 
     private void MoveToController(){
         ConsolePanel.consoleButtons.get(1).addActionListener(e -> {
-            if (Game.getActionCount()<3){
+            if (Game.getActionCount() < 3){
                 if (GameData.getBoard().isCanMove()){
-                    GameData.moveTo();
+                    GameData.MoveTo();
                     LogAgent.logMessenger("Move To" + Arrays.toString(Map.coordinatesMatcher.get(GameData.getAdventurers()[Game.getRoundNum()].getPos())));
                     UpdaterAgent.getBoardUpdater().guiUpdate();
                     Game.doAction();
@@ -76,7 +77,21 @@ public class Controllers {
 
     private void ShoreUpController(){
         ConsolePanel.consoleButtons.get(3).addActionListener(e -> {
-            LogAgent.logMessenger("Shore Up");
+            if (Game.getActionCount() < 3){
+                if (GameData.getBoard().isCanShoreUp()){
+                    GameData.ShoreUp();
+                    LogAgent.logMessenger("Shore Up" + Arrays.toString(Map.coordinatesMatcher.get(GameData.getAdventurers()[Game.getRoundNum()].getPos())));
+                    UpdaterAgent.getBoardUpdater().guiUpdate();
+                    Game.doAction();
+                    if (GameData.getAdventurers()[Game.getRoundNum()] instanceof Engineer){
+                        if(((Engineer) GameData.getAdventurers()[Game.getRoundNum()]).getShoreUpCount() > 0){
+                            ((Engineer) GameData.getAdventurers()[Game.getRoundNum()]).ShoreUp();
+                            Game.moreAction();
+                        }
+                    }
+                }
+                else { LogAgent.logMessenger("Can't Shore Up this tile"); }
+            }
         });
     }
 

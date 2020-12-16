@@ -47,6 +47,16 @@ public class Block {
         adventurersOnBoard.remove((Integer) adventurer.getId());
     }
 
+    public void ShoreUp() {
+        if (status == TileStatus.Flooded){
+            status = TileStatus.Normal;
+            this.img = "/Tiles/" + tileId + ".png";
+        }
+        else {
+            System.out.println("ERROR! Tile is not flooded");
+        }
+    }
+
     public boolean CanPassTo(Adventurer sender, Adventurer receiver){
         return adventurersOnBoard.contains(sender.getId()) && adventurersOnBoard.contains(receiver.getId());
     }
@@ -66,17 +76,6 @@ public class Block {
             System.out.println("ERROR! Tile has sunk");
         }
     }
-
-    public void ShoreUp() {
-        if (status == TileStatus.Flooded){
-            status = TileStatus.Normal;
-            this.img = "/Tiles/" + tileId + ".png";
-        }
-        else {
-            System.out.println("ERROR! Tile has sunk or normal");
-        }
-    }
-
 
     public int getTileId() {
         return tileId;

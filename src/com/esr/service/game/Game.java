@@ -5,10 +5,9 @@ import com.esr.gui.listener.Controllers;
 import com.esr.gui.listener.DataListener;
 import com.esr.gui.updater.LogAgent;
 import com.esr.gui.updater.UpdaterAgent;
+import com.esr.service.game.component.adventurer.Engineer;
 import com.esr.utils.Audio;
 import com.esr.utils.Constant;
-
-import java.util.ArrayList;
 
 /**
  * @Description
@@ -34,20 +33,18 @@ public class Game {
         numOfPlayer = numOfPlayers;
 
         LogAgent.logMessenger("Initialise Players...");
-        if (numOfPlayers == 4){
-            UpdaterAgent.getPlayerUpdater().handCardUpdater(GamePanel.p1HandCards,  GameData.getAdventurers()[0].getHandCards());
-            UpdaterAgent.getPlayerUpdater().handCardUpdater(GamePanel.p2HandCards,  GameData.getAdventurers()[1].getHandCards());
-            UpdaterAgent.getPlayerUpdater().handCardUpdater(GamePanel.p3HandCards,  GameData.getAdventurers()[2].getHandCards());
-            UpdaterAgent.getPlayerUpdater().handCardUpdater(GamePanel.p4HandCards,  GameData.getAdventurers()[3].getHandCards());
-        }
-        else if (numOfPlayers == 3){
-            UpdaterAgent.getPlayerUpdater().handCardUpdater(GamePanel.p1HandCards,  GameData.getAdventurers()[0].getHandCards());
-            UpdaterAgent.getPlayerUpdater().handCardUpdater(GamePanel.p2HandCards,  GameData.getAdventurers()[1].getHandCards());
-            UpdaterAgent.getPlayerUpdater().handCardUpdater(GamePanel.p3HandCards,  GameData.getAdventurers()[2].getHandCards());
-        }
-        else {
-            UpdaterAgent.getPlayerUpdater().handCardUpdater(GamePanel.p1HandCards,  GameData.getAdventurers()[0].getHandCards());
-            UpdaterAgent.getPlayerUpdater().handCardUpdater(GamePanel.p2HandCards,  GameData.getAdventurers()[1].getHandCards());
+        if (numOfPlayers == 4) {
+            UpdaterAgent.getPlayerUpdater().handCardUpdater(GamePanel.p1HandCards, GameData.getAdventurers()[0].getHandCards());
+            UpdaterAgent.getPlayerUpdater().handCardUpdater(GamePanel.p2HandCards, GameData.getAdventurers()[1].getHandCards());
+            UpdaterAgent.getPlayerUpdater().handCardUpdater(GamePanel.p3HandCards, GameData.getAdventurers()[2].getHandCards());
+            UpdaterAgent.getPlayerUpdater().handCardUpdater(GamePanel.p4HandCards, GameData.getAdventurers()[3].getHandCards());
+        } else if (numOfPlayers == 3) {
+            UpdaterAgent.getPlayerUpdater().handCardUpdater(GamePanel.p1HandCards, GameData.getAdventurers()[0].getHandCards());
+            UpdaterAgent.getPlayerUpdater().handCardUpdater(GamePanel.p2HandCards, GameData.getAdventurers()[1].getHandCards());
+            UpdaterAgent.getPlayerUpdater().handCardUpdater(GamePanel.p3HandCards, GameData.getAdventurers()[2].getHandCards());
+        } else {
+            UpdaterAgent.getPlayerUpdater().handCardUpdater(GamePanel.p1HandCards, GameData.getAdventurers()[0].getHandCards());
+            UpdaterAgent.getPlayerUpdater().handCardUpdater(GamePanel.p2HandCards, GameData.getAdventurers()[1].getHandCards());
         }
 
         LogAgent.logMessenger("Island starts to sink...");
@@ -58,35 +55,50 @@ public class Game {
         GameData.getFloodDeck().setToNorm();
 
         LogAgent.logMessenger("[ Game Start ! ]");
-        LogAgent.logMessenger("[ Player " + (roundNum + 1)  + " ]\n(" + GameData.getAdventurers()[roundNum].getName() + "'s Round)");
+        LogAgent.logMessenger("[ Player " + (roundNum + 1) + " ]\n(" + GameData.getAdventurers()[roundNum].getName() + "'s Round)");
 //        UpdaterAgent.getTreasureUpdater().guiUpdate(GameData.getTreasureDeck().getNTreasureCards(2));
         UpdaterAgent.getTreasureUpdater().guiUpdate();
         playerAudio();
     }
 
-    public static void MainGame(){
+    public static void MainGame() {
         playerAudio();
-        roundNum ++;
-        roundNum = roundNum % numOfPlayer;
+        if (GameData.getAdventurers()[roundNum] instanceof Engineer) {
+            ((Engineer) GameData.getAdventurers()[roundNum]).resetShoreUpCount();
+        }
         actionCount = 0;
-        LogAgent.logMessenger("[ Player " + (roundNum + 1)  + " ]\n(" + GameData.getAdventurers()[roundNum].getName() + "'s Round)");
+        roundNum++;
+        roundNum = roundNum % numOfPlayer;
+        LogAgent.logMessenger("[ Player " + (roundNum + 1) + " ]\n(" + GameData.getAdventurers()[roundNum].getName() + "'s Round)");
     }
 
-    public static void GameComplete(){
+    public static void GameComplete() {
         System.out.println("Game Success");
     }
 
-    public static int getNumOfPlayer(){ return numOfPlayer;}
+    public static int getNumOfPlayer() {
+        return numOfPlayer;
+    }
 
-    public static void doAction(){actionCount += 1;}
+    public static void doAction() {
+        actionCount += 1;
+    }
 
-    public static int getActionCount(){return actionCount;}
+    public static void moreAction() {
+        actionCount -= 1;
+    }
 
-    public static int getRoundNum() { return roundNum;}
+    public static int getActionCount() {
+        return actionCount;
+    }
 
-    private static void playerAudio(){
-        if (Constant.AUDIO_ON_OFF){
-            switch (roundNum){
+    public static int getRoundNum() {
+        return roundNum;
+    }
+
+    private static void playerAudio() {
+        if (Constant.AUDIO_ON_OFF) {
+            switch (roundNum) {
                 case 0:
                     Audio.PLAYER1.Play();
                     break;

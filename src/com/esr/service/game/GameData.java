@@ -4,6 +4,7 @@ import com.esr.gui.updater.UpdaterAgent;
 import com.esr.service.game.component.adventurer.*;
 import com.esr.service.game.data.*;
 import com.esr.utils.Map;
+import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -32,7 +33,6 @@ public class GameData {
         waterMeter = new WaterMeter(waterLevel);
         figurinesData = new FigurinesData();
         adventurers = new Adventurer[numOfPlayers];
-//        nextTileNo = new ArrayList<>();
 
         ArrayList<Integer> playerList = new ArrayList<>();
         for (int i = 0; i < 6; i++) { playerList.add(i); }
@@ -72,22 +72,43 @@ public class GameData {
         }
     }
 
-    public static void nextTile(int[] coords){
-        Boolean isNearY = ((adventurers[Game.getRoundNum()].getX() == coords[0]) && (Math.abs(adventurers[Game.getRoundNum()].getY() - coords[1]) == 1));
-        Boolean isNearX = ((adventurers[Game.getRoundNum()].getY() == coords[1]) && (Math.abs(adventurers[Game.getRoundNum()].getX() - coords[0]) == 1));
+    public static void NextTile(int[] coords){
+        boolean isNearY = ((adventurers[Game.getRoundNum()].getX() == coords[0]) && (Math.abs(adventurers[Game.getRoundNum()].getY() - coords[1]) == 1));
+        boolean isNearX = ((adventurers[Game.getRoundNum()].getY() == coords[1]) && (Math.abs(adventurers[Game.getRoundNum()].getX() - coords[0]) == 1));
+        boolean isNearDiagonally = ((Math.abs(adventurers[Game.getRoundNum()].getX() - coords[0]) == 1) && (Math.abs(adventurers[Game.getRoundNum()].getY() - coords[1]) == 1));
         if ((isNearX || isNearY) && (board.getTile(coords[0], coords[1]).isExist())){
+            //can extract to a function
             adventurers[Game.getRoundNum()].setMove(coords[0],coords[1]);
             board.setCanMove(true);
+            if(board.getTile(coords[0], coords[1]).getStatus() == TileStatus.Flooded){
+                adventurers[Game.getRoundNum()].setShoreUp(coords[0],coords[1]);
+                board.setCanShoreUp(true);
+            }
+            else { board.setCanShoreUp(false); }
         }
-        else {
-            System.out.println("This tile is unselectable!");
+        else if ((isNearDiagonally) && (board.getTile(coords[0], coords[1]).isExist()) && (adventurers[Game.getRoundNum()].getName().equals("Explorer"))){
+            adventurers[Game.getRoundNum()].setMove(coords[0],coords[1]);
+            board.setCanMove(true);
+            if(board.getTile(coords[0], coords[1]).getStatus() == TileStatus.Flooded){
+                adventurers[Game.getRoundNum()].setShoreUp(coords[0],coords[1]);
+                board.setCanShoreUp(true);
+            }
+            else { board.setCanShoreUp(false); }
+        }
+        else{
+            System.out.println("This tile is unselectable");
             board.setCanMove(false);
+            board.setCanShoreUp(false);
         }
     }
-    public static void moveTo(){
+    public static void MoveTo(){
         board.getTile(adventurers[Game.getRoundNum()].getX(),adventurers[Game.getRoundNum()].getY()).MoveOff(adventurers[Game.getRoundNum()]);
         adventurers[Game.getRoundNum()].Move();
         board.getTile(adventurers[Game.getRoundNum()].getX(), adventurers[Game.getRoundNum()].getY()).MoveOnto(adventurers[Game.getRoundNum()].getId());
+    }
+
+    public static void ShoreUp(){
+        board.getTile(adventurers[Game.getRoundNum()].getX2(),adventurers[Game.getRoundNum()].getY2()).ShoreUp();
     }
 
     public static BoardData getBoard() { return board; }

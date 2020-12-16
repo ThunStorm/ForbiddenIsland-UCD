@@ -30,7 +30,7 @@ public class DataListener {
         for (JButton tile : BoardPanel.tileCards) {
             tile.addActionListener(e -> {
 //                LogAgent.logMessenger(Arrays.toString(Map.coordinatesMatcher.get(BoardPanel.tileCards.indexOf(tile))));
-                GameData.nextTile(Map.coordinatesMatcher.get(BoardPanel.tileCards.indexOf(tile)));
+                GameData.NextTile(Map.coordinatesMatcher.get(BoardPanel.tileCards.indexOf(tile)));
             });
         }
     }
