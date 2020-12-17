@@ -53,7 +53,9 @@ public class BoardData {
         sunkList.clear();
         for (int sinkTile : sinkTiles){
             int[] coords = Map.coordinatesMatcher.get(this.tiles.indexOf(sinkTile));
-            tileMap[coords[0]][coords[1]].SinkTile();
+            if (tileMap[coords[0]][coords[1]].SinkTile()){
+                GameData.getFloodDeck().RemoveFloodCard(sinkTile);
+            }
         }
         UpdaterAgent.getBoardUpdater().guiUpdate();
     }
@@ -63,4 +65,45 @@ public class BoardData {
 
     public boolean isCanShoreUp(){ return canShoreUp;}
     public void setCanShoreUp(boolean canShoreUp){this.canShoreUp = canShoreUp;}
+
+
+    public boolean isShrinesFlooded(){
+        int[] isShrinesFlooded = {1, 1, 1, 1};
+        for (int i = 0; i < 6; i++) {
+            for (int j = 0; j < 6; j++) {
+                switch (tileMap[i][j].getTileId()) {
+                    case 1:
+                    case 2:
+                        if(!tileMap[i][j].isExist() && !tileMap[i][j].isCaptured()){
+                            isShrinesFlooded[0]--;
+                        }
+                        break;
+                    case 3:
+                    case 4:
+                        if(!tileMap[i][j].isExist() && !tileMap[i][j].isCaptured()){
+                            isShrinesFlooded[1]--;
+                        }
+                        break;
+                    case 5:
+                    case 6:
+                        if(!tileMap[i][j].isExist() && !tileMap[i][j].isCaptured()){
+                            isShrinesFlooded[2]--;
+                        }
+                        break;
+                    case 7:
+                    case 8:
+                        if(!tileMap[i][j].isExist() && !tileMap[i][j].isCaptured()){
+                            isShrinesFlooded[3]--;
+                        }
+                        break;
+                }
+            }
+        }
+        for (int isFlooded : isShrinesFlooded){
+            if (isFlooded == -1){
+                return true;
+            }
+        }
+        return false;
+    }
 }

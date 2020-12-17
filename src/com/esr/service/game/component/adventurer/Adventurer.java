@@ -60,11 +60,11 @@ public abstract class Adventurer {
         this.y2 = y2;
     }
 
-    public void setCapturedFigurines(ArrayList<TreasureFigurines> capturedFigurines) {
-        this.capturedFigurines = capturedFigurines;
+    public void setCapturedFigurines(TreasureFigurines capturedFigurines) {
+        this.capturedFigurines.add(capturedFigurines);
     }
 
-    public ArrayList<TreasureFigurines> getFigurines() {
+    public ArrayList<TreasureFigurines> getCapturedFigurines() {
         return capturedFigurines;
     }
 

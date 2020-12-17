@@ -1,10 +1,10 @@
 package com.esr.service.game.component.cards;
 
 public enum TreasureFigurines {
-    Earth("The Earth Stone"),
-    Wind("The Statue of the Wind"),
-    Fire("The Crystal of Fire"),
-    Ocean("The Ocean’s Chalice");
+    Earth("Earth"),
+    Wind("Wind"),
+    Fire("Fire"),
+    Ocean("Ocean");
 
     private String name;
     TreasureFigurines(String name){

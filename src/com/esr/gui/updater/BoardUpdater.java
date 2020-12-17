@@ -21,13 +21,13 @@ import java.util.ArrayList;
 public class BoardUpdater implements IUpdater {
     private ArrayList<Integer> Tiles;
 
-    public BoardUpdater(ArrayList<Integer> img) {
+    public BoardUpdater() {
         Tiles = new ArrayList<>();
-        Tiles.addAll(img);
+        Tiles.addAll(GameData.getTilesArray());
         for (int i = 0; i < BoardPanel.tileCards.size(); i++) {
             BoardPanel.tileCards.get(i).setEnabled(true);
             BoardPanel.tileCards.get(i).setVisible(true);
-            BoardPanel.tileCards.get(i).setIcon(new ImageIcon(CommonUtils.getImage("/Tiles/" + img.get(i) + ".png", Constant.TILE_WIDTH, Constant.TILE_HEIGHT)));
+            BoardPanel.tileCards.get(i).setIcon(new ImageIcon(CommonUtils.getImage("/Tiles/" + Tiles.get(i) + ".png", Constant.TILE_WIDTH, Constant.TILE_HEIGHT)));
         }
         for (int i = 0; i < GameData.getAdventurers().length; i++) {
             BoardPanel.tileCards.get(GameData.getAdventurers()[i].getPos()).setIcon(new TwoLayeredIcon(new ImageIcon(CommonUtils.getImage(GameData.getAdventurers()[i].getPawnImg(), Constant.TILE_WIDTH, Constant.TILE_HEIGHT)), BoardPanel.tileCards.get(Tiles.indexOf(GameData.getAdventurers()[i].getId()+9)).getIcon()));

@@ -6,8 +6,10 @@ import com.esr.gui.widgets.TwoLayeredIcon;
 import com.esr.service.base.IUpdater;
 import com.esr.service.game.Game;
 import com.esr.service.game.GameData;
+import com.esr.service.game.component.adventurer.Adventurer;
 import com.esr.utils.CommonUtils;
 import com.esr.utils.Constant;
+import com.esr.utils.Map;
 
 import javax.swing.*;
 import java.util.ArrayList;
@@ -20,22 +22,34 @@ import java.util.ArrayList;
  **/
 public class PlayerUpdater implements IUpdater {
 
-    public PlayerUpdater(ArrayList<String> pawnImg){
-        for (int i = 0; i < pawnImg.size(); i++) {
-            GamePanel.playerPawnList.get(i).setIcon(new ImageIcon(CommonUtils.getImage(pawnImg.get(i))));
-        }
-    }
-
-
-    public void handCardUpdater(ArrayList<JButton> handCards, ArrayList<Integer> img){
-        for (int i = 0; i < img.size(); i++) {
-            handCards.get(i).setIcon(new ImageIcon(CommonUtils.getImage("/TreasureCards/" + img.get(i) + ".png", Constant.ADVENTURER_WIDTH, Constant.ADVENTURER_HEIGHT)));
-            handCards.get(i).setAlignmentX(SwingConstants.CENTER);
+    public PlayerUpdater(){
+        for (int i = 0; i < Game.getNumOfPlayer(); i++) {
+            GamePanel.playerPawnList.get(i).setIcon(new ImageIcon(CommonUtils.getImage(GameData.getAdventurers()[i].getPawnImg())));
+            for (int j = 0; j < GameData.getAdventurers()[i].getHandCards().size(); j++){
+                GamePanel.playerHandCards.get(i).get(j).setIcon(new ImageIcon(CommonUtils.getImage("/TreasureCards/" + GameData.getAdventurers()[i].getHandCards().get(j) + ".png", Constant.ADVENTURER_WIDTH, Constant.ADVENTURER_HEIGHT)));
+                GamePanel.playerHandCards.get(i).get(j).setAlignmentX(SwingConstants.CENTER);
+            }
         }
     }
 
     @Override
     public void guiUpdate() {
-
+        for (int i = 0; i < Game.getNumOfPlayer(); i++) {
+            for (int k = 0; k < GameData.getAdventurers()[i].getCapturedFigurines().size(); k++){
+                GamePanel.playerPawnList.get(i).setIcon(
+                        new TwoLayeredIcon( new ImageIcon(CommonUtils.getImage("/Figurines/"
+                                + GameData.getAdventurers()[i].getCapturedFigurines().get(k).name() + ".png")),
+                                new ImageIcon(CommonUtils.getImage(GameData.getAdventurers()[i].getPawnImg())), k));
+            }
+            for (int j = 0; j < GameData.getAdventurers()[i].getHandCards().size(); j++){
+                GamePanel.playerHandCards.get(i).get(j).setIcon(new ImageIcon(CommonUtils.getImage("/TreasureCards/"
+                        + GameData.getAdventurers()[i].getHandCards().get(j) + ".png", Constant.ADVENTURER_WIDTH, Constant.ADVENTURER_HEIGHT)));
+                GamePanel.playerHandCards.get(i).get(j).setAlignmentX(SwingConstants.CENTER);
+            }
+            for (int j = GameData.getAdventurers()[i].getHandCards().size(); j < GamePanel.playerHandCards.get(i).size(); j++){
+                GamePanel.playerHandCards.get(i).get(j).setIcon(null);
+                GamePanel.playerHandCards.get(i).get(j).setAlignmentX(SwingConstants.CENTER);
+            }
+        }
     }
 }

@@ -18,9 +18,13 @@ import java.util.ArrayList;
 public class TreasureUpdater implements IUpdater {
     @Override
     public void guiUpdate() {
-        TreasurePanel.treasureCards.get(0).setIcon(new ImageIcon((CommonUtils.getImage("/TreasureCards/"
-                + GameData.getTreasureDeck().getNTreasureCards(2).get(0) + ".png", Constant.TREASURE_WIDTH, Constant.TREASURE_HEIGHT, 270d))));
-        TreasurePanel.treasureCards.get(1).setIcon(new ImageIcon((CommonUtils.getImage("/TreasureCards/"
-                + GameData.getTreasureDeck().getNTreasureCards(2).get(1) + ".png", Constant.TREASURE_WIDTH, Constant.TREASURE_HEIGHT, 270d))));
+        for (int i = 0; i < GameData.getDisplayedTreasureCard().size(); i++){
+            TreasurePanel.treasureCards.get(i).setIcon(new ImageIcon((CommonUtils.getImage("/TreasureCards/"
+                    + GameData.getDisplayedTreasureCard().get(i) + ".png", Constant.TREASURE_WIDTH, Constant.TREASURE_HEIGHT, 270d))));
+        }
+        for (int i = GameData.getDisplayedTreasureCard().size(); i < TreasurePanel.treasureCards.size(); i++){
+            TreasurePanel.treasureCards.get(i).setIcon(null);
+        }
+
     }
 }

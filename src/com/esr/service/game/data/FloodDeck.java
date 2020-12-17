@@ -34,7 +34,7 @@ public class FloodDeck {
 
     public ArrayList<Integer> getNFlood(){
         if (isInit){ this.displayNum = 6; }
-        else { this.displayNum = GameData.getWaterMeterLevel(); }
+        else { this.displayNum = GameData.getFloodCardCount(); }
         CheckAvailability(this.displayNum);
         displayedCards.clear();
         displayedCards.addAll(floodDeck.subList(0,this.displayNum));
@@ -46,16 +46,16 @@ public class FloodDeck {
             discardPile.add(floodDeck.get(0));
             floodDeck.remove(0);
         }
-//        System.out.println("DP: " + discardPile);
-//        System.out.println("FD: " + floodDeck);
     }
 
     public void PutBack2Top(){
-        Collections.shuffle(discardPile);
-        discardPile.addAll(floodDeck);
-        floodDeck.clear();
-        floodDeck.addAll(discardPile);
-        discardPile.clear();
+        if(discardPile.size()!=0){
+            Collections.shuffle(discardPile);
+            discardPile.addAll(floodDeck);
+            floodDeck.clear();
+            floodDeck.addAll(discardPile);
+            discardPile.clear();
+        }
     }
 
     public void PutBack(){
@@ -66,7 +66,7 @@ public class FloodDeck {
     }
 
     public void RemoveFloodCard(int removedTile){
-        removedFloodCard.add(floodDeck.get(removedTile));
+        removedFloodCard.add(removedTile);
         floodDeck.remove((Integer) removedTile);
     }
 

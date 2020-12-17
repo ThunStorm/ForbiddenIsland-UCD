@@ -1,12 +1,5 @@
 package com.esr.gui.updater;
 
-import com.esr.gui.game.TreasurePanel;
-import com.esr.service.game.GameData;
-import com.esr.service.game.component.adventurer.Adventurer;
-
-import java.util.ArrayList;
-import java.util.Collections;
-
 /**
  * @Description
  * @Author William
@@ -18,16 +11,14 @@ public class UpdaterAgent {
     private static FloodUpdater floodUpdater;
     private static PlayerUpdater playerUpdater;
     private static TreasureUpdater treasureUpdater;
+    private static WaterMeterUpdater waterMeterUpdater;
 
     public UpdaterAgent() {
-        ArrayList<String> pawnImg = new ArrayList<>();
-        for (Adventurer adventurer : GameData.getAdventurers()) {
-            pawnImg.add(adventurer.getPawnImg());
-        }
-        boardUpdater = new BoardUpdater(GameData.getTilesArray());
+        boardUpdater = new BoardUpdater();
         floodUpdater = new FloodUpdater();
-        playerUpdater = new PlayerUpdater(pawnImg);
+        playerUpdater = new PlayerUpdater();
         treasureUpdater = new TreasureUpdater();
+        waterMeterUpdater =new WaterMeterUpdater();
     }
 
     public static BoardUpdater getBoardUpdater() {
@@ -44,6 +35,10 @@ public class UpdaterAgent {
 
     public static TreasureUpdater getTreasureUpdater() {
         return treasureUpdater;
+    }
+
+    public static WaterMeterUpdater getWaterMeterUpdater(){
+        return waterMeterUpdater;
     }
 
     public int getUpdaterID(){ return 1;}

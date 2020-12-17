@@ -12,10 +12,7 @@ import java.util.ArrayList;
  **/
 public class GamePanel {
     public static ArrayList<JButton> playerPawnList;
-    public static ArrayList<JButton> p1HandCards;
-    public static ArrayList<JButton> p2HandCards;
-    public static ArrayList<JButton> p3HandCards;
-    public static ArrayList<JButton> p4HandCards;
+    public static ArrayList<ArrayList<JButton>> playerHandCards;
 
     private JPanel gamePanel;
     private PlayerPanel playerPanelUp;
@@ -23,6 +20,10 @@ public class GamePanel {
     private BoardPanel boardPanel;
     private TreasurePanel treasurePanel;
     private FloodPanel floodPanel;
+    private ArrayList<JButton> p1HandCards;
+    private ArrayList<JButton> p2HandCards;
+    private ArrayList<JButton> p3HandCards;
+    private ArrayList<JButton> p4HandCards;
 //    private Subject subject;
 
     public GamePanel() {
@@ -45,10 +46,20 @@ public class GamePanel {
         playerPawnList.add(playerPanelUp.getP1Pawn());
         playerPawnList.add(playerPanelUp.getP2Pawn());
 
-        p1HandCards = playerPanelDown.getP1HandCards();
-        p2HandCards = playerPanelDown.getP2HandCards();
-        p3HandCards = playerPanelUp.getP1HandCards();
-        p4HandCards = playerPanelUp.getP2HandCards();
+        p1HandCards = new ArrayList<>();
+        p2HandCards = new ArrayList<>();
+        p3HandCards = new ArrayList<>();
+        p4HandCards = new ArrayList<>();
+        p1HandCards.addAll(playerPanelDown.getP1HandCards());
+        p2HandCards.addAll(playerPanelDown.getP2HandCards());
+        p3HandCards.addAll(playerPanelUp.getP1HandCards());
+        p4HandCards.addAll(playerPanelUp.getP2HandCards());
+
+        playerHandCards = new ArrayList<>();
+        playerHandCards.add(p1HandCards);
+        playerHandCards.add(p2HandCards);
+        playerHandCards.add(p3HandCards);
+        playerHandCards.add(p4HandCards);
     }
 
     public JPanel getGamePanel() {

@@ -35,7 +35,7 @@ public class ConsolePanel {
         consoleButtons.add(new JButton("Pass To"));
         consoleButtons.add(new JButton("Capture"));
         consoleButtons.add(new JButton("Next"));
-        consoleButtons.add(new JButton("Clear"));
+        consoleButtons.add(new JButton("Discard"));
         InfoPanel();
         ConfigBox();
         LogBox();
@@ -72,7 +72,7 @@ public class ConsolePanel {
                 }
                 consoleButtons.get(0).setEnabled(false);
                 Game NewGame = new Game(Integer.parseInt((String) Objects.requireNonNull(numOfPlayerCB.getSelectedItem())), Integer.parseInt((String) Objects.requireNonNull(difficultyCB.getSelectedItem())));
-                TreasurePanel.waterMeter.setIcon(new ImageIcon(CommonUtils.getImage(GameData.getWaterMeterImg(), Constant.WATER_METER_WIDTH, Constant.WATER_METER_HEIGHT)));
+//                TreasurePanel.waterMeter.setIcon(new ImageIcon(CommonUtils.getImage(GameData.getWaterMeterImg(), Constant.WATER_METER_WIDTH, Constant.WATER_METER_HEIGHT)));
             }
         });
 

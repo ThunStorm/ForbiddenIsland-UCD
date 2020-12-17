@@ -9,9 +9,9 @@ import com.esr.service.game.component.adventurer.Adventurer;
 import com.esr.service.game.component.adventurer.Engineer;
 import com.esr.service.game.component.cards.TreasureFigurines;
 import com.esr.service.game.data.Block;
-import com.esr.service.game.data.FigurinesData;
 import com.esr.utils.Map;
 
+import javax.swing.plaf.synth.SynthEditorPaneUI;
 import java.util.ArrayList;
 import java.util.Arrays;
 
@@ -29,14 +29,7 @@ public class Controllers {
         PassToController();
         CaptureController();
         NextController();
-        ClearController();
-    }
-
-    private void NextController(){
-        ConsolePanel.consoleButtons.get(6).addActionListener(e -> {
-            LogAgent.logMessenger("Next");
-            Game.MainGame();
-        });
+        DiscardController();
     }
 
     private void MoveToController(){
@@ -44,7 +37,7 @@ public class Controllers {
             if (Game.getActionCount() < 3){
                 if (GameData.getBoard().isCanMove()){
                     GameData.MoveTo();
-                    LogAgent.logMessenger("Move To" + Arrays.toString(Map.coordinatesMatcher.get(GameData.getAdventurers()[Game.getRoundNum()].getPos())));
+                    LogAgent.logMessenger("Move To " + Arrays.toString(Map.coordinatesMatcher.get(GameData.getAdventurers()[Game.getRoundNum()].getPos())));
                     UpdaterAgent.getBoardUpdater().guiUpdate();
                     Game.doAction();
                 }
@@ -64,10 +57,10 @@ public class Controllers {
                 ArrayList<TreasureFigurines> figurines = new ArrayList<>();
                 for (Adventurer adventurer : GameData.getAdventurers()){
                     handCards.addAll(adventurer.getHandCards());
-                    figurines.addAll(adventurer.getFigurines());
+                    figurines.addAll(adventurer.getCapturedFigurines());
                 }
                 if ((handCards.contains(20) || handCards.contains(21) || handCards.contains(22)) && figurines.size() == 4){
-                    Game.GameComplete();
+                    Game.GameComplete(true);
                 }
                 else { System.out.println("Lift Off failed"); }
             }
@@ -80,7 +73,7 @@ public class Controllers {
             if (Game.getActionCount() < 3){
                 if (GameData.getBoard().isCanShoreUp()){
                     GameData.ShoreUp();
-                    LogAgent.logMessenger("Shore Up" + Arrays.toString(Map.coordinatesMatcher.get(GameData.getAdventurers()[Game.getRoundNum()].getPos())));
+                    LogAgent.logMessenger("Shore Up " + Arrays.toString(Map.coordinatesMatcher.get(GameData.getAdventurers()[Game.getRoundNum()].getPos())));
                     UpdaterAgent.getBoardUpdater().guiUpdate();
                     Game.doAction();
                     if (GameData.getAdventurers()[Game.getRoundNum()] instanceof Engineer){
@@ -97,19 +90,96 @@ public class Controllers {
 
     private void PassToController(){
         ConsolePanel.consoleButtons.get(4).addActionListener(e -> {
-            LogAgent.logMessenger("Pass To");
+//            LogAgent.logMessenger("Pass To");
+            if (Game.getActionCount() < 3 && GameData.getSelectedPawn() != -1){
+                if (GameData.getBoard().getTile(GameData.getAdventurers()[Game.getRoundNum()].getX(),GameData.getAdventurers()[Game.getRoundNum()].getY()).CanPassTo(GameData.getAdventurers()[Game.getRoundNum()], GameData.getAdventurers()[GameData.getSelectedPawn()])){
+                    GameData.PassTo();
+                    LogAgent.logMessenger(GameData.getAdventurers()[Game.getRoundNum()].getName()
+                            + " passed a card to " + GameData.getAdventurers()[GameData.getSelectedPawn()].getName());
+                    UpdaterAgent.getPlayerUpdater().guiUpdate();
+                    UpdaterAgent.getTreasureUpdater().guiUpdate();
+                    Game.doAction();
+                    GameData.SelectPawn(-1);
+                }
+                else{ LogAgent.logMessenger("Can't do Pass To Action"); }
+            }
+            else { LogAgent.logMessenger("Maximum actions succeed or no selected receiver"); }
         });
     }
 
     private void CaptureController(){
         ConsolePanel.consoleButtons.get(5).addActionListener(e -> {
-            LogAgent.logMessenger("Capture");
+//            LogAgent.logMessenger("Capture");
+            ArrayList<Integer> handCards = new ArrayList<>(GameData.getAdventurers()[Game.getRoundNum()].getHandCards());
+            int[] treasureCount = {0, 0, 0, 0};
+            for (int handCard : handCards){
+                if (handCard >= 0 && handCard <= 4){ treasureCount[0]++; }
+                else if (handCard >= 5 && handCard <= 9){ treasureCount[1]++;}
+                else if (handCard >= 10 && handCard <= 14){ treasureCount[2]++;}
+                else if (handCard >= 15 && handCard <= 19){ treasureCount[3]++;}
+            }
+            for (int i = 0; i < treasureCount.length; i++) {
+                if (treasureCount[i] == 4){
+                    Block block = GameData.getBoard().getTile(GameData.getAdventurers()[Game.getRoundNum()].getX(),GameData.getAdventurers()[Game.getRoundNum()].getY());
+                    if (block.getTileId() == 2*i+1 || block.getTileId() == 2*i+2){
+                        GameData.getBoard().getTile(GameData.getAdventurers()[Game.getRoundNum()].getX(),GameData.getAdventurers()[Game.getRoundNum()].getY()).setCaptured();
+                        for(TreasureFigurines figurine : TreasureFigurines.values()){
+                            if (figurine.ordinal() == i){
+                                GameData.getAdventurers()[Game.getRoundNum()].setCapturedFigurines(figurine);
+                                for (int handCardNo : GameData.getAdventurers()[Game.getRoundNum()].getHandCards()){
+                                    //TODO Carefully use remove https://www.cnblogs.com/dolphin0520/p/3933551.html
+                                    if(handCardNo >= i * 5 && handCardNo <= i * 5 + 4){
+                                        GameData.getAdventurers()[Game.getRoundNum()].getHandCards().remove((Integer)handCardNo);
+                                        GameData.getTreasureDeck().Discard(handCardNo);
+                                    }
+                                }
+                            }
+                        }
+                        GameData.getBoard().getTile(Map.coordinatesMatcher.get(GameData.getTilesArray().indexOf(2*i+1))[0],
+                                Map.coordinatesMatcher.get(GameData.getTilesArray().indexOf(2*i+1))[1]).setCaptured();
+                        GameData.getBoard().getTile(Map.coordinatesMatcher.get(GameData.getTilesArray().indexOf(2*i+2))[0],
+                                Map.coordinatesMatcher.get(GameData.getTilesArray().indexOf(2*i+2))[1]).setCaptured();
+                    }
+                }
+            }
+            UpdaterAgent.getPlayerUpdater().guiUpdate();
+            UpdaterAgent.getBoardUpdater().guiUpdate();
         });
     }
 
-    private void ClearController(){
+    private void NextController(){
+        ConsolePanel.consoleButtons.get(6).addActionListener(e -> {
+            LogAgent.logMessenger("Next");
+            if(!Game.isStage23Done()){
+                Game.Stage23();
+            }
+            else{
+                Game.RoundEnd();
+            }
+        });
+    }
+//
+    private void DiscardController(){
         ConsolePanel.consoleButtons.get(7).addActionListener(e -> {
-            LogAgent.logMessenger("Clear");
+            LogAgent.logMessenger("Discard");
+            if(GameData.getCardsInRound().size() != 0){
+                ArrayList<Integer> allCardsInRound = new ArrayList<>();
+                allCardsInRound.addAll(GameData.getAdventurers()[Game.getRoundNum()].getHandCards());
+                allCardsInRound.addAll(GameData.getDisplayedTreasureCard());
+                GameData.getAdventurers()[Game.getRoundNum()].getHandCards().clear();
+                GameData.getDisplayedTreasureCard().clear();
+                for (int card : allCardsInRound){
+                    if(GameData.getCardsInRound().contains(card)){
+                       GameData.getAdventurers()[Game.getRoundNum()].getHandCards().add(card);
+                    }
+                    else {
+                        GameData.getTreasureDeck().Discard(card);
+                    }
+                }
+                GameData.resetCardsInRound();
+                UpdaterAgent.getPlayerUpdater().guiUpdate();
+                UpdaterAgent.getTreasureUpdater().guiUpdate();
+            }
         });
     }
 
