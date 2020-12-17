@@ -38,6 +38,7 @@ public class Game {
         updaterAgent = new UpdaterAgent();
 
         LogAgent.logMessenger("Island starts to sink...");
+//        if (Constant.AUDIO_ON_OFF){ Audio.FLOOD.Play(); }
         UpdaterAgent.getFloodUpdater().guiUpdate();
         GameData.getBoard().sinkTiles(GameData.getFloodDeck().getNFlood());
         GameData.getFloodDeck().Discard();
@@ -75,6 +76,8 @@ public class Game {
         UpdaterAgent.getFloodUpdater().guiUpdate();
         GameData.getBoard().sinkTiles(GameData.getFloodDeck().getNFlood());
         GameData.getFloodDeck().Discard();
+        if (Constant.AUDIO_ON_OFF){ Audio.FLOOD.Play(); }
+
         stage23Done = true;
     }
 
@@ -116,9 +119,11 @@ public class Game {
 //        TODO More Actions e.g. disable buttons.
         if (isWin){
             System.out.println("Game Success");
+            if (Constant.AUDIO_ON_OFF){ Audio.WIN.Play(); }
         }
         else{
             System.out.println("Game failed");
+            if (Constant.AUDIO_ON_OFF){ Audio.FAILURE.Play(); }
         }
     }
 
@@ -146,7 +151,6 @@ public class Game {
         return stage23Done;
     }
 
-
     private static void playerAudio() {
         if (Constant.AUDIO_ON_OFF) {
             switch (roundNum) {
@@ -165,4 +169,6 @@ public class Game {
             }
         }
     }
+
+
 }

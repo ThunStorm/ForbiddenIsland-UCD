@@ -9,6 +9,8 @@ import com.esr.service.game.component.adventurer.Adventurer;
 import com.esr.service.game.component.adventurer.Engineer;
 import com.esr.service.game.component.cards.TreasureFigurines;
 import com.esr.service.game.data.Block;
+import com.esr.utils.Audio;
+import com.esr.utils.Constant;
 import com.esr.utils.Map;
 
 import javax.swing.plaf.synth.SynthEditorPaneUI;
@@ -38,6 +40,7 @@ public class Controllers {
                 if (GameData.getBoard().isCanMove()){
                     GameData.MoveTo();
                     LogAgent.logMessenger("Move To " + Arrays.toString(Map.coordinatesMatcher.get(GameData.getAdventurers()[Game.getRoundNum()].getPos())));
+                    if (Constant.AUDIO_ON_OFF){ Audio.MOVETO.Play(); }
                     UpdaterAgent.getBoardUpdater().guiUpdate();
                     Game.doAction();
                 }
@@ -60,6 +63,7 @@ public class Controllers {
                     figurines.addAll(adventurer.getCapturedFigurines());
                 }
                 if ((handCards.contains(20) || handCards.contains(21) || handCards.contains(22)) && figurines.size() == 4){
+                    if (Constant.AUDIO_ON_OFF){ Audio.LIFTOFF.Play(); }
                     Game.GameComplete(true);
                 }
                 else { System.out.println("Lift Off failed"); }
@@ -75,11 +79,13 @@ public class Controllers {
                     GameData.ShoreUp();
                     LogAgent.logMessenger("Shore Up " + Arrays.toString(Map.coordinatesMatcher.get(GameData.getAdventurers()[Game.getRoundNum()].getPos())));
                     UpdaterAgent.getBoardUpdater().guiUpdate();
+                    if (Constant.AUDIO_ON_OFF){ Audio.SHOREUP.Play(); }
                     Game.doAction();
                     if (GameData.getAdventurers()[Game.getRoundNum()] instanceof Engineer){
                         if(((Engineer) GameData.getAdventurers()[Game.getRoundNum()]).getShoreUpCount() > 0){
                             ((Engineer) GameData.getAdventurers()[Game.getRoundNum()]).ShoreUp();
                             Game.moreAction();
+                            if (Constant.AUDIO_ON_OFF){ Audio.SHOREUP.Play(); }
                         }
                     }
                 }
@@ -96,6 +102,7 @@ public class Controllers {
                     GameData.PassTo();
                     LogAgent.logMessenger(GameData.getAdventurers()[Game.getRoundNum()].getName()
                             + " passed a card to " + GameData.getAdventurers()[GameData.getSelectedPawn()].getName());
+                    if (Constant.AUDIO_ON_OFF){ Audio.PASSTO.Play(); }
                     UpdaterAgent.getPlayerUpdater().guiUpdate();
                     UpdaterAgent.getTreasureUpdater().guiUpdate();
                     Game.doAction();
@@ -130,6 +137,7 @@ public class Controllers {
                                     //TODO Carefully use remove https://www.cnblogs.com/dolphin0520/p/3933551.html
                                     if(handCardNo >= i * 5 && handCardNo <= i * 5 + 4){
                                         GameData.getAdventurers()[Game.getRoundNum()].getHandCards().remove((Integer)handCardNo);
+                                        if (Constant.AUDIO_ON_OFF){ Audio.CAPTURE.Play(); }
                                         GameData.getTreasureDeck().Discard(handCardNo);
                                     }
                                 }
@@ -150,6 +158,7 @@ public class Controllers {
     private void NextController(){
         ConsolePanel.consoleButtons.get(6).addActionListener(e -> {
             LogAgent.logMessenger("Next");
+            if (Constant.AUDIO_ON_OFF){ Audio.NEXT.Play(); }
             if(!Game.isStage23Done()){
                 Game.Stage23();
             }
@@ -179,6 +188,7 @@ public class Controllers {
                 GameData.resetCardsInRound();
                 UpdaterAgent.getPlayerUpdater().guiUpdate();
                 UpdaterAgent.getTreasureUpdater().guiUpdate();
+                if (Constant.AUDIO_ON_OFF){ Audio.DISCARD.Play(); }
             }
         });
     }

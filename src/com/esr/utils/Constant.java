@@ -9,7 +9,7 @@ package com.esr.utils;
 public abstract class Constant {
 
     public static boolean TIMER_STOP_ON_OFF = false;//Main switch of all timers. All timers stop when this turns to ture
-    public static boolean AUDIO_ON_OFF = false;
+    public static boolean AUDIO_ON_OFF = true;
 
     public final static int FRAME_WIDTH = 1080;//主窗体宽
     public final static int FRAME_HEIGHT = 950;//主窗体高

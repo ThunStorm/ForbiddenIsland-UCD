@@ -67,8 +67,9 @@ public class ConsolePanel {
             if (numOfPlayerCB.getSelectedItem() != "----NUM----" && difficultyCB.getSelectedItem() != "---LEVEL---") {
                 LogAgent.logMessenger("[Game Initialisation]");
                 if (Constant.AUDIO_ON_OFF){
-                    Audio.GO.Play();
-                    Audio.BGM.LoopPlay(176);
+//                    Audio.GO.Play();
+//                    Audio.BGM.LoopPlay(176);
+                    Audio.BGM.LoopPlay(398);
                 }
                 consoleButtons.get(0).setEnabled(false);
                 Game NewGame = new Game(Integer.parseInt((String) Objects.requireNonNull(numOfPlayerCB.getSelectedItem())), Integer.parseInt((String) Objects.requireNonNull(difficultyCB.getSelectedItem())));

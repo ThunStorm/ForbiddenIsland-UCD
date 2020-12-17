@@ -29,89 +29,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2b919aec-5efd-45b2-b528-0ea4fbe9c6b5" name="Default Changelist" comment="Build Game, TODO list in Main">
-      <change afterPath="$PROJECT_DIR$/src/com/esr/gui/updater/WaterMeterUpdater.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/FI-game-UCD-IDEA/com/esr/gui/console/ConsolePanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/FI-game-UCD-IDEA/com/esr/gui/console/ConsolePanel.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/FI-game-UCD-IDEA/com/esr/gui/game/GamePanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/FI-game-UCD-IDEA/com/esr/gui/game/GamePanel.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/FI-game-UCD-IDEA/com/esr/gui/updater/BoardUpdater.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/FI-game-UCD-IDEA/com/esr/gui/updater/BoardUpdater.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/FI-game-UCD-IDEA/com/esr/gui/updater/PlayerUpdater.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/FI-game-UCD-IDEA/com/esr/gui/updater/PlayerUpdater.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/FI-game-UCD-IDEA/com/esr/gui/updater/TreasureUpdater.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/FI-game-UCD-IDEA/com/esr/gui/updater/TreasureUpdater.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/FI-game-UCD-IDEA/com/esr/gui/updater/UpdaterAgent.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/FI-game-UCD-IDEA/com/esr/gui/updater/UpdaterAgent.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/FI-game-UCD-IDEA/com/esr/resources/image/Pawns/Diver@2x.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/FI-game-UCD-IDEA/com/esr/resources/image/Pawns/Engineer@2x.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/FI-game-UCD-IDEA/com/esr/resources/image/Pawns/Explorer@2x.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/FI-game-UCD-IDEA/com/esr/resources/image/Pawns/Messenger@2x.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/FI-game-UCD-IDEA/com/esr/resources/image/Pawns/Navigator@2x.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/FI-game-UCD-IDEA/com/esr/resources/image/Pawns/Pilot@2x.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/FI-game-UCD-IDEA/com/esr/resources/image/TreasureCards/0.png" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/FI-game-UCD-IDEA/com/esr/resources/image/TreasureCards/0.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/FI-game-UCD-IDEA/com/esr/resources/image/TreasureCards/1.png" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/FI-game-UCD-IDEA/com/esr/resources/image/TreasureCards/1.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/FI-game-UCD-IDEA/com/esr/resources/image/TreasureCards/10.png" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/FI-game-UCD-IDEA/com/esr/resources/image/TreasureCards/10.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/FI-game-UCD-IDEA/com/esr/resources/image/TreasureCards/11.png" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/FI-game-UCD-IDEA/com/esr/resources/image/TreasureCards/11.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/FI-game-UCD-IDEA/com/esr/resources/image/TreasureCards/12.png" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/FI-game-UCD-IDEA/com/esr/resources/image/TreasureCards/12.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/FI-game-UCD-IDEA/com/esr/resources/image/TreasureCards/13.png" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/FI-game-UCD-IDEA/com/esr/resources/image/TreasureCards/13.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/FI-game-UCD-IDEA/com/esr/resources/image/TreasureCards/14.png" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/FI-game-UCD-IDEA/com/esr/resources/image/TreasureCards/14.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/FI-game-UCD-IDEA/com/esr/resources/image/TreasureCards/15.png" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/FI-game-UCD-IDEA/com/esr/resources/image/TreasureCards/15.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/FI-game-UCD-IDEA/com/esr/resources/image/TreasureCards/16.png" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/FI-game-UCD-IDEA/com/esr/resources/image/TreasureCards/16.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/FI-game-UCD-IDEA/com/esr/resources/image/TreasureCards/17.png" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/FI-game-UCD-IDEA/com/esr/resources/image/TreasureCards/17.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/FI-game-UCD-IDEA/com/esr/resources/image/TreasureCards/18.png" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/FI-game-UCD-IDEA/com/esr/resources/image/TreasureCards/18.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/FI-game-UCD-IDEA/com/esr/resources/image/TreasureCards/19.png" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/FI-game-UCD-IDEA/com/esr/resources/image/TreasureCards/19.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/FI-game-UCD-IDEA/com/esr/resources/image/TreasureCards/2.png" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/FI-game-UCD-IDEA/com/esr/resources/image/TreasureCards/2.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/FI-game-UCD-IDEA/com/esr/resources/image/TreasureCards/3.png" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/FI-game-UCD-IDEA/com/esr/resources/image/TreasureCards/3.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/FI-game-UCD-IDEA/com/esr/resources/image/TreasureCards/4.png" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/FI-game-UCD-IDEA/com/esr/resources/image/TreasureCards/4.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/FI-game-UCD-IDEA/com/esr/resources/image/TreasureCards/5.png" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/FI-game-UCD-IDEA/com/esr/resources/image/TreasureCards/5.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/FI-game-UCD-IDEA/com/esr/resources/image/TreasureCards/6.png" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/FI-game-UCD-IDEA/com/esr/resources/image/TreasureCards/6.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/FI-game-UCD-IDEA/com/esr/resources/image/TreasureCards/7.png" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/FI-game-UCD-IDEA/com/esr/resources/image/TreasureCards/7.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/FI-game-UCD-IDEA/com/esr/resources/image/TreasureCards/8.png" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/FI-game-UCD-IDEA/com/esr/resources/image/TreasureCards/8.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/FI-game-UCD-IDEA/com/esr/resources/image/TreasureCards/9.png" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/FI-game-UCD-IDEA/com/esr/resources/image/TreasureCards/9.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/FI-game-UCD-IDEA/com/esr/service/game/Game.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/FI-game-UCD-IDEA/com/esr/service/game/Game.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/FI-game-UCD-IDEA/com/esr/service/game/GameData.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/FI-game-UCD-IDEA/com/esr/service/game/GameData.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/FI-game-UCD-IDEA/com/esr/service/game/component/adventurer/Adventurer.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/FI-game-UCD-IDEA/com/esr/service/game/component/adventurer/Adventurer.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/FI-game-UCD-IDEA/com/esr/service/game/component/cards/TreasureFigurines.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/FI-game-UCD-IDEA/com/esr/service/game/component/cards/TreasureFigurines.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/FI-game-UCD-IDEA/com/esr/service/game/data/FloodDeck.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/FI-game-UCD-IDEA/com/esr/service/game/data/FloodDeck.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/FI-game-UCD-IDEA/com/esr/service/game/data/WaterMeter.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/FI-game-UCD-IDEA/com/esr/service/game/data/WaterMeter.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/esr/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/esr/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/FI-game-UCD-IDEA/com/esr/service/game/data/BoardData.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/FI-game-UCD-IDEA/com/esr/service/game/data/BoardData.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/FI-game-UCD-IDEA/com/esr/utils/Audio.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/FI-game-UCD-IDEA/com/esr/utils/Audio.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/FI-game-UCD-IDEA/com/esr/utils/Constant.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/FI-game-UCD-IDEA/com/esr/utils/Constant.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/esr/gui/console/ConsolePanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/esr/gui/console/ConsolePanel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/esr/gui/game/GamePanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/esr/gui/game/GamePanel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/esr/gui/listener/Controllers.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/esr/gui/listener/Controllers.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/esr/gui/listener/DataListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/esr/gui/listener/DataListener.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/esr/gui/updater/BoardUpdater.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/esr/gui/updater/BoardUpdater.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/esr/gui/updater/PlayerUpdater.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/esr/gui/updater/PlayerUpdater.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/esr/gui/updater/TreasureUpdater.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/esr/gui/updater/TreasureUpdater.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/esr/gui/updater/UpdaterAgent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/esr/gui/updater/UpdaterAgent.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/esr/resources/image/Pawns/Diver@2x.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/esr/resources/image/Pawns/Engineer@2x.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/esr/resources/image/Pawns/Explorer@2x.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/esr/resources/image/Pawns/Messenger@2x.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/esr/resources/image/Pawns/Navigator@2x.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/esr/resources/image/Pawns/Pilot@2x.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/esr/resources/image/TreasureCards/0.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/esr/resources/image/TreasureCards/0.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/esr/resources/image/TreasureCards/1.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/esr/resources/image/TreasureCards/1.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/esr/resources/image/TreasureCards/10.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/esr/resources/image/TreasureCards/10.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/esr/resources/image/TreasureCards/11.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/esr/resources/image/TreasureCards/11.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/esr/resources/image/TreasureCards/12.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/esr/resources/image/TreasureCards/12.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/esr/resources/image/TreasureCards/13.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/esr/resources/image/TreasureCards/13.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/esr/resources/image/TreasureCards/14.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/esr/resources/image/TreasureCards/14.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/esr/resources/image/TreasureCards/15.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/esr/resources/image/TreasureCards/15.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/esr/resources/image/TreasureCards/16.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/esr/resources/image/TreasureCards/16.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/esr/resources/image/TreasureCards/17.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/esr/resources/image/TreasureCards/17.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/esr/resources/image/TreasureCards/18.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/esr/resources/image/TreasureCards/18.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/esr/resources/image/TreasureCards/19.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/esr/resources/image/TreasureCards/19.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/esr/resources/image/TreasureCards/2.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/esr/resources/image/TreasureCards/2.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/esr/resources/image/TreasureCards/3.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/esr/resources/image/TreasureCards/3.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/esr/resources/image/TreasureCards/4.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/esr/resources/image/TreasureCards/4.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/esr/resources/image/TreasureCards/5.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/esr/resources/image/TreasureCards/5.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/esr/resources/image/TreasureCards/6.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/esr/resources/image/TreasureCards/6.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/esr/resources/image/TreasureCards/7.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/esr/resources/image/TreasureCards/7.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/esr/resources/image/TreasureCards/8.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/esr/resources/image/TreasureCards/8.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/esr/resources/image/TreasureCards/9.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/esr/resources/image/TreasureCards/9.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/esr/service/game/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/esr/service/game/Game.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/esr/service/game/GameData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/esr/service/game/GameData.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/esr/service/game/component/adventurer/Adventurer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/esr/service/game/component/adventurer/Adventurer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/esr/service/game/component/cards/TreasureFigurines.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/esr/service/game/component/cards/TreasureFigurines.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/esr/service/game/data/Block.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/esr/service/game/data/Block.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/esr/service/game/data/BoardData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/esr/service/game/data/BoardData.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/esr/service/game/data/FloodDeck.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/esr/service/game/data/FloodDeck.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/esr/service/game/data/WaterMeter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/esr/service/game/data/WaterMeter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/esr/utils/Audio.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/esr/utils/Audio.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/esr/utils/Constant.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/esr/utils/Constant.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -198,19 +125,6 @@
       <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
       <RunnerSettings RunnerId="Run" />
       <ConfigurationWrapper RunnerId="Run" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
-      <option name="arquillianRunConfiguration">
-        <value>
-          <option name="containerStateName" value="" />
-        </value>
-      </option>
-      <option name="TEST_OBJECT" value="CLASS" />
-      <properties />
-      <listeners />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -311,7 +225,8 @@
       <workItem from="1607959315350" duration="13594000" />
       <workItem from="1607995000655" duration="2170000" />
       <workItem from="1608032174846" duration="25630000" />
-      <workItem from="1608121784872" duration="51701000" />
+      <workItem from="1608121784872" duration="51904000" />
+      <workItem from="1608211692975" duration="2305000" />
     </task>
     <task id="LOCAL-00001" summary="Build DataLayer">
       <created>1607400232334</created>
@@ -390,7 +305,14 @@
       <option name="project" value="LOCAL" />
       <updated>1608082360974</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="Build Game, TODO list in Main">
+      <created>1608178898549</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1608178898549</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -430,10 +352,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="533" y="51" key="#Java/0.0.1920.1040@0.0.1920.1040" timestamp="1606515686906" />
-    <state x="694" y="342" key="#Notifications" timestamp="1607955858628">
+    <state x="694" y="342" key="#Notifications" timestamp="1608178933953">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="694" y="342" key="#Notifications/0.0.1920.1040@0.0.1920.1040" timestamp="1607955858628" />
+    <state x="694" y="342" key="#Notifications/0.0.1920.1040@0.0.1920.1040" timestamp="1608178933953" />
     <state x="996" y="365" key="#com.intellij.codeInsight.template.impl.EditVariableDialog" timestamp="1602780235542">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -454,38 +376,38 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="740" y="274" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1608173483474" />
-    <state width="1877" height="180" key="GridCell.Tab.0.bottom" timestamp="1608178768329">
+    <state width="1334" height="180" key="GridCell.Tab.0.bottom" timestamp="1608213340604">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="180" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1608178768329" />
-    <state width="1877" height="180" key="GridCell.Tab.0.center" timestamp="1608178768329">
+    <state width="1334" height="180" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1608213340604" />
+    <state width="1334" height="180" key="GridCell.Tab.0.center" timestamp="1608213340604">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="180" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1608178768329" />
-    <state width="1877" height="180" key="GridCell.Tab.0.left" timestamp="1608178768329">
+    <state width="1334" height="180" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1608213340604" />
+    <state width="1334" height="180" key="GridCell.Tab.0.left" timestamp="1608213340604">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="180" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1608178768329" />
-    <state width="1877" height="180" key="GridCell.Tab.0.right" timestamp="1608178768329">
+    <state width="1334" height="180" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1608213340604" />
+    <state width="1334" height="180" key="GridCell.Tab.0.right" timestamp="1608213340604">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="180" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1608178768329" />
-    <state width="1877" height="348" key="GridCell.Tab.1.bottom" timestamp="1608154374295">
+    <state width="1334" height="180" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1608213340604" />
+    <state width="1877" height="348" key="GridCell.Tab.1.bottom" timestamp="1608178997184">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="348" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1608154374295" />
-    <state width="1877" height="348" key="GridCell.Tab.1.center" timestamp="1608154374295">
+    <state width="1877" height="348" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1608178997184" />
+    <state width="1877" height="348" key="GridCell.Tab.1.center" timestamp="1608178997184">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="348" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1608154374295" />
-    <state width="1877" height="348" key="GridCell.Tab.1.left" timestamp="1608154374295">
+    <state width="1877" height="348" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1608178997184" />
+    <state width="1877" height="348" key="GridCell.Tab.1.left" timestamp="1608178997184">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="348" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1608154374295" />
-    <state width="1877" height="348" key="GridCell.Tab.1.right" timestamp="1608154374295">
+    <state width="1877" height="348" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1608178997184" />
+    <state width="1877" height="348" key="GridCell.Tab.1.right" timestamp="1608178997184">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="348" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1608154374295" />
+    <state width="1877" height="348" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1608178997184" />
     <state x="184" y="85" key="MergeDialog" timestamp="1607427464967">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -502,10 +424,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="92" y="92" width="1736" height="856" key="ShowDiffWithBranchDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1606516011967" />
-    <state x="540" y="286" key="Vcs.Push.Dialog.v2" timestamp="1608082349109">
+    <state x="540" y="286" key="Vcs.Push.Dialog.v2" timestamp="1608178919109">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="540" y="286" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1608082349109" />
+    <state x="540" y="286" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1608178919109" />
     <state x="685" y="412" width="603" height="217" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD" timestamp="1608077637866">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

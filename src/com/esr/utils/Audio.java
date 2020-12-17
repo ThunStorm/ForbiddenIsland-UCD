@@ -17,10 +17,19 @@ public enum Audio {
     BGM("Bgm.wav"),
     TTO("3-2-1.wav"),
     GO("Go.wav"),
+    FLOOD("FloodTiles.wav"),
+    CAPTURE("Capture.wav"),
+    SHOREUP("ShoreUp.wav"),
+    PASSTO("PassTo.wav"),
+    MOVETO("MoveTo.wav"),
+    LIFTOFF("LiftOff"),
     PLAYER1("Player 1.wav"),
     PLAYER2("Player 2.wav"),
     PLAYER3("Player 3.wav"),
     PLAYER4("Player 4.wav"),
+    DISCARD("Discard.wav"),
+    NEXT("Next.wav"),
+    WIN("Wins!.wav"),
     FAILURE("Failure.wav");
 
     private String name;
