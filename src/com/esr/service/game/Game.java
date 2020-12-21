@@ -6,6 +6,7 @@ import com.esr.gui.listener.DataListener;
 import com.esr.gui.updater.LogAgent;
 import com.esr.gui.updater.UpdaterAgent;
 import com.esr.service.game.component.adventurer.Engineer;
+import com.esr.service.game.component.cards.TreasureFigurines;
 import com.esr.service.game.data.Block;
 import com.esr.utils.Audio;
 import com.esr.utils.Constant;
@@ -95,13 +96,15 @@ public class Game {
 
         // Discard Stage
         if (GameData.getAdventurers()[roundNum].getHandCards().size() + GameData.getDisplayedTreasureCard().size() > 5) {
-            LogAgent.logMessenger("You have more than 5 cards, please select all the cards you would like to discard and press [Discard]!");
+            LogAgent.logMessenger("You have more than 5 cards, please select all the cards you would like to keep and press [Discard]!");
             GameData.resetCardsInRound();
             return;
         }
         else {
             GameData.getAdventurers()[roundNum].getHandCards().addAll(GameData.getDisplayedTreasureCard());
             GameData.getDisplayedTreasureCard().clear();
+            GameData.SelectPawn(-1);
+            GameData.resetCardsInRound();
             UpdaterAgent.getTreasureUpdater().guiUpdate();
             UpdaterAgent.getPlayerUpdater().guiUpdate();
         }

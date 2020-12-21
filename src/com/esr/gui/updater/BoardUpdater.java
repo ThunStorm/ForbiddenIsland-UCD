@@ -57,7 +57,7 @@ public class BoardUpdater implements IUpdater {
                         new TwoLayeredIcon(new ImageIcon(CommonUtils.getImage("/Pawns/"
                                 + Map.adventurerMatcher.get(GameData.getBoard().getTile(GameData.getAdventurers()[i].getX(),GameData.getAdventurers()[i].getY()).getPlayerOnBoard().get(j))
                                 + ".png", Constant.TILE_WIDTH, Constant.TILE_HEIGHT)),
-                                BoardPanel.tileCards.get(GameData.getAdventurers()[i].getPos()).getIcon(), j));
+                                BoardPanel.tileCards.get(GameData.getAdventurers()[i].getPos()).getIcon(), j*6));
             }
         }
     }

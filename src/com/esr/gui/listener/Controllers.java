@@ -9,11 +9,11 @@ import com.esr.service.game.component.adventurer.Adventurer;
 import com.esr.service.game.component.adventurer.Engineer;
 import com.esr.service.game.component.cards.TreasureFigurines;
 import com.esr.service.game.data.Block;
+import com.esr.service.game.data.TileStatus;
 import com.esr.utils.Audio;
 import com.esr.utils.Constant;
 import com.esr.utils.Map;
 
-import javax.swing.plaf.synth.SynthEditorPaneUI;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Iterator;
@@ -27,7 +27,7 @@ import java.util.Iterator;
 public class Controllers {
     public Controllers() {
         MoveToController();
-        LiftOffController();
+        SpecialActionController();
         ShoreUpController();
         PassToController();
         CaptureController();
@@ -51,30 +51,8 @@ public class Controllers {
         });
     }
 
-    private void LiftOffController(){
-        ConsolePanel.consoleButtons.get(2).addActionListener(e -> {
-            LogAgent.logMessenger("Lift Off");
-            int idx14 = GameData.getTilesArray().indexOf(14);
-            Block block14 = GameData.getBoard().getTile(Map.coordinatesMatcher.get(idx14)[0],Map.coordinatesMatcher.get(idx14)[1]);
-            if (block14.isExist() && block14.getPlayerOnBoard().size() == Game.getNumOfPlayer()){
-                ArrayList<Integer> handCards = new ArrayList<>();
-                ArrayList<TreasureFigurines> figurines = new ArrayList<>();
-                for (Adventurer adventurer : GameData.getAdventurers()){
-                    handCards.addAll(adventurer.getHandCards());
-                    figurines.addAll(adventurer.getCapturedFigurines());
-                }
-                if ((handCards.contains(20) || handCards.contains(21) || handCards.contains(22)) && figurines.size() == 4){
-                    if (Constant.AUDIO_ON_OFF){ Audio.LIFTOFF.Play(); }
-                    Game.GameComplete(true);
-                }
-                else { System.out.println("Lift Off failed"); }
-            }
-            else{ System.out.println("Fool's landing no more exists"); }
-        });
-    }
-
     private void ShoreUpController(){
-        ConsolePanel.consoleButtons.get(3).addActionListener(e -> {
+        ConsolePanel.consoleButtons.get(2).addActionListener(e -> {
             if (Game.getActionCount() < 3){
                 if (GameData.getBoard().isCanShoreUp()){
                     GameData.ShoreUp();
@@ -96,7 +74,7 @@ public class Controllers {
     }
 
     private void PassToController(){
-        ConsolePanel.consoleButtons.get(4).addActionListener(e -> {
+        ConsolePanel.consoleButtons.get(3).addActionListener(e -> {
 //            LogAgent.logMessenger("Pass To");
             if (Game.getActionCount() < 3 && GameData.getSelectedPawn() != -1){
                 if (GameData.getBoard().getTile(GameData.getAdventurers()[Game.getRoundNum()].getX(),GameData.getAdventurers()[Game.getRoundNum()].getY()).CanPassTo(GameData.getAdventurers()[Game.getRoundNum()], GameData.getAdventurers()[GameData.getSelectedPawn()])){
@@ -116,7 +94,7 @@ public class Controllers {
     }
 
     private void CaptureController(){
-        ConsolePanel.consoleButtons.get(5).addActionListener(e -> {
+        ConsolePanel.consoleButtons.get(4).addActionListener(e -> {
 //            LogAgent.logMessenger("Capture");
             ArrayList<Integer> handCards = new ArrayList<>(GameData.getAdventurers()[Game.getRoundNum()].getHandCards());
             int[] treasureCount = {0, 0, 0, 0};
@@ -154,6 +132,67 @@ public class Controllers {
             }
             UpdaterAgent.getPlayerUpdater().guiUpdate();
             UpdaterAgent.getBoardUpdater().guiUpdate();
+        });
+    }
+
+    private void SpecialActionController(){
+        ConsolePanel.consoleButtons.get(5).addActionListener(e -> {
+            LogAgent.logMessenger("Lift Off");
+            int idx14 = GameData.getTilesArray().indexOf(14);
+            Block block14 = GameData.getBoard().getTile(Map.coordinatesMatcher.get(idx14)[0],Map.coordinatesMatcher.get(idx14)[1]);
+            if (GameData.getCardsInRound() != null && !GameData.getCardsInRound().isEmpty() && GameData.getSpecialActionTile()[0]!=-1 && GameData.getSpecialActionTile()[1] != -1){
+                int lastSelect = GameData.getCardsInRound().get(GameData.getCardsInRound().size()-1);
+                //sandbag
+                if (lastSelect == 23 || lastSelect == 24){
+                    Block shoredTile = GameData.getBoard().getTile(GameData.getSpecialActionTile()[0],GameData.getSpecialActionTile()[1]);
+                    if (shoredTile.isExist() && shoredTile.getStatus() == TileStatus.Flooded){
+                        GameData.getBoard().getTile(GameData.getSpecialActionTile()[0],GameData.getSpecialActionTile()[1]).ShoreUp();
+                        GameData.getAdventurers()[Game.getRoundNum()].getHandCards().remove((Integer)lastSelect);
+                        GameData.getTreasureDeck().Discard(lastSelect);
+                        GameData.resetCardsInRound();
+                        UpdaterAgent.getBoardUpdater().guiUpdate();
+                        UpdaterAgent.getPlayerUpdater().guiUpdate();
+                        if(Constant.AUDIO_ON_OFF){
+                            Audio.SHOREUP.Play();
+                        }
+                    }
+                }
+                else if ((lastSelect == 20 || lastSelect == 21 || lastSelect == 22) && GameData.getSelectedPawns().size() != 0){
+                    GameData.getBoard().getTile(GameData.getAdventurers()[Game.getRoundNum()].getX(),GameData.getAdventurers()[Game.getRoundNum()].getY()).MoveOff(GameData.getAdventurers()[Game.getRoundNum()]);
+                    GameData.getAdventurers()[Game.getRoundNum()].setPos(GameData.getSpecialActionTile()[0],GameData.getSpecialActionTile()[1]);
+                    GameData.getBoard().getTile(GameData.getSpecialActionTile()[0],GameData.getSpecialActionTile()[1]).MoveOnto(GameData.getAdventurers()[Game.getRoundNum()].getId());
+                    GameData.getAdventurers()[Game.getRoundNum()].getHandCards().remove((Integer)lastSelect);
+                    GameData.getTreasureDeck().Discard(lastSelect);
+                    for (int pawn : GameData.getSelectedPawns()){
+                        GameData.getBoard().getTile(GameData.getAdventurers()[pawn].getX(),GameData.getAdventurers()[pawn].getY()).MoveOff(GameData.getAdventurers()[pawn]);
+                        GameData.getAdventurers()[pawn].setPos(GameData.getSpecialActionTile()[0],GameData.getSpecialActionTile()[1]);
+                        GameData.getBoard().getTile(GameData.getSpecialActionTile()[0],GameData.getSpecialActionTile()[1]).MoveOnto(GameData.getAdventurers()[pawn].getId());
+                        GameData.getAdventurers()[Game.getRoundNum()].getHandCards().remove((Integer)lastSelect);
+                        GameData.getTreasureDeck().Discard(lastSelect);
+                    }
+                    GameData.SelectPawn(-1);
+                    GameData.resetCardsInRound();
+                    UpdaterAgent.getBoardUpdater().guiUpdate();
+                    UpdaterAgent.getPlayerUpdater().guiUpdate();
+                    if(Constant.AUDIO_ON_OFF){
+                        Audio.LIFTOFF.Play();
+                    }
+                }
+            }
+            else if (block14.isExist() && block14.getPlayerOnBoard().size() == Game.getNumOfPlayer()){
+                ArrayList<Integer> handCards = new ArrayList<>();
+                ArrayList<TreasureFigurines> figurines = new ArrayList<>();
+                for (Adventurer adventurer : GameData.getAdventurers()){
+                    handCards.addAll(adventurer.getHandCards());
+                    figurines.addAll(adventurer.getCapturedFigurines());
+                }
+                if ((handCards.contains(20) || handCards.contains(21) || handCards.contains(22)) && figurines.size() == 4){
+                    if (Constant.AUDIO_ON_OFF){ Audio.LIFTOFF.Play(); }
+                    Game.GameComplete(true);
+                }
+                else { System.out.println("Lift Off failed"); }
+            }
+            else{ System.out.println("Fool's landing no more exists"); }
         });
     }
 

@@ -1,11 +1,8 @@
 package com.esr.service.game;
 
-import com.esr.gui.updater.LogAgent;
-import com.esr.gui.updater.UpdaterAgent;
 import com.esr.service.game.component.adventurer.*;
 import com.esr.service.game.data.*;
 import com.esr.utils.Map;
-import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -28,6 +25,8 @@ public class GameData {
     private static FigurinesData figurinesData;
 //    private static ArrayList<Integer> selectedPlayers;
     private static int selectedPawn = -1;
+    private static ArrayList<Integer>  selectedPawns;
+    private static int[] SpecialActionTile = {-1, -1};
 
     public GameData(int numOfPlayers, int waterLevel) {
         Map.setUpMatchers();
@@ -38,6 +37,7 @@ public class GameData {
         adventurers = new Adventurer[numOfPlayers];
         displayedTreasureCard = new ArrayList<>();
         cardsInRound = new ArrayList<>();
+        selectedPawns = new ArrayList<>();
 
         ArrayList<Integer> playerList = new ArrayList<>();
         for (int i = 0; i < 6; i++) { playerList.add(i); }
@@ -77,6 +77,8 @@ public class GameData {
     }
 
     public static void NextTile(int[] coords){
+        SpecialActionTile[0] = coords[0];
+        SpecialActionTile[1] = coords[1];
         boolean isNearY = ((adventurers[Game.getRoundNum()].getX() == coords[0]) && (Math.abs(adventurers[Game.getRoundNum()].getY() - coords[1]) == 1));
         boolean isNearX = ((adventurers[Game.getRoundNum()].getY() == coords[1]) && (Math.abs(adventurers[Game.getRoundNum()].getX() - coords[0]) == 1));
         boolean isOnTile = ((adventurers[Game.getRoundNum()].getX() == coords[0]) && (adventurers[Game.getRoundNum()].getY() == coords[1]));
@@ -127,8 +129,10 @@ public class GameData {
 
     public static void SelectPawn(int index){
         selectedPawn = index;
+        selectedPawns.add(selectedPawn);
         if (index == -1){
             cardsInRound.clear();
+            selectedPawns.clear();
         }
     }
 
@@ -197,4 +201,11 @@ public class GameData {
         GameData.tiles = tiles;
     }
 
+    public static int[] getSpecialActionTile() {
+        return SpecialActionTile;
+    }
+
+    public static ArrayList<Integer> getSelectedPawns() {
+        return selectedPawns;
+    }
 }

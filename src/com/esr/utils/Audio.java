@@ -22,7 +22,7 @@ public enum Audio {
     SHOREUP("ShoreUp.wav"),
     PASSTO("PassTo.wav"),
     MOVETO("MoveTo.wav"),
-    LIFTOFF("LiftOff"),
+    LIFTOFF("LiftOff.wav"),
     PLAYER1("Player 1.wav"),
     PLAYER2("Player 2.wav"),
     PLAYER3("Player 3.wav"),

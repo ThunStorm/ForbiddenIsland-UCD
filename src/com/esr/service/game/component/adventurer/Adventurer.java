@@ -62,7 +62,7 @@ public abstract class Adventurer {
 
     public void setCapturedFigurines(TreasureFigurines capturedFigurines) {
         this.capturedFigurines.add(capturedFigurines);
-        System.out.println(capturedFigurines);
+//        System.out.println(capturedFigurines);
     }
 
     public ArrayList<TreasureFigurines> getCapturedFigurines() {
