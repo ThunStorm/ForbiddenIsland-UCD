@@ -5,6 +5,7 @@ import com.esr.service.game.component.cards.handcards.TreasureCard;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Iterator;
 
 /**
  * @Description
@@ -45,32 +46,39 @@ public class TreasureDeck {
         CheckAvailability(n);
         NTreasureCards.clear();
         int count = 0;
-        for (int i = 0; i < treasureDeck.size(); i++) {
-            if (treasureDeck.get(0) >= 25 && treasureDeck.get(0) <= 27){
-                Discard(treasureDeck.get(0));
+        Iterator<Integer> iterator = treasureDeck.iterator();
+        while (iterator.hasNext()){
+            int treasureCard = iterator.next();
+            if(treasureCard >= 25 && treasureCard <= 27){
+                Discard(treasureCard);
             }
             else {
-                NTreasureCards.add(treasureDeck.get(0));
-                count ++;
+                NTreasureCards.add(treasureCard);
+                count++;
             }
-            treasureDeck.remove(0);
+            iterator.remove();
             if (count >= n){
                 break;
             }
         }
+//        for (int i = 0; i < treasureDeck.size(); i++) {
+//            if (treasureDeck.get(0) >= 25 && treasureDeck.get(0) <= 27){
+//                Discard(treasureDeck.get(0));
+//            }
+//            else {
+//                NTreasureCards.add(treasureDeck.get(0));
+//                count ++;
+//            }
+//            treasureDeck.remove(0);
+//            if (count >= n){
+//                break;
+//            }
+//        }
         return NTreasureCards;
     }
 
     public void Discard(int treasureID){
         discardPile.add(treasureID);
-    }
-
-// useless
-    public void PutBack(){
-        Collections.shuffle(discardPile);
-        treasureDeck.clear();
-        treasureDeck.addAll(discardPile);
-        discardPile.clear();
     }
 
     private void CheckAvailability(int n){
@@ -80,6 +88,4 @@ public class TreasureDeck {
             discardPile.clear();
         }
     }
-
-    //needed to check the number of the rest of cards
 }

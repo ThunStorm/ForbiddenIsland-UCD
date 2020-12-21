@@ -5,6 +5,7 @@ import com.esr.service.game.GameData;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Iterator;
 
 /**
  * @Description
@@ -42,10 +43,23 @@ public class FloodDeck {
     }
 
     public void Discard(){
-        for (int i = 0; i < displayNum; i++) {
-            discardPile.add(floodDeck.get(0));
-            floodDeck.remove(0);
+        int count = 0;
+        Iterator<Integer> iterator = floodDeck.iterator();
+        while (iterator.hasNext()){
+            int floodCard = iterator.next();
+            if (count < displayNum){
+                discardPile.add(floodCard);
+                iterator.remove();
+                count++;
+            }
+            if( count >= displayNum ){
+                break;
+            }
         }
+//        for (int i = 0; i < displayNum; i++) {
+//            discardPile.add(floodDeck.get(0));
+//            floodDeck.remove(0);
+//        }
     }
 
     public void PutBack2Top(){

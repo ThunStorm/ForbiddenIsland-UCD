@@ -41,10 +41,6 @@ public abstract class Adventurer {
 //        System.out.println(this.x + " " + this.y);
     }
 
-    public int getPos() {
-        return Map.numberMatcher.get(Arrays.toString(new int[]{this.x, this.y}));
-    }
-
     public void setMove(int x1, int y1) {
         this.x1 = x1;
         this.y1 = y1;
@@ -62,7 +58,6 @@ public abstract class Adventurer {
 
     public void setCapturedFigurines(TreasureFigurines capturedFigurines) {
         this.capturedFigurines.add(capturedFigurines);
-//        System.out.println(capturedFigurines);
     }
 
     public ArrayList<TreasureFigurines> getCapturedFigurines() {
@@ -85,10 +80,6 @@ public abstract class Adventurer {
         return id;
     }
 
-    public int getOrder() {
-        return order;
-    }
-
     public int getX() {
         return x;
     }
@@ -107,5 +98,9 @@ public abstract class Adventurer {
 
     public String getName() {
         return name;
+    }
+
+    public int getPos() {
+        return Map.numberMatcher.get(Arrays.toString(new int[]{this.x, this.y}));
     }
 }

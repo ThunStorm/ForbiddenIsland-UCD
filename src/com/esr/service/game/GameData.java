@@ -22,7 +22,7 @@ public class GameData {
     private static ArrayList<Integer> tiles;
     private static ArrayList<Integer> displayedTreasureCard;
     private static ArrayList<Integer> cardsInRound;
-    private static FigurinesData figurinesData;
+//    private static FigurinesData figurinesData;
 //    private static ArrayList<Integer> selectedPlayers;
     private static int selectedPawn = -1;
     private static ArrayList<Integer>  selectedPawns;
@@ -33,7 +33,7 @@ public class GameData {
         floodDeck = new FloodDeck();
         treasureDeck = new TreasureDeck();
         waterMeter = new WaterMeter(waterLevel);
-        figurinesData = new FigurinesData();
+//        figurinesData = new FigurinesData();
         adventurers = new Adventurer[numOfPlayers];
         displayedTreasureCard = new ArrayList<>();
         cardsInRound = new ArrayList<>();
@@ -170,7 +170,6 @@ public class GameData {
         displayedTreasureCard.addAll(treasureDeck.getNTreasureCards(2));
     }
 
-
     public static BoardData getBoard() { return board; }
 
     public static ArrayList<Integer> getTilesArray(){ return tiles; }
@@ -195,11 +194,7 @@ public class GameData {
 
     public static WaterMeter getWaterMeter() { return waterMeter; }
 
-    public static FigurinesData getFigurinesData() { return figurinesData; }
-
-    public static void setTiles(ArrayList<Integer> tiles) {
-        GameData.tiles = tiles;
-    }
+//    public static FigurinesData getFigurinesData() { return figurinesData; }
 
     public static int[] getSpecialActionTile() {
         return SpecialActionTile;

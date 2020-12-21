@@ -166,6 +166,7 @@ public class Controllers {
                         }
                     }
                 }
+                // fly to
                 else if ((lastSelect == 20 || lastSelect == 21 || lastSelect == 22) && GameData.getSelectedPawns().size() != 0){
                     GameData.getBoard().getTile(GameData.getAdventurers()[Game.getRoundNum()].getX(),GameData.getAdventurers()[Game.getRoundNum()].getY()).MoveOff(GameData.getAdventurers()[Game.getRoundNum()]);
                     GameData.getAdventurers()[Game.getRoundNum()].setPos(GameData.getSpecialActionTile()[0],GameData.getSpecialActionTile()[1]);
@@ -188,6 +189,7 @@ public class Controllers {
                     }
                 }
             }
+            // lift off
             else if (block14.isExist() && block14.getPlayerOnBoard().size() == Game.getNumOfPlayer()){
                 ArrayList<Integer> handCards = new ArrayList<>();
                 ArrayList<TreasureFigurines> figurines = new ArrayList<>();
