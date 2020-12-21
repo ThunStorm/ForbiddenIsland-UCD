@@ -28,24 +28,14 @@
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2b919aec-5efd-45b2-b528-0ea4fbe9c6b5" name="Default Changelist" comment="CHANGE REMOVE TO ITERATOR.REMOVE IN LOOP AND FIX LOGIC">
+    <list default="true" id="2b919aec-5efd-45b2-b528-0ea4fbe9c6b5" name="Default Changelist" comment="SPECIAL ACTIONS ADDED">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/FI-game-UCD-IDEA/com/esr/gui/console/ConsolePanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/FI-game-UCD-IDEA/com/esr/gui/console/ConsolePanel.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/FI-game-UCD-IDEA/com/esr/gui/updater/PlayerUpdater.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/FI-game-UCD-IDEA/com/esr/gui/updater/PlayerUpdater.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/FI-game-UCD-IDEA/com/esr/gui/widgets/TwoLayeredIcon.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/FI-game-UCD-IDEA/com/esr/gui/widgets/TwoLayeredIcon.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/FI-game-UCD-IDEA/com/esr/service/game/Game.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/FI-game-UCD-IDEA/com/esr/service/game/Game.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/FI-game-UCD-IDEA/com/esr/service/game/component/adventurer/Adventurer.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/FI-game-UCD-IDEA/com/esr/service/game/component/adventurer/Adventurer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/FI-game-UCD-IDEA/com/esr/gui/listener/Controllers.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/FI-game-UCD-IDEA/com/esr/gui/listener/Controllers.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/FI-game-UCD-IDEA/com/esr/service/game/data/Block.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/FI-game-UCD-IDEA/com/esr/service/game/data/Block.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/FI-game-UCD-IDEA/com/esr/service/game/data/BoardData.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/FI-game-UCD-IDEA/com/esr/service/game/data/BoardData.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/esr/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/esr/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/esr/gui/console/ConsolePanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/esr/gui/console/ConsolePanel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/esr/gui/listener/Controllers.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/esr/gui/listener/Controllers.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/esr/gui/updater/BoardUpdater.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/esr/gui/updater/BoardUpdater.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/esr/gui/updater/PlayerUpdater.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/esr/gui/updater/PlayerUpdater.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/esr/gui/widgets/TwoLayeredIcon.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/esr/gui/widgets/TwoLayeredIcon.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/esr/service/game/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/esr/service/game/Game.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/esr/service/game/GameData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/esr/service/game/GameData.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/esr/service/game/component/adventurer/Adventurer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/esr/service/game/component/adventurer/Adventurer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/esr/utils/Audio.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/esr/utils/Audio.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/esr/service/game/data/Block.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/esr/service/game/data/Block.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/esr/service/game/data/BoardData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/esr/service/game/data/BoardData.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -246,7 +236,7 @@
       <workItem from="1608121784872" duration="51904000" />
       <workItem from="1608211692975" duration="3367000" />
       <workItem from="1608239352749" duration="2572000" />
-      <workItem from="1608549503029" duration="21330000" />
+      <workItem from="1608549503029" duration="25884000" />
     </task>
     <task id="LOCAL-00001" summary="Build DataLayer">
       <created>1607400232334</created>
@@ -346,7 +336,14 @@
       <option name="project" value="LOCAL" />
       <updated>1608561008248</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="SPECIAL ACTIONS ADDED">
+      <created>1608577919319</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1608577919319</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -377,7 +374,8 @@
     <MESSAGE value="Build Game, TODO list in Main" />
     <MESSAGE value="Audio Added" />
     <MESSAGE value="CHANGE REMOVE TO ITERATOR.REMOVE IN LOOP AND FIX LOGIC" />
-    <option name="LAST_COMMIT_MESSAGE" value="CHANGE REMOVE TO ITERATOR.REMOVE IN LOOP AND FIX LOGIC" />
+    <MESSAGE value="SPECIAL ACTIONS ADDED" />
+    <option name="LAST_COMMIT_MESSAGE" value="SPECIAL ACTIONS ADDED" />
   </component>
   <component name="WindowStateProjectService">
     <state x="586" y="198" key="#Inspections" timestamp="1607907503160">
@@ -412,22 +410,22 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="740" y="274" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1608173483474" />
-    <state width="1877" height="179" key="GridCell.Tab.0.bottom" timestamp="1608577268164">
+    <state width="1877" height="179" key="GridCell.Tab.0.bottom" timestamp="1608581972301">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="179" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1608577268164" />
-    <state width="1877" height="179" key="GridCell.Tab.0.center" timestamp="1608577268164">
+    <state width="1877" height="179" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1608581972301" />
+    <state width="1877" height="179" key="GridCell.Tab.0.center" timestamp="1608581972301">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="179" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1608577268164" />
-    <state width="1877" height="179" key="GridCell.Tab.0.left" timestamp="1608577268164">
+    <state width="1877" height="179" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1608581972301" />
+    <state width="1877" height="179" key="GridCell.Tab.0.left" timestamp="1608581972301">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="179" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1608577268164" />
-    <state width="1877" height="179" key="GridCell.Tab.0.right" timestamp="1608577268164">
+    <state width="1877" height="179" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1608581972301" />
+    <state width="1877" height="179" key="GridCell.Tab.0.right" timestamp="1608581972301">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="179" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1608577268164" />
+    <state width="1877" height="179" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1608581972301" />
     <state width="1877" height="348" key="GridCell.Tab.1.bottom" timestamp="1608178997184">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -460,10 +458,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="92" y="92" width="1736" height="856" key="ShowDiffWithBranchDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1606516011967" />
-    <state x="540" y="286" key="Vcs.Push.Dialog.v2" timestamp="1608561005389">
+    <state x="540" y="286" key="Vcs.Push.Dialog.v2" timestamp="1608577922228">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="540" y="286" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1608561005389" />
+    <state x="540" y="286" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1608577922228" />
     <state x="685" y="412" width="603" height="217" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD" timestamp="1608077637866">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

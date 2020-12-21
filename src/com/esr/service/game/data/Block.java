@@ -2,7 +2,6 @@ package com.esr.service.game.data;
 
 import com.esr.service.game.Game;
 import com.esr.service.game.component.adventurer.Adventurer;
-import com.sun.xml.internal.bind.v2.TODO;
 
 import java.util.ArrayList;
 
@@ -16,6 +15,8 @@ public class Block {
     private int tileId = -1;
     private TileStatus status;
     private String img;
+    private String imgFolder;
+    private String imgFile;
     private boolean isExist;
     private ArrayList<Integer> adventurersOnBoard;
     private boolean isCaptured = false;
@@ -25,7 +26,9 @@ public class Block {
         this.adventurersOnBoard = new ArrayList<>();
         this.tileId = tileId;
         this.status = TileStatus.Normal;
-        this.img = "/Tiles/" + tileId + ".png";
+        this.imgFolder = "/Tiles/";
+        this.imgFile = tileId + ".png";
+        this.img = imgFolder + imgFile;
         this.adventurersOnBoard.add(playerID);
         this.isExist = isExist;
     }
@@ -34,7 +37,9 @@ public class Block {
         this.adventurersOnBoard = new ArrayList<>();
         this.tileId = tileId;
         this.status = TileStatus.Normal;
-        this.img = "/Tiles/" + tileId + ".png";
+        this.imgFolder = "/Tiles/";
+        this.imgFile = tileId + ".png";
+        this.img = imgFolder + imgFile;
         this.isExist = isExist;
     }
 
@@ -47,14 +52,15 @@ public class Block {
     }
 
     public void MoveOff(Adventurer adventurer){
-        int playerOut = adventurersOnBoard.get(adventurersOnBoard.indexOf(adventurer.getId()));
+//        int playerOut = adventurersOnBoard.get(adventurersOnBoard.indexOf(adventurer.getId()));
         adventurersOnBoard.remove((Integer) adventurer.getId());
     }
 
     public void ShoreUp() {
         if (status == TileStatus.Flooded){
             status = TileStatus.Normal;
-            this.img = "/Tiles/" + tileId + ".png";
+            this.imgFolder = "/Tiles/";
+            this.img = imgFolder + imgFile;
         }
         else {
             System.out.println("ERROR! Tile is not flooded");
@@ -68,7 +74,8 @@ public class Block {
     public boolean SinkTile() {
         if (status == TileStatus.Normal){
             status = TileStatus.Flooded;
-            img = "/SubmersedTiles/" + tileId + ".png";
+            imgFolder = "/SubmersedTiles/";
+            img = imgFolder + imgFile;
             return false;
         }
         else if (status == TileStatus.Flooded){
@@ -89,21 +96,24 @@ public class Block {
 
     public void setCaptured(){
         isCaptured = true;
-        if (status == TileStatus.Normal){
-            this.floodedOffset = tileId + 24;
-            this.img = "/Tiles/" + this.floodedOffset + ".png";
-        }
-        else if (status == TileStatus.Flooded){
-            this.floodedOffset = tileId + 24;
-            this.img = "/SubmersedTiles/" + this.floodedOffset + ".png";
-        }
-        else {
-            this.img = null;
-        }
+        this.imgFile = tileId + 24 + ".png";
+        this.img = imgFolder + imgFile;
+//        if (status == TileStatus.Normal){
+//            this.imgFolder = "/Tiles/";
+//            this.imgFile = (tileId + 24) + ".png";
+//            this.img = imgFolder + imgFile;
+//        }
+//        else if (status == TileStatus.Flooded){
+//            this.floodedOffset = tileId + 24;
+//            this.img = "/SubmersedTiles/" + this.floodedOffset + ".png";
+//        }
+//        else {
+//            this.img = null;
+//        }
     }
 
-    public boolean isCaptured() {
-        return isCaptured;
+    public boolean isUnCaptured() {
+        return !isCaptured;
     }
 
     public int getTileId() {

@@ -96,42 +96,51 @@ public class Controllers {
     private void CaptureController(){
         ConsolePanel.consoleButtons.get(4).addActionListener(e -> {
 //            LogAgent.logMessenger("Capture");
-            ArrayList<Integer> handCards = new ArrayList<>(GameData.getAdventurers()[Game.getRoundNum()].getHandCards());
-            int[] treasureCount = {0, 0, 0, 0};
-            for (int handCard : handCards){
-                if (handCard >= 0 && handCard <= 4){ treasureCount[0]++; }
-                else if (handCard >= 5 && handCard <= 9){ treasureCount[1]++;}
-                else if (handCard >= 10 && handCard <= 14){ treasureCount[2]++;}
-                else if (handCard >= 15 && handCard <= 19){ treasureCount[3]++;}
-            }
-            for (int i = 0; i < treasureCount.length; i++) {
-                if (treasureCount[i] == 4){
-                    Block block = GameData.getBoard().getTile(GameData.getAdventurers()[Game.getRoundNum()].getX(),GameData.getAdventurers()[Game.getRoundNum()].getY());
-                    if (block.getTileId() == 2*i+1 || block.getTileId() == 2*i+2){
-                        GameData.getBoard().getTile(GameData.getAdventurers()[Game.getRoundNum()].getX(),GameData.getAdventurers()[Game.getRoundNum()].getY()).setCaptured();
-                        for(TreasureFigurines figurine : TreasureFigurines.values()){
-                            if (figurine.ordinal() == i){
-                                GameData.getAdventurers()[Game.getRoundNum()].setCapturedFigurines(figurine);
-                                Iterator<Integer> iterator = GameData.getAdventurers()[Game.getRoundNum()].getHandCards().iterator();
-                                while (iterator.hasNext()){
-                                    Integer handCardNo = iterator.next();
-                                    if(handCardNo >= i * 5 && handCardNo <= i * 5 + 4){
-                                        iterator.remove();
-                                        if (Constant.AUDIO_ON_OFF){ Audio.CAPTURE.Play(); }
-                                        GameData.getTreasureDeck().Discard(handCardNo);
+            if (Game.getActionCount() < 3) {
+                ArrayList<Integer> handCards = new ArrayList<>(GameData.getAdventurers()[Game.getRoundNum()].getHandCards());
+                int[] treasureCount = {0, 0, 0, 0};
+                for (int handCard : handCards) {
+                    if (handCard >= 0 && handCard <= 4) {
+                        treasureCount[0]++;
+                    } else if (handCard >= 5 && handCard <= 9) {
+                        treasureCount[1]++;
+                    } else if (handCard >= 10 && handCard <= 14) {
+                        treasureCount[2]++;
+                    } else if (handCard >= 15 && handCard <= 19) {
+                        treasureCount[3]++;
+                    }
+                }
+                for (int i = 0; i < treasureCount.length; i++) {
+                    if (treasureCount[i] == 4) {
+                        Block block = GameData.getBoard().getTile(GameData.getAdventurers()[Game.getRoundNum()].getX(), GameData.getAdventurers()[Game.getRoundNum()].getY());
+                        if (block.getTileId() == 2 * i + 1 || block.getTileId() == 2 * i + 2) {
+                            GameData.getBoard().getTile(GameData.getAdventurers()[Game.getRoundNum()].getX(), GameData.getAdventurers()[Game.getRoundNum()].getY()).setCaptured();
+                            for (TreasureFigurines figurine : TreasureFigurines.values()) {
+                                if (figurine.ordinal() == i) {
+                                    GameData.getAdventurers()[Game.getRoundNum()].setCapturedFigurines(figurine);
+                                    Iterator<Integer> iterator = GameData.getAdventurers()[Game.getRoundNum()].getHandCards().iterator();
+                                    while (iterator.hasNext()) {
+                                        Integer handCardNo = iterator.next();
+                                        if (handCardNo >= i * 5 && handCardNo <= i * 5 + 4) {
+                                            iterator.remove();
+                                            if (Constant.AUDIO_ON_OFF) {
+                                                Audio.CAPTURE.Play();
+                                            }
+                                            GameData.getTreasureDeck().Discard(handCardNo);
+                                        }
                                     }
                                 }
                             }
+                            GameData.getBoard().getTile(Map.coordinatesMatcher.get(GameData.getTilesArray().indexOf(2 * i + 1))[0],
+                                    Map.coordinatesMatcher.get(GameData.getTilesArray().indexOf(2 * i + 1))[1]).setCaptured();
+                            GameData.getBoard().getTile(Map.coordinatesMatcher.get(GameData.getTilesArray().indexOf(2 * i + 2))[0],
+                                    Map.coordinatesMatcher.get(GameData.getTilesArray().indexOf(2 * i + 2))[1]).setCaptured();
                         }
-                        GameData.getBoard().getTile(Map.coordinatesMatcher.get(GameData.getTilesArray().indexOf(2*i+1))[0],
-                                Map.coordinatesMatcher.get(GameData.getTilesArray().indexOf(2*i+1))[1]).setCaptured();
-                        GameData.getBoard().getTile(Map.coordinatesMatcher.get(GameData.getTilesArray().indexOf(2*i+2))[0],
-                                Map.coordinatesMatcher.get(GameData.getTilesArray().indexOf(2*i+2))[1]).setCaptured();
                     }
                 }
+                UpdaterAgent.getPlayerUpdater().guiUpdate();
+                UpdaterAgent.getBoardUpdater().guiUpdate();
             }
-            UpdaterAgent.getPlayerUpdater().guiUpdate();
-            UpdaterAgent.getBoardUpdater().guiUpdate();
         });
     }
 

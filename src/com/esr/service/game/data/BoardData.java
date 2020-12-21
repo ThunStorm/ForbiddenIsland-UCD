@@ -73,25 +73,25 @@ public class BoardData {
                 switch (tileMap[i][j].getTileId()) {
                     case 1:
                     case 2:
-                        if(!tileMap[i][j].isExist() && !tileMap[i][j].isCaptured()){
+                        if(!tileMap[i][j].isExist() && tileMap[i][j].isUnCaptured()){
                             isShrinesFlooded[0]--;
                         }
                         break;
                     case 3:
                     case 4:
-                        if(!tileMap[i][j].isExist() && !tileMap[i][j].isCaptured()){
+                        if(!tileMap[i][j].isExist() && tileMap[i][j].isUnCaptured()){
                             isShrinesFlooded[1]--;
                         }
                         break;
                     case 5:
                     case 6:
-                        if(!tileMap[i][j].isExist() && !tileMap[i][j].isCaptured()){
+                        if(!tileMap[i][j].isExist() && tileMap[i][j].isUnCaptured()){
                             isShrinesFlooded[2]--;
                         }
                         break;
                     case 7:
                     case 8:
-                        if(!tileMap[i][j].isExist() && !tileMap[i][j].isCaptured()){
+                        if(!tileMap[i][j].isExist() && tileMap[i][j].isUnCaptured()){
                             isShrinesFlooded[3]--;
                         }
                         break;
