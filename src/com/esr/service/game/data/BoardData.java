@@ -66,7 +66,6 @@ public class BoardData {
     public boolean isCanShoreUp(){ return canShoreUp;}
     public void setCanShoreUp(boolean canShoreUp){this.canShoreUp = canShoreUp;}
 
-
     public boolean isShrinesFlooded(){
         int[] isShrinesFlooded = {1, 1, 1, 1};
         for (int i = 0; i < 6; i++) {

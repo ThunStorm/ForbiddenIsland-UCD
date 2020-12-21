@@ -19,6 +19,7 @@ public class Block {
     private boolean isExist;
     private ArrayList<Integer> adventurersOnBoard;
     private boolean isCaptured = false;
+    private int floodedOffset = 0;
 
     public Block(int tileId, int playerID, boolean isExist) {
         this.adventurersOnBoard = new ArrayList<>();
@@ -76,6 +77,7 @@ public class Block {
             isExist = false;
             if(tileId == 14){
                 Game.GameComplete(false);
+                System.out.println("Fool's landing is flooded!");
             }
             return true;
         }
@@ -88,13 +90,15 @@ public class Block {
     public void setCaptured(){
         isCaptured = true;
         if (status == TileStatus.Normal){
-            this.img = "/Tiles/" + (tileId+24) + ".png";
+            this.floodedOffset = tileId + 24;
+            this.img = "/Tiles/" + this.floodedOffset + ".png";
         }
         else if (status == TileStatus.Flooded){
-            img = "/SubmersedTiles/" + (tileId+24) + ".png";
+            this.floodedOffset = tileId + 24;
+            this.img = "/SubmersedTiles/" + this.floodedOffset + ".png";
         }
         else {
-            img = null;
+            this.img = null;
         }
     }
 

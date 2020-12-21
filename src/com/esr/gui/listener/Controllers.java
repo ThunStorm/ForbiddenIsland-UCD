@@ -16,6 +16,7 @@ import com.esr.utils.Map;
 import javax.swing.plaf.synth.SynthEditorPaneUI;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Iterator;
 
 /**
  * @Description
@@ -133,10 +134,11 @@ public class Controllers {
                         for(TreasureFigurines figurine : TreasureFigurines.values()){
                             if (figurine.ordinal() == i){
                                 GameData.getAdventurers()[Game.getRoundNum()].setCapturedFigurines(figurine);
-                                for (int handCardNo : GameData.getAdventurers()[Game.getRoundNum()].getHandCards()){
-                                    //TODO Carefully use remove https://www.cnblogs.com/dolphin0520/p/3933551.html
+                                Iterator<Integer> iterator = GameData.getAdventurers()[Game.getRoundNum()].getHandCards().iterator();
+                                while (iterator.hasNext()){
+                                    Integer handCardNo = iterator.next();
                                     if(handCardNo >= i * 5 && handCardNo <= i * 5 + 4){
-                                        GameData.getAdventurers()[Game.getRoundNum()].getHandCards().remove((Integer)handCardNo);
+                                        iterator.remove();
                                         if (Constant.AUDIO_ON_OFF){ Audio.CAPTURE.Play(); }
                                         GameData.getTreasureDeck().Discard(handCardNo);
                                     }

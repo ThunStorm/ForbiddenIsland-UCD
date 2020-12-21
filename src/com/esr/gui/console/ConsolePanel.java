@@ -30,7 +30,7 @@ public class ConsolePanel {
         this.logs = LogAgent.logs;
         consoleButtons.add(new JButton("Start"));
         consoleButtons.add(new JButton("Move To"));
-        consoleButtons.add(new JButton("Lift Off"));
+        consoleButtons.add(new JButton("Special Card"));
         consoleButtons.add(new JButton("Shore Up"));
         consoleButtons.add(new JButton("Pass To"));
         consoleButtons.add(new JButton("Capture"));

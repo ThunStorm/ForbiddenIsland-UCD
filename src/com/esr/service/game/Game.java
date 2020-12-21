@@ -11,6 +11,8 @@ import com.esr.utils.Audio;
 import com.esr.utils.Constant;
 import com.sun.xml.internal.bind.v2.TODO;
 
+import java.util.Iterator;
+
 /**
  * @Description
  * @Author William
@@ -55,19 +57,28 @@ public class Game {
 //        LogAgent.logMessenger(String.valueOf(GameData.getDisplayedTreasureCard()));
         UpdaterAgent.getTreasureUpdater().guiUpdate();
 
-        //TODO deal with remove
-        for (int i = 0; i < GameData.getDisplayedTreasureCard().size(); i++) {
-            if (GameData.getDisplayedTreasureCard().get(i) == 25
-                    || GameData.getDisplayedTreasureCard().get(i) == 26
-                    || GameData.getDisplayedTreasureCard().get(i) == 27){
+
+        Iterator<Integer> iterator = GameData.getDisplayedTreasureCard().iterator();
+        while (iterator.hasNext()){
+            Integer treasureID = iterator.next();
+            if (treasureID == 25 || treasureID == 26 || treasureID == 27){
                 GameData.getWaterMeter().WaterRise();
                 GameData.getFloodDeck().PutBack2Top();
-                GameData.getTreasureDeck().Discard(GameData.getDisplayedTreasureCard().get(i));
-                GameData.getDisplayedTreasureCard().remove(i);
-//                LogAgent.logMessenger("After discard " + String.valueOf(GameData.getDisplayedTreasureCard()));
+                GameData.getTreasureDeck().Discard(treasureID);
+                iterator.remove();
             }
         }
-
+//        for (int i = 0; i < GameData.getDisplayedTreasureCard().size(); i++) {
+//            if (GameData.getDisplayedTreasureCard().get(i) == 25
+//                    || GameData.getDisplayedTreasureCard().get(i) == 26
+//                    || GameData.getDisplayedTreasureCard().get(i) == 27){
+//                GameData.getWaterMeter().WaterRise();
+//                GameData.getFloodDeck().PutBack2Top();
+//                GameData.getTreasureDeck().Discard(GameData.getDisplayedTreasureCard().get(i));
+//                GameData.getDisplayedTreasureCard().remove(i);
+////                LogAgent.logMessenger("After discard " + String.valueOf(GameData.getDisplayedTreasureCard()));
+//            }
+//        }
         UpdaterAgent.getBoardUpdater().guiUpdate();
         UpdaterAgent.getTreasureUpdater().guiUpdate();
         UpdaterAgent.getPlayerUpdater().guiUpdate();
@@ -77,7 +88,6 @@ public class Game {
         GameData.getBoard().sinkTiles(GameData.getFloodDeck().getNFlood());
         GameData.getFloodDeck().Discard();
         if (Constant.AUDIO_ON_OFF){ Audio.FLOOD.Play(); }
-
         stage23Done = true;
     }
 
@@ -99,6 +109,7 @@ public class Game {
         // check win or lose
         if (GameData.getBoard().isShrinesFlooded()){
             GameComplete(false);
+            return;
         }
 
 
@@ -116,7 +127,7 @@ public class Game {
     }
 
     public static void GameComplete(boolean isWin) {
-//        TODO More Actions e.g. disable buttons.
+// TODO More Actions e.g. disable buttons.
         if (isWin){
             System.out.println("Game Success");
             if (Constant.AUDIO_ON_OFF){ Audio.WIN.Play(); }

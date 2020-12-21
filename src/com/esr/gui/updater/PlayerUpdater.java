@@ -39,8 +39,9 @@ public class PlayerUpdater implements IUpdater {
                 GamePanel.playerPawnList.get(i).setIcon(
                         new TwoLayeredIcon( new ImageIcon(CommonUtils.getImage("/Figurines/"
                                 + GameData.getAdventurers()[i].getCapturedFigurines().get(k).name() + ".png")),
-                                new ImageIcon(CommonUtils.getImage(GameData.getAdventurers()[i].getPawnImg())), k));
+                                GamePanel.playerPawnList.get(i).getIcon(), -2*k));
             }
+
             for (int j = 0; j < GameData.getAdventurers()[i].getHandCards().size(); j++){
                 GamePanel.playerHandCards.get(i).get(j).setIcon(new ImageIcon(CommonUtils.getImage("/TreasureCards/"
                         + GameData.getAdventurers()[i].getHandCards().get(j) + ".png", Constant.ADVENTURER_WIDTH, Constant.ADVENTURER_HEIGHT)));
