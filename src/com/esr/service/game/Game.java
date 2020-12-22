@@ -144,83 +144,90 @@ public class Game {
 
                 int x = GameData.getAdventurers()[roundNum].getX();
                 int y = GameData.getAdventurers()[roundNum].getY();
-                if(x == 0){
-                    if (!GameData.getBoard().getTile(x + 1, y).isExist() && !GameData.getBoard().getTile(x, y - 1).isExist() && !GameData.getBoard().getTile(x, y + 1).isExist()) {
-                        Game.GameComplete(false);
-                        LogAgent.logMessenger("No adjacent tile to swim to");
-                        return;
+                if (!GameData.getAdventurers()[roundNum].getName().equals("Pilot")){
+                    if(x == 0){
+                        if (!GameData.getBoard().getTile(x + 1, y).isExist() && !GameData.getBoard().getTile(x, y - 1).isExist() && !GameData.getBoard().getTile(x, y + 1).isExist()) {
+                            Game.GameComplete(false);
+                            LogAgent.logMessenger("No adjacent tile to swim to");
+                            return;
+                        }
+                        else if (GameData.getAdventurers()[roundNum].getName().equals("Explorer") && !GameData.getBoard().getTile(x + 1, y).isExist()
+                                && !GameData.getBoard().getTile(x, y - 1).isExist() && !GameData.getBoard().getTile(x, y + 1).isExist()
+                                && !GameData.getBoard().getTile(x + 1, y - 1).isExist() && !GameData.getBoard().getTile(x + 1, y + 1).isExist()) {
+                            Game.GameComplete(false);
+                            LogAgent.logMessenger("No adjacent tile to swim to");
+                            return;
+                        }
+
                     }
-                    if (GameData.getAdventurers()[roundNum].getName().equals("Explorer") && !GameData.getBoard().getTile(x + 1, y).isExist()
-                            && !GameData.getBoard().getTile(x, y - 1).isExist() && !GameData.getBoard().getTile(x, y + 1).isExist()
-                            && !GameData.getBoard().getTile(x + 1, y - 1).isExist() && !GameData.getBoard().getTile(x + 1, y + 1).isExist()) {
-                        Game.GameComplete(false);
-                        LogAgent.logMessenger("No adjacent tile to swim to");
-                        return;
+                    else if (x == 5){
+                        if (!GameData.getBoard().getTile(x - 1, y).isExist() && !GameData.getBoard().getTile(x, y - 1).isExist() && !GameData.getBoard().getTile(x, y + 1).isExist()) {
+                            Game.GameComplete(false);
+                            LogAgent.logMessenger("No adjacent tile to swim to");
+                            return;
+                        }
+                        else if (GameData.getAdventurers()[roundNum].getName().equals("Explorer")
+                                && !GameData.getBoard().getTile(x - 1, y).isExist()
+                                && !GameData.getBoard().getTile(x, y - 1).isExist() && !GameData.getBoard().getTile(x, y + 1).isExist()
+                                && !GameData.getBoard().getTile(x - 1, y - 1).isExist() && !GameData.getBoard().getTile(x - 1, y + 1).isExist()) {
+                            Game.GameComplete(false);
+                            LogAgent.logMessenger("No adjacent tile to swim to");
+                            return;
+                        }
                     }
-                }
-                else if (x == 5){
-                    if (!GameData.getBoard().getTile(x - 1, y).isExist() && !GameData.getBoard().getTile(x, y - 1).isExist() && !GameData.getBoard().getTile(x, y + 1).isExist()) {
-                        Game.GameComplete(false);
-                        LogAgent.logMessenger("No adjacent tile to swim to");
-                        return;
+                    else if (y == 0){
+                        if (!GameData.getBoard().getTile(x - 1, y).isExist() && !GameData.getBoard().getTile(x + 1, y).isExist()
+                                && !GameData.getBoard().getTile(x, y + 1).isExist()) {
+                            Game.GameComplete(false);
+                            LogAgent.logMessenger("No adjacent tile to swim to");
+                            return;
+                        }
+                        else if (GameData.getAdventurers()[roundNum].getName().equals("Explorer")
+                                && !GameData.getBoard().getTile(x - 1, y).isExist() && !GameData.getBoard().getTile(x + 1, y).isExist()
+                                && !GameData.getBoard().getTile(x, y + 1).isExist()
+                                && !GameData.getBoard().getTile(x - 1, y + 1).isExist() && !GameData.getBoard().getTile(x + 1, y + 1).isExist()) {
+                            Game.GameComplete(false);
+                            LogAgent.logMessenger("No adjacent tile to swim to");
+                            return;
+                        }
                     }
-                    if (GameData.getAdventurers()[roundNum].getName().equals("Explorer")
-                            && !GameData.getBoard().getTile(x - 1, y).isExist()
-                            && !GameData.getBoard().getTile(x, y - 1).isExist() && !GameData.getBoard().getTile(x, y + 1).isExist()
-                            && !GameData.getBoard().getTile(x - 1, y - 1).isExist() && !GameData.getBoard().getTile(x - 1, y + 1).isExist()) {
-                        Game.GameComplete(false);
-                        LogAgent.logMessenger("No adjacent tile to swim to");
-                        return;
+                    else if (y == 5){
+                        if (!GameData.getBoard().getTile(x - 1, y).isExist() && !GameData.getBoard().getTile(x + 1, y).isExist()
+                                && !GameData.getBoard().getTile(x, y - 1).isExist()) {
+                            Game.GameComplete(false);
+                            LogAgent.logMessenger("No adjacent tile to swim to");
+                            return;
+                        }
+                        else if (GameData.getAdventurers()[roundNum].getName().equals("Explorer")
+                                && !GameData.getBoard().getTile(x - 1, y).isExist() && !GameData.getBoard().getTile(x + 1, y).isExist()
+                                && !GameData.getBoard().getTile(x, y - 1).isExist()
+                                && !GameData.getBoard().getTile(x - 1, y - 1).isExist() && !GameData.getBoard().getTile(x + 1, y - 1).isExist()) {
+                            Game.GameComplete(false);
+                            LogAgent.logMessenger("No adjacent tile to swim to");
+                            return;
+                        }
                     }
-                }
-                else if (y == 0){
-                    if (!GameData.getBoard().getTile(x - 1, y).isExist() && !GameData.getBoard().getTile(x + 1, y).isExist()
-                            && !GameData.getBoard().getTile(x, y + 1).isExist()) {
-                        Game.GameComplete(false);
-                        LogAgent.logMessenger("No adjacent tile to swim to");
-                        return;
-                    }
-                    if (GameData.getAdventurers()[roundNum].getName().equals("Explorer")
-                            && !GameData.getBoard().getTile(x - 1, y).isExist() && !GameData.getBoard().getTile(x + 1, y).isExist()
-                            && !GameData.getBoard().getTile(x, y + 1).isExist()
-                            && !GameData.getBoard().getTile(x - 1, y + 1).isExist() && !GameData.getBoard().getTile(x + 1, y + 1).isExist()) {
-                        Game.GameComplete(false);
-                        LogAgent.logMessenger("No adjacent tile to swim to");
-                        return;
-                    }
-                }
-                else if (y == 5){
-                    if (!GameData.getBoard().getTile(x - 1, y).isExist() && !GameData.getBoard().getTile(x + 1, y).isExist()
-                            && !GameData.getBoard().getTile(x, y - 1).isExist()) {
-                        Game.GameComplete(false);
-                        LogAgent.logMessenger("No adjacent tile to swim to");
-                        return;
-                    }
-                    if (GameData.getAdventurers()[roundNum].getName().equals("Explorer")
-                            && !GameData.getBoard().getTile(x - 1, y).isExist() && !GameData.getBoard().getTile(x + 1, y).isExist()
-                            && !GameData.getBoard().getTile(x, y - 1).isExist()
-                            && !GameData.getBoard().getTile(x - 1, y - 1).isExist() && !GameData.getBoard().getTile(x + 1, y - 1).isExist()) {
-                        Game.GameComplete(false);
-                        LogAgent.logMessenger("No adjacent tile to swim to");
-                        return;
+                    else {
+                        if (!GameData.getBoard().getTile(x - 1, y).isExist() && !GameData.getBoard().getTile(x + 1, y).isExist()
+                                && !GameData.getBoard().getTile(x, y - 1).isExist() && !GameData.getBoard().getTile(x, y + 1).isExist()) {
+                            Game.GameComplete(false);
+                            LogAgent.logMessenger("No adjacent tile to swim to");
+                            return;
+                        }
+                        else if (GameData.getAdventurers()[roundNum].getName().equals("Explorer")
+                                && !GameData.getBoard().getTile(x - 1, y).isExist() && !GameData.getBoard().getTile(x + 1, y).isExist()
+                                && !GameData.getBoard().getTile(x, y - 1).isExist() && !GameData.getBoard().getTile(x, y + 1).isExist()
+                                && !GameData.getBoard().getTile(x - 1, y - 1).isExist() && !GameData.getBoard().getTile(x + 1, y - 1).isExist()
+                                && !GameData.getBoard().getTile(x - 1, y + 1).isExist() && !GameData.getBoard().getTile(x + 1, y + 1).isExist()) {
+                            Game.GameComplete(false);
+                            LogAgent.logMessenger("No adjacent tile to swim to");
+                            return;
+                        }
                     }
                 }
                 else {
-                    if (!GameData.getBoard().getTile(x - 1, y).isExist() && !GameData.getBoard().getTile(x + 1, y).isExist()
-                            && !GameData.getBoard().getTile(x, y - 1).isExist() && !GameData.getBoard().getTile(x, y + 1).isExist()) {
-                        Game.GameComplete(false);
-                        LogAgent.logMessenger("No adjacent tile to swim to");
-                        return;
-                    }
-                    if (GameData.getAdventurers()[roundNum].getName().equals("Explorer")
-                            && !GameData.getBoard().getTile(x - 1, y).isExist() && !GameData.getBoard().getTile(x + 1, y).isExist()
-                            && !GameData.getBoard().getTile(x, y - 1).isExist() && !GameData.getBoard().getTile(x, y + 1).isExist()
-                            && !GameData.getBoard().getTile(x - 1, y - 1).isExist() && !GameData.getBoard().getTile(x + 1, y - 1).isExist()
-                            && !GameData.getBoard().getTile(x - 1, y + 1).isExist() && !GameData.getBoard().getTile(x + 1, y + 1).isExist()) {
-                        Game.GameComplete(false);
-                        LogAgent.logMessenger("No adjacent tile to swim to");
-                        return;
-                    }
+                    //TODO
+                    continue;
                 }
 
                 LogAgent.logMessenger("Select a nearest tile for [ Player " + (roundNum + 1) + " ] ("

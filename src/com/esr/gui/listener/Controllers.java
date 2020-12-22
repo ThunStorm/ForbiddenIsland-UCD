@@ -210,7 +210,7 @@ public class Controllers {
                     Game.setFakeActionCount(-1);
                     UpdaterAgent.getBoardUpdater().guiUpdate();
                     UpdaterAgent.getPlayerUpdater().guiUpdate();
-                    LogAgent.logMessenger("Back to player " + Game.getRoundNum()+1 +"'s turn (" + GameData.getAdventurers()[Game.getRoundNum()].getName()+ ")");
+                    LogAgent.logMessenger("Back to player " + (Game.getRoundNum()+1) +"'s turn (" + GameData.getAdventurers()[Game.getRoundNum()].getName()+ ")");
                     LogAgent.logMessenger("Have done " + Game.getActionCount() + " actions");
                 }
             }
@@ -230,7 +230,7 @@ public class Controllers {
                 Game.setActionCount(3);
                 Game.setRoundNum(GameData.getSelectedPawn());
                 UpdaterAgent.getPlayerUpdater().guiUpdate();
-                LogAgent.logMessenger("Switch to player " + Game.getRoundNum()+1 +"'s turn (" + GameData.getAdventurers()[Game.getRoundNum()].getName()+ ")");
+                LogAgent.logMessenger("Switch to player " + (Game.getRoundNum()+1) +"'s turn (" + GameData.getAdventurers()[Game.getRoundNum()].getName()+ ")");
             }
             else{ System.out.println("Error"); }
         });

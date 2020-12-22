@@ -91,7 +91,8 @@ public class GameData {
         boolean isNearDiagonally = ((Math.abs(adventurers[Game.getRoundNum()].getX() - coords[0]) == 1) && (Math.abs(adventurers[Game.getRoundNum()].getY() - coords[1]) == 1));
 
         if (((isNearX || isNearY) && (board.getTile(coords[0], coords[1]).isExist()))
-                || ((isNearDiagonally) && (board.getTile(coords[0], coords[1]).isExist()) && (adventurers[Game.getRoundNum()].getName().equals("Explorer")))) {
+                || ((isNearDiagonally) && (board.getTile(coords[0], coords[1]).isExist()) && (adventurers[Game.getRoundNum()].getName().equals("Explorer")))
+                || adventurers[Game.getRoundNum()].getName().equals("Pilot")) {
             adventurers[Game.getRoundNum()].setMove(coords[0], coords[1]);
             board.setCanMove(true);
             if (board.getTile(coords[0], coords[1]).getStatus() == TileStatus.Flooded) {
@@ -104,7 +105,13 @@ public class GameData {
             board.setCanMove(false);
             adventurers[Game.getRoundNum()].setShoreUp(coords[0], coords[1]);
             board.setCanShoreUp(true);
-        } else {
+        } else if(adventurers[Game.getRoundNum()].getName().equals("Diver")){
+            //TODO
+
+            board.setCanMove(true);
+            board.setCanShoreUp(false);
+        }
+        else {
             System.out.println("This tile is unselectable");
             board.setCanMove(false);
             board.setCanShoreUp(false);
@@ -219,8 +226,6 @@ public class GameData {
     public static WaterMeter getWaterMeter() {
         return waterMeter;
     }
-
-//    public static FigurinesData getFigurinesData() { return figurinesData; }
 
     public static int[] getSpecialActionTile() {
         return SpecialActionTile;
