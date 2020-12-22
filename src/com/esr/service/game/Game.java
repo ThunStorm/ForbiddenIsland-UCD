@@ -57,6 +57,7 @@ public class Game {
 
     public static void Stage23() {
         GameData.getDisplayedTreasureCard().addAll(GameData.getTreasureDeck().getNTreasureCards(2));
+        actionCount = 3;
 //        LogAgent.logMessenger(String.valueOf(GameData.getDisplayedTreasureCard()));
         UpdaterAgent.getTreasureUpdater().guiUpdate();
 
@@ -71,24 +72,14 @@ public class Game {
                 iterator.remove();
             }
         }
-//        for (int i = 0; i < GameData.getDisplayedTreasureCard().size(); i++) {
-//            if (GameData.getDisplayedTreasureCard().get(i) == 25
-//                    || GameData.getDisplayedTreasureCard().get(i) == 26
-//                    || GameData.getDisplayedTreasureCard().get(i) == 27){
-//                GameData.getWaterMeter().WaterRise();
-//                GameData.getFloodDeck().PutBack2Top();
-//                GameData.getTreasureDeck().Discard(GameData.getDisplayedTreasureCard().get(i));
-//                GameData.getDisplayedTreasureCard().remove(i);
-////                LogAgent.logMessenger("After discard " + String.valueOf(GameData.getDisplayedTreasureCard()));
-//            }
-//        }
-        UpdaterAgent.getBoardUpdater().guiUpdate();
         UpdaterAgent.getTreasureUpdater().guiUpdate();
         UpdaterAgent.getPlayerUpdater().guiUpdate();
         UpdaterAgent.getWaterMeterUpdater().guiUpdate();
+        UpdaterAgent.getBoardUpdater().guiUpdate();
 
         UpdaterAgent.getFloodUpdater().guiUpdate();
         GameData.getBoard().sinkTiles(GameData.getFloodDeck().getNFlood());
+
         GameData.getFloodDeck().Discard();
         if (Constant.AUDIO_ON_OFF) {
             Audio.FLOOD.Play();
@@ -133,11 +124,13 @@ public class Game {
     }
 
     public static void SavePlayersRound() {
+
         if (playerIDinWater.size() == 0) {
             roundNum = fakeRoundNum;
             fakeRoundNum = -1;
             actionCount = 3;
             need2save = false;
+            GameData.getBoard().sinkTiles(GameData.getFloodDeck().getNFlood());
             return;
         }
 
@@ -303,9 +296,6 @@ public class Game {
         }
     }
 
-    public static int getFakeRoundNum() {
-        return fakeRoundNum;
-    }
 
     public static void setFakeRoundNum(int fakeRoundNum) {
         Game.fakeRoundNum = fakeRoundNum;

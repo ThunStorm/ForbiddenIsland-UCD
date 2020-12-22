@@ -13,7 +13,6 @@ import com.esr.service.game.data.TileStatus;
 import com.esr.utils.Audio;
 import com.esr.utils.Constant;
 import com.esr.utils.Map;
-import sun.management.Agent;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -81,7 +80,9 @@ public class Controllers {
         ConsolePanel.consoleButtons.get(3).addActionListener(e -> {
 //            LogAgent.logMessenger("Pass To");
             if (Game.getActionCount() < 3 && GameData.getSelectedPawn() != -1){
-                if (GameData.getBoard().getTile(GameData.getAdventurers()[Game.getRoundNum()].getX(),GameData.getAdventurers()[Game.getRoundNum()].getY()).CanPassTo(GameData.getAdventurers()[Game.getRoundNum()], GameData.getAdventurers()[GameData.getSelectedPawn()])){
+                if (GameData.getBoard().getTile(GameData.getAdventurers()[Game.getRoundNum()].getX(),GameData.getAdventurers()[Game.getRoundNum()].getY())
+                        .CanPassTo(GameData.getAdventurers()[Game.getRoundNum()], GameData.getAdventurers()[GameData.getSelectedPawn()])
+                        || GameData.getAdventurers()[Game.getRoundNum()].getName().equals("Messenger")){
                     GameData.PassTo();
                     LogAgent.logMessenger(GameData.getAdventurers()[Game.getRoundNum()].getName()
                             + " passed a card to " + GameData.getAdventurers()[GameData.getSelectedPawn()].getName());
@@ -90,6 +91,7 @@ public class Controllers {
                     UpdaterAgent.getTreasureUpdater().guiUpdate();
                     Game.doAction();
                     GameData.SelectPawn(-1);
+                    GameData.resetCardsInRound();
                 }
                 else{ LogAgent.logMessenger("Can't do Pass To Action"); }
             }

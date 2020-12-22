@@ -28,16 +28,19 @@
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2b919aec-5efd-45b2-b528-0ea4fbe9c6b5" name="Default Changelist" comment="add SWIM TO when fall into water">
+    <list default="true" id="2b919aec-5efd-45b2-b528-0ea4fbe9c6b5" name="Default Changelist" comment="fix swim conditions @ margin">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/FI-game-UCD-IDEA/com/esr/gui/listener/Controllers.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/FI-game-UCD-IDEA/com/esr/gui/listener/Controllers.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/FI-game-UCD-IDEA/com/esr/service/game/Game.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/FI-game-UCD-IDEA/com/esr/service/game/Game.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/FI-game-UCD-IDEA/com/esr/service/game/GameData.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/FI-game-UCD-IDEA/com/esr/service/game/GameData.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/FI-game-UCD-IDEA/com/esr/service/game/data/BoardData.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/FI-game-UCD-IDEA/com/esr/service/game/data/BoardData.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/FI-game-UCD-IDEA/com/esr/service/game/data/Block.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/FI-game-UCD-IDEA/com/esr/service/game/data/Block.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/FI-game-UCD-IDEA/com/esr/service/game/data/TreasureDeck.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/FI-game-UCD-IDEA/com/esr/service/game/data/TreasureDeck.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/FI-game-UCD-IDEA/com/esr/service/game/data/WaterMeter.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/FI-game-UCD-IDEA/com/esr/service/game/data/WaterMeter.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/esr/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/esr/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/esr/gui/listener/Controllers.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/esr/gui/listener/Controllers.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/esr/service/game/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/esr/service/game/Game.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/esr/service/game/GameData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/esr/service/game/GameData.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/esr/service/game/data/TreasureDeck.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/esr/service/game/data/TreasureDeck.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/esr/service/game/data/BoardData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/esr/service/game/data/BoardData.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -241,7 +244,7 @@
       <workItem from="1608211692975" duration="3367000" />
       <workItem from="1608239352749" duration="2572000" />
       <workItem from="1608549503029" duration="42690000" />
-      <workItem from="1608636063919" duration="10516000" />
+      <workItem from="1608636063919" duration="15336000" />
     </task>
     <task id="LOCAL-00001" summary="Build DataLayer">
       <created>1607400232334</created>
@@ -383,7 +386,14 @@
       <option name="project" value="LOCAL" />
       <updated>1608643634727</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL-00021" summary="fix swim conditions @ margin">
+      <created>1608647129204</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1608647129204</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -419,7 +429,8 @@
     <MESSAGE value="fix index error" />
     <MESSAGE value="change to select cards to discard" />
     <MESSAGE value="add SWIM TO when fall into water" />
-    <option name="LAST_COMMIT_MESSAGE" value="add SWIM TO when fall into water" />
+    <MESSAGE value="fix swim conditions @ margin" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix swim conditions @ margin" />
   </component>
   <component name="WindowStateProjectService">
     <state x="586" y="198" key="#Inspections" timestamp="1607907503160">
@@ -454,38 +465,38 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="740" y="274" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1608173483474" />
-    <state width="1877" height="179" key="GridCell.Tab.0.bottom" timestamp="1608647073604">
+    <state width="1877" height="179" key="GridCell.Tab.0.bottom" timestamp="1608651151975">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="179" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1608647073604" />
-    <state width="1877" height="179" key="GridCell.Tab.0.center" timestamp="1608647073603">
+    <state width="1877" height="179" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1608651151975" />
+    <state width="1877" height="179" key="GridCell.Tab.0.center" timestamp="1608651151975">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="179" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1608647073603" />
-    <state width="1877" height="179" key="GridCell.Tab.0.left" timestamp="1608647073603">
+    <state width="1877" height="179" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1608651151975" />
+    <state width="1877" height="179" key="GridCell.Tab.0.left" timestamp="1608651151975">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="179" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1608647073603" />
-    <state width="1877" height="179" key="GridCell.Tab.0.right" timestamp="1608647073603">
+    <state width="1877" height="179" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1608651151975" />
+    <state width="1877" height="179" key="GridCell.Tab.0.right" timestamp="1608651151975">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="179" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1608647073603" />
-    <state width="1877" height="348" key="GridCell.Tab.1.bottom" timestamp="1608178997184">
+    <state width="1877" height="179" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1608651151975" />
+    <state width="1877" height="348" key="GridCell.Tab.1.bottom" timestamp="1608649591075">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="348" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1608178997184" />
-    <state width="1877" height="348" key="GridCell.Tab.1.center" timestamp="1608178997184">
+    <state width="1877" height="348" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1608649591075" />
+    <state width="1877" height="348" key="GridCell.Tab.1.center" timestamp="1608649591075">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="348" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1608178997184" />
-    <state width="1877" height="348" key="GridCell.Tab.1.left" timestamp="1608178997184">
+    <state width="1877" height="348" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1608649591075" />
+    <state width="1877" height="348" key="GridCell.Tab.1.left" timestamp="1608649591075">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="348" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1608178997184" />
-    <state width="1877" height="348" key="GridCell.Tab.1.right" timestamp="1608178997184">
+    <state width="1877" height="348" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1608649591075" />
+    <state width="1877" height="348" key="GridCell.Tab.1.right" timestamp="1608649591075">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="348" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1608178997184" />
+    <state width="1877" height="348" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1608649591075" />
     <state x="184" y="85" key="MergeDialog" timestamp="1607427464967">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -502,10 +513,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="92" y="92" width="1736" height="856" key="ShowDiffWithBranchDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1606516011967" />
-    <state x="540" y="286" key="Vcs.Push.Dialog.v2" timestamp="1608643643489">
+    <state x="540" y="286" key="Vcs.Push.Dialog.v2" timestamp="1608647124696">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="540" y="286" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1608643643489" />
+    <state x="540" y="286" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1608647124696" />
     <state x="685" y="412" width="603" height="217" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD" timestamp="1608077637866">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -518,10 +529,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="499" y="255" width="921" height="642" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2/0.0.1920.1040@0.0.1920.1040" timestamp="1608055054680" />
-    <state x="1120" y="274" key="extract.method.dialog" timestamp="1608079220881">
+    <state x="1120" y="274" key="extract.method.dialog" timestamp="1608649425850">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="1120" y="274" key="extract.method.dialog/0.0.1920.1040@0.0.1920.1040" timestamp="1608079220881" />
+    <state x="1120" y="274" key="extract.method.dialog/0.0.1920.1040@0.0.1920.1040" timestamp="1608649425850" />
     <state x="660" y="145" width="596" height="536" key="find.popup" timestamp="1608593480865">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

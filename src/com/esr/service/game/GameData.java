@@ -140,31 +140,22 @@ public class GameData {
     }
 
     public static void PassTo(){
-        if(selectedPawn != -1){
-//            ArrayList<Integer> subList = new ArrayList<>(cardsInRound.subList(0,  Math.min(5 - adventurers[selectedPawn].getHandCards().size(), cardsInRound.size())));
-//            adventurers[selectedPawn].setHandCards(subList);
-//            for (int cardInRound : subList){
-//                if (adventurers[Game.getRoundNum()].getHandCards().contains(cardInRound)){
-//                    adventurers[Game.getRoundNum()].getHandCards().remove((Integer)cardInRound);
-//                }
-//                else if(displayedTreasureCard.contains(cardInRound)){
-//                    displayedTreasureCard.remove((Integer) cardInRound);
-//                }
-//                else {
-//                    System.out.println("Error in pass to");
-//                }
-//            }
+        if(selectedPawn != -1 && cardsInRound.size() != 0){
             ArrayList<Integer> subList = new ArrayList<>(cardsInRound.subList(0,1));
+            // TODO pass to full
             adventurers[selectedPawn].setHandCards(subList);
             if (adventurers[Game.getRoundNum()].getHandCards().contains(cardsInRound.get(0))){
                 adventurers[Game.getRoundNum()].getHandCards().remove(cardsInRound.get(0));
             }
-            else if(displayedTreasureCard.contains(cardsInRound.get(0))){
-                displayedTreasureCard.remove(cardsInRound.get(0));
-            }
+//            else if(displayedTreasureCard.contains(cardsInRound.get(0))){
+//                displayedTreasureCard.remove(cardsInRound.get(0));
+//            }
             else {
-                System.out.println("Error in pass to");
+                System.out.println("Error in [pass to]");
             }
+        }
+        else {
+            LogAgent.logMessenger("Please select a card and a player you would like to pass a card to");
         }
     }
 

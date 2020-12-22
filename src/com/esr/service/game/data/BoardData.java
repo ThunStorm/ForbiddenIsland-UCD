@@ -69,7 +69,9 @@ public class BoardData {
                     Game.setNeed2save(true);
                     Game.setFakeRoundNum(Game.getRoundNum());
                     Game.setPlayerIDinWater(tileMap[coords[0]][coords[1]].getPlayerOnBoard());
+                    tileMap[coords[0]][coords[1]].getPlayerOnBoard().clear();
                     Game.SavePlayersRound();
+                    break;
                 }
             }
         }
