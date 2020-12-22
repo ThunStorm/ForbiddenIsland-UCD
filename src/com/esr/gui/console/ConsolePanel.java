@@ -33,9 +33,11 @@ public class ConsolePanel {
         consoleButtons.add(new JButton("Shore Up"));
         consoleButtons.add(new JButton("Pass To"));
         consoleButtons.add(new JButton("Capture"));
+        consoleButtons.add(new JButton("Lift Off"));
         consoleButtons.add(new JButton("Special Actions"));
         consoleButtons.add(new JButton("Next"));
         consoleButtons.add(new JButton("Discard"));
+        consoleButtons.add(new JButton("Clear"));
         InfoPanel();
         ConfigBox();
         LogBox();
@@ -97,12 +99,12 @@ public class ConsolePanel {
         TitledBorder logBorder = new TitledBorder("Logs");
         logBox.add(scrollPane);
         logBox.setBorder(logBorder);
-        logBox.setPreferredSize(new Dimension(95, 540));
+        logBox.setPreferredSize(new Dimension(95, 500));
     }
 
     public void ActionPanel() {
         TitledBorder action = new TitledBorder("Action");
-        GridLayout gridLayout = new GridLayout(7, 1, 0, 2);
+        GridLayout gridLayout = new GridLayout(9, 1, 0, 2);
         actionPanel.setLayout(gridLayout);
         actionPanel.add(consoleButtons.get(1));
         actionPanel.add(consoleButtons.get(2));
@@ -111,8 +113,9 @@ public class ConsolePanel {
         actionPanel.add(consoleButtons.get(5));
         actionPanel.add(consoleButtons.get(6));
         actionPanel.add(consoleButtons.get(7));
-//        actionPanel.add(consoleButtons.get(8));
-        actionPanel.setPreferredSize(new Dimension(95, 180));
+        actionPanel.add(consoleButtons.get(8));
+        actionPanel.add(consoleButtons.get(9));
+        actionPanel.setPreferredSize(new Dimension(95, 220));
     }
 
     public void InfoPanel() {

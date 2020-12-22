@@ -13,7 +13,9 @@ import com.esr.service.game.data.TileStatus;
 import com.esr.utils.Audio;
 import com.esr.utils.Constant;
 import com.esr.utils.Map;
+import sun.rmi.runtime.Log;
 
+import java.io.Console;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Iterator;
@@ -27,12 +29,14 @@ import java.util.Iterator;
 public class Controllers {
     public Controllers() {
         MoveToController();
-        SpecialActionController();
         ShoreUpController();
         PassToController();
         CaptureController();
+        LiftOffController();
+        SpecialActionController();
         NextController();
         DiscardController();
+        ClearController();
     }
 
     private void MoveToController(){
@@ -151,9 +155,9 @@ public class Controllers {
         });
     }
 
-    private void SpecialActionController(){
+    private void LiftOffController() {
         ConsolePanel.consoleButtons.get(5).addActionListener(e -> {
-            LogAgent.logMessenger("Lift Off");
+            // lift off
             int idx14 = GameData.getTilesArray().indexOf(14);
             Block block14 = GameData.getBoard().getTile(Map.coordinatesMatcher.get(idx14)[0],Map.coordinatesMatcher.get(idx14)[1]);
             ArrayList<Integer> handCards = new ArrayList<>();
@@ -162,6 +166,18 @@ public class Controllers {
                 handCards.addAll(adventurer.getHandCards());
                 figurines.addAll(adventurer.getCapturedFigurines());
             }
+            if (block14.isExist() && block14.getPlayerOnBoard().size() == Game.getNumOfPlayer()){
+                if ((handCards.contains(20) || handCards.contains(21) || handCards.contains(22)) && figurines.size() == 4){
+                    if (Constant.AUDIO_ON_OFF){ Audio.LIFTOFF.Play(); }
+                    Game.GameComplete(true);
+                }
+                else { System.out.println("Lift Off failed"); }
+            }
+        });
+    }
+
+    private void SpecialActionController(){
+        ConsolePanel.consoleButtons.get(6).addActionListener(e -> {
             if (GameData.getCardsInRound() != null && !GameData.getCardsInRound().isEmpty() && GameData.getSpecialActionTile()[0]!=-1 && GameData.getSpecialActionTile()[1] != -1){
                 int lastSelect = GameData.getCardsInRound().get(GameData.getCardsInRound().size()-1);
                 //sandbag
@@ -214,14 +230,6 @@ public class Controllers {
                     LogAgent.logMessenger("Have done " + Game.getActionCount() + " actions");
                 }
             }
-            // lift off
-            else if (block14.isExist() && block14.getPlayerOnBoard().size() == Game.getNumOfPlayer()){
-                if ((handCards.contains(20) || handCards.contains(21) || handCards.contains(22)) && figurines.size() == 4){
-                    if (Constant.AUDIO_ON_OFF){ Audio.LIFTOFF.Play(); }
-                    Game.GameComplete(true);
-                }
-                else { System.out.println("Lift Off failed"); }
-            }
             // Enter in fake round
             else if (GameData.getSelectedPawn() != -1){
                 Game.setInFakeRound(true);
@@ -237,7 +245,7 @@ public class Controllers {
     }
 
     private void NextController(){
-        ConsolePanel.consoleButtons.get(6).addActionListener(e -> {
+        ConsolePanel.consoleButtons.get(7).addActionListener(e -> {
             LogAgent.logMessenger("Next");
             if (Constant.AUDIO_ON_OFF){ Audio.NEXT.Play(); }
             if(!Game.isStage23Done()){
@@ -253,7 +261,7 @@ public class Controllers {
     }
 //
     private void DiscardController(){
-        ConsolePanel.consoleButtons.get(7).addActionListener(e -> {
+        ConsolePanel.consoleButtons.get(8).addActionListener(e -> {
             LogAgent.logMessenger("Discard");
             if(GameData.getCardsInRound().size() != 0 && !Game.isInFakeRound()){
                 ArrayList<Integer> allCardsInRound = new ArrayList<>();
@@ -308,6 +316,15 @@ public class Controllers {
             else {
                 LogAgent.logMessenger("Please select the cards you would like to discard");
             }
+        });
+    }
+
+    private void ClearController() {
+        ConsolePanel.consoleButtons.get(9).addActionListener(e -> {
+            LogAgent.logMessenger("Clear");
+            GameData.SelectPawn(-1);
+            GameData.resetCardsInRound();
+            GameData.resetSpecialActionTile();
         });
     }
 
