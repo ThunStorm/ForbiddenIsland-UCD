@@ -96,7 +96,7 @@ public class Game {
 
         // Discard Stage
         if (GameData.getAdventurers()[roundNum].getHandCards().size() + GameData.getDisplayedTreasureCard().size() > 5) {
-            LogAgent.logMessenger("You have more than 5 cards, please select all the cards you would like to keep and press [Discard]!");
+            LogAgent.logMessenger("You have more than 5 cards, please select all the cards you would like to discard and press [Discard]!");
             GameData.resetCardsInRound();
             return;
         }
@@ -115,8 +115,7 @@ public class Game {
             return;
         }
 
-
-//        GameData.SelectPawn(-1);
+        GameData.SelectPawn(-1);
         if (GameData.getAdventurers()[roundNum] instanceof Engineer) {
             ((Engineer) GameData.getAdventurers()[roundNum]).resetShoreUpCount();
         }
@@ -183,6 +182,4 @@ public class Game {
             }
         }
     }
-
-
 }

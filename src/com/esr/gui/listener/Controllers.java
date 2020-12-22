@@ -13,6 +13,7 @@ import com.esr.service.game.data.TileStatus;
 import com.esr.utils.Audio;
 import com.esr.utils.Constant;
 import com.esr.utils.Map;
+import sun.management.Agent;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -222,6 +223,30 @@ public class Controllers {
 //
     private void DiscardController(){
         ConsolePanel.consoleButtons.get(7).addActionListener(e -> {
+//            LogAgent.logMessenger("Discard");
+//            if(GameData.getCardsInRound().size() != 0 && GameData.getCardsInRound().size() <= 5){
+//                ArrayList<Integer> allCardsInRound = new ArrayList<>();
+//                allCardsInRound.addAll(GameData.getAdventurers()[Game.getRoundNum()].getHandCards());
+//                allCardsInRound.addAll(GameData.getDisplayedTreasureCard());
+//                GameData.getAdventurers()[Game.getRoundNum()].getHandCards().clear();
+//                GameData.getDisplayedTreasureCard().clear();
+//                for (int card : allCardsInRound){
+//                    if(GameData.getCardsInRound().contains(card)){
+//                       GameData.getAdventurers()[Game.getRoundNum()].getHandCards().add(card);
+//                    }
+//                    else {
+//                        GameData.getTreasureDeck().Discard(card);
+//                    }
+//                }
+//                GameData.resetCardsInRound();
+//                UpdaterAgent.getPlayerUpdater().guiUpdate();
+//                UpdaterAgent.getTreasureUpdater().guiUpdate();
+//                if (Constant.AUDIO_ON_OFF){ Audio.DISCARD.Play(); }
+//            }
+//            else {
+//                LogAgent.logMessenger("You haven't selected or selected more than 5 cards, please re-select the card you want to keep");
+//                GameData.resetCardsInRound();
+//            }
             LogAgent.logMessenger("Discard");
             if(GameData.getCardsInRound().size() != 0){
                 ArrayList<Integer> allCardsInRound = new ArrayList<>();
@@ -230,17 +255,20 @@ public class Controllers {
                 GameData.getAdventurers()[Game.getRoundNum()].getHandCards().clear();
                 GameData.getDisplayedTreasureCard().clear();
                 for (int card : allCardsInRound){
-                    if(GameData.getCardsInRound().contains(card)){
-                       GameData.getAdventurers()[Game.getRoundNum()].getHandCards().add(card);
+                    if (GameData.getCardsInRound().contains(card)){
+                        GameData.getTreasureDeck().Discard(card);
                     }
                     else {
-                        GameData.getTreasureDeck().Discard(card);
+                        GameData.getAdventurers()[Game.getRoundNum()].getHandCards().add(card);
                     }
                 }
                 GameData.resetCardsInRound();
                 UpdaterAgent.getPlayerUpdater().guiUpdate();
                 UpdaterAgent.getTreasureUpdater().guiUpdate();
                 if (Constant.AUDIO_ON_OFF){ Audio.DISCARD.Play(); }
+            }
+            else {
+                LogAgent.logMessenger("Please select the cards you would like to discard");
             }
         });
     }

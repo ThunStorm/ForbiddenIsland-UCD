@@ -1,5 +1,6 @@
 package com.esr.service.game.data;
 
+import com.esr.gui.updater.LogAgent;
 import com.esr.gui.updater.UpdaterAgent;
 import com.esr.service.game.GameData;
 import com.esr.utils.Map;
@@ -15,13 +16,13 @@ import java.util.ArrayList;
 public class BoardData {
     private Block[][] tileMap;
     private ArrayList<Integer> tiles;
-    private ArrayList<Integer> sunkList;
+//    private ArrayList<Integer> sunkList;
     private boolean canMove;
     private boolean canShoreUp;
 
     public BoardData(ArrayList<Integer> players, ArrayList<Integer> tiles) {
         this.tiles = tiles;
-        sunkList = new ArrayList<>();
+//        sunkList = new ArrayList<>();
         tileMap = new Block[6][6];
         int tileIdx = 0;
         for (int i = 0; i < 6; i++) {
@@ -50,11 +51,14 @@ public class BoardData {
     public Block[][] getTileMap() { return tileMap; }
 
     public void sinkTiles(ArrayList<Integer> sinkTiles){
-        sunkList.clear();
+//        sunkList.clear();
         for (int sinkTile : sinkTiles){
             int[] coords = Map.coordinatesMatcher.get(this.tiles.indexOf(sinkTile));
             if (tileMap[coords[0]][coords[1]].SinkTile()){
                 GameData.getFloodDeck().RemoveFloodCard(sinkTile);
+                if(tileMap[coords[0]][coords[1]].getPlayerOnBoard().size() != 0){
+
+                }
             }
         }
         UpdaterAgent.getBoardUpdater().guiUpdate();
