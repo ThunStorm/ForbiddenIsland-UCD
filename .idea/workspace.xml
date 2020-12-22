@@ -28,18 +28,9 @@
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2b919aec-5efd-45b2-b528-0ea4fbe9c6b5" name="Default Changelist" comment="fix index error">
+    <list default="true" id="2b919aec-5efd-45b2-b528-0ea4fbe9c6b5" name="Default Changelist" comment="change to select cards to discard">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/FI-game-UCD-IDEA/com/esr/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/FI-game-UCD-IDEA/com/esr/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/FI-game-UCD-IDEA/com/esr/gui/listener/Controllers.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/FI-game-UCD-IDEA/com/esr/gui/listener/Controllers.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/FI-game-UCD-IDEA/com/esr/service/game/Game.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/FI-game-UCD-IDEA/com/esr/service/game/Game.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/FI-game-UCD-IDEA/com/esr/service/game/component/adventurer/Adventurer.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/FI-game-UCD-IDEA/com/esr/service/game/component/adventurer/Adventurer.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/FI-game-UCD-IDEA/com/esr/service/game/data/BoardData.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/FI-game-UCD-IDEA/com/esr/service/game/data/BoardData.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/FI-game-UCD-IDEA/com/esr/service/game/data/FloodDeck.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/FI-game-UCD-IDEA/com/esr/service/game/data/FloodDeck.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/FI-game-UCD-IDEA/com/esr/service/game/data/TreasureDeck.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/FI-game-UCD-IDEA/com/esr/service/game/data/TreasureDeck.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/esr/gui/listener/Controllers.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/esr/gui/listener/Controllers.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/esr/service/game/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/esr/service/game/Game.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/esr/service/game/data/BoardData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/esr/service/game/data/BoardData.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -240,7 +231,7 @@
       <workItem from="1608121784872" duration="51904000" />
       <workItem from="1608211692975" duration="3367000" />
       <workItem from="1608239352749" duration="2572000" />
-      <workItem from="1608549503029" duration="34139000" />
+      <workItem from="1608549503029" duration="35464000" />
     </task>
     <task id="LOCAL-00001" summary="Build DataLayer">
       <created>1607400232334</created>
@@ -361,7 +352,14 @@
       <option name="project" value="LOCAL" />
       <updated>1608593825671</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="change to select cards to discard">
+      <created>1608597093823</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1608597093823</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -395,7 +393,8 @@
     <MESSAGE value="SPECIAL ACTIONS ADDED" />
     <MESSAGE value="Turn Grey after capturing" />
     <MESSAGE value="fix index error" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix index error" />
+    <MESSAGE value="change to select cards to discard" />
+    <option name="LAST_COMMIT_MESSAGE" value="change to select cards to discard" />
   </component>
   <component name="WindowStateProjectService">
     <state x="586" y="198" key="#Inspections" timestamp="1607907503160">
@@ -430,22 +429,22 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="740" y="274" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1608173483474" />
-    <state width="1877" height="179" key="GridCell.Tab.0.bottom" timestamp="1608596938307">
+    <state width="1877" height="179" key="GridCell.Tab.0.bottom" timestamp="1608597286647">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="179" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1608596938307" />
-    <state width="1877" height="179" key="GridCell.Tab.0.center" timestamp="1608596938307">
+    <state width="1877" height="179" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1608597286647" />
+    <state width="1877" height="179" key="GridCell.Tab.0.center" timestamp="1608597286647">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="179" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1608596938307" />
-    <state width="1877" height="179" key="GridCell.Tab.0.left" timestamp="1608596938307">
+    <state width="1877" height="179" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1608597286647" />
+    <state width="1877" height="179" key="GridCell.Tab.0.left" timestamp="1608597286647">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="179" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1608596938307" />
-    <state width="1877" height="179" key="GridCell.Tab.0.right" timestamp="1608596938307">
+    <state width="1877" height="179" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1608597286647" />
+    <state width="1877" height="179" key="GridCell.Tab.0.right" timestamp="1608597286647">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="179" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1608596938307" />
+    <state width="1877" height="179" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1608597286647" />
     <state width="1877" height="348" key="GridCell.Tab.1.bottom" timestamp="1608178997184">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -478,10 +477,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="92" y="92" width="1736" height="856" key="ShowDiffWithBranchDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1606516011967" />
-    <state x="540" y="286" key="Vcs.Push.Dialog.v2" timestamp="1608593836110">
+    <state x="540" y="286" key="Vcs.Push.Dialog.v2" timestamp="1608597101180">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="540" y="286" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1608593836110" />
+    <state x="540" y="286" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1608597101180" />
     <state x="685" y="412" width="603" height="217" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD" timestamp="1608077637866">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

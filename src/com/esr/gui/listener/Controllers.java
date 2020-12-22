@@ -262,6 +262,16 @@ public class Controllers {
                         GameData.getAdventurers()[Game.getRoundNum()].getHandCards().add(card);
                     }
                 }
+                Iterator<Integer> iterator = GameData.getAdventurers()[Game.getRoundNum()].getHandCards().iterator();
+                int count = 0;
+                while (iterator.hasNext()){
+                    int handCard = iterator.next();
+                    if(count >= 5){
+                       GameData.getDisplayedTreasureCard().add(handCard);
+                       iterator.remove();
+                    }
+                    count++;
+                }
                 GameData.resetCardsInRound();
                 UpdaterAgent.getPlayerUpdater().guiUpdate();
                 UpdaterAgent.getTreasureUpdater().guiUpdate();
