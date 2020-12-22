@@ -1,6 +1,7 @@
 package com.esr.service.game;
 
 import com.esr.gui.updater.LogAgent;
+import com.esr.gui.updater.UpdaterAgent;
 import com.esr.service.game.component.adventurer.*;
 import com.esr.service.game.data.*;
 import com.esr.utils.Map;
@@ -153,6 +154,7 @@ public class GameData {
                 Game.setRoundNum(selectedPawn);
                 Game.setActionCount(3);
                 LogAgent.logMessenger("Please select a card " + adventurers[selectedPawn].getName() + " would like to discard and redo passing card");
+                UpdaterAgent.getPlayerUpdater().guiUpdate();
                 return false;
             } else {
                 adventurers[selectedPawn].setHandCards(subList);

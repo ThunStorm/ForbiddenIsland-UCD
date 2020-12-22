@@ -24,7 +24,7 @@ public class PlayerUpdater implements IUpdater {
                 GamePanel.playerPawnList.get(i).setIcon(new ImageIcon(CommonUtils.getImage(GameData.getAdventurers()[i].getPawnImg())));
                 for (int j = 0; j < GamePanel.playerHandCards.get(i).size(); j++) {
                     if (j < GameData.getAdventurers()[i].getHandCards().size()) {
-                        GamePanel.playerHandCards.get(i).get(j).setEnabled(true);
+                        GamePanel.playerHandCards.get(i).get(j).setEnabled(i == Game.getRoundNum());
                         GamePanel.playerHandCards.get(i).get(j).setIcon(new ImageIcon(CommonUtils.getImage("/TreasureCards/" + GameData.getAdventurers()[i].getHandCards().get(j) + ".png", Constant.ADVENTURER_WIDTH, Constant.ADVENTURER_HEIGHT)));
                         GamePanel.playerHandCards.get(i).get(j).setAlignmentX(SwingConstants.CENTER);
                     } else {
@@ -54,7 +54,7 @@ public class PlayerUpdater implements IUpdater {
                 GamePanel.playerHandCards.get(i).get(j).setIcon(new ImageIcon(CommonUtils.getImage("/TreasureCards/"
                         + GameData.getAdventurers()[i].getHandCards().get(j) + ".png", Constant.ADVENTURER_WIDTH, Constant.ADVENTURER_HEIGHT)));
                 GamePanel.playerHandCards.get(i).get(j).setAlignmentX(SwingConstants.CENTER);
-                GamePanel.playerHandCards.get(i).get(j).setEnabled(true);
+                GamePanel.playerHandCards.get(i).get(j).setEnabled(i == Game.getRoundNum());
                 GamePanel.playerHandCards.get(i).get(j).setVisible(true);
             }
             for (int j = GameData.getAdventurers()[i].getHandCards().size(); j < GamePanel.playerHandCards.get(i).size(); j++) {

@@ -185,15 +185,13 @@ public class Controllers {
                     GameData.getBoard().getTile(GameData.getAdventurers()[Game.getRoundNum()].getX(),GameData.getAdventurers()[Game.getRoundNum()].getY()).MoveOff(GameData.getAdventurers()[Game.getRoundNum()]);
                     GameData.getAdventurers()[Game.getRoundNum()].setPos(GameData.getSpecialActionTile()[0],GameData.getSpecialActionTile()[1]);
                     GameData.getBoard().getTile(GameData.getSpecialActionTile()[0],GameData.getSpecialActionTile()[1]).MoveOnto(GameData.getAdventurers()[Game.getRoundNum()].getId());
-                    GameData.getAdventurers()[Game.getRoundNum()].getHandCards().remove((Integer)lastSelect);
-                    GameData.getTreasureDeck().Discard(lastSelect);
                     for (int pawn : GameData.getSelectedPawns()){
                         GameData.getBoard().getTile(GameData.getAdventurers()[pawn].getX(),GameData.getAdventurers()[pawn].getY()).MoveOff(GameData.getAdventurers()[pawn]);
                         GameData.getAdventurers()[pawn].setPos(GameData.getSpecialActionTile()[0],GameData.getSpecialActionTile()[1]);
                         GameData.getBoard().getTile(GameData.getSpecialActionTile()[0],GameData.getSpecialActionTile()[1]).MoveOnto(GameData.getAdventurers()[pawn].getId());
-                        GameData.getAdventurers()[Game.getRoundNum()].getHandCards().remove((Integer)lastSelect);
-                        GameData.getTreasureDeck().Discard(lastSelect);
                     }
+                    GameData.getAdventurers()[Game.getRoundNum()].getHandCards().remove((Integer)lastSelect);
+                    GameData.getTreasureDeck().Discard(lastSelect);
                     GameData.SelectPawn(-1);
                     GameData.resetCardsInRound();
                     GameData.resetSpecialActionTile();
@@ -224,12 +222,14 @@ public class Controllers {
                 }
                 else { System.out.println("Lift Off failed"); }
             }
+            // Enter in fake round
             else if (GameData.getSelectedPawn() != -1){
                 Game.setInFakeRound(true);
                 Game.setFakeRoundNum(Game.getRoundNum());
                 Game.setFakeActionCount(Game.getActionCount());
                 Game.setActionCount(3);
                 Game.setRoundNum(GameData.getSelectedPawn());
+                UpdaterAgent.getPlayerUpdater().guiUpdate();
                 LogAgent.logMessenger("Switch to player " + Game.getRoundNum()+1 +"'s turn (" + GameData.getAdventurers()[Game.getRoundNum()].getName()+ ")");
             }
             else{ System.out.println("Error"); }
