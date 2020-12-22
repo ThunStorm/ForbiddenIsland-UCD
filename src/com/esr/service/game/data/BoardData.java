@@ -2,7 +2,10 @@ package com.esr.service.game.data;
 
 import com.esr.gui.updater.LogAgent;
 import com.esr.gui.updater.UpdaterAgent;
+import com.esr.service.game.Game;
 import com.esr.service.game.GameData;
+import com.esr.utils.Audio;
+import com.esr.utils.Constant;
 import com.esr.utils.Map;
 
 import java.util.ArrayList;
@@ -57,7 +60,16 @@ public class BoardData {
             if (tileMap[coords[0]][coords[1]].SinkTile()){
                 GameData.getFloodDeck().RemoveFloodCard(sinkTile);
                 if(tileMap[coords[0]][coords[1]].getPlayerOnBoard().size() != 0){
-
+                    for (int player : tileMap[coords[0]][coords[1]].getPlayerOnBoard()){
+                        LogAgent.logMessenger(Map.adventurerMatcher.get(player) + " has fallen into sea");
+                    }
+                    if(Constant.AUDIO_ON_OFF){
+                        Audio.SPLASH.Play();
+                    }
+                    Game.setNeed2save(true);
+                    Game.setFakeRoundNum(Game.getRoundNum());
+                    Game.setPlayerIDinWater(tileMap[coords[0]][coords[1]].getPlayerOnBoard());
+                    Game.SavePlayersRound();
                 }
             }
         }

@@ -28,6 +28,7 @@ public enum Audio {
     PLAYER3("Player 3.wav"),
     PLAYER4("Player 4.wav"),
     DISCARD("Discard.wav"),
+    SPLASH("Splash.wav"),
     NEXT("Next.wav"),
     WIN("Wins!.wav"),
     FAILURE("Failure.wav");

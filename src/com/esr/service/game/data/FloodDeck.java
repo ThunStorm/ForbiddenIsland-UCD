@@ -1,6 +1,5 @@
 package com.esr.service.game.data;
 
-import com.esr.service.game.Game;
 import com.esr.service.game.GameData;
 
 import java.util.ArrayList;
@@ -33,26 +32,34 @@ public class FloodDeck {
         Collections.shuffle(floodDeck);
     }
 
-    public ArrayList<Integer> getNFlood(){
-        if (isInit){ this.displayNum = 6; }
-        else { this.displayNum = GameData.getFloodCardCount(); }
+    public ArrayList<Integer> getNFlood() {
+        if (isInit) {
+            this.displayNum = 6;
+        } else {
+            this.displayNum = GameData.getFloodCardCount();
+        }
         CheckAvailability(this.displayNum);
         displayedCards.clear();
-        displayedCards.addAll(floodDeck.subList(0,this.displayNum));
+        if (floodDeck.size() + discardPile.size() < displayNum){
+            displayedCards.addAll(floodDeck);
+        }
+        else{
+            displayedCards.addAll(floodDeck.subList(0, this.displayNum));
+        }
         return displayedCards;
     }
 
-    public void Discard(){
+    public void Discard() {
         int count = 0;
         Iterator<Integer> iterator = floodDeck.iterator();
-        while (iterator.hasNext()){
+        while (iterator.hasNext()) {
             int floodCard = iterator.next();
-            if (count < displayNum){
+            if (count < displayNum) {
                 discardPile.add(floodCard);
                 iterator.remove();
                 count++;
             }
-            if( count >= displayNum ){
+            if (count >= displayNum) {
                 break;
             }
         }
@@ -62,8 +69,8 @@ public class FloodDeck {
 //        }
     }
 
-    public void PutBack2Top(){
-        if(discardPile.size()!=0){
+    public void PutBack2Top() {
+        if (discardPile.size() != 0) {
             Collections.shuffle(discardPile);
             discardPile.addAll(floodDeck);
             floodDeck.clear();
@@ -72,27 +79,27 @@ public class FloodDeck {
         }
     }
 
-    public void PutBack(){
+    public void PutBack() {
         Collections.shuffle(discardPile);
         floodDeck.clear();
         floodDeck.addAll(discardPile);
         discardPile.clear();
     }
 
-    public void RemoveFloodCard(int removedTile){
+    public void RemoveFloodCard(int removedTile) {
         removedFloodCard.add(removedTile);
         floodDeck.remove((Integer) removedTile);
     }
 
-    private void CheckAvailability(int n){
-        if (floodDeck.size() < n){
+    private void CheckAvailability(int n) {
+        if (floodDeck.size() < n) {
             Collections.shuffle(discardPile);
             floodDeck.addAll(discardPile);
             discardPile.clear();
         }
     }
 
-    public void setToNorm(){
+    public void setToNorm() {
         this.isInit = false;
     }
 

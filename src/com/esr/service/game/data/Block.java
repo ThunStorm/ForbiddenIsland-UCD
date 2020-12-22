@@ -1,5 +1,6 @@
 package com.esr.service.game.data;
 
+import com.esr.gui.updater.LogAgent;
 import com.esr.service.game.Game;
 import com.esr.service.game.component.adventurer.Adventurer;
 
@@ -85,6 +86,7 @@ public class Block {
             if(tileId == 14){
                 Game.GameComplete(false);
                 System.out.println("Fool's landing is flooded!");
+                LogAgent.logMessenger("Fool's landing is flooded!");
             }
             return true;
         }

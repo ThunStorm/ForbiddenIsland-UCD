@@ -103,4 +103,8 @@ public abstract class Adventurer {
     public int getPos() {
         return Map.numberMatcher.get(Arrays.toString(new int[]{this.x, this.y}));
     }
+
+    public int getOrder() {
+        return order;
+    }
 }

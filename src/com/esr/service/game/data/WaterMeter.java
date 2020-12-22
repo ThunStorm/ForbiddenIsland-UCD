@@ -1,5 +1,6 @@
 package com.esr.service.game.data;
 
+import com.esr.gui.updater.LogAgent;
 import com.esr.service.game.Game;
 
 /**
@@ -24,6 +25,7 @@ public class WaterMeter {
         img = "/WaterMeter/" + waterLevel + ".png";
         setFloodCardCount();
         if (waterLevel == 10){
+            LogAgent.logMessenger("Water level reaches the skull and crossbones");
             Game.GameComplete(false);
         }
     }

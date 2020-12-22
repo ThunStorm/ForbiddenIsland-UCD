@@ -1,5 +1,6 @@
 package com.esr.service.game;
 
+import com.esr.gui.updater.LogAgent;
 import com.esr.service.game.component.adventurer.*;
 import com.esr.service.game.data.*;
 import com.esr.utils.Map;
@@ -83,7 +84,28 @@ public class GameData {
         boolean isNearX = ((adventurers[Game.getRoundNum()].getY() == coords[1]) && (Math.abs(adventurers[Game.getRoundNum()].getX() - coords[0]) == 1));
         boolean isOnTile = ((adventurers[Game.getRoundNum()].getX() == coords[0]) && (adventurers[Game.getRoundNum()].getY() == coords[1]));
         boolean isNearDiagonally = ((Math.abs(adventurers[Game.getRoundNum()].getX() - coords[0]) == 1) && (Math.abs(adventurers[Game.getRoundNum()].getY() - coords[1]) == 1));
-        if (((isNearX || isNearY) && (board.getTile(coords[0], coords[1]).isExist()))||((isNearDiagonally) && (board.getTile(coords[0], coords[1]).isExist()) && (adventurers[Game.getRoundNum()].getName().equals("Explorer")))){
+
+        if (Game.isNeed2save()){
+            int x = adventurers[Game.getRoundNum()].getX();
+            int y = adventurers[Game.getRoundNum()].getY();
+            if (!board.getTile(x-1, y).isExist() && !board.getTile(x+1, y).isExist()
+                    && !board.getTile(x, y-1).isExist() && !board.getTile(x, y+1).isExist()){
+                Game.GameComplete(false);
+                LogAgent.logMessenger("No adjacent tile to swim to");
+                return;
+            }
+            if (adventurers[Game.getRoundNum()].getName().equals("Explorer")
+                    && !board.getTile(x-1, y).isExist() && !board.getTile(x+1, y).isExist()
+                    && !board.getTile(x, y-1).isExist() && !board.getTile(x, y+1).isExist()
+                    && !board.getTile(x-1, y-1).isExist() && !board.getTile(x+1, y-1).isExist()
+                    && !board.getTile(x-1, y+1).isExist() && !board.getTile(x+1, y+1).isExist()){
+                Game.GameComplete(false);
+                LogAgent.logMessenger("No adjacent tile to swim to");
+                return;
+            }
+        }
+        if (((isNearX || isNearY) && (board.getTile(coords[0], coords[1]).isExist()))
+                ||((isNearDiagonally) && (board.getTile(coords[0], coords[1]).isExist()) && (adventurers[Game.getRoundNum()].getName().equals("Explorer")))){
             adventurers[Game.getRoundNum()].setMove(coords[0],coords[1]);
             board.setCanMove(true);
             if(board.getTile(coords[0], coords[1]).getStatus() == TileStatus.Flooded){
@@ -177,6 +199,11 @@ public class GameData {
     public static FloodDeck getFloodDeck() { return floodDeck; }
 
     public static TreasureDeck getTreasureDeck() { return treasureDeck; }
+
+    public static void resetSpecialActionTile() {
+        SpecialActionTile[0]=-1;
+        SpecialActionTile[1]=-1;
+    }
 
     public static String getWaterMeterImg() { return waterMeter.getImg(); }
 

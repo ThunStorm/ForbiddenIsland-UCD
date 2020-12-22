@@ -45,6 +45,9 @@ public class Controllers {
                     if (Constant.AUDIO_ON_OFF){ Audio.MOVETO.Play(); }
                     UpdaterAgent.getBoardUpdater().guiUpdate();
                     Game.doAction();
+                    if (Game.isNeed2save()){
+                        Game.SavePlayersRound();
+                    }
                 }
                 else{ LogAgent.logMessenger("Can't Move To this tile"); }
             }
@@ -160,6 +163,7 @@ public class Controllers {
                         GameData.getAdventurers()[Game.getRoundNum()].getHandCards().remove((Integer)lastSelect);
                         GameData.getTreasureDeck().Discard(lastSelect);
                         GameData.resetCardsInRound();
+                        GameData.resetSpecialActionTile();
                         UpdaterAgent.getBoardUpdater().guiUpdate();
                         UpdaterAgent.getPlayerUpdater().guiUpdate();
                         if(Constant.AUDIO_ON_OFF){
@@ -183,6 +187,7 @@ public class Controllers {
                     }
                     GameData.SelectPawn(-1);
                     GameData.resetCardsInRound();
+                    GameData.resetSpecialActionTile();
                     UpdaterAgent.getBoardUpdater().guiUpdate();
                     UpdaterAgent.getPlayerUpdater().guiUpdate();
                     if(Constant.AUDIO_ON_OFF){
@@ -223,30 +228,6 @@ public class Controllers {
 //
     private void DiscardController(){
         ConsolePanel.consoleButtons.get(7).addActionListener(e -> {
-//            LogAgent.logMessenger("Discard");
-//            if(GameData.getCardsInRound().size() != 0 && GameData.getCardsInRound().size() <= 5){
-//                ArrayList<Integer> allCardsInRound = new ArrayList<>();
-//                allCardsInRound.addAll(GameData.getAdventurers()[Game.getRoundNum()].getHandCards());
-//                allCardsInRound.addAll(GameData.getDisplayedTreasureCard());
-//                GameData.getAdventurers()[Game.getRoundNum()].getHandCards().clear();
-//                GameData.getDisplayedTreasureCard().clear();
-//                for (int card : allCardsInRound){
-//                    if(GameData.getCardsInRound().contains(card)){
-//                       GameData.getAdventurers()[Game.getRoundNum()].getHandCards().add(card);
-//                    }
-//                    else {
-//                        GameData.getTreasureDeck().Discard(card);
-//                    }
-//                }
-//                GameData.resetCardsInRound();
-//                UpdaterAgent.getPlayerUpdater().guiUpdate();
-//                UpdaterAgent.getTreasureUpdater().guiUpdate();
-//                if (Constant.AUDIO_ON_OFF){ Audio.DISCARD.Play(); }
-//            }
-//            else {
-//                LogAgent.logMessenger("You haven't selected or selected more than 5 cards, please re-select the card you want to keep");
-//                GameData.resetCardsInRound();
-//            }
             LogAgent.logMessenger("Discard");
             if(GameData.getCardsInRound().size() != 0){
                 ArrayList<Integer> allCardsInRound = new ArrayList<>();

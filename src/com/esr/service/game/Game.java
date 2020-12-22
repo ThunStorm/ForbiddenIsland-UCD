@@ -5,13 +5,16 @@ import com.esr.gui.listener.Controllers;
 import com.esr.gui.listener.DataListener;
 import com.esr.gui.updater.LogAgent;
 import com.esr.gui.updater.UpdaterAgent;
+import com.esr.service.game.component.adventurer.Adventurer;
 import com.esr.service.game.component.adventurer.Engineer;
 import com.esr.service.game.component.cards.TreasureFigurines;
 import com.esr.service.game.data.Block;
 import com.esr.utils.Audio;
 import com.esr.utils.Constant;
+import com.esr.utils.Map;
 import com.sun.xml.internal.bind.v2.TODO;
 
+import java.util.ArrayList;
 import java.util.Iterator;
 
 /**
@@ -22,9 +25,12 @@ import java.util.Iterator;
  **/
 public class Game {
     private static int roundNum = 0;
+    private static int fakeRoundNum = -1;
     private static int actionCount = 0;
     private static int numOfPlayer;
     private static boolean stage23Done = false;
+    private static boolean need2save = false;
+    private static ArrayList<Integer> playerIDinWater;
     public GameData gameData;
     public UpdaterAgent updaterAgent;
     public DataListener dataListener;
@@ -33,6 +39,7 @@ public class Game {
 
     public Game(int numOfPlayers, int waterLevel) {
         numOfPlayer = numOfPlayers;
+        playerIDinWater = new ArrayList<>();
         gameData = new GameData(numOfPlayers, waterLevel);
         dataListener = new DataListener();
         controllers = new Controllers();
@@ -111,6 +118,7 @@ public class Game {
 
         // check win or lose
         if (GameData.getBoard().isShrinesFlooded()){
+            LogAgent.logMessenger("Shrines and Treasures are sunk");
             GameComplete(false);
             return;
         }
@@ -128,14 +136,38 @@ public class Game {
         LogAgent.logMessenger("[ Player " + (roundNum + 1) + " ]\n(" + GameData.getAdventurers()[roundNum].getName() + "'s Round)");
     }
 
+    public static void SavePlayersRound(){
+        if(playerIDinWater.size() == 0){
+            roundNum = fakeRoundNum;
+            fakeRoundNum = -1;
+            actionCount = 3;
+            need2save = false;
+            return;
+        }
+
+        for (Adventurer adventurer : GameData.getAdventurers()){
+            if(playerIDinWater.contains(adventurer.getId())){
+                roundNum = adventurer.getOrder();
+                actionCount = 2;
+                playerIDinWater.remove((Integer) adventurer.getId());
+                LogAgent.logMessenger("Select a nearest tile for [ Player " + (roundNum + 1) + " ] ("
+                        + GameData.getAdventurers()[roundNum].getName() + ")to swim to and click [Move To]");
+                break;
+            }
+        }
+
+    }
+
     public static void GameComplete(boolean isWin) {
 // TODO More Actions e.g. disable buttons.
         if (isWin){
             System.out.println("Game Success");
+            LogAgent.logMessenger("Game Success");
             if (Constant.AUDIO_ON_OFF){ Audio.WIN.Play(); }
         }
         else{
             System.out.println("Game failed");
+            LogAgent.logMessenger("Game failed");
             if (Constant.AUDIO_ON_OFF){ Audio.FAILURE.Play(); }
         }
     }
@@ -164,6 +196,14 @@ public class Game {
         return stage23Done;
     }
 
+    public static void setNeed2save(boolean need2saveFlag){
+        need2save = need2saveFlag;
+    }
+
+    public static boolean isNeed2save(){
+        return need2save;
+    }
+
     private static void playerAudio() {
         if (Constant.AUDIO_ON_OFF) {
             switch (roundNum) {
@@ -181,5 +221,17 @@ public class Game {
                     break;
             }
         }
+    }
+
+    public static int getFakeRoundNum() {
+        return fakeRoundNum;
+    }
+
+    public static void setFakeRoundNum(int fakeRoundNum) {
+        Game.fakeRoundNum = fakeRoundNum;
+    }
+
+    public static void setPlayerIDinWater(ArrayList<Integer> playerIDinWater) {
+        Game.playerIDinWater = playerIDinWater;
     }
 }
