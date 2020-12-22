@@ -130,7 +130,6 @@ public class Game {
             fakeRoundNum = -1;
             actionCount = 3;
             need2save = false;
-            GameData.getBoard().sinkTiles(GameData.getFloodDeck().getNFlood());
             return;
         }
 
@@ -302,6 +301,6 @@ public class Game {
     }
 
     public static void setPlayerIDinWater(ArrayList<Integer> playerIDinWater) {
-        Game.playerIDinWater = playerIDinWater;
+        Game.playerIDinWater.addAll(playerIDinWater);
     }
 }

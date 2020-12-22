@@ -63,16 +63,18 @@ public class BoardData {
                     for (int player : tileMap[coords[0]][coords[1]].getPlayerOnBoard()){
                         LogAgent.logMessenger(Map.adventurerMatcher.get(player) + " has fallen into sea");
                     }
-                    if(Constant.AUDIO_ON_OFF){
-                        Audio.SPLASH.Play();
-                    }
                     Game.setNeed2save(true);
-                    Game.setFakeRoundNum(Game.getRoundNum());
                     Game.setPlayerIDinWater(tileMap[coords[0]][coords[1]].getPlayerOnBoard());
                     tileMap[coords[0]][coords[1]].getPlayerOnBoard().clear();
-                    Game.SavePlayersRound();
-                    break;
+
                 }
+            }
+        }
+        if(Game.isNeed2save()){
+            Game.setFakeRoundNum(Game.getRoundNum());
+            Game.SavePlayersRound();
+            if(Constant.AUDIO_ON_OFF){
+                Audio.SPLASH.Play();
             }
         }
         UpdaterAgent.getBoardUpdater().guiUpdate();
