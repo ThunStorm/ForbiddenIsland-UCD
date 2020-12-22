@@ -123,6 +123,7 @@ public class Game {
 
         playerAudio();
         LogAgent.logMessenger("[ Player " + (roundNum + 1) + " ]\n(" + GameData.getAdventurers()[roundNum].getName() + "'s Round)");
+        UpdaterAgent.getPlayerUpdater().guiUpdate();
     }
 
     public static void SavePlayersRound() {
