@@ -22,9 +22,11 @@ public class Game {
     private static int roundNum = 0;
     private static int fakeRoundNum = -1;
     private static int actionCount = 0;
+    private static int fakeActionCount = 0;
     private static int numOfPlayer;
     private static boolean stage23Done = false;
     private static boolean need2save = false;
+    private static boolean inFakeRound = false;
     private static ArrayList<Integer> playerIDinWater;
     public GameData gameData;
     public UpdaterAgent updaterAgent;
@@ -252,6 +254,10 @@ public class Game {
         actionCount += 1;
     }
 
+    public static void setActionCount(int num){
+        actionCount = num;
+    }
+
     public static void moreAction() {
         actionCount -= 1;
     }
@@ -300,7 +306,31 @@ public class Game {
         Game.fakeRoundNum = fakeRoundNum;
     }
 
+    public static int getFakeRoundNum() {
+        return fakeRoundNum;
+    }
+
     public static void setPlayerIDinWater(ArrayList<Integer> playerIDinWater) {
         Game.playerIDinWater.addAll(playerIDinWater);
+    }
+
+    public static boolean isInFakeRound() {
+        return inFakeRound;
+    }
+
+    public static void setInFakeRound(boolean inFakeRound) {
+        Game.inFakeRound = inFakeRound;
+    }
+
+    public static void setRoundNum(int roundNum) {
+        Game.roundNum = roundNum;
+    }
+
+    public static int getFakeActionCount() {
+        return fakeActionCount;
+    }
+
+    public static void setFakeActionCount(int fakeActionCount) {
+        Game.fakeActionCount = fakeActionCount;
     }
 }

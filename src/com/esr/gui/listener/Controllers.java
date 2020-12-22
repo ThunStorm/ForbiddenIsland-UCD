@@ -83,15 +83,16 @@ public class Controllers {
                 if (GameData.getBoard().getTile(GameData.getAdventurers()[Game.getRoundNum()].getX(),GameData.getAdventurers()[Game.getRoundNum()].getY())
                         .CanPassTo(GameData.getAdventurers()[Game.getRoundNum()], GameData.getAdventurers()[GameData.getSelectedPawn()])
                         || GameData.getAdventurers()[Game.getRoundNum()].getName().equals("Messenger")){
-                    GameData.PassTo();
-                    LogAgent.logMessenger(GameData.getAdventurers()[Game.getRoundNum()].getName()
-                            + " passed a card to " + GameData.getAdventurers()[GameData.getSelectedPawn()].getName());
-                    if (Constant.AUDIO_ON_OFF){ Audio.PASSTO.Play(); }
-                    UpdaterAgent.getPlayerUpdater().guiUpdate();
-                    UpdaterAgent.getTreasureUpdater().guiUpdate();
-                    Game.doAction();
-                    GameData.SelectPawn(-1);
-                    GameData.resetCardsInRound();
+                    if(GameData.PassTo()){
+                        LogAgent.logMessenger(GameData.getAdventurers()[Game.getRoundNum()].getName()
+                                + " passed a card to " + GameData.getAdventurers()[GameData.getSelectedPawn()].getName());
+                        if (Constant.AUDIO_ON_OFF){ Audio.PASSTO.Play(); }
+                        UpdaterAgent.getPlayerUpdater().guiUpdate();
+                        UpdaterAgent.getTreasureUpdater().guiUpdate();
+                        Game.doAction();
+                        GameData.SelectPawn(-1);
+                        GameData.resetCardsInRound();
+                    }
                 }
                 else{ LogAgent.logMessenger("Can't do Pass To Action"); }
             }
@@ -234,7 +235,7 @@ public class Controllers {
     private void DiscardController(){
         ConsolePanel.consoleButtons.get(7).addActionListener(e -> {
             LogAgent.logMessenger("Discard");
-            if(GameData.getCardsInRound().size() != 0){
+            if(GameData.getCardsInRound().size() != 0 && !Game.isInFakeRound()){
                 ArrayList<Integer> allCardsInRound = new ArrayList<>();
                 allCardsInRound.addAll(GameData.getAdventurers()[Game.getRoundNum()].getHandCards());
                 allCardsInRound.addAll(GameData.getDisplayedTreasureCard());
@@ -259,6 +260,27 @@ public class Controllers {
                     count++;
                 }
                 GameData.resetCardsInRound();
+                UpdaterAgent.getPlayerUpdater().guiUpdate();
+                UpdaterAgent.getTreasureUpdater().guiUpdate();
+                if (Constant.AUDIO_ON_OFF){ Audio.DISCARD.Play(); }
+            }
+            else if(Game.isInFakeRound()){
+                ArrayList<Integer> allCardsInRound = new ArrayList<>(GameData.getAdventurers()[Game.getRoundNum()].getHandCards());
+                GameData.getAdventurers()[Game.getRoundNum()].getHandCards().clear();
+                for (Integer card : allCardsInRound){
+                    if (GameData.getCardsInRound().contains(card)){
+                        GameData.getTreasureDeck().Discard(card);
+                    }
+                    else {
+                        GameData.getAdventurers()[Game.getRoundNum()].getHandCards().add(card);
+                    }
+                }
+                Game.setInFakeRound(false);
+                Game.setActionCount(Game.getFakeActionCount());
+                Game.setFakeActionCount(-1);
+                Game.setRoundNum(Game.getFakeRoundNum());
+                Game.setFakeRoundNum(-1);
+                GameData.SelectPawn(-1);
                 UpdaterAgent.getPlayerUpdater().guiUpdate();
                 UpdaterAgent.getTreasureUpdater().guiUpdate();
                 if (Constant.AUDIO_ON_OFF){ Audio.DISCARD.Play(); }
