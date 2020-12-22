@@ -85,25 +85,6 @@ public class GameData {
         boolean isOnTile = ((adventurers[Game.getRoundNum()].getX() == coords[0]) && (adventurers[Game.getRoundNum()].getY() == coords[1]));
         boolean isNearDiagonally = ((Math.abs(adventurers[Game.getRoundNum()].getX() - coords[0]) == 1) && (Math.abs(adventurers[Game.getRoundNum()].getY() - coords[1]) == 1));
 
-        if (Game.isNeed2save()){
-            int x = adventurers[Game.getRoundNum()].getX();
-            int y = adventurers[Game.getRoundNum()].getY();
-            if (!board.getTile(x-1, y).isExist() && !board.getTile(x+1, y).isExist()
-                    && !board.getTile(x, y-1).isExist() && !board.getTile(x, y+1).isExist()){
-                Game.GameComplete(false);
-                LogAgent.logMessenger("No adjacent tile to swim to");
-                return;
-            }
-            if (adventurers[Game.getRoundNum()].getName().equals("Explorer")
-                    && !board.getTile(x-1, y).isExist() && !board.getTile(x+1, y).isExist()
-                    && !board.getTile(x, y-1).isExist() && !board.getTile(x, y+1).isExist()
-                    && !board.getTile(x-1, y-1).isExist() && !board.getTile(x+1, y-1).isExist()
-                    && !board.getTile(x-1, y+1).isExist() && !board.getTile(x+1, y+1).isExist()){
-                Game.GameComplete(false);
-                LogAgent.logMessenger("No adjacent tile to swim to");
-                return;
-            }
-        }
         if (((isNearX || isNearY) && (board.getTile(coords[0], coords[1]).isExist()))
                 ||((isNearDiagonally) && (board.getTile(coords[0], coords[1]).isExist()) && (adventurers[Game.getRoundNum()].getName().equals("Explorer")))){
             adventurers[Game.getRoundNum()].setMove(coords[0],coords[1]);
@@ -185,11 +166,6 @@ public class GameData {
                 System.out.println("Error in pass to");
             }
         }
-    }
-
-    public static void draw2Treasure(){
-        displayedTreasureCard.clear();
-        displayedTreasureCard.addAll(treasureDeck.getNTreasureCards(2));
     }
 
     public static BoardData getBoard() { return board; }

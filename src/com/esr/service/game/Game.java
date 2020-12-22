@@ -1,18 +1,13 @@
 package com.esr.service.game;
 
-import com.esr.gui.game.GamePanel;
 import com.esr.gui.listener.Controllers;
 import com.esr.gui.listener.DataListener;
 import com.esr.gui.updater.LogAgent;
 import com.esr.gui.updater.UpdaterAgent;
 import com.esr.service.game.component.adventurer.Adventurer;
 import com.esr.service.game.component.adventurer.Engineer;
-import com.esr.service.game.component.cards.TreasureFigurines;
-import com.esr.service.game.data.Block;
 import com.esr.utils.Audio;
 import com.esr.utils.Constant;
-import com.esr.utils.Map;
-import com.sun.xml.internal.bind.v2.TODO;
 
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -60,16 +55,16 @@ public class Game {
         playerAudio();
     }
 
-    public static void Stage23(){
+    public static void Stage23() {
         GameData.getDisplayedTreasureCard().addAll(GameData.getTreasureDeck().getNTreasureCards(2));
 //        LogAgent.logMessenger(String.valueOf(GameData.getDisplayedTreasureCard()));
         UpdaterAgent.getTreasureUpdater().guiUpdate();
 
 
         Iterator<Integer> iterator = GameData.getDisplayedTreasureCard().iterator();
-        while (iterator.hasNext()){
+        while (iterator.hasNext()) {
             Integer treasureID = iterator.next();
-            if (treasureID == 25 || treasureID == 26 || treasureID == 27){
+            if (treasureID == 25 || treasureID == 26 || treasureID == 27) {
                 GameData.getWaterMeter().WaterRise();
                 GameData.getFloodDeck().PutBack2Top();
                 GameData.getTreasureDeck().Discard(treasureID);
@@ -95,7 +90,9 @@ public class Game {
         UpdaterAgent.getFloodUpdater().guiUpdate();
         GameData.getBoard().sinkTiles(GameData.getFloodDeck().getNFlood());
         GameData.getFloodDeck().Discard();
-        if (Constant.AUDIO_ON_OFF){ Audio.FLOOD.Play(); }
+        if (Constant.AUDIO_ON_OFF) {
+            Audio.FLOOD.Play();
+        }
         stage23Done = true;
     }
 
@@ -106,8 +103,7 @@ public class Game {
             LogAgent.logMessenger("You have more than 5 cards, please select all the cards you would like to discard and press [Discard]!");
             GameData.resetCardsInRound();
             return;
-        }
-        else {
+        } else {
             GameData.getAdventurers()[roundNum].getHandCards().addAll(GameData.getDisplayedTreasureCard());
             GameData.getDisplayedTreasureCard().clear();
             GameData.SelectPawn(-1);
@@ -117,7 +113,7 @@ public class Game {
         }
 
         // check win or lose
-        if (GameData.getBoard().isShrinesFlooded()){
+        if (GameData.getBoard().isShrinesFlooded()) {
             LogAgent.logMessenger("Shrines and Treasures are sunk");
             GameComplete(false);
             return;
@@ -136,8 +132,8 @@ public class Game {
         LogAgent.logMessenger("[ Player " + (roundNum + 1) + " ]\n(" + GameData.getAdventurers()[roundNum].getName() + "'s Round)");
     }
 
-    public static void SavePlayersRound(){
-        if(playerIDinWater.size() == 0){
+    public static void SavePlayersRound() {
+        if (playerIDinWater.size() == 0) {
             roundNum = fakeRoundNum;
             fakeRoundNum = -1;
             actionCount = 3;
@@ -145,30 +141,114 @@ public class Game {
             return;
         }
 
-        for (Adventurer adventurer : GameData.getAdventurers()){
-            if(playerIDinWater.contains(adventurer.getId())){
+        for (Adventurer adventurer : GameData.getAdventurers()) {
+            if (playerIDinWater.contains(adventurer.getId())) {
                 roundNum = adventurer.getOrder();
                 actionCount = 2;
                 playerIDinWater.remove((Integer) adventurer.getId());
+
+                int x = GameData.getAdventurers()[roundNum].getX();
+                int y = GameData.getAdventurers()[roundNum].getY();
+                if(x == 0){
+                    if (!GameData.getBoard().getTile(x + 1, y).isExist() && !GameData.getBoard().getTile(x, y - 1).isExist() && !GameData.getBoard().getTile(x, y + 1).isExist()) {
+                        Game.GameComplete(false);
+                        LogAgent.logMessenger("No adjacent tile to swim to");
+                        return;
+                    }
+                    if (GameData.getAdventurers()[roundNum].getName().equals("Explorer") && !GameData.getBoard().getTile(x + 1, y).isExist()
+                            && !GameData.getBoard().getTile(x, y - 1).isExist() && !GameData.getBoard().getTile(x, y + 1).isExist()
+                            && !GameData.getBoard().getTile(x + 1, y - 1).isExist() && !GameData.getBoard().getTile(x + 1, y + 1).isExist()) {
+                        Game.GameComplete(false);
+                        LogAgent.logMessenger("No adjacent tile to swim to");
+                        return;
+                    }
+                }
+                else if (x == 5){
+                    if (!GameData.getBoard().getTile(x - 1, y).isExist() && !GameData.getBoard().getTile(x, y - 1).isExist() && !GameData.getBoard().getTile(x, y + 1).isExist()) {
+                        Game.GameComplete(false);
+                        LogAgent.logMessenger("No adjacent tile to swim to");
+                        return;
+                    }
+                    if (GameData.getAdventurers()[roundNum].getName().equals("Explorer")
+                            && !GameData.getBoard().getTile(x - 1, y).isExist()
+                            && !GameData.getBoard().getTile(x, y - 1).isExist() && !GameData.getBoard().getTile(x, y + 1).isExist()
+                            && !GameData.getBoard().getTile(x - 1, y - 1).isExist() && !GameData.getBoard().getTile(x - 1, y + 1).isExist()) {
+                        Game.GameComplete(false);
+                        LogAgent.logMessenger("No adjacent tile to swim to");
+                        return;
+                    }
+                }
+                else if (y == 0){
+                    if (!GameData.getBoard().getTile(x - 1, y).isExist() && !GameData.getBoard().getTile(x + 1, y).isExist()
+                            && !GameData.getBoard().getTile(x, y + 1).isExist()) {
+                        Game.GameComplete(false);
+                        LogAgent.logMessenger("No adjacent tile to swim to");
+                        return;
+                    }
+                    if (GameData.getAdventurers()[roundNum].getName().equals("Explorer")
+                            && !GameData.getBoard().getTile(x - 1, y).isExist() && !GameData.getBoard().getTile(x + 1, y).isExist()
+                            && !GameData.getBoard().getTile(x, y + 1).isExist()
+                            && !GameData.getBoard().getTile(x - 1, y + 1).isExist() && !GameData.getBoard().getTile(x + 1, y + 1).isExist()) {
+                        Game.GameComplete(false);
+                        LogAgent.logMessenger("No adjacent tile to swim to");
+                        return;
+                    }
+                }
+                else if (y == 5){
+                    if (!GameData.getBoard().getTile(x - 1, y).isExist() && !GameData.getBoard().getTile(x + 1, y).isExist()
+                            && !GameData.getBoard().getTile(x, y - 1).isExist()) {
+                        Game.GameComplete(false);
+                        LogAgent.logMessenger("No adjacent tile to swim to");
+                        return;
+                    }
+                    if (GameData.getAdventurers()[roundNum].getName().equals("Explorer")
+                            && !GameData.getBoard().getTile(x - 1, y).isExist() && !GameData.getBoard().getTile(x + 1, y).isExist()
+                            && !GameData.getBoard().getTile(x, y - 1).isExist()
+                            && !GameData.getBoard().getTile(x - 1, y - 1).isExist() && !GameData.getBoard().getTile(x + 1, y - 1).isExist()) {
+                        Game.GameComplete(false);
+                        LogAgent.logMessenger("No adjacent tile to swim to");
+                        return;
+                    }
+                }
+                else {
+                    if (!GameData.getBoard().getTile(x - 1, y).isExist() && !GameData.getBoard().getTile(x + 1, y).isExist()
+                            && !GameData.getBoard().getTile(x, y - 1).isExist() && !GameData.getBoard().getTile(x, y + 1).isExist()) {
+                        Game.GameComplete(false);
+                        LogAgent.logMessenger("No adjacent tile to swim to");
+                        return;
+                    }
+                    if (GameData.getAdventurers()[roundNum].getName().equals("Explorer")
+                            && !GameData.getBoard().getTile(x - 1, y).isExist() && !GameData.getBoard().getTile(x + 1, y).isExist()
+                            && !GameData.getBoard().getTile(x, y - 1).isExist() && !GameData.getBoard().getTile(x, y + 1).isExist()
+                            && !GameData.getBoard().getTile(x - 1, y - 1).isExist() && !GameData.getBoard().getTile(x + 1, y - 1).isExist()
+                            && !GameData.getBoard().getTile(x - 1, y + 1).isExist() && !GameData.getBoard().getTile(x + 1, y + 1).isExist()) {
+                        Game.GameComplete(false);
+                        LogAgent.logMessenger("No adjacent tile to swim to");
+                        return;
+                    }
+                }
+
                 LogAgent.logMessenger("Select a nearest tile for [ Player " + (roundNum + 1) + " ] ("
-                        + GameData.getAdventurers()[roundNum].getName() + ")to swim to and click [Move To]");
+                        + GameData.getAdventurers()[roundNum].getName() + ") to swim to and click [Move To]");
                 break;
             }
         }
-
     }
 
     public static void GameComplete(boolean isWin) {
 // TODO More Actions e.g. disable buttons.
-        if (isWin){
+        if (isWin) {
             System.out.println("Game Success");
             LogAgent.logMessenger("Game Success");
-            if (Constant.AUDIO_ON_OFF){ Audio.WIN.Play(); }
-        }
-        else{
+            if (Constant.AUDIO_ON_OFF) {
+                Audio.WIN.Play();
+            }
+        } else {
             System.out.println("Game failed");
             LogAgent.logMessenger("Game failed");
-            if (Constant.AUDIO_ON_OFF){ Audio.FAILURE.Play(); }
+            if (Constant.AUDIO_ON_OFF) {
+                Audio.FAILURE.Play();
+            }
         }
     }
 
@@ -196,12 +276,12 @@ public class Game {
         return stage23Done;
     }
 
-    public static void setNeed2save(boolean need2saveFlag){
-        need2save = need2saveFlag;
+    public static boolean isNeed2save() {
+        return need2save;
     }
 
-    public static boolean isNeed2save(){
-        return need2save;
+    public static void setNeed2save(boolean need2saveFlag) {
+        need2save = need2saveFlag;
     }
 
     private static void playerAudio() {

@@ -220,6 +220,9 @@ public class Controllers {
             if(!Game.isStage23Done()){
                 Game.Stage23();
             }
+            else if (Game.isNeed2save()){
+                LogAgent.logMessenger("Please save adventures first");
+            }
             else{
                 Game.RoundEnd();
             }
@@ -235,7 +238,7 @@ public class Controllers {
                 allCardsInRound.addAll(GameData.getDisplayedTreasureCard());
                 GameData.getAdventurers()[Game.getRoundNum()].getHandCards().clear();
                 GameData.getDisplayedTreasureCard().clear();
-                for (int card : allCardsInRound){
+                for (Integer card : allCardsInRound){
                     if (GameData.getCardsInRound().contains(card)){
                         GameData.getTreasureDeck().Discard(card);
                     }

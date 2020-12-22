@@ -17,19 +17,15 @@ public class TreasureDeck {
     private ArrayList<Integer> treasureDeck;
     private ArrayList<Integer> discardPile;
     private ArrayList<Integer> NTreasureCards;
-//    private ArrayList<Integer> displayedCards;
-//    private int displayNum = 2;
 
     public TreasureDeck() {
         treasureDeck = new ArrayList<>();
         discardPile = new ArrayList<>();
-//        displayedCards = new ArrayList<>();
         NTreasureCards = new ArrayList<>();
         for (int i = 0; i < 28; i++) {
             treasureDeck.add(i);
         }
         Collections.shuffle(treasureDeck);
-//        System.out.println(floodDeck);
     }
 
     public ArrayList<Integer> getNTreasureCards(int n) {
@@ -61,19 +57,6 @@ public class TreasureDeck {
                 break;
             }
         }
-//        for (int i = 0; i < treasureDeck.size(); i++) {
-//            if (treasureDeck.get(0) >= 25 && treasureDeck.get(0) <= 27){
-//                Discard(treasureDeck.get(0));
-//            }
-//            else {
-//                NTreasureCards.add(treasureDeck.get(0));
-//                count ++;
-//            }
-//            treasureDeck.remove(0);
-//            if (count >= n){
-//                break;
-//            }
-//        }
         return NTreasureCards;
     }
 
