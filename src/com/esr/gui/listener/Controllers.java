@@ -156,6 +156,12 @@ public class Controllers {
             LogAgent.logMessenger("Lift Off");
             int idx14 = GameData.getTilesArray().indexOf(14);
             Block block14 = GameData.getBoard().getTile(Map.coordinatesMatcher.get(idx14)[0],Map.coordinatesMatcher.get(idx14)[1]);
+            ArrayList<Integer> handCards = new ArrayList<>();
+            ArrayList<TreasureFigurines> figurines = new ArrayList<>();
+            for (Adventurer adventurer : GameData.getAdventurers()){
+                handCards.addAll(adventurer.getHandCards());
+                figurines.addAll(adventurer.getCapturedFigurines());
+            }
             if (GameData.getCardsInRound() != null && !GameData.getCardsInRound().isEmpty() && GameData.getSpecialActionTile()[0]!=-1 && GameData.getSpecialActionTile()[1] != -1){
                 int lastSelect = GameData.getCardsInRound().get(GameData.getCardsInRound().size()-1);
                 //sandbag
@@ -197,22 +203,36 @@ public class Controllers {
                         Audio.LIFTOFF.Play();
                     }
                 }
+
+                if(Game.isInFakeRound()){
+                    Game.setInFakeRound(false);
+                    Game.setRoundNum(Game.getFakeRoundNum());
+                    Game.setFakeRoundNum(-1);
+                    Game.setActionCount(Game.getFakeActionCount());
+                    Game.setFakeActionCount(-1);
+                    UpdaterAgent.getBoardUpdater().guiUpdate();
+                    UpdaterAgent.getPlayerUpdater().guiUpdate();
+                    LogAgent.logMessenger("Back to player " + Game.getRoundNum()+1 +"'s turn (" + GameData.getAdventurers()[Game.getRoundNum()].getName()+ ")");
+                    LogAgent.logMessenger("Have done " + Game.getActionCount() + " actions");
+                }
             }
             // lift off
             else if (block14.isExist() && block14.getPlayerOnBoard().size() == Game.getNumOfPlayer()){
-                ArrayList<Integer> handCards = new ArrayList<>();
-                ArrayList<TreasureFigurines> figurines = new ArrayList<>();
-                for (Adventurer adventurer : GameData.getAdventurers()){
-                    handCards.addAll(adventurer.getHandCards());
-                    figurines.addAll(adventurer.getCapturedFigurines());
-                }
                 if ((handCards.contains(20) || handCards.contains(21) || handCards.contains(22)) && figurines.size() == 4){
                     if (Constant.AUDIO_ON_OFF){ Audio.LIFTOFF.Play(); }
                     Game.GameComplete(true);
                 }
                 else { System.out.println("Lift Off failed"); }
             }
-            else{ System.out.println("Fool's landing no more exists"); }
+            else if (GameData.getSelectedPawn() != -1){
+                Game.setInFakeRound(true);
+                Game.setFakeRoundNum(Game.getRoundNum());
+                Game.setFakeActionCount(Game.getActionCount());
+                Game.setActionCount(3);
+                Game.setRoundNum(GameData.getSelectedPawn());
+                LogAgent.logMessenger("Switch to player " + Game.getRoundNum()+1 +"'s turn (" + GameData.getAdventurers()[Game.getRoundNum()].getName()+ ")");
+            }
+            else{ System.out.println("Error"); }
         });
     }
 

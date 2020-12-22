@@ -1,8 +1,5 @@
 package com.esr.service.game.data;
 
-import com.esr.gui.updater.TreasureUpdater;
-import com.esr.service.game.component.cards.handcards.TreasureCard;
-
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Iterator;
