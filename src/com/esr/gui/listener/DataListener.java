@@ -26,21 +26,13 @@ public class DataListener {
 
     private void BoardListener() {
         for (JButton tile : BoardPanel.tileCards) {
-            tile.addActionListener(e -> {
-//                LogAgent.logMessenger(Arrays.toString(Map.coordinatesMatcher.get(BoardPanel.tileCards.indexOf(tile))));
-                GameData.NextTile(Map.coordinatesMatcher.get(BoardPanel.tileCards.indexOf(tile)));
-            });
+            tile.addActionListener(e -> GameData.NextTile(Map.coordinatesMatcher.get(BoardPanel.tileCards.indexOf(tile))));
         }
     }
 
     private void TreasureListener() {
         for (JButton treasure : TreasurePanel.treasureCards) {
-            treasure.addActionListener(e -> {
-//                LogAgent.logMessenger(String.valueOf(TreasurePanel.treasureCards.indexOf(treasure)));
-                // deal with select blank
-                GameData.SelectTreasureCard(false, TreasurePanel.treasureCards.indexOf(treasure));
-
-            });
+            treasure.addActionListener(e -> GameData.SelectTreasureCard(false, TreasurePanel.treasureCards.indexOf(treasure)));
         }
     }
 

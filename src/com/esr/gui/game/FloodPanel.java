@@ -39,8 +39,4 @@ public class FloodPanel {
     public JPanel getFloodPanel() {
         return floodPanel;
     }
-
-    public ArrayList<JButton> getFloodCards() {
-        return floodCards;
-    }
 }

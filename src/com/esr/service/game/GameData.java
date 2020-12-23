@@ -34,7 +34,6 @@ public class GameData {
         floodDeck = new FloodDeck();
         treasureDeck = new TreasureDeck();
         waterMeter = new WaterMeter(waterLevel);
-//        figurinesData = new FigurinesData();
         adventurers = new Adventurer[numOfPlayers];
         displayedTreasureCard = new ArrayList<>();
         cardsInRound = new ArrayList<>();
@@ -105,9 +104,8 @@ public class GameData {
             adventurers[Game.getRoundNum()].setShoreUp(coords[0], coords[1]);
             board.setCanShoreUp(true);
         } else if (adventurers[Game.getRoundNum()].getName().equals("Diver")) {
-//            HashMap<int[], Double> distance = new HashMap<>();
             ArrayList<int[]> coordinates = new ArrayList<>();
-            double distance = 7.0;
+            double distance = 6.0;
             coordinates.add(new int[]{0, 0});
             for (int i = 0; i < board.getTileMap().length; i++) {
                 for (int j = 0; j < board.getTileMap()[i].length; j++) {
@@ -131,11 +129,10 @@ public class GameData {
             if (coordinates.contains(coords)) {
                 adventurers[Game.getRoundNum()].setMove(coords[0], coords[1]);
                 board.setCanMove(true);
-                coordinates.clear();
             } else {
                 board.setCanMove(false);
-                coordinates.clear();
             }
+            coordinates.clear();
         } else {
             System.out.println("This tile is unselectable");
             board.setCanMove(false);

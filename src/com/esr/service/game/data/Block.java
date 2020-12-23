@@ -97,18 +97,6 @@ public class Block {
         isCaptured = true;
         this.imgFile = tileId + 24 + ".png";
         this.img = imgFolder + imgFile;
-//        if (status == TileStatus.Normal){
-//            this.imgFolder = "/Tiles/";
-//            this.imgFile = (tileId + 24) + ".png";
-//            this.img = imgFolder + imgFile;
-//        }
-//        else if (status == TileStatus.Flooded){
-//            this.floodedOffset = tileId + 24;
-//            this.img = "/SubmersedTiles/" + this.floodedOffset + ".png";
-//        }
-//        else {
-//            this.img = null;
-//        }
     }
 
     public boolean isUnCaptured() {
