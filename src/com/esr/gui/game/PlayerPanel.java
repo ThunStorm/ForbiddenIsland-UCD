@@ -1,6 +1,5 @@
 package com.esr.gui.game;
 
-import com.esr.utils.CommonUtils;
 import com.esr.utils.Constant;
 
 import javax.swing.*;
@@ -28,21 +27,22 @@ public class PlayerPanel {
         duoPlayerPanel.add(player2.playerPanel);
     }
 
-    public JButton getP1Pawn(){
+    public JButton getP1Pawn() {
         return player1.pawn;
     }
 
-    public ArrayList<JButton> getP1HandCards(){
+    public ArrayList<JButton> getP1HandCards() {
         return player1.handCards;
     }
 
-    public JButton getP2Pawn(){
+    public JButton getP2Pawn() {
         return player2.pawn;
     }
 
-    public ArrayList<JButton> getP2HandCards(){
+    public ArrayList<JButton> getP2HandCards() {
         return player2.handCards;
     }
+
     public Box getDuoPlayerPanel() {
         return duoPlayerPanel;
     }

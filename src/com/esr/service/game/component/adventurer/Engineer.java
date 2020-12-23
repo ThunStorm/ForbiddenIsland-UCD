@@ -6,9 +6,10 @@ package com.esr.service.game.component.adventurer;
  * @Date 2020/11/24
  * @Version 1.0
  **/
-public class Engineer extends Adventurer{
+public class Engineer extends Adventurer {
 
     private int shoreUpCount = 1;
+
     public Engineer(int order) {
         super(order, "Engineer");
         this.id = 1;
@@ -18,7 +19,7 @@ public class Engineer extends Adventurer{
         return shoreUpCount;
     }
 
-    public void ShoreUp(){
+    public void ShoreUp() {
         this.shoreUpCount -= 1;
     }
 

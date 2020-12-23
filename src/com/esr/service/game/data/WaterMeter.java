@@ -20,33 +20,33 @@ public class WaterMeter {
         setFloodCardCount();
     }
 
-    public void WaterRise(){
+    public void WaterRise() {
         waterLevel += 1;
         img = "/WaterMeter/" + waterLevel + ".png";
         setFloodCardCount();
-        if (waterLevel == 10){
+        if (waterLevel == 10) {
             LogAgent.logMessenger("Water level reaches the skull and crossbones");
             Game.GameComplete(false);
         }
     }
 
-    private void setFloodCardCount(){
-        switch (waterLevel){
-            case 1 :
-            case 2 :
+    private void setFloodCardCount() {
+        switch (waterLevel) {
+            case 1:
+            case 2:
                 floodCardCount = 2;
                 break;
-            case 3 :
-            case 4 :
-            case 5 :
+            case 3:
+            case 4:
+            case 5:
                 floodCardCount = 3;
                 break;
-            case 6 :
-            case 7 :
+            case 6:
+            case 7:
                 floodCardCount = 4;
                 break;
-            case 8 :
-            case 9 :
+            case 8:
+            case 9:
                 floodCardCount = 5;
                 break;
         }

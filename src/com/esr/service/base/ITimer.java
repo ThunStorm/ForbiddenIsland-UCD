@@ -9,5 +9,5 @@ import java.io.IOException;
  * @Version 1.0
  **/
 public interface ITimer {
-        void run() throws IOException;
+    void run() throws IOException;
 }

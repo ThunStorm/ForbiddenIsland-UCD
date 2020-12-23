@@ -9,6 +9,7 @@ import com.esr.utils.CommonUtils;
 import com.esr.utils.Constant;
 
 import javax.swing.*;
+import java.util.ArrayList;
 
 /**
  * @Description
@@ -62,6 +63,18 @@ public class PlayerUpdater implements IUpdater {
                 GamePanel.playerHandCards.get(i).get(j).setAlignmentX(SwingConstants.CENTER);
                 GamePanel.playerHandCards.get(i).get(j).setEnabled(false);
                 GamePanel.playerHandCards.get(i).get(j).setVisible(true);
+            }
+        }
+    }
+
+    @Override
+    public void gameOver() {
+        for (JButton player : GamePanel.playerPawnList) {
+            player.setEnabled(false);
+        }
+        for (ArrayList<JButton> hands : GamePanel.playerHandCards) {
+            for (JButton hand : hands) {
+                hand.setEnabled(false);
             }
         }
     }

@@ -15,11 +15,11 @@ public class LogAgent {
         logs = new JTextArea();
     }
 
-    public JTextArea getLogs() {
-        return logs;
+    public static void logMessenger(String log) {
+        logs.append(log + '\n');
     }
 
-    public static void logMessenger(String log){
-        logs.append(log + '\n');
+    public JTextArea getLogs() {
+        return logs;
     }
 }

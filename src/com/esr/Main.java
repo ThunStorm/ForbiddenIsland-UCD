@@ -3,7 +3,6 @@ package com.esr;
 import com.esr.gui.GameFrame;
 
 import javax.swing.*;
-import java.io.IOException;
 
 /**
  * @Description
@@ -22,6 +21,5 @@ public class Main {
 }
 
 //TODO
-// [NEW CHARACTER IMPLEMENT]
 // [LOGS]
 // [DISABLE BUTTONS AT FINISH]

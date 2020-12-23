@@ -23,4 +23,9 @@ public class WaterMeterUpdater implements IUpdater {
     public void guiUpdate() {
         TreasurePanel.waterMeter.setIcon(new ImageIcon(CommonUtils.getImage(GameData.getWaterMeterImg(), Constant.WATER_METER_WIDTH, Constant.WATER_METER_HEIGHT)));
     }
+
+    @Override
+    public void gameOver() {
+        TreasurePanel.waterMeter.setVisible(false);
+    }
 }

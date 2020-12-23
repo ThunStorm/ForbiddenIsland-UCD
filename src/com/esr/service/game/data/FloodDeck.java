@@ -40,10 +40,9 @@ public class FloodDeck {
         }
         CheckAvailability(this.displayNum);
         displayedCards.clear();
-        if (floodDeck.size() + discardPile.size() < displayNum){
+        if (floodDeck.size() + discardPile.size() < displayNum) {
             displayedCards.addAll(floodDeck);
-        }
-        else{
+        } else {
             displayedCards.addAll(floodDeck.subList(0, this.displayNum));
         }
         return displayedCards;

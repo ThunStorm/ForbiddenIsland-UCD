@@ -26,6 +26,6 @@ public class JPanelBG extends JPanel {
         super.paintComponent(g);
 
         // Draw the background image.
-        g.drawImage(backgroundImage, -150, -150, 1100, 1100,this);
+        g.drawImage(backgroundImage, -150, -150, 1100, 1100, this);
     }
 }

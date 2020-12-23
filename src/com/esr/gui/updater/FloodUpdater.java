@@ -7,7 +7,6 @@ import com.esr.utils.CommonUtils;
 import com.esr.utils.Constant;
 
 import javax.swing.*;
-import java.util.ArrayList;
 
 /**
  * @Description
@@ -19,15 +18,21 @@ public class FloodUpdater implements IUpdater {
     @Override
     public void guiUpdate() {
         for (int i = 0; i < FloodPanel.floodCards.size(); i++) {
-            if (i < GameData.getFloodDeck().getNFlood().size()){
+            if (i < GameData.getFloodDeck().getNFlood().size()) {
                 FloodPanel.floodCards.get(i).setEnabled(true);
                 FloodPanel.floodCards.get(i).setVisible(true);
                 FloodPanel.floodCards.get(i).setIcon(new ImageIcon(CommonUtils.getImage("/Flood/" + GameData.getFloodDeck().getNFlood().get(i) + ".png", Constant.FLOOD_WIDTH, Constant.FLOOD_HEIGHT)));
-            }
-            else {
+            } else {
                 FloodPanel.floodCards.get(i).setEnabled(false);
                 FloodPanel.floodCards.get(i).setVisible(false);
             }
+        }
+    }
+
+    @Override
+    public void gameOver() {
+        for (JButton floodCard : FloodPanel.floodCards) {
+            floodCard.setEnabled(false);
         }
     }
 }

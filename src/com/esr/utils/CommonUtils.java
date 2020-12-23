@@ -32,10 +32,10 @@ public abstract class CommonUtils {
     }
 
     public static Image getImage(String imageName, int imageWidth, int imageHeight) {
-        return new ImageIcon(Constant.RESOURCES_PATH + imageName).getImage().getScaledInstance(imageWidth, imageHeight,4);
+        return new ImageIcon(Constant.RESOURCES_PATH + imageName).getImage().getScaledInstance(imageWidth, imageHeight, 4);
     }
 
-    public static Image getImage(String imageName,int imageWidth, int imageHeight, double rotationAngle) {
+    public static Image getImage(String imageName, int imageWidth, int imageHeight, double rotationAngle) {
         ImageRotation imageRotation = new ImageRotation();
         BufferedImage image = null;
         try {
@@ -43,8 +43,8 @@ public abstract class CommonUtils {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        BufferedImage bufferedImage = imageRotation.rotate(Objects.requireNonNull(image),rotationAngle);
-        return new ImageIcon(bufferedImage).getImage().getScaledInstance(imageWidth, imageHeight,4);
+        BufferedImage bufferedImage = imageRotation.rotate(Objects.requireNonNull(image), rotationAngle);
+        return new ImageIcon(bufferedImage).getImage().getScaledInstance(imageWidth, imageHeight, 4);
     }
 
     public static void task(int periodInSec, ITimer t) {
@@ -52,7 +52,6 @@ public abstract class CommonUtils {
         TimerTask timerTask = new TimerTask() {
             @Override
             public void run() {
-                //当结束开关打开时，清除所有定时器
                 if (Constant.TIMER_STOP_ON_OFF) {
                     timer.cancel();
                     return;
@@ -64,7 +63,7 @@ public abstract class CommonUtils {
                 }
             }
         };
-        timer.schedule(timerTask, 0, periodInSec*1000);
+        timer.schedule(timerTask, 0, periodInSec * 1000);
     }
 
 }

@@ -40,29 +40,28 @@ public class TreasureDeck {
         NTreasureCards.clear();
         int count = 0;
         Iterator<Integer> iterator = treasureDeck.iterator();
-        while (iterator.hasNext()){
+        while (iterator.hasNext()) {
             int treasureCard = iterator.next();
-            if(treasureCard >= 25 && treasureCard <= 27){
+            if (treasureCard >= 25 && treasureCard <= 27) {
                 Discard(treasureCard);
-            }
-            else {
+            } else {
                 NTreasureCards.add(treasureCard);
                 count++;
             }
             iterator.remove();
-            if (count >= n){
+            if (count >= n) {
                 break;
             }
         }
         return NTreasureCards;
     }
 
-    public void Discard(int treasureID){
+    public void Discard(int treasureID) {
         discardPile.add(treasureID);
     }
 
-    private void CheckAvailability(int n){
-        if (treasureDeck.size() < n){
+    private void CheckAvailability(int n) {
+        if (treasureDeck.size() < n) {
             Collections.shuffle(discardPile);
             treasureDeck.addAll(discardPile);
             discardPile.clear();

@@ -18,7 +18,7 @@ public class UpdaterAgent {
         floodUpdater = new FloodUpdater();
         playerUpdater = new PlayerUpdater();
         treasureUpdater = new TreasureUpdater();
-        waterMeterUpdater =new WaterMeterUpdater();
+        waterMeterUpdater = new WaterMeterUpdater();
     }
 
     public static BoardUpdater getBoardUpdater() {
@@ -37,9 +37,11 @@ public class UpdaterAgent {
         return treasureUpdater;
     }
 
-    public static WaterMeterUpdater getWaterMeterUpdater(){
+    public static WaterMeterUpdater getWaterMeterUpdater() {
         return waterMeterUpdater;
     }
 
-    public int getUpdaterID(){ return 1;}
+    public int getUpdaterID() {
+        return 1;
+    }
 }

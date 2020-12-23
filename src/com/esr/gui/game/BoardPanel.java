@@ -1,16 +1,12 @@
 package com.esr.gui.game;
 
-import com.esr.service.game.component.adventurer.Adventurer;
 import com.esr.gui.widgets.JPanelBG;
-import com.esr.gui.widgets.TwoLayeredIcon;
-import com.esr.utils.CommonUtils;
 import com.esr.utils.Constant;
 import com.esr.utils.Map;
 
 import javax.swing.*;
 import java.awt.*;
 import java.util.ArrayList;
-import java.util.Iterator;
 
 /**
  * @Description
@@ -32,8 +28,7 @@ public class BoardPanel {
             tileCard.setPreferredSize(tileSize);
             if (Map.blankLayout.contains(i)) {
                 tileCard.setVisible(false);
-            }
-            else {
+            } else {
                 tileCards.add(tileCard);
             }
             board.add(tileCard);

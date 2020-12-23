@@ -1,7 +1,5 @@
 package com.esr.gui.widgets;
 
-import javax.swing.*;
-import javax.swing.border.Border;
 import java.awt.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -164,7 +162,7 @@ public class VFlowLayout extends FlowLayout {
     /**
      * Set to true to enable horizontally fill.
      *
-     * @param hfill true to fill horizontally.
+     * @param isHorizontalFill true to fill horizontally.
      */
     public void setHorizontalFill(boolean isHorizontalFill) {
         this.isHorizontalFill = isHorizontalFill;
@@ -233,7 +231,6 @@ public class VFlowLayout extends FlowLayout {
         Dimension preferredComponentsSize = this.preferredComponentsSize(components);
         int alignment = this.getAlignment();
         int y = insets.top + this.topVerticalGap;
-        ;
 
         if (!this.isVerticalFill && preferredComponentsSize.height < maxHeight) {
             if (MIDDLE == alignment) {

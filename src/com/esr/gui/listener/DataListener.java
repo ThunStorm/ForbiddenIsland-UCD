@@ -3,16 +3,11 @@ package com.esr.gui.listener;
 import com.esr.gui.game.BoardPanel;
 import com.esr.gui.game.GamePanel;
 import com.esr.gui.game.TreasurePanel;
-import com.esr.gui.updater.LogAgent;
-import com.esr.service.game.Game;
 import com.esr.service.game.GameData;
-import com.esr.service.game.component.adventurer.Adventurer;
 import com.esr.utils.Map;
-import sun.management.Agent;
 
 import javax.swing.*;
 import java.util.ArrayList;
-import java.util.Arrays;
 
 /**
  * @Description
@@ -29,7 +24,7 @@ public class DataListener {
         TreasureListener();
     }
 
-    private void BoardListener(){
+    private void BoardListener() {
         for (JButton tile : BoardPanel.tileCards) {
             tile.addActionListener(e -> {
 //                LogAgent.logMessenger(Arrays.toString(Map.coordinatesMatcher.get(BoardPanel.tileCards.indexOf(tile))));
@@ -38,8 +33,8 @@ public class DataListener {
         }
     }
 
-    private void TreasureListener(){
-        for (JButton treasure : TreasurePanel.treasureCards){
+    private void TreasureListener() {
+        for (JButton treasure : TreasurePanel.treasureCards) {
             treasure.addActionListener(e -> {
 //                LogAgent.logMessenger(String.valueOf(TreasurePanel.treasureCards.indexOf(treasure)));
                 // deal with select blank
@@ -49,9 +44,9 @@ public class DataListener {
         }
     }
 
-    private void HandCardListener(){
-        for (ArrayList<JButton> individualPlayerCards: GamePanel.playerHandCards){
-            for (JButton handCard : individualPlayerCards){
+    private void HandCardListener() {
+        for (ArrayList<JButton> individualPlayerCards : GamePanel.playerHandCards) {
+            for (JButton handCard : individualPlayerCards) {
                 handCard.addActionListener(e -> {
 //                    LogAgent.logMessenger(String.valueOf(individualPlayerCards.indexOf(handCard)));
                     GameData.SelectTreasureCard(true, individualPlayerCards.indexOf(handCard));
@@ -60,7 +55,7 @@ public class DataListener {
         }
     }
 
-    private void PawnListener(){
+    private void PawnListener() {
         for (JButton pawn : GamePanel.playerPawnList) {
             pawn.addActionListener(e -> {
 //                LogAgent.logMessenger(String.valueOf(GamePanel.playerPawnList.indexOf(pawn)));

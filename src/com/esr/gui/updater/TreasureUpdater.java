@@ -7,7 +7,6 @@ import com.esr.utils.CommonUtils;
 import com.esr.utils.Constant;
 
 import javax.swing.*;
-import java.util.ArrayList;
 
 /**
  * @Description
@@ -17,22 +16,29 @@ import java.util.ArrayList;
  **/
 public class TreasureUpdater implements IUpdater {
     public TreasureUpdater() {
-        for( JButton treasureCard : TreasurePanel.treasureCards){
+        for (JButton treasureCard : TreasurePanel.treasureCards) {
             treasureCard.setEnabled(false);
         }
     }
 
     @Override
     public void guiUpdate() {
-        for (int i = 0; i < GameData.getDisplayedTreasureCard().size(); i++){
+        for (int i = 0; i < GameData.getDisplayedTreasureCard().size(); i++) {
             TreasurePanel.treasureCards.get(i).setEnabled(true);
             TreasurePanel.treasureCards.get(i).setIcon(new ImageIcon((CommonUtils.getImage("/TreasureCards/"
                     + GameData.getDisplayedTreasureCard().get(i) + ".png", Constant.TREASURE_WIDTH, Constant.TREASURE_HEIGHT, 270d))));
         }
-        for (int i = GameData.getDisplayedTreasureCard().size(); i < TreasurePanel.treasureCards.size(); i++){
+        for (int i = GameData.getDisplayedTreasureCard().size(); i < TreasurePanel.treasureCards.size(); i++) {
             TreasurePanel.treasureCards.get(i).setIcon(null);
             TreasurePanel.treasureCards.get(i).setEnabled(false);
         }
 
+    }
+
+    @Override
+    public void gameOver() {
+        for (JButton treasureCard : TreasurePanel.treasureCards) {
+            treasureCard.setEnabled(false);
+        }
     }
 }

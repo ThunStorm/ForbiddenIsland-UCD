@@ -7,7 +7,8 @@ public enum TreasureFigurines {
     Ocean("Ocean");
 
     private String name;
-    TreasureFigurines(String name){
+
+    TreasureFigurines(String name) {
         this.name = name;
     }
 }

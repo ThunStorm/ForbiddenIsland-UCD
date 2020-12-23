@@ -3,7 +3,6 @@ package com.esr.utils;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
-import java.util.List;
 
 /**
  * @Description
@@ -12,17 +11,28 @@ import java.util.List;
  * @Version 1.0
  **/
 public abstract class Map {
-//    public final static int[] layOut = new int[]{1, 2, 5, 6, 7, 12, 25, 30, 31, 32, 35, 36};
-    public final static ArrayList<Integer> blankLayout = new ArrayList<Integer>(){{
-        add(0);add(1);add(4);add(5);add(6);add(11);add(24);add(29);add(30);add(31);add(34);add(35);
+    //    public final static int[] layOut = new int[]{1, 2, 5, 6, 7, 12, 25, 30, 31, 32, 35, 36};
+    public final static ArrayList<Integer> blankLayout = new ArrayList<Integer>() {{
+        add(0);
+        add(1);
+        add(4);
+        add(5);
+        add(6);
+        add(11);
+        add(24);
+        add(29);
+        add(30);
+        add(31);
+        add(34);
+        add(35);
     }};
     public final static int rows = 6;
     public final static int cols = 6;
     public final static HashMap<Integer, int[]> coordinatesMatcher = new HashMap<>();
     public final static HashMap<String, Integer> numberMatcher = new HashMap<>();
     public final static HashMap<Integer, String> adventurerMatcher = new HashMap<>();
-    public static void setUpMatchers()
-    {
+
+    public static void setUpMatchers() {
         coordinatesMatcher.put(0, new int[]{0, 2});
         coordinatesMatcher.put(1, new int[]{0, 3});
         coordinatesMatcher.put(2, new int[]{1, 1});

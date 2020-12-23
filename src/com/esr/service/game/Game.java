@@ -144,14 +144,13 @@ public class Game {
 
                 int x = GameData.getAdventurers()[roundNum].getX();
                 int y = GameData.getAdventurers()[roundNum].getY();
-                if (!GameData.getAdventurers()[roundNum].getName().equals("Pilot")){
-                    if(x == 0){
+                if (!GameData.getAdventurers()[roundNum].getName().equals("Diver") || !GameData.getAdventurers()[roundNum].getName().equals("Pilot")) {
+                    if (x == 0) {
                         if (!GameData.getBoard().getTile(x + 1, y).isExist() && !GameData.getBoard().getTile(x, y - 1).isExist() && !GameData.getBoard().getTile(x, y + 1).isExist()) {
                             Game.GameComplete(false);
                             LogAgent.logMessenger("No adjacent tile to swim to");
                             return;
-                        }
-                        else if (GameData.getAdventurers()[roundNum].getName().equals("Explorer") && !GameData.getBoard().getTile(x + 1, y).isExist()
+                        } else if (GameData.getAdventurers()[roundNum].getName().equals("Explorer") && !GameData.getBoard().getTile(x + 1, y).isExist()
                                 && !GameData.getBoard().getTile(x, y - 1).isExist() && !GameData.getBoard().getTile(x, y + 1).isExist()
                                 && !GameData.getBoard().getTile(x + 1, y - 1).isExist() && !GameData.getBoard().getTile(x + 1, y + 1).isExist()) {
                             Game.GameComplete(false);
@@ -159,14 +158,12 @@ public class Game {
                             return;
                         }
 
-                    }
-                    else if (x == 5){
+                    } else if (x == 5) {
                         if (!GameData.getBoard().getTile(x - 1, y).isExist() && !GameData.getBoard().getTile(x, y - 1).isExist() && !GameData.getBoard().getTile(x, y + 1).isExist()) {
                             Game.GameComplete(false);
                             LogAgent.logMessenger("No adjacent tile to swim to");
                             return;
-                        }
-                        else if (GameData.getAdventurers()[roundNum].getName().equals("Explorer")
+                        } else if (GameData.getAdventurers()[roundNum].getName().equals("Explorer")
                                 && !GameData.getBoard().getTile(x - 1, y).isExist()
                                 && !GameData.getBoard().getTile(x, y - 1).isExist() && !GameData.getBoard().getTile(x, y + 1).isExist()
                                 && !GameData.getBoard().getTile(x - 1, y - 1).isExist() && !GameData.getBoard().getTile(x - 1, y + 1).isExist()) {
@@ -174,15 +171,13 @@ public class Game {
                             LogAgent.logMessenger("No adjacent tile to swim to");
                             return;
                         }
-                    }
-                    else if (y == 0){
+                    } else if (y == 0) {
                         if (!GameData.getBoard().getTile(x - 1, y).isExist() && !GameData.getBoard().getTile(x + 1, y).isExist()
                                 && !GameData.getBoard().getTile(x, y + 1).isExist()) {
                             Game.GameComplete(false);
                             LogAgent.logMessenger("No adjacent tile to swim to");
                             return;
-                        }
-                        else if (GameData.getAdventurers()[roundNum].getName().equals("Explorer")
+                        } else if (GameData.getAdventurers()[roundNum].getName().equals("Explorer")
                                 && !GameData.getBoard().getTile(x - 1, y).isExist() && !GameData.getBoard().getTile(x + 1, y).isExist()
                                 && !GameData.getBoard().getTile(x, y + 1).isExist()
                                 && !GameData.getBoard().getTile(x - 1, y + 1).isExist() && !GameData.getBoard().getTile(x + 1, y + 1).isExist()) {
@@ -190,15 +185,13 @@ public class Game {
                             LogAgent.logMessenger("No adjacent tile to swim to");
                             return;
                         }
-                    }
-                    else if (y == 5){
+                    } else if (y == 5) {
                         if (!GameData.getBoard().getTile(x - 1, y).isExist() && !GameData.getBoard().getTile(x + 1, y).isExist()
                                 && !GameData.getBoard().getTile(x, y - 1).isExist()) {
                             Game.GameComplete(false);
                             LogAgent.logMessenger("No adjacent tile to swim to");
                             return;
-                        }
-                        else if (GameData.getAdventurers()[roundNum].getName().equals("Explorer")
+                        } else if (GameData.getAdventurers()[roundNum].getName().equals("Explorer")
                                 && !GameData.getBoard().getTile(x - 1, y).isExist() && !GameData.getBoard().getTile(x + 1, y).isExist()
                                 && !GameData.getBoard().getTile(x, y - 1).isExist()
                                 && !GameData.getBoard().getTile(x - 1, y - 1).isExist() && !GameData.getBoard().getTile(x + 1, y - 1).isExist()) {
@@ -206,15 +199,13 @@ public class Game {
                             LogAgent.logMessenger("No adjacent tile to swim to");
                             return;
                         }
-                    }
-                    else {
+                    } else {
                         if (!GameData.getBoard().getTile(x - 1, y).isExist() && !GameData.getBoard().getTile(x + 1, y).isExist()
                                 && !GameData.getBoard().getTile(x, y - 1).isExist() && !GameData.getBoard().getTile(x, y + 1).isExist()) {
                             Game.GameComplete(false);
                             LogAgent.logMessenger("No adjacent tile to swim to");
                             return;
-                        }
-                        else if (GameData.getAdventurers()[roundNum].getName().equals("Explorer")
+                        } else if (GameData.getAdventurers()[roundNum].getName().equals("Explorer")
                                 && !GameData.getBoard().getTile(x - 1, y).isExist() && !GameData.getBoard().getTile(x + 1, y).isExist()
                                 && !GameData.getBoard().getTile(x, y - 1).isExist() && !GameData.getBoard().getTile(x, y + 1).isExist()
                                 && !GameData.getBoard().getTile(x - 1, y - 1).isExist() && !GameData.getBoard().getTile(x + 1, y - 1).isExist()
@@ -225,20 +216,21 @@ public class Game {
                         }
                     }
                 }
-                else {
-                    //TODO
-                    continue;
-                }
-
                 LogAgent.logMessenger("Select a nearest tile for [ Player " + (roundNum + 1) + " ] ("
                         + GameData.getAdventurers()[roundNum].getName() + ") to swim to and click [Move To]");
+                UpdaterAgent.getPlayerUpdater().guiUpdate();
+                UpdaterAgent.getBoardUpdater().guiUpdate();
                 break;
             }
         }
     }
 
     public static void GameComplete(boolean isWin) {
-// TODO More Actions e.g. disable buttons.
+        try {
+            Thread.sleep(1000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
         if (isWin) {
             System.out.println("Game Success");
             LogAgent.logMessenger("Game Success");
@@ -252,6 +244,11 @@ public class Game {
                 Audio.FAILURE.Play();
             }
         }
+        UpdaterAgent.getPlayerUpdater().gameOver();
+        UpdaterAgent.getBoardUpdater().gameOver();
+        UpdaterAgent.getTreasureUpdater().gameOver();
+        UpdaterAgent.getWaterMeterUpdater().gameOver();
+        UpdaterAgent.getFloodUpdater().gameOver();
     }
 
     public static int getNumOfPlayer() {
@@ -262,10 +259,6 @@ public class Game {
         actionCount += 1;
     }
 
-    public static void setActionCount(int num){
-        actionCount = num;
-    }
-
     public static void moreAction() {
         actionCount -= 1;
     }
@@ -274,8 +267,16 @@ public class Game {
         return actionCount;
     }
 
+    public static void setActionCount(int num) {
+        actionCount = num;
+    }
+
     public static int getRoundNum() {
         return roundNum;
+    }
+
+    public static void setRoundNum(int roundNum) {
+        Game.roundNum = roundNum;
     }
 
     public static boolean isStage23Done() {
@@ -309,13 +310,12 @@ public class Game {
         }
     }
 
+    public static int getFakeRoundNum() {
+        return fakeRoundNum;
+    }
 
     public static void setFakeRoundNum(int fakeRoundNum) {
         Game.fakeRoundNum = fakeRoundNum;
-    }
-
-    public static int getFakeRoundNum() {
-        return fakeRoundNum;
     }
 
     public static void setPlayerIDinWater(ArrayList<Integer> playerIDinWater) {
@@ -328,10 +328,6 @@ public class Game {
 
     public static void setInFakeRound(boolean inFakeRound) {
         Game.inFakeRound = inFakeRound;
-    }
-
-    public static void setRoundNum(int roundNum) {
-        Game.roundNum = roundNum;
     }
 
     public static int getFakeActionCount() {

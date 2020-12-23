@@ -20,9 +20,8 @@ public class FigurinesData {
     }
 
     // later finish
-    public TreasureFigurines captureFigurine(){
+    public TreasureFigurines captureFigurine() {
         return treasureFigurines.get(0);
     }
 
-    // sunk func
 }

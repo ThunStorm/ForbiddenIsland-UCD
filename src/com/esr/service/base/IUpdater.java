@@ -1,7 +1,5 @@
 package com.esr.service.base;
 
-import java.util.ArrayList;
-
 /**
  * @Description
  * @Author William
@@ -9,6 +7,7 @@ import java.util.ArrayList;
  * @Version 1.0
  **/
 public interface IUpdater {
-//    void guiUpdate(ArrayList<Integer> img);
     void guiUpdate();
+
+    void gameOver();
 }

@@ -30,35 +30,42 @@ public class BoardUpdater implements IUpdater {
             BoardPanel.tileCards.get(i).setIcon(new ImageIcon(CommonUtils.getImage("/Tiles/" + Tiles.get(i) + ".png", Constant.TILE_WIDTH, Constant.TILE_HEIGHT)));
         }
         for (int i = 0; i < GameData.getAdventurers().length; i++) {
-            BoardPanel.tileCards.get(GameData.getAdventurers()[i].getPos()).setIcon(new TwoLayeredIcon(new ImageIcon(CommonUtils.getImage(GameData.getAdventurers()[i].getPawnImg(), Constant.TILE_WIDTH, Constant.TILE_HEIGHT)), BoardPanel.tileCards.get(Tiles.indexOf(GameData.getAdventurers()[i].getId()+9)).getIcon()));
+            BoardPanel.tileCards.get(GameData.getAdventurers()[i].getPos()).setIcon(new TwoLayeredIcon(new ImageIcon(CommonUtils.getImage(GameData.getAdventurers()[i].getPawnImg(), Constant.TILE_WIDTH, Constant.TILE_HEIGHT)), BoardPanel.tileCards.get(Tiles.indexOf(GameData.getAdventurers()[i].getId() + 9)).getIcon()));
         }
     }
 
     @Override
     public void guiUpdate() {
         int idx = 0;
-        for (Block[] blocks : GameData.getBoard().getTileMap()){
-            for (Block block : blocks){
-                if (block.isExist()){
+        for (Block[] blocks : GameData.getBoard().getTileMap()) {
+            for (Block block : blocks) {
+                if (block.isExist()) {
                     BoardPanel.tileCards.get(idx).setIcon(new ImageIcon(CommonUtils.getImage(block.getImg(), Constant.TILE_WIDTH, Constant.TILE_HEIGHT)));
-                }
-                else if (!block.isExist() && (block.getTileId() != -1)){
+                } else if (!block.isExist() && (block.getTileId() != -1)) {
                     BoardPanel.tileCards.get(idx).setVisible(false);
                     BoardPanel.tileCards.get(idx).setEnabled(false);
+                } else {
+                    idx--;
                 }
-                else { idx--; }
                 idx++;
             }
         }
         for (int i = 0; i < GameData.getAdventurers().length; i++) {
 
-            for (int j = 0; j < GameData.getBoard().getTile(GameData.getAdventurers()[i].getX(),GameData.getAdventurers()[i].getY()).getPlayerOnBoard().size(); j++){
+            for (int j = 0; j < GameData.getBoard().getTile(GameData.getAdventurers()[i].getX(), GameData.getAdventurers()[i].getY()).getPlayerOnBoard().size(); j++) {
                 BoardPanel.tileCards.get(GameData.getAdventurers()[i].getPos()).setIcon(
                         new TwoLayeredIcon(new ImageIcon(CommonUtils.getImage("/Pawns/"
-                                + Map.adventurerMatcher.get(GameData.getBoard().getTile(GameData.getAdventurers()[i].getX(),GameData.getAdventurers()[i].getY()).getPlayerOnBoard().get(j))
+                                + Map.adventurerMatcher.get(GameData.getBoard().getTile(GameData.getAdventurers()[i].getX(), GameData.getAdventurers()[i].getY()).getPlayerOnBoard().get(j))
                                 + ".png", Constant.TILE_WIDTH, Constant.TILE_HEIGHT)),
-                                BoardPanel.tileCards.get(GameData.getAdventurers()[i].getPos()).getIcon(), j*6));
+                                BoardPanel.tileCards.get(GameData.getAdventurers()[i].getPos()).getIcon(), j * 6));
             }
+        }
+    }
+
+    @Override
+    public void gameOver() {
+        for (JButton tile : BoardPanel.tileCards) {
+            tile.setEnabled(false);
         }
     }
 

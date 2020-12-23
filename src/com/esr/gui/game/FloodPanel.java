@@ -14,11 +14,11 @@ import java.util.ArrayList;
  * @Version 1.0
  **/
 public class FloodPanel {
-    private Dimension floodCardSize = new Dimension(Constant.FLOOD_WIDTH, Constant.FLOOD_HEIGHT);
     public static ArrayList<JButton> floodCards;
+    private Dimension floodCardSize = new Dimension(Constant.FLOOD_WIDTH, Constant.FLOOD_HEIGHT);
     private JPanel floodPanel;
 
-    public FloodPanel(){
+    public FloodPanel() {
         floodPanel = new JPanel(new GridLayout(8, 1, 1, 3));
         JLabel pile = new JLabel();
         pile.setPreferredSize(floodCardSize);

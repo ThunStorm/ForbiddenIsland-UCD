@@ -8,6 +8,7 @@ import com.esr.utils.Map;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Iterator;
 
 /**
  * @Description
@@ -24,8 +25,6 @@ public class GameData {
     private static ArrayList<Integer> tiles;
     private static ArrayList<Integer> displayedTreasureCard;
     private static ArrayList<Integer> cardsInRound;
-    //    private static FigurinesData figurinesData;
-//    private static ArrayList<Integer> selectedPlayers;
     private static int selectedPawn = -1;
     private static ArrayList<Integer> selectedPawns;
     private static int[] SpecialActionTile = {-1, -1};
@@ -105,13 +104,39 @@ public class GameData {
             board.setCanMove(false);
             adventurers[Game.getRoundNum()].setShoreUp(coords[0], coords[1]);
             board.setCanShoreUp(true);
-        } else if(adventurers[Game.getRoundNum()].getName().equals("Diver")){
-            //TODO
-
-            board.setCanMove(true);
-            board.setCanShoreUp(false);
-        }
-        else {
+        } else if (adventurers[Game.getRoundNum()].getName().equals("Diver")) {
+//            HashMap<int[], Double> distance = new HashMap<>();
+            ArrayList<int[]> coordinates = new ArrayList<>();
+            double distance = 7.0;
+            coordinates.add(new int[]{0, 0});
+            for (int i = 0; i < board.getTileMap().length; i++) {
+                for (int j = 0; j < board.getTileMap()[i].length; j++) {
+                    if (board.getTile(i, j).isExist()) {
+                        double d = Math.sqrt(Math.pow((i - adventurers[Game.getRoundNum()].getX()), 2)
+                                + Math.pow((j - adventurers[Game.getRoundNum()].getY()), 2));
+                        if (d < distance) {
+                            Iterator<int[]> iteratorCoords = coordinates.iterator();
+                            while (iteratorCoords.hasNext()) {
+                                int[] temp = iteratorCoords.next();
+                                iteratorCoords.remove();
+                            }
+                            distance = d;
+                            coordinates.add(new int[]{i, j});
+                        } else if (d == distance) {
+                            coordinates.add(new int[]{i, j});
+                        }
+                    }
+                }
+            }
+            if (coordinates.contains(coords)) {
+                adventurers[Game.getRoundNum()].setMove(coords[0], coords[1]);
+                board.setCanMove(true);
+                coordinates.clear();
+            } else {
+                board.setCanMove(false);
+                coordinates.clear();
+            }
+        } else {
             System.out.println("This tile is unselectable");
             board.setCanMove(false);
             board.setCanShoreUp(false);
