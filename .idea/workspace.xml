@@ -28,13 +28,7 @@
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2b919aec-5efd-45b2-b528-0ea4fbe9c6b5" name="Default Changelist" comment="Implement Diver">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/esr/gui/listener/DataListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/esr/gui/listener/DataListener.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/esr/service/game/GameData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/esr/service/game/GameData.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/esr/service/game/component/adventurer/Adventurer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/esr/service/game/component/adventurer/Adventurer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/esr/service/game/data/Block.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/esr/service/game/data/Block.java" afterDir="false" />
-    </list>
+    <list default="true" id="2b919aec-5efd-45b2-b528-0ea4fbe9c6b5" name="Default Changelist" comment="Implement Diver" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -121,17 +115,6 @@
       <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
       <RunnerSettings RunnerId="Run" />
       <ConfigurationWrapper RunnerId="Run" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
-      <option name="arquillianRunConfiguration">
-        <value>
-          <option name="containerStateName" value="" />
-        </value>
-      </option>
-      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -236,8 +219,7 @@
       <workItem from="1608211692975" duration="3367000" />
       <workItem from="1608239352749" duration="2572000" />
       <workItem from="1608549503029" duration="42690000" />
-      <workItem from="1608636063919" duration="47416000" />
-      <workItem from="1608724239682" duration="2805000" />
+      <workItem from="1608636063919" duration="46737000" />
     </task>
     <task id="LOCAL-00001" summary="Build DataLayer">
       <created>1607400232334</created>
@@ -518,42 +500,42 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="703" y="372" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.0.1920.1040@0.0.1920.1040" timestamp="1608687284911" />
-    <state x="740" y="274" key="FileChooserDialogImpl" timestamp="1608173483474">
+    <state x="740" y="274" key="FileChooserDialogImpl" timestamp="1608730690908">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="740" y="274" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1608173483474" />
-    <state width="1877" height="179" key="GridCell.Tab.0.bottom" timestamp="1608724677663">
+    <state x="740" y="274" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1608730690908" />
+    <state width="1877" height="179" key="GridCell.Tab.0.bottom" timestamp="1608730766106">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="179" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1608724677663" />
-    <state width="1877" height="179" key="GridCell.Tab.0.center" timestamp="1608724677663">
+    <state width="1877" height="179" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1608730766106" />
+    <state width="1877" height="179" key="GridCell.Tab.0.center" timestamp="1608730766106">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="179" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1608724677663" />
-    <state width="1877" height="179" key="GridCell.Tab.0.left" timestamp="1608724677663">
+    <state width="1877" height="179" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1608730766106" />
+    <state width="1877" height="179" key="GridCell.Tab.0.left" timestamp="1608730766106">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="179" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1608724677663" />
-    <state width="1877" height="179" key="GridCell.Tab.0.right" timestamp="1608724677663">
+    <state width="1877" height="179" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1608730766106" />
+    <state width="1877" height="179" key="GridCell.Tab.0.right" timestamp="1608730766106">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="179" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1608724677663" />
-    <state width="1877" height="348" key="GridCell.Tab.1.bottom" timestamp="1608688887857">
+    <state width="1877" height="179" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1608730766106" />
+    <state width="1877" height="348" key="GridCell.Tab.1.bottom" timestamp="1608649591075">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="348" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1608688887857" />
-    <state width="1877" height="348" key="GridCell.Tab.1.center" timestamp="1608688887857">
+    <state width="1877" height="348" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1608649591075" />
+    <state width="1877" height="348" key="GridCell.Tab.1.center" timestamp="1608649591075">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="348" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1608688887857" />
-    <state width="1877" height="348" key="GridCell.Tab.1.left" timestamp="1608688887857">
+    <state width="1877" height="348" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1608649591075" />
+    <state width="1877" height="348" key="GridCell.Tab.1.left" timestamp="1608649591075">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="348" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1608688887857" />
-    <state width="1877" height="348" key="GridCell.Tab.1.right" timestamp="1608688887857">
+    <state width="1877" height="348" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1608649591075" />
+    <state width="1877" height="348" key="GridCell.Tab.1.right" timestamp="1608649591075">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="348" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1608688887857" />
+    <state width="1877" height="348" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1608649591075" />
     <state x="184" y="85" key="MergeDialog" timestamp="1607427464967">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
