@@ -1,4 +1,4 @@
-package com.esr.gui.widgets;
+package com.esr.gui.tools;
 
 import javax.imageio.ImageIO;
 import javax.swing.*;
@@ -12,7 +12,6 @@ public class JPanelBG extends JPanel {
     // Some code to initialize the background image.
     // Here, we use the constructor to load the image. This
     // can vary depending on the use case of the panel.
-
     public JPanelBG(String fileName, LayoutManager layout) {
         super(layout);
         try {

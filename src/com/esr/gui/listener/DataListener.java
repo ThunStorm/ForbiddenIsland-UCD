@@ -17,6 +17,7 @@ import java.util.ArrayList;
  **/
 public class DataListener {
 
+    // set up click action listeners for buttons
     public DataListener() {
         BoardListener();
         PawnListener();
@@ -26,41 +27,27 @@ public class DataListener {
 
     private void BoardListener() {
         for (JButton tile : BoardPanel.tileCards) {
-            tile.addActionListener(e -> {
-//                LogAgent.logMessenger(Arrays.toString(Map.coordinatesMatcher.get(BoardPanel.tileCards.indexOf(tile))));
-                GameData.NextTile(Map.coordinatesMatcher.get(BoardPanel.tileCards.indexOf(tile)));
-            });
+            tile.addActionListener(e -> GameData.NextTile(Map.coordinatesMatcher.get(BoardPanel.tileCards.indexOf(tile))));
         }
     }
 
     private void TreasureListener() {
         for (JButton treasure : TreasurePanel.treasureCards) {
-            treasure.addActionListener(e -> {
-//                LogAgent.logMessenger(String.valueOf(TreasurePanel.treasureCards.indexOf(treasure)));
-                // deal with select blank
-                GameData.SelectTreasureCard(false, TreasurePanel.treasureCards.indexOf(treasure));
-
-            });
+            treasure.addActionListener(e -> GameData.SelectTreasureCard(false, TreasurePanel.treasureCards.indexOf(treasure)));
         }
     }
 
     private void HandCardListener() {
         for (ArrayList<JButton> individualPlayerCards : GamePanel.playerHandCards) {
             for (JButton handCard : individualPlayerCards) {
-                handCard.addActionListener(e -> {
-//                    LogAgent.logMessenger(String.valueOf(individualPlayerCards.indexOf(handCard)));
-                    GameData.SelectTreasureCard(true, individualPlayerCards.indexOf(handCard));
-                });
+                handCard.addActionListener(e -> GameData.SelectTreasureCard(true, individualPlayerCards.indexOf(handCard)));
             }
         }
     }
 
     private void PawnListener() {
         for (JButton pawn : GamePanel.playerPawnList) {
-            pawn.addActionListener(e -> {
-//                LogAgent.logMessenger(String.valueOf(GamePanel.playerPawnList.indexOf(pawn)));
-                GameData.SelectPawn(GamePanel.playerPawnList.indexOf(pawn));
-            });
+            pawn.addActionListener(e -> GameData.SelectPawn(GamePanel.playerPawnList.indexOf(pawn)));
         }
     }
 }

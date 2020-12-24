@@ -10,26 +10,30 @@ import com.esr.service.game.Game;
  * @Version 1.0
  **/
 public class WaterMeter {
+    // water meter class implementation
     private int waterLevel;
     private int floodCardCount;
     private String img;
 
+    // init water meter
     public WaterMeter(int waterLevel) {
         this.waterLevel = waterLevel;
         this.img = "/WaterMeter/" + waterLevel + ".png";
         setFloodCardCount();
     }
 
+    // when draw a WaterRise!, increase water level
     public void WaterRise() {
         waterLevel += 1;
         img = "/WaterMeter/" + waterLevel + ".png";
         setFloodCardCount();
         if (waterLevel == 10) {
-            LogAgent.logMessenger("Water level reaches the skull and crossbones");
+            LogAgent.logMessenger("[!] Water Level Reaches The Skull And Crossbones");
             Game.GameComplete(false);
         }
     }
 
+    // set the number of flood cards that will be drawn in following rounds
     private void setFloodCardCount() {
         switch (waterLevel) {
             case 1:
@@ -52,10 +56,12 @@ public class WaterMeter {
         }
     }
 
+    // get number of flood cards needed be drawn in following rounds
     public int getFloodCardCount() {
         return floodCardCount;
     }
 
+    // get img
     public String getImg() {
         return img;
     }

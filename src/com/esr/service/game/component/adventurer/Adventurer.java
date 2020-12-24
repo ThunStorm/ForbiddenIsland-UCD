@@ -34,50 +34,61 @@ public abstract class Adventurer {
         this.capturedFigurines = new ArrayList<>();
     }
 
+    // set position of an adventurer
     public void setPos(int x, int y) {
         this.x = x;
         this.y = y;
-//        System.out.println(this.getClass().getName());
-//        System.out.println(this.x + " " + this.y);
     }
 
+    // before check whether we can move to a tile, put coordinates here temporarily
     public void setMove(int x1, int y1) {
         this.x1 = x1;
         this.y1 = y1;
     }
 
+    // move to buffered coordinates
     public void Move() {
         this.x = this.x1;
         this.y = this.y1;
     }
 
+    // set the tile position that will be shored up
     public void setShoreUp(int x2, int y2) {
         this.x2 = x2;
         this.y2 = y2;
     }
 
-    public ArrayList<TreasureFigurines> getCapturedFigurines() {
-        return capturedFigurines;
+    // give player hand cards
+    public void setHandCards(ArrayList<Integer> handCards) {
+        this.handCards.addAll(handCards);
     }
 
     public void setCapturedFigurines(TreasureFigurines capturedFigurines) {
         this.capturedFigurines.add(capturedFigurines);
     }
 
-    public ArrayList<Integer> getHandCards() {
-        return handCards;
+    public ArrayList<TreasureFigurines> getCapturedFigurines() {
+        return capturedFigurines;
     }
 
-    public void setHandCards(ArrayList<Integer> handCards) {
-        this.handCards.addAll(handCards);
+    public ArrayList<Integer> getHandCards() {
+        return handCards;
     }
 
     public String getPawnImg() {
         return pawnImg;
     }
 
+    public int getOrder() {
+        return order;
+    }
+
     public int getId() {
         return id;
+    }
+
+    public String getName() {
+        return name;
     }
 
     public int getX() {
@@ -96,15 +107,11 @@ public abstract class Adventurer {
         return y2;
     }
 
-    public String getName() {
-        return name;
-    }
-
     public int getPos() {
         return Map.numberMatcher.get(Arrays.toString(new int[]{this.x, this.y}));
     }
 
-    public int getOrder() {
-        return order;
+    public int getShoredPos() {
+        return Map.numberMatcher.get(Arrays.toString(new int[]{this.x2, this.y2}));
     }
 }

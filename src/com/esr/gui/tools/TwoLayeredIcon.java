@@ -1,13 +1,14 @@
-package com.esr.gui.widgets;
+package com.esr.gui.tools;
 
 import javax.swing.*;
 import java.awt.*;
 
 public class TwoLayeredIcon implements Icon {
-    private Icon top;
-    private Icon bottom;
+    private final Icon top;
+    private final Icon bottom;
     private int scaledX = 1;
 
+    // Implement a wheel to draw multiple icons on a component
     public TwoLayeredIcon(Icon top, Icon bottom) {
         this.top = top;
         this.bottom = bottom;
@@ -16,7 +17,7 @@ public class TwoLayeredIcon implements Icon {
     public TwoLayeredIcon(Icon top, Icon bottom, int scaledX) {
         this.top = top;
         this.bottom = bottom;
-        this.scaledX = scaledX;
+        this.scaledX = scaledX * 6;
     }
 
     public int getIconHeight() {

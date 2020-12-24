@@ -33,12 +33,13 @@ public enum Audio {
     WIN("Wins!.wav"),
     FAILURE("Failure.wav");
 
-    private String name;
+    private final String name;
 
     Audio(String name) {
         this.name = name;
     }
 
+    // play audio
     public void Play() {
         AudioStream as;
         try {
@@ -50,14 +51,13 @@ public enum Audio {
         }
     }
 
+    // parameter sec is the duration of a audio to play
     public void LoopPlay(int sec) {
         CommonUtils.task(sec, () -> {
             try {
                 InputStream resourceAsStream = Audio.class.getClassLoader().getResourceAsStream("com/esr/resources/audio/" + name);
                 AudioStream as = new AudioStream(Objects.requireNonNull(resourceAsStream));
-//                System.out.println(as.getLength());
                 AudioPlayer.player.start(as);
-//            player.getPlayerState().getGameLevel().add();
             } catch (IOException e) {
                 e.printStackTrace();
             }

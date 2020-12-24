@@ -1,6 +1,6 @@
 package com.esr.utils;
 
-import com.esr.gui.widgets.ImageRotation;
+import com.esr.gui.tools.ImageRotation;
 import com.esr.service.base.ITimer;
 
 import javax.imageio.ImageIO;
@@ -21,20 +21,25 @@ import java.util.TimerTask;
  * @Version 1.0
  **/
 public abstract class CommonUtils {
-    private static final Random RANDOM = new Random();
+    // this class is a utility class of common utils
 
+    private static final Random RANDOM = new Random();
+    // get random next Int (deprecated)
     public static int nextInt(int start, int end) {
         return start == end ? start : start + RANDOM.nextInt(end - start);
     }
 
+    // to get an img
     public static Image getImage(String imageName) {
         return new ImageIcon(Constant.RESOURCES_PATH + imageName).getImage();
     }
 
+    // to get an img with defined dimension
     public static Image getImage(String imageName, int imageWidth, int imageHeight) {
         return new ImageIcon(Constant.RESOURCES_PATH + imageName).getImage().getScaledInstance(imageWidth, imageHeight, 4);
     }
 
+    // to get a rotated img with defined dimension
     public static Image getImage(String imageName, int imageWidth, int imageHeight, double rotationAngle) {
         ImageRotation imageRotation = new ImageRotation();
         BufferedImage image = null;
@@ -47,6 +52,7 @@ public abstract class CommonUtils {
         return new ImageIcon(bufferedImage).getImage().getScaledInstance(imageWidth, imageHeight, 4);
     }
 
+    // task
     public static void task(int periodInSec, ITimer t) {
         Timer timer = new Timer();
         TimerTask timerTask = new TimerTask() {
@@ -65,5 +71,4 @@ public abstract class CommonUtils {
         };
         timer.schedule(timerTask, 0, periodInSec * 1000);
     }
-
 }

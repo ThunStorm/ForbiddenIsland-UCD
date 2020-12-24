@@ -16,9 +16,10 @@ public class PlayerPanel {
 
     Player player1;
     Player player2;
-    private Dimension adventurerSize = new Dimension(Constant.ADVENTURER_WIDTH, Constant.ADVENTURER_HEIGHT);
-    private Box duoPlayerPanel = Box.createHorizontalBox();
+    private final Dimension adventurerSize = new Dimension(Constant.ADVENTURER_WIDTH, Constant.ADVENTURER_HEIGHT);
+    private final Box duoPlayerPanel = Box.createHorizontalBox();
 
+    // this panel is designed for player's pawn and hands interface
     public PlayerPanel() {
         player1 = new Player();
         player2 = new Player();
@@ -49,26 +50,23 @@ public class PlayerPanel {
 
 
     public class Player {
-        private JPanel playerPanel = new JPanel(new BorderLayout(3, 0));
-        private JPanel handCardPanel = new JPanel(new GridLayout(1, 5, 1, 1));
-        private JButton pawn;
-        private ArrayList<JButton> handCards = new ArrayList<>();
+        private final JPanel playerPanel = new JPanel(new BorderLayout(3, 0));
+        private final JButton pawn;
+        private final ArrayList<JButton> handCards = new ArrayList<>();
 
         public Player() {
             pawn = new JButton();
             pawn.setPreferredSize(adventurerSize);
             playerPanel.add(pawn, BorderLayout.WEST);
+            JPanel handCardPanel = new JPanel(new GridLayout(1, 5, 1, 1));
             for (int i = 0; i < 5; i++) {
                 handCards.add(new JButton());
                 handCards.get(i).setPreferredSize(adventurerSize);
+                handCards.get(i).setEnabled(false);
                 handCardPanel.add(handCards.get(i));
             }
             playerPanel.add(handCardPanel, BorderLayout.CENTER);
             playerPanel.setPreferredSize(new Dimension(440, 120));
-        }
-
-        public JPanel getPlayer() {
-            return playerPanel;
         }
     }
 

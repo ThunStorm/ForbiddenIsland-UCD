@@ -1,6 +1,9 @@
 package com.esr.gui.console;
 
+import com.esr.gui.listener.Controllers;
+import com.esr.gui.listener.DataListener;
 import com.esr.gui.updater.LogAgent;
+import com.esr.gui.updater.UpdaterAgent;
 import com.esr.service.game.Game;
 import com.esr.utils.Audio;
 import com.esr.utils.Constant;
@@ -16,13 +19,14 @@ public class ConsolePanel {
     public static JComboBox<Object> numOfPlayerCB = new JComboBox<>();
     public static JComboBox<Object> difficultyCB = new JComboBox<>();
 
-    private Box consolePanel = Box.createVerticalBox();
-    private JPanel infoPanel = new JPanel();
-    private Box configBox = Box.createVerticalBox();
-    private Box logBox = Box.createHorizontalBox();
-    private JPanel actionPanel = new JPanel();
-    private JTextArea logs;
+    private final Box consolePanel = Box.createVerticalBox();
+    private final JPanel infoPanel = new JPanel();
+    private final Box configBox = Box.createVerticalBox();
+    private final Box logBox = Box.createHorizontalBox();
+    private final JPanel actionPanel = new JPanel();
+    private final JTextArea logs;
 
+    // To create console panel on the right
     public ConsolePanel() {
         this.logs = LogAgent.logs;
         consoleButtons.add(new JButton("Start"));
@@ -49,6 +53,7 @@ public class ConsolePanel {
         consolePanel.setPreferredSize(new Dimension(Constant.CONSOLE_WIDTH, Constant.CONSOLE_HEIGHT));
     }
 
+    // Config Box used to customize the difficulty and the number of players in the game
     public void ConfigBox() {
         Box keyBox = Box.createHorizontalBox();
         TitledBorder config = new TitledBorder("Config");
@@ -65,15 +70,22 @@ public class ConsolePanel {
         consoleButtons.get(0).addActionListener(e -> {
             if (numOfPlayerCB.getSelectedItem() != "----NUM----" && difficultyCB.getSelectedItem() != "---LEVEL---") {
                 LogAgent.logMessenger("[Game Initialisation]");
+
+                // the size AudioData object is limited under 1 MB when looped play, hence we use a timer to implement loop-play
                 if (Constant.AUDIO_ON_OFF) {
                     Audio.BGM.LoopPlay(398);
                 }
+
+                // disable the start avoid mistakenly touching and start the game with customised parameters
                 consoleButtons.get(0).setEnabled(false);
-                Game NewGame = new Game(Integer.parseInt((String) Objects.requireNonNull(numOfPlayerCB.getSelectedItem())),
+                new Game(Integer.parseInt((String) Objects.requireNonNull(numOfPlayerCB.getSelectedItem())),
                         Integer.parseInt((String) Objects.requireNonNull(difficultyCB.getSelectedItem())));
+
+                // setting up action listeners on buttons
+                new Controllers();
+                new DataListener();
             }
         });
-
         keyBox.add(Box.createHorizontalGlue());
         keyBox.add(consoleButtons.get(0));
         configBox.add(numOfPlayerCB);
@@ -82,9 +94,9 @@ public class ConsolePanel {
         configBox.add(keyBox);
         configBox.setBorder(config);
         configBox.setPreferredSize(new Dimension(95, 120));
-
     }
 
+    // log box will log the game and give instruction to players
     public void LogBox() {
         logs.setLineWrap(true);
         logs.setWrapStyleWord(true);
@@ -97,6 +109,7 @@ public class ConsolePanel {
         logBox.setPreferredSize(new Dimension(95, 500));
     }
 
+    // action buttons
     public void ActionPanel() {
         TitledBorder action = new TitledBorder("Action");
         GridLayout gridLayout = new GridLayout(9, 1, 0, 2);
@@ -113,6 +126,7 @@ public class ConsolePanel {
         actionPanel.setPreferredSize(new Dimension(95, 220));
     }
 
+    // simple title intro
     public void InfoPanel() {
         TitledBorder info = new TitledBorder("Info");
         JLabel INFO1 = new JLabel();

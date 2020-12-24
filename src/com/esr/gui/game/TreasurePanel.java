@@ -14,21 +14,18 @@ import java.util.ArrayList;
  * @Version 1.0
  **/
 public class TreasurePanel {
-
     public static JLabel waterMeter = new JLabel();
     public static ArrayList<JButton> treasureCards;
+    private final JPanel treasurePanel;
 
-    private Dimension treasureCardSize = new Dimension(Constant.TREASURE_WIDTH, Constant.TREASURE_HEIGHT);
-    private JPanel treasureCardPile;
-    private JPanel treasurePanel;
-
-
+    // the panel used to display treasure cards
     public TreasurePanel() {
         treasurePanel = new JPanel(new BorderLayout(1, 3));
-        treasureCardPile = new JPanel(new GridLayout(4, 1, 1, 3));
+        JPanel treasureCardPile = new JPanel(new GridLayout(4, 1, 1, 3));
         treasureCards = new ArrayList<>();
 
         JLabel pile = new JLabel();
+        Dimension treasureCardSize = new Dimension(Constant.TREASURE_WIDTH, Constant.TREASURE_HEIGHT);
         pile.setPreferredSize(treasureCardSize);
         pile.setIcon(new ImageIcon(CommonUtils.getImage("/Back/Treasure Discard.png", Constant.TREASURE_WIDTH, Constant.TREASURE_HEIGHT)));
         treasureCardPile.add(pile);
@@ -40,6 +37,7 @@ public class TreasurePanel {
         for (int i = 0; i < 2; i++) {
             treasureCards.add(new JButton());
             treasureCards.get(i).setPreferredSize(treasureCardSize);
+            treasureCards.get(i).setEnabled(false);
             treasureCardPile.add(treasureCards.get(i));
         }
 

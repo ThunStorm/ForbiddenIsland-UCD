@@ -19,7 +19,3 @@ public class Main {
         gameFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     }
 }
-
-//TODO
-// [LOGS]
-// [DISABLE BUTTONS AT FINISH]

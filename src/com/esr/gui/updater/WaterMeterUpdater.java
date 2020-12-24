@@ -1,5 +1,6 @@
 package com.esr.gui.updater;
 
+import com.esr.gui.console.ConsolePanel;
 import com.esr.gui.game.TreasurePanel;
 import com.esr.service.base.IUpdater;
 import com.esr.service.game.GameData;

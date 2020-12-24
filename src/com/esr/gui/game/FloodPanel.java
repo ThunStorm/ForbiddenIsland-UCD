@@ -15,12 +15,13 @@ import java.util.ArrayList;
  **/
 public class FloodPanel {
     public static ArrayList<JButton> floodCards;
-    private Dimension floodCardSize = new Dimension(Constant.FLOOD_WIDTH, Constant.FLOOD_HEIGHT);
-    private JPanel floodPanel;
+    private final JPanel floodPanel;
 
+    // create a panel for displaying flood card
     public FloodPanel() {
         floodPanel = new JPanel(new GridLayout(8, 1, 1, 3));
         JLabel pile = new JLabel();
+        Dimension floodCardSize = new Dimension(Constant.FLOOD_WIDTH, Constant.FLOOD_HEIGHT);
         pile.setPreferredSize(floodCardSize);
         pile.setIcon(new ImageIcon(CommonUtils.getImage("/Back/Flood Discard.png", Constant.FLOOD_WIDTH, Constant.FLOOD_HEIGHT)));
         floodPanel.add(pile);
@@ -32,15 +33,12 @@ public class FloodPanel {
         for (int i = 0; i < 6; i++) {
             floodCards.add(new JButton());
             floodCards.get(i).setPreferredSize(floodCardSize);
+            floodCards.get(i).setVisible(false);
             floodPanel.add(floodCards.get(i));
         }
     }
 
     public JPanel getFloodPanel() {
         return floodPanel;
-    }
-
-    public ArrayList<JButton> getFloodCards() {
-        return floodCards;
     }
 }

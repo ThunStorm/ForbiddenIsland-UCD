@@ -32,7 +32,6 @@ public class TreasureUpdater implements IUpdater {
             TreasurePanel.treasureCards.get(i).setIcon(null);
             TreasurePanel.treasureCards.get(i).setEnabled(false);
         }
-
     }
 
     @Override
