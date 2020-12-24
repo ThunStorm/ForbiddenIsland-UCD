@@ -10,36 +10,35 @@ import java.util.Iterator;
  * @Date 2020/12/8
  * @Version 1.0
  **/
-public class TreasureDeck {
-    private ArrayList<Integer> treasureDeck;
-    private ArrayList<Integer> discardPile;
-    private ArrayList<Integer> NTreasureCards;
+public class TreasureDeck extends Deck{
+    // treasure deck implementation
+    private final ArrayList<Integer> NTreasureCards;
 
+    // init deck and shuffle the deck
     public TreasureDeck() {
-        treasureDeck = new ArrayList<>();
-        discardPile = new ArrayList<>();
+        super(2);
         NTreasureCards = new ArrayList<>();
         for (int i = 0; i < 28; i++) {
-            treasureDeck.add(i);
+            deck.add(i);
         }
-        Collections.shuffle(treasureDeck);
+        Collections.shuffle(deck);
     }
 
-    public ArrayList<Integer> getNTreasureCards(int n) {
-        CheckAvailability(n);
+    // get n cards
+    public ArrayList<Integer> getNCards() {
+        CheckAvailability(Num);
         NTreasureCards.clear();
-        NTreasureCards.addAll(treasureDeck.subList(0, n));
-        if (n > 0) {
-            treasureDeck.subList(0, n).clear();
-        }
+        NTreasureCards.addAll(deck.subList(0, Num));
+        deck.subList(0, Num).clear();
         return NTreasureCards;
     }
 
-    public ArrayList<Integer> getNNoRiseCards(int n) {
-        CheckAvailability(n);
+    // get n cards initially. player will not get a Water Rise!
+    public ArrayList<Integer> getNNoRiseCards() {
+        CheckAvailability(Num);
         NTreasureCards.clear();
         int count = 0;
-        Iterator<Integer> iterator = treasureDeck.iterator();
+        Iterator<Integer> iterator = deck.iterator();
         while (iterator.hasNext()) {
             int treasureCard = iterator.next();
             if (treasureCard >= 25 && treasureCard <= 27) {
@@ -49,22 +48,18 @@ public class TreasureDeck {
                 count++;
             }
             iterator.remove();
-            if (count >= n) {
+            if (count >= Num) {
                 break;
             }
         }
+        deck.addAll(discardPile);
+        Collections.shuffle(deck);
         return NTreasureCards;
     }
 
+    // discard process
     public void Discard(int treasureID) {
         discardPile.add(treasureID);
     }
 
-    private void CheckAvailability(int n) {
-        if (treasureDeck.size() < n) {
-            Collections.shuffle(discardPile);
-            treasureDeck.addAll(discardPile);
-            discardPile.clear();
-        }
-    }
 }

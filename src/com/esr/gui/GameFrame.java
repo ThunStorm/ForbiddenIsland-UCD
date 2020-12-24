@@ -11,15 +11,8 @@ import java.awt.*;
 
 public class GameFrame extends JFrame {
 
-    //    public Subject subject;
-    private GamePanel gamePanel;
-    private ConsolePanel consolePanel;
-    private JPanel jGamePanel;
-    private Box consoleBoxPanel;
-
     public GameFrame(String title) throws HeadlessException {
         super(title);
-        //Dimension frameSize = new Dimension(Constant.FRAME_WIDTH,Constant.FRAME_HEIGHT);
         Toolkit toolkit = Toolkit.getDefaultToolkit();
         int screenWidth = toolkit.getScreenSize().width;
         int screenHeight = toolkit.getScreenSize().height;
@@ -30,18 +23,13 @@ public class GameFrame extends JFrame {
     }
 
     public void Init() {
-        LogAgent logAgent = new LogAgent();
-        consolePanel = new ConsolePanel();
-        gamePanel = new GamePanel();
-        jGamePanel = gamePanel.getGamePanel();
-        consoleBoxPanel = consolePanel.getConsolePanel();
+//        new LogAgent();
+        ConsolePanel consolePanel = new ConsolePanel();
+        GamePanel gamePanel = new GamePanel();
+        JPanel jGamePanel = gamePanel.getGamePanel();
+        Box consoleBoxPanel = consolePanel.getConsolePanel();
         this.add(consoleBoxPanel, BorderLayout.EAST);
         this.add(jGamePanel, BorderLayout.CENTER);
-
-        //the size AudioData object is limited under 1 MB when looped play;
-//        Audio.BGM.LoopPlay();
-
-
     }
 
 }

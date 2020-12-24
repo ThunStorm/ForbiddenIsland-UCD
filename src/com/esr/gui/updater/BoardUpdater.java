@@ -1,7 +1,7 @@
 package com.esr.gui.updater;
 
 import com.esr.gui.game.BoardPanel;
-import com.esr.gui.widgets.TwoLayeredIcon;
+import com.esr.gui.tools.TwoLayeredIcon;
 import com.esr.service.base.IUpdater;
 import com.esr.service.game.GameData;
 import com.esr.service.game.data.Block;
@@ -19,18 +19,16 @@ import java.util.ArrayList;
  * @Version 1.0
  **/
 public class BoardUpdater implements IUpdater {
-    private ArrayList<Integer> Tiles;
 
     public BoardUpdater() {
-        Tiles = new ArrayList<>();
-        Tiles.addAll(GameData.getTilesArray());
+        ArrayList<Integer> tiles = new ArrayList<>(GameData.getTilesArray());
         for (int i = 0; i < BoardPanel.tileCards.size(); i++) {
             BoardPanel.tileCards.get(i).setEnabled(true);
             BoardPanel.tileCards.get(i).setVisible(true);
-            BoardPanel.tileCards.get(i).setIcon(new ImageIcon(CommonUtils.getImage("/Tiles/" + Tiles.get(i) + ".png", Constant.TILE_WIDTH, Constant.TILE_HEIGHT)));
+            BoardPanel.tileCards.get(i).setIcon(new ImageIcon(CommonUtils.getImage("/Tiles/" + tiles.get(i) + ".png", Constant.TILE_WIDTH, Constant.TILE_HEIGHT)));
         }
         for (int i = 0; i < GameData.getAdventurers().length; i++) {
-            BoardPanel.tileCards.get(GameData.getAdventurers()[i].getPos()).setIcon(new TwoLayeredIcon(new ImageIcon(CommonUtils.getImage(GameData.getAdventurers()[i].getPawnImg(), Constant.TILE_WIDTH, Constant.TILE_HEIGHT)), BoardPanel.tileCards.get(Tiles.indexOf(GameData.getAdventurers()[i].getId() + 9)).getIcon()));
+            BoardPanel.tileCards.get(GameData.getAdventurers()[i].getPos()).setIcon(new TwoLayeredIcon(new ImageIcon(CommonUtils.getImage(GameData.getAdventurers()[i].getPawnImg(), Constant.TILE_WIDTH, Constant.TILE_HEIGHT)), BoardPanel.tileCards.get(tiles.indexOf(GameData.getAdventurers()[i].getId() + 9)).getIcon()));
         }
     }
 
@@ -57,7 +55,7 @@ public class BoardUpdater implements IUpdater {
                         new TwoLayeredIcon(new ImageIcon(CommonUtils.getImage("/Pawns/"
                                 + Map.adventurerMatcher.get(GameData.getBoard().getTile(GameData.getAdventurers()[i].getX(), GameData.getAdventurers()[i].getY()).getPlayerOnBoard().get(j))
                                 + ".png", Constant.TILE_WIDTH, Constant.TILE_HEIGHT)),
-                                BoardPanel.tileCards.get(GameData.getAdventurers()[i].getPos()).getIcon(), j * 6));
+                                BoardPanel.tileCards.get(GameData.getAdventurers()[i].getPos()).getIcon(), j));
             }
         }
     }

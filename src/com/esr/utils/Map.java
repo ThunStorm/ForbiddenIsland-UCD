@@ -11,7 +11,7 @@ import java.util.HashMap;
  * @Version 1.0
  **/
 public abstract class Map {
-    //    public final static int[] layOut = new int[]{1, 2, 5, 6, 7, 12, 25, 30, 31, 32, 35, 36};
+    // map layout
     public final static ArrayList<Integer> blankLayout = new ArrayList<Integer>() {{
         add(0);
         add(1);
@@ -32,6 +32,7 @@ public abstract class Map {
     public final static HashMap<String, Integer> numberMatcher = new HashMap<>();
     public final static HashMap<Integer, String> adventurerMatcher = new HashMap<>();
 
+    // matchers setting up
     public static void setUpMatchers() {
         coordinatesMatcher.put(0, new int[]{0, 2});
         coordinatesMatcher.put(1, new int[]{0, 3});
@@ -89,6 +90,6 @@ public abstract class Map {
         adventurerMatcher.put(3, "Messenger");
         adventurerMatcher.put(4, "Navigator");
         adventurerMatcher.put(5, "Pilot");
-    }
+    } // this method is a little clumsy...need to optimise in the future
 }
 

@@ -12,94 +12,81 @@ import java.util.Iterator;
  * @Date 2020/12/8
  * @Version 1.0
  **/
-public class FloodDeck {
-    private ArrayList<Integer> floodDeck;
-    private ArrayList<Integer> discardPile;
-    private ArrayList<Integer> displayedCards;
-    private ArrayList<Integer> removedFloodCard;
-    private int displayNum;
+public class FloodDeck extends Deck{
+    // flood deck implementation
+    private final ArrayList<Integer> displayedCards;
+    private final ArrayList<Integer> removedFloodCard;
     private boolean isInit;
 
+    // init deck: set number of flood cards will be drawn, shuffle the deck
     public FloodDeck() {
-        floodDeck = new ArrayList<>();
-        discardPile = new ArrayList<>();
+        super(6);
         displayedCards = new ArrayList<>();
         removedFloodCard = new ArrayList<>();
         isInit = true;
         for (int i = 1; i <= 24; i++) {
-            floodDeck.add(i);
+            deck.add(i);
         }
-        Collections.shuffle(floodDeck);
+        Collections.shuffle(deck);
     }
 
-    public ArrayList<Integer> getNFlood() {
-        if (isInit) {
-            this.displayNum = 6;
-        } else {
-            this.displayNum = GameData.getFloodCardCount();
+    // get n cards
+    public ArrayList<Integer> getNCards() {
+        if (!isInit) {
+            Num = GameData.getFloodCardCount();
         }
-        CheckAvailability(this.displayNum);
+        CheckAvailability(Num);
         displayedCards.clear();
-        if (floodDeck.size() + discardPile.size() < displayNum) {
-            displayedCards.addAll(floodDeck);
+        // after flood card removal, correct display num
+        if (deck.size() + discardPile.size() < Num) {
+            displayedCards.addAll(deck);
         } else {
-            displayedCards.addAll(floodDeck.subList(0, this.displayNum));
+            displayedCards.addAll(deck.subList(0, Num));
         }
         return displayedCards;
     }
 
-    public void Discard() {
+    // discard process
+    public void Discard(){
         int count = 0;
-        Iterator<Integer> iterator = floodDeck.iterator();
+        Iterator<Integer> iterator = deck.iterator();
         while (iterator.hasNext()) {
             int floodCard = iterator.next();
-            if (count < displayNum) {
+            if (count < Num) {
                 discardPile.add(floodCard);
                 iterator.remove();
                 count++;
             }
-            if (count >= displayNum) {
+            if (count >= Num) {
                 break;
             }
         }
-//        for (int i = 0; i < displayNum; i++) {
-//            discardPile.add(floodDeck.get(0));
-//            floodDeck.remove(0);
-//        }
     }
 
+    // put flood card back to the top of deck
     public void PutBack2Top() {
         if (discardPile.size() != 0) {
             Collections.shuffle(discardPile);
-            discardPile.addAll(floodDeck);
-            floodDeck.clear();
-            floodDeck.addAll(discardPile);
+            discardPile.addAll(deck);
+            deck.clear();
+            deck.addAll(discardPile);
             discardPile.clear();
         }
     }
 
-    public void PutBack() {
-        Collections.shuffle(discardPile);
-        floodDeck.clear();
-        floodDeck.addAll(discardPile);
-        discardPile.clear();
-    }
-
+    // remove flood card when corresponding tile is removed
     public void RemoveFloodCard(int removedTile) {
         removedFloodCard.add(removedTile);
-        floodDeck.remove((Integer) removedTile);
+        deck.remove((Integer) removedTile);
     }
 
-    private void CheckAvailability(int n) {
-        if (floodDeck.size() < n) {
-            Collections.shuffle(discardPile);
-            floodDeck.addAll(discardPile);
-            discardPile.clear();
-        }
-    }
-
-    public void setToNorm() {
+    // first time will draw 6 cards then depends on water level
+    public void set2Norm() {
         this.isInit = false;
     }
 
+    // preserve interface for testing
+    public ArrayList<Integer> getRemovedFloodCard() {
+        return removedFloodCard;
+    }
 }

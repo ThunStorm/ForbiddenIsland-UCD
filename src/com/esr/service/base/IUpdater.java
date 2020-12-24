@@ -7,7 +7,9 @@ package com.esr.service.base;
  * @Version 1.0
  **/
 public interface IUpdater {
+    // update graphical interface
     void guiUpdate();
 
+    // disable all gui when game finish
     void gameOver();
 }

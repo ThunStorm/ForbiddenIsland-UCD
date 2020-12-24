@@ -17,6 +17,7 @@ import java.util.ArrayList;
  **/
 public class DataListener {
 
+    // set up click action listeners for buttons
     public DataListener() {
         BoardListener();
         PawnListener();
@@ -39,20 +40,14 @@ public class DataListener {
     private void HandCardListener() {
         for (ArrayList<JButton> individualPlayerCards : GamePanel.playerHandCards) {
             for (JButton handCard : individualPlayerCards) {
-                handCard.addActionListener(e -> {
-//                    LogAgent.logMessenger(String.valueOf(individualPlayerCards.indexOf(handCard)));
-                    GameData.SelectTreasureCard(true, individualPlayerCards.indexOf(handCard));
-                });
+                handCard.addActionListener(e -> GameData.SelectTreasureCard(true, individualPlayerCards.indexOf(handCard)));
             }
         }
     }
 
     private void PawnListener() {
         for (JButton pawn : GamePanel.playerPawnList) {
-            pawn.addActionListener(e -> {
-//                LogAgent.logMessenger(String.valueOf(GamePanel.playerPawnList.indexOf(pawn)));
-                GameData.SelectPawn(GamePanel.playerPawnList.indexOf(pawn));
-            });
+            pawn.addActionListener(e -> GameData.SelectPawn(GamePanel.playerPawnList.indexOf(pawn)));
         }
     }
 }

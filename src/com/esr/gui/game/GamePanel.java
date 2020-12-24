@@ -13,26 +13,16 @@ import java.util.ArrayList;
 public class GamePanel {
     public static ArrayList<JButton> playerPawnList;
     public static ArrayList<ArrayList<JButton>> playerHandCards;
+    private final JPanel gamePanel;
 
-    private JPanel gamePanel;
-    private PlayerPanel playerPanelUp;
-    private PlayerPanel playerPanelDown;
-    private BoardPanel boardPanel;
-    private TreasurePanel treasurePanel;
-    private FloodPanel floodPanel;
-    private ArrayList<JButton> p1HandCards;
-    private ArrayList<JButton> p2HandCards;
-    private ArrayList<JButton> p3HandCards;
-    private ArrayList<JButton> p4HandCards;
-//    private Subject subject;
-
+    // add sub-panels to the game panel
     public GamePanel() {
+        PlayerPanel playerPanelUp = new PlayerPanel();
+        PlayerPanel playerPanelDown = new PlayerPanel();
+        BoardPanel boardPanel = new BoardPanel();
+        TreasurePanel treasurePanel = new TreasurePanel();
+        FloodPanel floodPanel = new FloodPanel();
         gamePanel = new JPanel();
-        playerPanelUp = new PlayerPanel();
-        playerPanelDown = new PlayerPanel();
-        boardPanel = new BoardPanel();
-        treasurePanel = new TreasurePanel();
-        floodPanel = new FloodPanel();
         gamePanel.setLayout(new BorderLayout(5, 5));
         gamePanel.add(playerPanelDown.getDuoPlayerPanel(), BorderLayout.SOUTH);
         gamePanel.add(playerPanelUp.getDuoPlayerPanel(), BorderLayout.NORTH);
@@ -46,14 +36,10 @@ public class GamePanel {
         playerPawnList.add(playerPanelUp.getP1Pawn());
         playerPawnList.add(playerPanelUp.getP2Pawn());
 
-        p1HandCards = new ArrayList<>();
-        p2HandCards = new ArrayList<>();
-        p3HandCards = new ArrayList<>();
-        p4HandCards = new ArrayList<>();
-        p1HandCards.addAll(playerPanelDown.getP1HandCards());
-        p2HandCards.addAll(playerPanelDown.getP2HandCards());
-        p3HandCards.addAll(playerPanelUp.getP1HandCards());
-        p4HandCards.addAll(playerPanelUp.getP2HandCards());
+        ArrayList<JButton> p1HandCards = new ArrayList<>(playerPanelDown.getP1HandCards());
+        ArrayList<JButton> p2HandCards = new ArrayList<>(playerPanelDown.getP2HandCards());
+        ArrayList<JButton> p3HandCards = new ArrayList<>(playerPanelUp.getP1HandCards());
+        ArrayList<JButton> p4HandCards = new ArrayList<>(playerPanelUp.getP2HandCards());
 
         playerHandCards = new ArrayList<>();
         playerHandCards.add(p1HandCards);

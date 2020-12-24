@@ -1,7 +1,7 @@
 package com.esr.gui.updater;
 
 import com.esr.gui.game.GamePanel;
-import com.esr.gui.widgets.TwoLayeredIcon;
+import com.esr.gui.tools.TwoLayeredIcon;
 import com.esr.service.base.IUpdater;
 import com.esr.service.game.Game;
 import com.esr.service.game.GameData;
@@ -38,7 +38,6 @@ public class PlayerUpdater implements IUpdater {
                     handCard.setEnabled(false);
                 }
             }
-
         }
     }
 

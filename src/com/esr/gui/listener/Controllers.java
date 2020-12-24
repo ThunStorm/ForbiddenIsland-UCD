@@ -37,6 +37,7 @@ public class Controllers {
         ClearController();
     }
 
+    // if the action number is under 3, player can take an action to move and consume one action
     private void MoveToController() {
         ConsolePanel.consoleButtons.get(1).addActionListener(e -> {
             if (Game.getActionCount() < 3) {
@@ -52,20 +53,21 @@ public class Controllers {
                         Game.SavePlayersRound();
                     }
                 } else {
-                    LogAgent.logMessenger("Can't Move To this tile");
+                    LogAgent.logMessenger("Can't [Move To] This Tile");
                 }
             } else {
-                LogAgent.logMessenger("Maximum actions succeed");
+                LogAgent.logMessenger("Exceeded Maximum Actions");
             }
         });
     }
 
+    // if the action number is under 3, player can take an action to shore up a flooded tile and consume one action
     private void ShoreUpController() {
         ConsolePanel.consoleButtons.get(2).addActionListener(e -> {
             if (Game.getActionCount() < 3) {
                 if (GameData.getBoard().isCanShoreUp()) {
                     GameData.ShoreUp();
-                    LogAgent.logMessenger("Shore Up " + Arrays.toString(Map.coordinatesMatcher.get(GameData.getAdventurers()[Game.getRoundNum()].getPos())));
+                    LogAgent.logMessenger("Shore Up " + Arrays.toString(Map.coordinatesMatcher.get(GameData.getAdventurers()[Game.getRoundNum()].getShoredPos())));
                     UpdaterAgent.getBoardUpdater().guiUpdate();
                     if (Constant.AUDIO_ON_OFF) {
                         Audio.SHOREUP.Play();
@@ -81,22 +83,25 @@ public class Controllers {
                         }
                     }
                 } else {
-                    LogAgent.logMessenger("Can't Shore Up this tile");
+                    LogAgent.logMessenger("Can't [Shore Up] This Tile");
                 }
+            }
+            else {
+                LogAgent.logMessenger("Exceeded Maximum Actions");
             }
         });
     }
 
+    // if the action number is under 3, player can take an action to pass a card to a player and consume one action
     private void PassToController() {
         ConsolePanel.consoleButtons.get(3).addActionListener(e -> {
-//            LogAgent.logMessenger("Pass To");
             if (Game.getActionCount() < 3 && GameData.getSelectedPawn() != -1) {
                 if (GameData.getBoard().getTile(GameData.getAdventurers()[Game.getRoundNum()].getX(), GameData.getAdventurers()[Game.getRoundNum()].getY())
                         .CanPassTo(GameData.getAdventurers()[Game.getRoundNum()], GameData.getAdventurers()[GameData.getSelectedPawn()])
                         || GameData.getAdventurers()[Game.getRoundNum()].getName().equals("Messenger")) {
                     if (GameData.PassTo()) {
                         LogAgent.logMessenger(GameData.getAdventurers()[Game.getRoundNum()].getName()
-                                + " passed a card to " + GameData.getAdventurers()[GameData.getSelectedPawn()].getName());
+                                + " Passed A Card To " + GameData.getAdventurers()[GameData.getSelectedPawn()].getName());
                         if (Constant.AUDIO_ON_OFF) {
                             Audio.PASSTO.Play();
                         }
@@ -107,17 +112,18 @@ public class Controllers {
                         GameData.resetCardsInRound();
                     }
                 } else {
-                    LogAgent.logMessenger("Can't do Pass To Action");
+                    LogAgent.logMessenger("Can't Do [Pass To] Action");
                 }
             } else {
-                LogAgent.logMessenger("Maximum actions succeed or no selected receiver");
+                LogAgent.logMessenger("Exceeded Maximum Actions Or No Receiver Is Selected");
             }
         });
     }
 
+    // if the action number is under 3, player can take an action to capture a figurine from current tile and consume one action
     private void CaptureController() {
         ConsolePanel.consoleButtons.get(4).addActionListener(e -> {
-//            LogAgent.logMessenger("Capture");
+            LogAgent.logMessenger("Trying To Capture The Treasure Figurine...");
             if (Game.getActionCount() < 3) {
                 ArrayList<Integer> handCards = new ArrayList<>(GameData.getAdventurers()[Game.getRoundNum()].getHandCards());
                 int[] treasureCount = {0, 0, 0, 0};
@@ -157,18 +163,21 @@ public class Controllers {
                                     Map.coordinatesMatcher.get(GameData.getTilesArray().indexOf(2 * i + 1))[1]).setCaptured();
                             GameData.getBoard().getTile(Map.coordinatesMatcher.get(GameData.getTilesArray().indexOf(2 * i + 2))[0],
                                     Map.coordinatesMatcher.get(GameData.getTilesArray().indexOf(2 * i + 2))[1]).setCaptured();
+                            UpdaterAgent.getPlayerUpdater().guiUpdate();
+                            UpdaterAgent.getBoardUpdater().guiUpdate();
                         }
                     }
+                    else {
+                        LogAgent.logMessenger("You Don't Have Enough Treasure Cards To Capture The Figurine");
+                    }
                 }
-                UpdaterAgent.getPlayerUpdater().guiUpdate();
-                UpdaterAgent.getBoardUpdater().guiUpdate();
             }
         });
     }
 
+    // this controller is to judge players are winning the game
     private void LiftOffController() {
         ConsolePanel.consoleButtons.get(5).addActionListener(e -> {
-            // lift off
             int idx14 = GameData.getTilesArray().indexOf(14);
             Block block14 = GameData.getBoard().getTile(Map.coordinatesMatcher.get(idx14)[0], Map.coordinatesMatcher.get(idx14)[1]);
             ArrayList<Integer> handCards = new ArrayList<>();
@@ -182,35 +191,36 @@ public class Controllers {
                     if (Constant.AUDIO_ON_OFF) {
                         Audio.LIFTOFF.Play();
                     }
+                    LogAgent.logMessenger("Lift Off Success!");
                     Game.GameComplete(true);
                 } else {
-                    System.out.println("Lift Off failed");
+                    LogAgent.logMessenger("Lift Off failed!");
                 }
             }
         });
     }
 
+    // either in self turn or others' turn, a special action can be taken. Use other's cards please select s/he's pawn and click the button first
     private void SpecialActionController() {
         ConsolePanel.consoleButtons.get(6).addActionListener(e -> {
             if (GameData.getCardsInRound() != null && !GameData.getCardsInRound().isEmpty() && GameData.getSpecialActionTile()[0] != -1 && GameData.getSpecialActionTile()[1] != -1) {
                 int lastSelect = GameData.getCardsInRound().get(GameData.getCardsInRound().size() - 1);
-                //sandbag
+                // use a Sandbag to shore up the last selected tile
                 if (lastSelect == 23 || lastSelect == 24) {
                     Block shoredTile = GameData.getBoard().getTile(GameData.getSpecialActionTile()[0], GameData.getSpecialActionTile()[1]);
                     if (shoredTile.isExist() && shoredTile.getStatus() == TileStatus.Flooded) {
                         GameData.getBoard().getTile(GameData.getSpecialActionTile()[0], GameData.getSpecialActionTile()[1]).ShoreUp();
                         GameData.getAdventurers()[Game.getRoundNum()].getHandCards().remove((Integer) lastSelect);
                         GameData.getTreasureDeck().Discard(lastSelect);
+                        LogAgent.logMessenger("Use A [Sandbag] To Shore Up A Tile");
                         GameData.resetCardsInRound();
                         GameData.resetSpecialActionTile();
-                        UpdaterAgent.getBoardUpdater().guiUpdate();
-                        UpdaterAgent.getPlayerUpdater().guiUpdate();
                         if (Constant.AUDIO_ON_OFF) {
                             Audio.SHOREUP.Play();
                         }
                     }
                 }
-                // fly to
+                // Use a Helicopter to lift off players to other tile
                 else if ((lastSelect == 20 || lastSelect == 21 || lastSelect == 22) && GameData.getSelectedPawns().size() != 0) {
                     GameData.getBoard().getTile(GameData.getAdventurers()[Game.getRoundNum()].getX(), GameData.getAdventurers()[Game.getRoundNum()].getY()).MoveOff(GameData.getAdventurers()[Game.getRoundNum()]);
                     GameData.getAdventurers()[Game.getRoundNum()].setPos(GameData.getSpecialActionTile()[0], GameData.getSpecialActionTile()[1]);
@@ -222,62 +232,74 @@ public class Controllers {
                     }
                     GameData.getAdventurers()[Game.getRoundNum()].getHandCards().remove((Integer) lastSelect);
                     GameData.getTreasureDeck().Discard(lastSelect);
+                    LogAgent.logMessenger("Use A [Helicopter Lift]");
                     GameData.SelectPawn(-1);
                     GameData.resetCardsInRound();
                     GameData.resetSpecialActionTile();
-                    UpdaterAgent.getBoardUpdater().guiUpdate();
-                    UpdaterAgent.getPlayerUpdater().guiUpdate();
                     if (Constant.AUDIO_ON_OFF) {
                         Audio.LIFTOFF.Play();
                     }
                 }
-
                 if (Game.isInFakeRound()) {
                     Game.setInFakeRound(false);
                     Game.setRoundNum(Game.getFakeRoundNum());
                     Game.setFakeRoundNum(-1);
                     Game.setActionCount(Game.getFakeActionCount());
                     Game.setFakeActionCount(-1);
-                    UpdaterAgent.getBoardUpdater().guiUpdate();
-                    UpdaterAgent.getPlayerUpdater().guiUpdate();
-                    LogAgent.logMessenger("Back to player " + (Game.getRoundNum() + 1) + "'s turn (" + GameData.getAdventurers()[Game.getRoundNum()].getName() + ")");
-                    LogAgent.logMessenger("Have done " + Game.getActionCount() + " actions");
+                    LogAgent.logMessenger("Back To Player " + (Game.getRoundNum() + 1) + "'s Turn (" + GameData.getAdventurers()[Game.getRoundNum()].getName() + ")");
+                    LogAgent.logMessenger("Have Done " + Game.getActionCount() + " Actions");
                 }
             }
+
             // Enter in fake round
-            else if (GameData.getSelectedPawn() != -1) {
+            else if (GameData.getSelectedPawn() != -1 && !Game.isInFakeRound()) {
                 Game.setInFakeRound(true);
                 Game.setFakeRoundNum(Game.getRoundNum());
                 Game.setFakeActionCount(Game.getActionCount());
                 Game.setActionCount(3);
                 Game.setRoundNum(GameData.getSelectedPawn());
                 UpdaterAgent.getPlayerUpdater().guiUpdate();
-                LogAgent.logMessenger("Switch to player " + (Game.getRoundNum() + 1) + "'s turn (" + GameData.getAdventurers()[Game.getRoundNum()].getName() + ")");
-            } else {
-                System.out.println("Error");
+                LogAgent.logMessenger("Switch To Player " + (Game.getRoundNum() + 1) + "'s Turn (" + GameData.getAdventurers()[Game.getRoundNum()].getName() + ")");
             }
+
+            // Return back without any operation
+            else if (GameData.getSelectedPawn() == Game.getFakeRoundNum() && Game.isInFakeRound()) {
+                Game.setInFakeRound(false);
+                Game.setRoundNum(Game.getFakeRoundNum());
+                Game.setFakeRoundNum(-1);
+                Game.setActionCount(Game.getFakeActionCount());
+                Game.setFakeActionCount(-1);
+                UpdaterAgent.getBoardUpdater().guiUpdate();
+                UpdaterAgent.getPlayerUpdater().guiUpdate();
+                LogAgent.logMessenger("Back To Player " + (Game.getRoundNum() + 1) + "'s Turn (" + GameData.getAdventurers()[Game.getRoundNum()].getName() + ")");
+                LogAgent.logMessenger("Have Done " + Game.getActionCount() + " Actions");
+            }
+            UpdaterAgent.getBoardUpdater().guiUpdate();
+            UpdaterAgent.getPlayerUpdater().guiUpdate();
         });
     }
 
+    // to enter next stage/round
     private void NextController() {
         ConsolePanel.consoleButtons.get(7).addActionListener(e -> {
-            LogAgent.logMessenger("Next");
             if (Constant.AUDIO_ON_OFF) {
                 Audio.NEXT.Play();
             }
             if (!Game.isStage23Done()) {
+                LogAgent.logMessenger("[Next] Stage");
                 Game.Stage23();
             } else if (Game.isNeed2save()) {
                 LogAgent.logMessenger("Please save adventures first");
             } else {
+                LogAgent.logMessenger("[Next] Round");
                 Game.RoundEnd();
             }
         });
     }
 
+    // to discard cards you have (which may locate in treasure card display zone), this will not cost Actions
     private void DiscardController() {
         ConsolePanel.consoleButtons.get(8).addActionListener(e -> {
-            LogAgent.logMessenger("Discard");
             if (GameData.getCardsInRound().size() != 0 && !Game.isInFakeRound()) {
                 ArrayList<Integer> allCardsInRound = new ArrayList<>();
                 allCardsInRound.addAll(GameData.getAdventurers()[Game.getRoundNum()].getHandCards());
@@ -301,9 +323,8 @@ public class Controllers {
                     }
                     count++;
                 }
+                LogAgent.logMessenger("[Discard] Card(s)");
                 GameData.resetCardsInRound();
-                UpdaterAgent.getPlayerUpdater().guiUpdate();
-                UpdaterAgent.getTreasureUpdater().guiUpdate();
                 if (Constant.AUDIO_ON_OFF) {
                     Audio.DISCARD.Play();
                 }
@@ -317,26 +338,28 @@ public class Controllers {
                         GameData.getAdventurers()[Game.getRoundNum()].getHandCards().add(card);
                     }
                 }
+                LogAgent.logMessenger("[Discard] Card(s)");
                 Game.setInFakeRound(false);
                 Game.setActionCount(Game.getFakeActionCount());
                 Game.setFakeActionCount(-1);
                 Game.setRoundNum(Game.getFakeRoundNum());
                 Game.setFakeRoundNum(-1);
                 GameData.SelectPawn(-1);
-                UpdaterAgent.getPlayerUpdater().guiUpdate();
-                UpdaterAgent.getTreasureUpdater().guiUpdate();
                 if (Constant.AUDIO_ON_OFF) {
                     Audio.DISCARD.Play();
                 }
             } else {
-                LogAgent.logMessenger("Please select the cards you would like to discard");
+                LogAgent.logMessenger("Please Select Cards To [Discard]");
             }
+            UpdaterAgent.getPlayerUpdater().guiUpdate();
+            UpdaterAgent.getTreasureUpdater().guiUpdate();
         });
     }
 
+    // used to clear the selected card
     private void ClearController() {
         ConsolePanel.consoleButtons.get(9).addActionListener(e -> {
-            LogAgent.logMessenger("Clear");
+            LogAgent.logMessenger("[Clear] Your Selections");
             GameData.SelectPawn(-1);
             GameData.resetCardsInRound();
             GameData.resetSpecialActionTile();

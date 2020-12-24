@@ -1,6 +1,6 @@
 package com.esr.gui.game;
 
-import com.esr.gui.widgets.JPanelBG;
+import com.esr.gui.tools.JPanelBG;
 import com.esr.utils.Constant;
 import com.esr.utils.Map;
 
@@ -16,9 +16,9 @@ import java.util.ArrayList;
  **/
 public class BoardPanel {
     public static ArrayList<JButton> tileCards = new ArrayList<>();
+    private final JPanelBG board;
 
-    private JPanelBG board;
-
+    // create a chessboard panel
     public BoardPanel() {
         Dimension tileSize = new Dimension(Constant.TILE_WIDTH, Constant.TILE_HEIGHT);
         Dimension boardSize = new Dimension(Constant.BOARD_WIDTH, Constant.BOARD_HEIGHT);
@@ -29,6 +29,7 @@ public class BoardPanel {
             if (Map.blankLayout.contains(i)) {
                 tileCard.setVisible(false);
             } else {
+                tileCard.setVisible(false);
                 tileCards.add(tileCard);
             }
             board.add(tileCard);

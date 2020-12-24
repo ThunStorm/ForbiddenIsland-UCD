@@ -25,9 +25,9 @@ public abstract class Constant {
     public final static int CONSOLE_WIDTH = 125;
     public final static int CONSOLE_HEIGHT = 950;
     public final static String RESOURCES_PATH = "src/com/esr/resources/image/";
-    public static boolean TIMER_STOP_ON_OFF = false;//Main switch of all timers. All timers stop when this turns to ture
+    // Main switch of all timers. All timers stop when this turns to ture
+    public static boolean TIMER_STOP_ON_OFF = false;
+    // Switch to enable/disable audio player
     public static boolean AUDIO_ON_OFF = true;
-
-
 }
 

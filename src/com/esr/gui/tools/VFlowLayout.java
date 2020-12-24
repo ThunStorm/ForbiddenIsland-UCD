@@ -1,4 +1,4 @@
-package com.esr.gui.widgets;
+package com.esr.gui.tools;
 
 import java.awt.*;
 import java.util.ArrayList;
@@ -303,7 +303,7 @@ public class VFlowLayout extends FlowLayout {
     }
 
     private java.util.List<Component> getVisibleComponents(Container container) {
-        List<Component> rs = new ArrayList<Component>();
+        List<Component> rs = new ArrayList<>();
 
         for (Component component : container.getComponents()) {
             if (component.isVisible()) {

@@ -13,6 +13,7 @@ import java.util.ArrayList;
  * @Version 1.0
  **/
 public class Block {
+    // this class stores information of a single tile
     private int tileId = -1;
     private TileStatus status;
     private String img;
@@ -21,8 +22,8 @@ public class Block {
     private boolean isExist;
     private ArrayList<Integer> adventurersOnBoard;
     private boolean isCaptured = false;
-    private int floodedOffset = 0;
 
+    // initial a block with a pawn on
     public Block(int tileId, int playerID, boolean isExist) {
         this.adventurersOnBoard = new ArrayList<>();
         this.tileId = tileId;
@@ -34,6 +35,7 @@ public class Block {
         this.isExist = isExist;
     }
 
+    // initial a block without a pawn on
     public Block(int tileId, boolean isExist) {
         this.adventurersOnBoard = new ArrayList<>();
         this.tileId = tileId;
@@ -44,19 +46,27 @@ public class Block {
         this.isExist = isExist;
     }
 
+    // initial a place-holding blank block
     public Block(boolean isExist) {
         this.isExist = isExist;
     }
 
+    // store a player when moving onto the tile
     public void MoveOnto(int playerID) {
         this.adventurersOnBoard.add(playerID);
     }
 
+    // remove a player when moving off the tile
     public void MoveOff(Adventurer adventurer) {
-//        int playerOut = adventurersOnBoard.get(adventurersOnBoard.indexOf(adventurer.getId()));
         adventurersOnBoard.remove((Integer) adventurer.getId());
     }
 
+    // confirm sender and receiver are on the same tile
+    public boolean CanPassTo(Adventurer sender, Adventurer receiver) {
+        return adventurersOnBoard.contains(sender.getId()) && adventurersOnBoard.contains(receiver.getId());
+    }
+
+    // shore up a tile and update img
     public void ShoreUp() {
         if (status == TileStatus.Flooded) {
             status = TileStatus.Normal;
@@ -67,10 +77,7 @@ public class Block {
         }
     }
 
-    public boolean CanPassTo(Adventurer sender, Adventurer receiver) {
-        return adventurersOnBoard.contains(sender.getId()) && adventurersOnBoard.contains(receiver.getId());
-    }
-
+    // sink a tile and update img
     public boolean SinkTile() {
         if (status == TileStatus.Normal) {
             status = TileStatus.Flooded;
@@ -83,42 +90,48 @@ public class Block {
             isExist = false;
             if (tileId == 14) {
                 Game.GameComplete(false);
-                System.out.println("Fool's landing is flooded!");
-                LogAgent.logMessenger("Fool's landing is flooded!");
+                LogAgent.logMessenger("[!] Fool's Landing Is Flooded!");
             }
             return true;
         } else {
-            System.out.println("ERROR! Tile has sunk");
+            System.out.println("ERROR! This tile has sunk");
             return true;
         }
     }
 
+    // used to update status and img, after successfully capturing a figurine from the tile
     public void setCaptured() {
         isCaptured = true;
         this.imgFile = tileId + 24 + ".png";
         this.img = imgFolder + imgFile;
     }
 
+    // check whether figurine still on the tile
     public boolean isUnCaptured() {
         return !isCaptured;
     }
 
+    // get tile id
     public int getTileId() {
         return tileId;
     }
 
+    // get tile status
     public TileStatus getStatus() {
         return status;
     }
 
+    // get tile img
     public String getImg() {
         return img;
     }
 
+    // get tile existence
     public boolean isExist() {
         return isExist;
     }
 
+    // get the list of players on the tile
     public ArrayList<Integer> getPlayerOnBoard() {
         return adventurersOnBoard;
     }
