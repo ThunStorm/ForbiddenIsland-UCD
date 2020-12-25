@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # FI-game-UCD
 COMP41670-Software Engineering (ME)-2020/21 Autumn - Forbidden Island Game Project
 =======
@@ -86,7 +85,3 @@ This project is to design and implement the cooperative game, Forbidden Island g
    -  Fools’ Landing tile sinks.
    - If any player is on a sink Island tile and cannot move to another tile.
    - If the water level reaches 5
-
-
-
->>>>>>> dev
