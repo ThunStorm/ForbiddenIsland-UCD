@@ -30,9 +30,7 @@
   <component name="ChangeListManager">
     <list default="true" id="2b919aec-5efd-45b2-b528-0ea4fbe9c6b5" name="Default Changelist" comment="Clean up code, fix diver and pilot movement error, add comments, re-construct/optimise several classes, create updaters and do many chores">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/FI-game-UCD-IDEA/com/esr/service/game/Game.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/FI-game-UCD-IDEA/com/esr/service/game/Game.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/FI-game-UCD-IDEA/com/esr/utils/CommonUtils$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/FI-game-UCD-IDEA/com/esr/utils/CommonUtils$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/FI-game-UCD-IDEA/com/esr/utils/Map.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/FI-game-UCD-IDEA/com/esr/utils/Map.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/esr/gui/listener/Controllers.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/esr/gui/listener/Controllers.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -120,17 +118,6 @@
       <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
       <RunnerSettings RunnerId="Run" />
       <ConfigurationWrapper RunnerId="Run" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
-      <option name="arquillianRunConfiguration">
-        <value>
-          <option name="containerStateName" value="" />
-        </value>
-      </option>
-      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -255,6 +242,7 @@
       <workItem from="1608740165922" duration="40034000" />
       <workItem from="1608809439261" duration="414000" />
       <workItem from="1608836353407" duration="3260000" />
+      <workItem from="1608919971763" duration="1572000" />
     </task>
     <task id="LOCAL-00001" summary="Build DataLayer">
       <created>1607400232334</created>
@@ -539,21 +527,25 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="740" y="274" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1608730690908" />
-    <state width="1877" height="218" key="GridCell.Tab.0.bottom" timestamp="1608839345252">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="1237" height="61" key="GridCell.Tab.0.bottom" timestamp="1608921557836">
+      <screen x="0" y="0" width="1280" height="680" />
     </state>
+    <state width="1237" height="61" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1608921557836" />
     <state width="1877" height="218" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1608839345252" />
-    <state width="1877" height="218" key="GridCell.Tab.0.center" timestamp="1608839345251">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="1237" height="61" key="GridCell.Tab.0.center" timestamp="1608921557836">
+      <screen x="0" y="0" width="1280" height="680" />
     </state>
+    <state width="1237" height="61" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1608921557836" />
     <state width="1877" height="218" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1608839345251" />
-    <state width="1877" height="218" key="GridCell.Tab.0.left" timestamp="1608839345251">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="1237" height="61" key="GridCell.Tab.0.left" timestamp="1608921557836">
+      <screen x="0" y="0" width="1280" height="680" />
     </state>
+    <state width="1237" height="61" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1608921557836" />
     <state width="1877" height="218" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1608839345251" />
-    <state width="1877" height="218" key="GridCell.Tab.0.right" timestamp="1608839345252">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="1237" height="61" key="GridCell.Tab.0.right" timestamp="1608921557836">
+      <screen x="0" y="0" width="1280" height="680" />
     </state>
+    <state width="1237" height="61" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1608921557836" />
     <state width="1877" height="218" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1608839345252" />
     <state width="1877" height="348" key="GridCell.Tab.1.bottom" timestamp="1608649591075">
       <screen x="0" y="0" width="1920" height="1040" />
@@ -641,7 +633,7 @@
         </breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/com/esr/gui/listener/Controllers.java</url>
-          <line>41</line>
+          <line>42</line>
           <option name="timeStamp" value="8" />
         </line-breakpoint>
       </breakpoints>
