@@ -23,7 +23,6 @@ public class GameFrame extends JFrame {
     }
 
     public void Init() {
-//        new LogAgent();
         ConsolePanel consolePanel = new ConsolePanel();
         GamePanel gamePanel = new GamePanel();
         JPanel jGamePanel = gamePanel.getGamePanel();
