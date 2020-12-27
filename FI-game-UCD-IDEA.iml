@@ -26,5 +26,7 @@
         <SOURCES />
       </library>
     </orderEntry>
+    <orderEntry type="library" name="junit-4.12" level="project" />
+    <orderEntry type="library" name="junit" level="project" />
   </component>
 </module>
