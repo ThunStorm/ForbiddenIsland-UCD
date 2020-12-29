@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class-diagram version="1.2.4" icons="true" always-add-relationships="true" generalizations="true" realizations="true" 
+  associations="true" dependencies="true" nesting-relationships="true" router="FAN">  
+  <class id="1" language="java" name="com.esr.gui.tools.ImageRotation" project="FI-game-UCD" 
+    file="/FI-game-UCD/src/com/esr/gui/tools/ImageRotation.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="116" width="338" x="254" y="-62"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="2" language="java" name="com.esr.gui.tools.TwoLayeredIcon" project="FI-game-UCD" 
+    file="/FI-game-UCD/src/com/esr/gui/tools/TwoLayeredIcon.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="236" width="319" x="632" y="-62"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="3" language="java" name="com.esr.gui.tools.VFlowLayout" project="FI-game-UCD" 
+    file="/FI-game-UCD/src/com/esr/gui/tools/VFlowLayout.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="796" width="423" x="991" y="-62"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="4" language="java" name="com.esr.gui.tools.JPanelBG" project="FI-game-UCD" 
+    file="/FI-game-UCD/src/com/esr/gui/tools/JPanelBG.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="136" width="260" x="1454" y="-62"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <classifier-display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+    sort-features="false" accessors="true" visibility="true">    
+    <attributes public="true" package="true" protected="true" private="true" static="true"/>    
+    <operations public="true" package="true" protected="true" private="true" static="true"/>  
+  </classifier-display>  
+  <association-display labels="true" multiplicity="true"/>
+</class-diagram>
