@@ -1,0 +1,1371 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class-diagram version="1.2.4" icons="true" always-add-relationships="true" generalizations="true" realizations="true" 
+  associations="true" dependencies="true" nesting-relationships="true" router="FAN">  
+  <class id="1" language="java" name="com.esr.gui.updater.UpdaterAgent" project="FI-game-UCD" 
+    file="/FI-game-UCD/src/com/esr/gui/updater/UpdaterAgent.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="236" width="336" x="1009" y="1569"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="2" language="java" name="com.esr.gui.tools.TwoLayeredIcon" project="FI-game-UCD" 
+    file="/FI-game-UCD/src/com/esr/gui/tools/TwoLayeredIcon.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="236" width="319" x="1847" y="3073"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="3" language="java" name="com.esr.service.game.data.Deck" project="FI-game-UCD" 
+    file="/FI-game-UCD/src/com/esr/service/game/data/Deck.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="197" width="247" x="804" y="2021"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <interface id="4" language="java" name="com.esr.service.base.ITimer" project="FI-game-UCD" 
+    file="/FI-game-UCD/src/com/esr/service/base/ITimer.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="96" width="143" x="895" y="4621"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </interface>  
+  <class id="5" language="java" name="com.esr.service.game.GameData" project="FI-game-UCD" 
+    file="/FI-game-UCD/src/com/esr/service/game/GameData.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="656" width="355" x="1851" y="2021"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="6" language="java" name="com.esr.service.game.data.WaterMeter" project="FI-game-UCD" 
+    file="/FI-game-UCD/src/com/esr/service/game/data/WaterMeter.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="236" width="206" x="1700" y="2717"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="7" language="java" name="com.esr.gui.GameFrame" project="FI-game-UCD" 
+    file="/FI-game-UCD/src/com/esr/gui/GameFrame.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="116" width="166" x="-169" y="2717"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="8" language="java" name="com.esr.gui.tools.VFlowLayout" project="FI-game-UCD" 
+    file="/FI-game-UCD/src/com/esr/gui/tools/VFlowLayout.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="796" width="423" x="440" y="-23"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="9" language="java" name="com.esr.service.game.data.TreasureDeck" project="FI-game-UCD" 
+    file="/FI-game-UCD/src/com/esr/service/game/data/TreasureDeck.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="176" width="295" x="322" y="2717"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="10" language="java" name="com.esr.service.game.component.adventurer.Diver" project="FI-game-UCD" 
+    file="/FI-game-UCD/src/com/esr/service/game/component/adventurer/Diver.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="96" width="294" x="2010" y="4345"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <interface id="11" language="java" name="com.esr.service.base.IUpdater" project="FI-game-UCD" 
+    file="/FI-game-UCD/src/com/esr/service/base/IUpdater.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="116" width="143" x="537" y="3073"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </interface>  
+  <class id="12" language="java" name="com.esr.gui.updater.FloodUpdater" project="FI-game-UCD" 
+    file="/FI-game-UCD/src/com/esr/gui/updater/FloodUpdater.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="136" width="142" x="1184" y="1845"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="13" language="java" name="com.esr.gui.game.GamePanel" project="FI-game-UCD" 
+    file="/FI-game-UCD/src/com/esr/gui/game/GamePanel.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="176" width="367" x="-169" y="3073"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="14" language="java" name="com.esr.gui.listener.Controllers4TestUse" project="FI-game-UCD" 
+    file="/FI-game-UCD/src/com/esr/gui/listener/Controllers4TestUse.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="276" width="233" x="2806" y="-23"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <enumeration id="15" language="java" name="com.esr.service.game.component.cards.TreasureFigurines" 
+    project="FI-game-UCD" file="/FI-game-UCD/src/com/esr/service/game/component/cards/TreasureFigurines.java" 
+    binary="false" corner="BOTTOM_RIGHT">    
+    <position height="196" width="260" x="3012" y="4345"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </enumeration>  
+  <class id="16" language="java" name="com.esr.service.game.component.adventurer.Engineer" project="FI-game-UCD" 
+    file="/FI-game-UCD/src/com/esr/service/game/component/adventurer/Engineer.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="176" width="294" x="3691" y="4345"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <enumeration id="17" language="java" name="com.esr.utils.Audio" project="FI-game-UCD" 
+    file="/FI-game-UCD/src/com/esr/utils/Audio.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="516" width="171" x="3035" y="3073"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </enumeration>  
+  <class id="18" language="java" name="com.esr.service.game.component.adventurer.Adventurer" project="FI-game-UCD" 
+    file="/FI-game-UCD/src/com/esr/service/game/component/adventurer/Adventurer.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="676" width="398" x="2311" y="3629"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="19" language="java" name="com.esr.gui.game.TreasurePanel" project="FI-game-UCD" 
+    file="/FI-game-UCD/src/com/esr/gui/game/TreasurePanel.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="176" width="265" x="288" y="3629"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="20" language="java" name="com.esr.gui.tools.JPanelBG" project="FI-game-UCD" 
+    file="/FI-game-UCD/src/com/esr/gui/tools/JPanelBG.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="136" width="260" x="-13" y="4345"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="21" language="java" name="com.esr.gui.updater.PlayerUpdater" project="FI-game-UCD" 
+    file="/FI-game-UCD/src/com/esr/gui/updater/PlayerUpdater.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="136" width="149" x="1490" y="2717"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="22" language="java" name="com.esr.service.game.component.adventurer.Navigator" project="FI-game-UCD" 
+    file="/FI-game-UCD/src/com/esr/service/game/component/adventurer/Navigator.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="96" width="294" x="2344" y="4345"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="23" language="java" name="com.esr.gui.updater.BoardUpdater" project="FI-game-UCD" 
+    file="/FI-game-UCD/src/com/esr/gui/updater/BoardUpdater.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="136" width="145" x="2227" y="1845"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="24" language="java" name="com.esr.service.game.component.adventurer.Messenger" project="FI-game-UCD" 
+    file="/FI-game-UCD/src/com/esr/service/game/component/adventurer/Messenger.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="96" width="294" x="1342" y="4345"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="25" language="java" name="com.esr.service.game.data.Block" project="FI-game-UCD" 
+    file="/FI-game-UCD/src/com/esr/service/game/data/Block.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="516" width="330" x="2395" y="3073"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="26" language="java" name="com.esr.service.game.data.FloodDeck" project="FI-game-UCD" 
+    file="/FI-game-UCD/src/com/esr/service/game/data/FloodDeck.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="276" width="331" x="1224" y="3073"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="27" language="java" name="com.esr.gui.game.PlayerPanel" project="FI-game-UCD" 
+    file="/FI-game-UCD/src/com/esr/gui/game/PlayerPanel.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="236" width="294" x="-335" y="3629"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="28" language="java" name="com.esr.utils.CommonUtils" project="FI-game-UCD" 
+    file="/FI-game-UCD/src/com/esr/utils/CommonUtils.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="216" width="280" x="959" y="4345"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="29" language="java" name="com.esr.utils.Map" project="FI-game-UCD" 
+    file="/FI-game-UCD/src/com/esr/utils/Map.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="236" width="339" x="3312" y="4345"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="30" language="java" name="com.esr.gui.game.BoardPanel" project="FI-game-UCD" 
+    file="/FI-game-UCD/src/com/esr/gui/game/BoardPanel.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="136" width="228" x="20" y="3629"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="31" language="java" name="com.esr.utils.Constant" project="FI-game-UCD" 
+    file="/FI-game-UCD/src/com/esr/utils/Constant.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="476" width="262" x="593" y="4621"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="32" language="java" name="com.esr.gui.updater.ControllersUpdater" project="FI-game-UCD" 
+    file="/FI-game-UCD/src/com/esr/gui/updater/ControllersUpdater.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="136" width="190" x="721" y="1845"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="33" language="java" name="com.esr.gui.updater.LogAgent" project="FI-game-UCD" 
+    file="/FI-game-UCD/src/com/esr/gui/updater/LogAgent.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="136" width="209" x="1763" y="3629"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="34" language="java" name="com.esr.service.game.component.adventurer.Pilot" project="FI-game-UCD" 
+    file="/FI-game-UCD/src/com/esr/service/game/component/adventurer/Pilot.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="96" width="294" x="2678" y="4345"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="35" language="java" name="com.esr.gui.listener.DataListener" project="FI-game-UCD" 
+    file="/FI-game-UCD/src/com/esr/gui/listener/DataListener.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="176" width="197" x="43" y="2717"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="36" language="java" name="com.esr.gui.game.FloodPanel" project="FI-game-UCD" 
+    file="/FI-game-UCD/src/com/esr/gui/game/FloodPanel.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="156" width="242" x="593" y="3629"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <enumeration id="37" language="java" name="com.esr.service.game.data.TileStatus" project="FI-game-UCD" 
+    file="/FI-game-UCD/src/com/esr/service/game/data/TileStatus.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="156" width="179" x="2770" y="3629"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </enumeration>  
+  <class id="38" language="java" name="com.esr.gui.tools.ImageRotation" project="FI-game-UCD" 
+    file="/FI-game-UCD/src/com/esr/gui/tools/ImageRotation.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="116" width="338" x="1078" y="4621"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="39" language="java" name="com.esr.gui.game.PlayerPanel.Player" project="FI-game-UCD" 
+    file="/FI-game-UCD/src/com/esr/gui/game/PlayerPanel.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="156" width="242" x="-295" y="4345"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="40" language="java" name="com.esr.gui.listener.Controllers" project="FI-game-UCD" 
+    file="/FI-game-UCD/src/com/esr/gui/listener/Controllers.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="276" width="233" x="888" y="2717"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="41" language="java" name="com.esr.service.game.component.adventurer.Explorer" project="FI-game-UCD" 
+    file="/FI-game-UCD/src/com/esr/service/game/component/adventurer/Explorer.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="96" width="294" x="1676" y="4345"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="42" language="java" name="com.esr.gui.updater.TreasureUpdater" project="FI-game-UCD" 
+    file="/FI-game-UCD/src/com/esr/gui/updater/TreasureUpdater.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="136" width="170" x="282" y="1845"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="43" language="java" name="com.esr.Main" project="FI-game-UCD" file="/FI-game-UCD/src/com/esr/Main.java" 
+    binary="false" corner="BOTTOM_RIGHT">    
+    <position height="116" width="152" x="-169" y="2021"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="44" language="java" name="com.esr.service.game.Game" project="FI-game-UCD" 
+    file="/FI-game-UCD/src/com/esr/service/game/Game.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="716" width="329" x="1429" y="813"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="45" language="java" name="com.esr.gui.console.ConsolePanel" project="FI-game-UCD" 
+    file="/FI-game-UCD/src/com/esr/gui/console/ConsolePanel.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="376" width="296" x="846" y="3073"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="46" language="java" name="com.esr.service.game.data.BoardData" project="FI-game-UCD" 
+    file="/FI-game-UCD/src/com/esr/service/game/data/BoardData.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="316" width="371" x="2435" y="2717"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <interface id="47" language="java" name="com.esr.service.base.IExecuter" project="FI-game-UCD" 
+    file="/FI-game-UCD/src/com/esr/service/base/IExecuter.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="76" width="143" x="1763" y="-23"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </interface>  
+  <class id="48" language="java" name="com.esr.gui.updater.WaterMeterUpdater" project="FI-game-UCD" 
+    file="/FI-game-UCD/src/com/esr/gui/updater/WaterMeterUpdater.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="136" width="193" x="951" y="1845"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <dependency id="49">    
+    <bendpoint x="1648" y="3073"/>    
+    <bendpoint x="1648" y="3629"/>    
+    <bendpoint x="1269" y="4345"/>    
+    <end type="SOURCE" refId="21"/>    
+    <end type="TARGET" refId="31"/>  
+  </dependency>  
+  <dependency id="50">    
+    <bendpoint x="1417" y="1569"/>    
+    <bendpoint x="1417" y="1845"/>    
+    <bendpoint x="1396" y="2021"/>    
+    <bendpoint x="1396" y="2717"/>    
+    <end type="SOURCE" refId="44"/>    
+    <end type="TARGET" refId="26"/>  
+  </dependency>  
+  <dependency id="51">    
+    <bendpoint x="1690" y="3073"/>    
+    <bendpoint x="1732" y="3629"/>    
+    <end type="SOURCE" refId="21"/>    
+    <end type="TARGET" refId="15"/>  
+  </dependency>  
+  <association id="52">    
+    <end type="SOURCE" refId="1" navigable="false">      
+      <attribute id="53" name="floodUpdater"/>      
+      <multiplicity id="54" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="12" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <dependency id="55">    
+    <bendpoint x="1725" y="2021"/>    
+    <bendpoint x="1725" y="1845"/>    
+    <bendpoint x="1725" y="1569"/>    
+    <end type="SOURCE" refId="6"/>    
+    <end type="TARGET" refId="44"/>  
+  </dependency>  
+  <generalization id="56">    
+    <end type="SOURCE" refId="16"/>    
+    <end type="TARGET" refId="18"/>  
+  </generalization>  
+  <dependency id="57">    
+    <bendpoint x="270" y="813"/>    
+    <bendpoint x="270" y="1569"/>    
+    <end type="SOURCE" refId="14"/>    
+    <end type="TARGET" refId="42"/>  
+  </dependency>  
+  <generalization id="58">    
+    <end type="SOURCE" refId="24"/>    
+    <end type="TARGET" refId="18"/>  
+  </generalization>  
+  <dependency id="59">    
+    <bendpoint x="1501" y="2021"/>    
+    <bendpoint x="1214" y="2717"/>    
+    <bendpoint x="794" y="3073"/>    
+    <end type="SOURCE" refId="23"/>    
+    <end type="TARGET" refId="30"/>  
+  </dependency>  
+  <association id="60">    
+    <end type="SOURCE" refId="27" navigable="false">      
+      <attribute id="61" name="player1"/>      
+      <multiplicity id="62" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="39" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <dependency id="63">    
+    <end type="SOURCE" refId="13"/>    
+    <end type="TARGET" refId="27"/>  
+  </dependency>  
+  <dependency id="64">    
+    <bendpoint x="2320" y="2717"/>    
+    <bendpoint x="2322" y="3073"/>    
+    <bendpoint x="2739" y="3629"/>    
+    <end type="SOURCE" refId="5"/>    
+    <end type="TARGET" refId="16"/>  
+  </dependency>  
+  <dependency id="65">    
+    <bendpoint x="2341" y="2717"/>    
+    <end type="SOURCE" refId="5"/>    
+    <end type="TARGET" refId="25"/>  
+  </dependency>  
+  <generalization id="66">    
+    <bendpoint x="1151" y="2717"/>    
+    <end type="SOURCE" refId="26"/>    
+    <end type="TARGET" refId="3"/>  
+  </generalization>  
+  <dependency id="67">    
+    <bendpoint x="1978" y="2717"/>    
+    <bendpoint x="1774" y="3073"/>    
+    <bendpoint x="1690" y="3629"/>    
+    <end type="SOURCE" refId="5"/>    
+    <end type="TARGET" refId="41"/>  
+  </dependency>  
+  <dependency id="68">    
+    <end type="SOURCE" refId="43"/>    
+    <end type="TARGET" refId="7"/>  
+  </dependency>  
+  <dependency id="69">    
+    <bendpoint x="1957" y="2717"/>    
+    <bendpoint x="1753" y="3073"/>    
+    <bendpoint x="1669" y="3629"/>    
+    <end type="SOURCE" refId="5"/>    
+    <end type="TARGET" refId="24"/>  
+  </dependency>  
+  <association id="70">    
+    <end type="SOURCE" refId="30" navigable="false">      
+      <attribute id="71" name="board"/>      
+      <multiplicity id="72" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="20" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <dependency id="73">    
+    <end type="SOURCE" refId="25"/>    
+    <end type="TARGET" refId="33"/>  
+  </dependency>  
+  <generalization id="74">    
+    <end type="SOURCE" refId="9"/>    
+    <end type="TARGET" refId="3"/>  
+  </generalization>  
+  <realization id="75">    
+    <bendpoint x="1081" y="2021"/>    
+    <bendpoint x="731" y="2717"/>    
+    <end type="SOURCE" refId="12"/>    
+    <end type="TARGET" refId="11"/>  
+  </realization>  
+  <association id="76">    
+    <end type="SOURCE" refId="27" navigable="false">      
+      <attribute id="77" name="player2"/>      
+      <multiplicity id="78" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="39" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="79">    
+    <bendpoint x="2299" y="2717"/>    
+    <bendpoint x="2301" y="3073"/>    
+    <end type="SOURCE" refId="5" navigable="false">      
+      <attribute id="80" name="adventurers"/>      
+      <multiplicity id="81" minimum="0" maximum="2147483647"/>    
+    </end>    
+    <end type="TARGET" refId="18" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="82">    
+    <end type="SOURCE" refId="46" navigable="false">      
+      <attribute id="83" name="tileMap"/>      
+      <multiplicity id="84" minimum="0" maximum="2147483647"/>    
+    </end>    
+    <end type="TARGET" refId="25" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <dependency id="85">    
+    <bendpoint x="-11" y="3629"/>    
+    <end type="SOURCE" refId="13"/>    
+    <end type="TARGET" refId="20"/>  
+  </dependency>  
+  <dependency id="86">    
+    <bendpoint x="1438" y="1569"/>    
+    <bendpoint x="1438" y="1845"/>    
+    <bendpoint x="1438" y="2021"/>    
+    <bendpoint x="1438" y="2717"/>    
+    <bendpoint x="1627" y="3073"/>    
+    <end type="SOURCE" refId="44"/>    
+    <end type="TARGET" refId="33"/>  
+  </dependency>  
+  <dependency id="87">    
+    <end type="SOURCE" refId="12"/>    
+    <end type="TARGET" refId="5"/>  
+  </dependency>  
+  <dependency id="88">    
+    <bendpoint x="2278" y="2717"/>    
+    <bendpoint x="2280" y="3073"/>    
+    <bendpoint x="2280" y="3629"/>    
+    <end type="SOURCE" refId="5"/>    
+    <end type="TARGET" refId="29"/>  
+  </dependency>  
+  <dependency id="89">    
+    <end type="SOURCE" refId="46"/>    
+    <end type="TARGET" refId="26"/>  
+  </dependency>  
+  <dependency id="90">    
+    <bendpoint x="1606" y="3073"/>    
+    <bendpoint x="1606" y="3629"/>    
+    <end type="SOURCE" refId="21"/>    
+    <end type="TARGET" refId="28"/>  
+  </dependency>  
+  <dependency id="91">    
+    <bendpoint x="2278" y="2021"/>    
+    <bendpoint x="1704" y="1845"/>    
+    <end type="SOURCE" refId="46"/>    
+    <end type="TARGET" refId="1"/>  
+  </dependency>  
+  <dependency id="92">    
+    <bendpoint x="2836" y="2717"/>    
+    <bendpoint x="2815" y="2021"/>    
+    <bendpoint x="2794" y="1845"/>    
+    <bendpoint x="2773" y="1569"/>    
+    <end type="SOURCE" refId="25"/>    
+    <end type="TARGET" refId="44"/>  
+  </dependency>  
+  <dependency id="93">    
+    <bendpoint x="1711" y="3073"/>    
+    <end type="SOURCE" refId="6"/>    
+    <end type="TARGET" refId="33"/>  
+  </dependency>  
+  <dependency id="94">    
+    <bendpoint x="2236" y="2717"/>    
+    <bendpoint x="2238" y="3073"/>    
+    <bendpoint x="2238" y="3629"/>    
+    <end type="SOURCE" refId="5"/>    
+    <end type="TARGET" refId="34"/>  
+  </dependency>  
+  <dependency id="95">    
+    <bendpoint x="1837" y="1569"/>    
+    <end type="SOURCE" refId="44"/>    
+    <end type="TARGET" refId="23"/>  
+  </dependency>  
+  <dependency id="96">    
+    <bendpoint x="2259" y="3073"/>    
+    <end type="SOURCE" refId="46"/>    
+    <end type="TARGET" refId="33"/>  
+  </dependency>  
+  <dependency id="97">    
+    <bendpoint x="2362" y="2717"/>    
+    <bendpoint x="2776" y="3073"/>    
+    <end type="SOURCE" refId="5"/>    
+    <end type="TARGET" refId="37"/>  
+  </dependency>  
+  <dependency id="98">    
+    <end type="SOURCE" refId="42"/>    
+    <end type="TARGET" refId="5"/>  
+  </dependency>  
+  <dependency id="99">    
+    <bendpoint x="2236" y="2021"/>    
+    <bendpoint x="2194" y="2717"/>    
+    <end type="SOURCE" refId="23"/>    
+    <end type="TARGET" refId="2"/>  
+  </dependency>  
+  <dependency id="100">    
+    <bendpoint x="710" y="2021"/>    
+    <bendpoint x="710" y="2717"/>    
+    <bendpoint x="710" y="3073"/>    
+    <end type="SOURCE" refId="48"/>    
+    <end type="TARGET" refId="19"/>  
+  </dependency>  
+  <dependency id="101">    
+    <bendpoint x="689" y="813"/>    
+    <bendpoint x="689" y="1569"/>    
+    <bendpoint x="689" y="1845"/>    
+    <bendpoint x="689" y="2021"/>    
+    <bendpoint x="773" y="2717"/>    
+    <end type="SOURCE" refId="14"/>    
+    <end type="TARGET" refId="45"/>  
+  </dependency>  
+  <dependency id="102">    
+    <bendpoint x="2962" y="813"/>    
+    <bendpoint x="2962" y="1569"/>    
+    <bendpoint x="2962" y="1845"/>    
+    <bendpoint x="2962" y="2021"/>    
+    <bendpoint x="2962" y="2717"/>    
+    <bendpoint x="2962" y="3073"/>    
+    <end type="SOURCE" refId="14"/>    
+    <end type="TARGET" refId="37"/>  
+  </dependency>  
+  <dependency id="103">    
+    <bendpoint x="228" y="3073"/>    
+    <end type="SOURCE" refId="35"/>    
+    <end type="TARGET" refId="30"/>  
+  </dependency>  
+  <dependency id="104">    
+    <bendpoint x="1795" y="3073"/>    
+    <end type="SOURCE" refId="21"/>    
+    <end type="TARGET" refId="18"/>  
+  </dependency>  
+  <association id="105">    
+    <end type="SOURCE" refId="1" navigable="false">      
+      <attribute id="106" name="treasureUpdater"/>      
+      <multiplicity id="107" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="42" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <dependency id="108">    
+    <bendpoint x="249" y="3073"/>    
+    <end type="SOURCE" refId="35"/>    
+    <end type="TARGET" refId="19"/>  
+  </dependency>  
+  <dependency id="109">    
+    <bendpoint x="928" y="3629"/>    
+    <bendpoint x="928" y="4345"/>    
+    <end type="SOURCE" refId="45"/>    
+    <end type="TARGET" refId="31"/>  
+  </dependency>  
+  <dependency id="110">    
+    <bendpoint x="2920" y="813"/>    
+    <bendpoint x="2920" y="1569"/>    
+    <bendpoint x="2920" y="1845"/>    
+    <bendpoint x="2920" y="2021"/>    
+    <bendpoint x="2920" y="2717"/>    
+    <bendpoint x="2920" y="3073"/>    
+    <end type="SOURCE" refId="14"/>    
+    <end type="TARGET" refId="18"/>  
+  </dependency>  
+  <dependency id="111">    
+    <bendpoint x="270" y="2021"/>    
+    <bendpoint x="270" y="2717"/>    
+    <bendpoint x="270" y="3073"/>    
+    <end type="SOURCE" refId="42"/>    
+    <end type="TARGET" refId="19"/>  
+  </dependency>  
+  <dependency id="112">    
+    <bendpoint x="2899" y="813"/>    
+    <bendpoint x="2899" y="1569"/>    
+    <bendpoint x="2878" y="1845"/>    
+    <bendpoint x="2878" y="2021"/>    
+    <bendpoint x="2857" y="2717"/>    
+    <end type="SOURCE" refId="14"/>    
+    <end type="TARGET" refId="25"/>  
+  </dependency>  
+  <dependency id="113">    
+    <bendpoint x="1396" y="1569"/>    
+    <end type="SOURCE" refId="44"/>    
+    <end type="TARGET" refId="12"/>  
+  </dependency>  
+  <association id="114">    
+    <end type="SOURCE" refId="5" navigable="false">      
+      <attribute id="115" name="waterMeter"/>      
+      <multiplicity id="116" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="6" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <dependency id="117">    
+    <end type="SOURCE" refId="25"/>    
+    <end type="TARGET" refId="18"/>  
+  </dependency>  
+  <dependency id="118">    
+    <bendpoint x="315" y="4345"/>    
+    <end type="SOURCE" refId="30"/>    
+    <end type="TARGET" refId="31"/>  
+  </dependency>  
+  <dependency id="119">    
+    <bendpoint x="-429" y="813"/>    
+    <bendpoint x="-429" y="1569"/>    
+    <bendpoint x="-429" y="1845"/>    
+    <bendpoint x="-429" y="2021"/>    
+    <bendpoint x="-429" y="2717"/>    
+    <bendpoint x="-429" y="3073"/>    
+    <bendpoint x="-429" y="3629"/>    
+    <bendpoint x="-429" y="4345"/>    
+    <end type="SOURCE" refId="14"/>    
+    <end type="TARGET" refId="31"/>  
+  </dependency>  
+  <association id="120">    
+    <bendpoint x="1396" y="1845"/>    
+    <bendpoint x="1459" y="2021"/>    
+    <end type="SOURCE" refId="1" navigable="false">      
+      <attribute id="121" name="playerUpdater"/>      
+      <multiplicity id="122" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="21" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <dependency id="123">    
+    <bendpoint x="1123" y="2021"/>    
+    <bendpoint x="1172" y="2717"/>    
+    <bendpoint x="1172" y="3073"/>    
+    <bendpoint x="1172" y="3629"/>    
+    <end type="SOURCE" refId="48"/>    
+    <end type="TARGET" refId="28"/>  
+  </dependency>  
+  <dependency id="124">    
+    <bendpoint x="291" y="1569"/>    
+    <bendpoint x="-58" y="1845"/>    
+    <bendpoint x="-408" y="2021"/>    
+    <bendpoint x="-408" y="2717"/>    
+    <bendpoint x="-409" y="3073"/>    
+    <bendpoint x="-409" y="3629"/>    
+    <bendpoint x="-408" y="4345"/>    
+    <end type="SOURCE" refId="44"/>    
+    <end type="TARGET" refId="31"/>  
+  </dependency>  
+  <dependency id="125">    
+    <end type="SOURCE" refId="48"/>    
+    <end type="TARGET" refId="5"/>  
+  </dependency>  
+  <dependency id="126">    
+    <bendpoint x="249" y="813"/>    
+    <bendpoint x="249" y="1569"/>    
+    <bendpoint x="249" y="1845"/>    
+    <bendpoint x="249" y="2021"/>    
+    <end type="SOURCE" refId="14"/>    
+    <end type="TARGET" refId="9"/>  
+  </dependency>  
+  <dependency id="127">    
+    <bendpoint x="2878" y="813"/>    
+    <bendpoint x="2878" y="1569"/>    
+    <bendpoint x="2836" y="1845"/>    
+    <bendpoint x="2836" y="2021"/>    
+    <end type="SOURCE" refId="14"/>    
+    <end type="TARGET" refId="46"/>  
+  </dependency>  
+  <association id="128">    
+    <end type="SOURCE" refId="1" navigable="false">      
+      <attribute id="129" name="boardUpdater"/>      
+      <multiplicity id="130" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="23" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <dependency id="131">    
+    <bendpoint x="2364" y="3073"/>    
+    <bendpoint x="2259" y="3629"/>    
+    <bendpoint x="1311" y="4345"/>    
+    <end type="SOURCE" refId="46"/>    
+    <end type="TARGET" refId="31"/>  
+  </dependency>  
+  <dependency id="132">    
+    <end type="SOURCE" refId="21"/>    
+    <end type="TARGET" refId="2"/>  
+  </dependency>  
+  <dependency id="133">    
+    <bendpoint x="1936" y="2717"/>    
+    <bendpoint x="1732" y="3073"/>    
+    <end type="SOURCE" refId="5"/>    
+    <end type="TARGET" refId="33"/>  
+  </dependency>  
+  <dependency id="134">    
+    <bendpoint x="449" y="4345"/>    
+    <end type="SOURCE" refId="19"/>    
+    <end type="TARGET" refId="31"/>  
+  </dependency>  
+  <dependency id="135">    
+    <bendpoint x="710" y="1569"/>    
+    <end type="SOURCE" refId="44"/>    
+    <end type="TARGET" refId="42"/>  
+  </dependency>  
+  <association id="136">    
+    <end type="SOURCE" refId="25" navigable="false">      
+      <attribute id="137" name="status"/>      
+      <multiplicity id="138" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="37" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="139">    
+    <end type="SOURCE" refId="1" navigable="false">      
+      <attribute id="140" name="waterMeterUpdater"/>      
+      <multiplicity id="141" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="48" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <dependency id="142">    
+    <bendpoint x="2836" y="1569"/>    
+    <bendpoint x="2857" y="1845"/>    
+    <bendpoint x="2899" y="2021"/>    
+    <bendpoint x="2941" y="2717"/>    
+    <bendpoint x="3004" y="3073"/>    
+    <bendpoint x="3257" y="3629"/>    
+    <end type="SOURCE" refId="44"/>    
+    <end type="TARGET" refId="16"/>  
+  </dependency>  
+  <dependency id="143">    
+    <bendpoint x="1999" y="2717"/>    
+    <bendpoint x="1816" y="3073"/>    
+    <bendpoint x="2002" y="3629"/>    
+    <end type="SOURCE" refId="5"/>    
+    <end type="TARGET" refId="10"/>  
+  </dependency>  
+  <generalization id="144">    
+    <end type="SOURCE" refId="41"/>    
+    <end type="TARGET" refId="18"/>  
+  </generalization>  
+  <dependency id="145">    
+    <bendpoint x="2857" y="1569"/>    
+    <bendpoint x="2899" y="1845"/>    
+    <bendpoint x="2941" y="2021"/>    
+    <bendpoint x="3004" y="2717"/>    
+    <end type="SOURCE" refId="44"/>    
+    <end type="TARGET" refId="17"/>  
+  </dependency>  
+  <dependency id="146">    
+    <bendpoint x="752" y="2021"/>    
+    <bendpoint x="752" y="2717"/>    
+    <bendpoint x="752" y="3073"/>    
+    <bendpoint x="865" y="3629"/>    
+    <bendpoint x="865" y="4345"/>    
+    <end type="SOURCE" refId="48"/>    
+    <end type="TARGET" refId="31"/>  
+  </dependency>  
+  <dependency id="147">    
+    <end type="SOURCE" refId="23"/>    
+    <end type="TARGET" refId="5"/>  
+  </dependency>  
+  <dependency id="148">    
+    <end type="SOURCE" refId="7"/>    
+    <end type="TARGET" refId="45"/>  
+  </dependency>  
+  <dependency id="149">    
+    <bendpoint x="731" y="1569"/>    
+    <bendpoint x="668" y="1845"/>    
+    <bendpoint x="605" y="2021"/>    
+    <end type="SOURCE" refId="44"/>    
+    <end type="TARGET" refId="9"/>  
+  </dependency>  
+  <dependency id="150">    
+    <end type="SOURCE" refId="5"/>    
+    <end type="TARGET" refId="21"/>  
+  </dependency>  
+  <dependency id="151">    
+    <bendpoint x="1375" y="813"/>    
+    <bendpoint x="1375" y="1569"/>    
+    <bendpoint x="1375" y="1845"/>    
+    <bendpoint x="1375" y="2021"/>    
+    <bendpoint x="1417" y="2717"/>    
+    <bendpoint x="1585" y="3073"/>    
+    <end type="SOURCE" refId="14"/>    
+    <end type="TARGET" refId="33"/>  
+  </dependency>  
+  <realization id="152">    
+    <bendpoint x="291" y="2021"/>    
+    <bendpoint x="291" y="2717"/>    
+    <end type="SOURCE" refId="42"/>    
+    <end type="TARGET" refId="11"/>  
+  </realization>  
+  <dependency id="153">    
+    <end type="SOURCE" refId="13"/>    
+    <end type="TARGET" refId="19"/>  
+  </dependency>  
+  <dependency id="154">    
+    <end type="SOURCE" refId="28"/>    
+    <end type="TARGET" refId="38"/>  
+  </dependency>  
+  <dependency id="155">    
+    <end type="SOURCE" refId="46"/>    
+    <end type="TARGET" refId="17"/>  
+  </dependency>  
+  <dependency id="156">    
+    <bendpoint x="1235" y="2021"/>    
+    <bendpoint x="1235" y="2717"/>    
+    <bendpoint x="1193" y="3073"/>    
+    <bendpoint x="1193" y="3629"/>    
+    <end type="SOURCE" refId="12"/>    
+    <end type="TARGET" refId="28"/>  
+  </dependency>  
+  <generalization id="157">    
+    <end type="SOURCE" refId="22"/>    
+    <end type="TARGET" refId="18"/>  
+  </generalization>  
+  <dependency id="158">    
+    <bendpoint x="1788" y="813"/>    
+    <bendpoint x="1788" y="1569"/>    
+    <bendpoint x="1746" y="1845"/>    
+    <bendpoint x="1704" y="2021"/>    
+    <end type="SOURCE" refId="14"/>    
+    <end type="TARGET" refId="21"/>  
+  </dependency>  
+  <dependency id="159">    
+    <bendpoint x="626" y="2021"/>    
+    <bendpoint x="689" y="2717"/>    
+    <bendpoint x="731" y="3073"/>    
+    <bendpoint x="886" y="3629"/>    
+    <end type="SOURCE" refId="42"/>    
+    <end type="TARGET" refId="28"/>  
+  </dependency>  
+  <dependency id="160">    
+    <bendpoint x="2215" y="2717"/>    
+    <bendpoint x="2217" y="3073"/>    
+    <bendpoint x="2217" y="3629"/>    
+    <end type="SOURCE" refId="5"/>    
+    <end type="TARGET" refId="22"/>  
+  </dependency>  
+  <dependency id="161">    
+    <end type="SOURCE" refId="45"/>    
+    <end type="TARGET" refId="33"/>  
+  </dependency>  
+  <association id="162">    
+    <end type="SOURCE" refId="1" navigable="false">      
+      <attribute id="163" name="controllersUpdater"/>      
+      <multiplicity id="164" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="32" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <dependency id="165">    
+    <bendpoint x="3278" y="813"/>    
+    <bendpoint x="3278" y="1569"/>    
+    <bendpoint x="3278" y="1845"/>    
+    <bendpoint x="3278" y="2021"/>    
+    <bendpoint x="3278" y="2717"/>    
+    <bendpoint x="3278" y="3073"/>    
+    <bendpoint x="3278" y="3629"/>    
+    <end type="SOURCE" refId="14"/>    
+    <end type="TARGET" refId="16"/>  
+  </dependency>  
+  <association id="166">    
+    <bendpoint x="1767" y="1569"/>    
+    <bendpoint x="1767" y="1845"/>    
+    <end type="SOURCE" refId="44" navigable="false">      
+      <attribute id="167" name="gameData"/>      
+      <multiplicity id="168" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="5" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <dependency id="169">    
+    <bendpoint x="2383" y="2021"/>    
+    <bendpoint x="2383" y="2717"/>    
+    <bendpoint x="2343" y="3073"/>    
+    <end type="SOURCE" refId="23"/>    
+    <end type="TARGET" refId="18"/>  
+  </dependency>  
+  <association id="170">    
+    <end type="SOURCE" refId="5" navigable="false">      
+      <attribute id="171" name="treasureDeck"/>      
+      <multiplicity id="172" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="9" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <dependency id="173">    
+    <bendpoint x="2794" y="2021"/>    
+    <bendpoint x="2878" y="2717"/>    
+    <bendpoint x="2941" y="3073"/>    
+    <bendpoint x="3000" y="3629"/>    
+    <end type="SOURCE" refId="23"/>    
+    <end type="TARGET" refId="29"/>  
+  </dependency>  
+  <dependency id="174">    
+    <bendpoint x="2755" y="3073"/>    
+    <end type="SOURCE" refId="46"/>    
+    <end type="TARGET" refId="18"/>  
+  </dependency>  
+  <dependency id="175">    
+    <bendpoint x="1480" y="2021"/>    
+    <bendpoint x="1480" y="1845"/>    
+    <bendpoint x="1480" y="1569"/>    
+    <end type="SOURCE" refId="21"/>    
+    <end type="TARGET" refId="44"/>  
+  </dependency>  
+  <dependency id="176">    
+    <end type="SOURCE" refId="40"/>    
+    <end type="TARGET" refId="45"/>  
+  </dependency>  
+  <dependency id="177">    
+    <end type="SOURCE" refId="30"/>    
+    <end type="TARGET" refId="29"/>  
+  </dependency>  
+  <dependency id="178">    
+    <bendpoint x="1746" y="2021"/>    
+    <bendpoint x="1669" y="2717"/>    
+    <bendpoint x="1669" y="3073"/>    
+    <bendpoint x="1627" y="3629"/>    
+    <end type="SOURCE" refId="23"/>    
+    <end type="TARGET" refId="28"/>  
+  </dependency>  
+  <dependency id="179">    
+    <bendpoint x="-326" y="4345"/>    
+    <end type="SOURCE" refId="27"/>    
+    <end type="TARGET" refId="31"/>  
+  </dependency>  
+  <dependency id="180">    
+    <bendpoint x="2257" y="2021"/>    
+    <bendpoint x="2257" y="2717"/>    
+    <bendpoint x="2196" y="3073"/>    
+    <bendpoint x="1711" y="3629"/>    
+    <bendpoint x="1290" y="4345"/>    
+    <end type="SOURCE" refId="23"/>    
+    <end type="TARGET" refId="31"/>  
+  </dependency>  
+  <generalization id="181">    
+    <end type="SOURCE" refId="10"/>    
+    <end type="TARGET" refId="18"/>  
+  </generalization>  
+  <dependency id="182">    
+    <bendpoint x="1144" y="2021"/>    
+    <bendpoint x="857" y="2717"/>    
+    <bendpoint x="815" y="3073"/>    
+    <bendpoint x="907" y="3629"/>    
+    <bendpoint x="907" y="4345"/>    
+    <end type="SOURCE" refId="12"/>    
+    <end type="TARGET" refId="31"/>  
+  </dependency>  
+  <dependency id="183">    
+    <bendpoint x="1193" y="2021"/>    
+    <bendpoint x="1193" y="2717"/>    
+    <end type="SOURCE" refId="12"/>    
+    <end type="TARGET" refId="26"/>  
+  </dependency>  
+  <dependency id="184">    
+    <end type="SOURCE" refId="21"/>    
+    <end type="TARGET" refId="13"/>  
+  </dependency>  
+  <dependency id="185">    
+    <bendpoint x="957" y="1569"/>    
+    <end type="SOURCE" refId="32"/>    
+    <end type="TARGET" refId="44"/>  
+  </dependency>  
+  <dependency id="186">    
+    <end type="SOURCE" refId="7"/>    
+    <end type="TARGET" refId="13"/>  
+  </dependency>  
+  <dependency id="187">    
+    <bendpoint x="3236" y="813"/>    
+    <bendpoint x="3236" y="1569"/>    
+    <bendpoint x="3236" y="1845"/>    
+    <bendpoint x="3236" y="2021"/>    
+    <bendpoint x="3236" y="2717"/>    
+    <bendpoint x="3236" y="3073"/>    
+    <bendpoint x="3236" y="3629"/>    
+    <end type="SOURCE" refId="14"/>    
+    <end type="TARGET" refId="29"/>  
+  </dependency>  
+  <dependency id="188">    
+    <bendpoint x="2983" y="813"/>    
+    <bendpoint x="2983" y="1569"/>    
+    <bendpoint x="2983" y="1845"/>    
+    <bendpoint x="2983" y="2021"/>    
+    <bendpoint x="2983" y="2717"/>    
+    <bendpoint x="2983" y="3073"/>    
+    <bendpoint x="3021" y="3629"/>    
+    <end type="SOURCE" refId="14"/>    
+    <end type="TARGET" refId="15"/>  
+  </dependency>  
+  <dependency id="189">    
+    <end type="SOURCE" refId="28"/>    
+    <end type="TARGET" refId="4"/>  
+  </dependency>  
+  <association id="190">    
+    <bendpoint x="1459" y="2717"/>    
+    <end type="SOURCE" refId="5" navigable="false">      
+      <attribute id="191" name="floodDeck"/>      
+      <multiplicity id="192" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="26" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <dependency id="193">    
+    <bendpoint x="1354" y="813"/>    
+    <end type="SOURCE" refId="14"/>    
+    <end type="TARGET" refId="1"/>  
+  </dependency>  
+  <dependency id="194">    
+    <bendpoint x="773" y="2021"/>    
+    <bendpoint x="815" y="2717"/>    
+    <end type="SOURCE" refId="32"/>    
+    <end type="TARGET" refId="45"/>  
+  </dependency>  
+  <dependency id="195">    
+    <end type="SOURCE" refId="35"/>    
+    <end type="TARGET" refId="13"/>  
+  </dependency>  
+  <dependency id="196">    
+    <bendpoint x="978" y="1569"/>    
+    <end type="SOURCE" refId="44"/>    
+    <end type="TARGET" refId="48"/>  
+  </dependency>  
+  <generalization id="197">    
+    <end type="SOURCE" refId="34"/>    
+    <end type="TARGET" refId="18"/>  
+  </generalization>  
+  <realization id="198">    
+    <bendpoint x="1417" y="2021"/>    
+    <bendpoint x="836" y="2717"/>    
+    <end type="SOURCE" refId="23"/>    
+    <end type="TARGET" refId="11"/>  
+  </realization>  
+  <association id="199">    
+    <end type="SOURCE" refId="18" navigable="false">      
+      <attribute id="200" name="capturedFigurines"/>      
+      <multiplicity id="201" minimum="0" maximum="2147483647"/>    
+    </end>    
+    <end type="TARGET" refId="15" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <dependency id="202">    
+    <end type="SOURCE" refId="14"/>    
+    <end type="TARGET" refId="44"/>  
+  </dependency>  
+  <dependency id="203">    
+    <end type="SOURCE" refId="13"/>    
+    <end type="TARGET" refId="36"/>  
+  </dependency>  
+  <dependency id="204">    
+    <bendpoint x="2425" y="2021"/>    
+    <end type="SOURCE" refId="23"/>    
+    <end type="TARGET" refId="46"/>  
+  </dependency>  
+  <dependency id="205">    
+    <bendpoint x="1102" y="2021"/>    
+    <bendpoint x="794" y="2717"/>    
+    <bendpoint x="773" y="3073"/>    
+    <end type="SOURCE" refId="12"/>    
+    <end type="TARGET" refId="36"/>  
+  </dependency>  
+  <dependency id="206">    
+    <end type="SOURCE" refId="36"/>    
+    <end type="TARGET" refId="28"/>  
+  </dependency>  
+  <dependency id="207">    
+    <bendpoint x="2404" y="2021"/>    
+    <bendpoint x="2404" y="2717"/>    
+    <end type="SOURCE" refId="23"/>    
+    <end type="TARGET" refId="25"/>  
+  </dependency>  
+  <dependency id="208">    
+    <bendpoint x="2878" y="3073"/>    
+    <bendpoint x="2979" y="3629"/>    
+    <end type="SOURCE" refId="46"/>    
+    <end type="TARGET" refId="29"/>  
+  </dependency>  
+  <dependency id="209">    
+    <end type="SOURCE" refId="18"/>    
+    <end type="TARGET" refId="29"/>  
+  </dependency>  
+  <dependency id="210">    
+    <bendpoint x="2794" y="1569"/>    
+    <bendpoint x="2815" y="1845"/>    
+    <bendpoint x="2857" y="2021"/>    
+    <bendpoint x="2899" y="2717"/>    
+    <bendpoint x="2899" y="3073"/>    
+    <end type="SOURCE" refId="44"/>    
+    <end type="TARGET" refId="18"/>  
+  </dependency>  
+  <dependency id="211">    
+    <bendpoint x="602" y="4345"/>    
+    <end type="SOURCE" refId="36"/>    
+    <end type="TARGET" refId="31"/>  
+  </dependency>  
+  <dependency id="212">    
+    <bendpoint x="1459" y="1845"/>    
+    <end type="SOURCE" refId="5"/>    
+    <end type="TARGET" refId="1"/>  
+  </dependency>  
+  <realization id="213">    
+    <bendpoint x="668" y="2021"/>    
+    <bendpoint x="668" y="2717"/>    
+    <end type="SOURCE" refId="48"/>    
+    <end type="TARGET" refId="11"/>  
+  </realization>  
+  <realization id="214">    
+    <end type="SOURCE" refId="21"/>    
+    <end type="TARGET" refId="11"/>  
+  </realization>  
+  <dependency id="215">    
+    <bendpoint x="2196" y="813"/>    
+    <bendpoint x="2196" y="1569"/>    
+    <bendpoint x="2196" y="1845"/>    
+    <end type="SOURCE" refId="14"/>    
+    <end type="TARGET" refId="5"/>  
+  </dependency>  
+  <dependency id="216">    
+    <bendpoint x="-366" y="3073"/>    
+    <bendpoint x="-366" y="3629"/>    
+    <bendpoint x="-366" y="4345"/>    
+    <end type="SOURCE" refId="7"/>    
+    <end type="TARGET" refId="31"/>  
+  </dependency>  
+  <dependency id="217">    
+    <bendpoint x="2446" y="1569"/>    
+    <bendpoint x="2446" y="1845"/>    
+    <bendpoint x="2446" y="2021"/>    
+    <end type="SOURCE" refId="44"/>    
+    <end type="TARGET" refId="46"/>  
+  </dependency>  
+  <dependency id="218">    
+    <end type="SOURCE" refId="19"/>    
+    <end type="TARGET" refId="28"/>  
+  </dependency>  
+  <dependency id="219">    
+    <end type="SOURCE" refId="28"/>    
+    <end type="TARGET" refId="31"/>  
+  </dependency>  
+  <dependency id="220">    
+    <end type="SOURCE" refId="44"/>    
+    <end type="TARGET" refId="1"/>  
+  </dependency>  
+  <nesting id="221">    
+    <end type="SOURCE" refId="27"/>    
+    <end type="TARGET" refId="39"/>  
+  </nesting>  
+  <realization id="222">    
+    <bendpoint x="647" y="2021"/>    
+    <bendpoint x="647" y="2717"/>    
+    <end type="SOURCE" refId="32"/>    
+    <end type="TARGET" refId="11"/>  
+  </realization>  
+  <association id="223">    
+    <end type="SOURCE" refId="5" navigable="false">      
+      <attribute id="224" name="board"/>      
+      <multiplicity id="225" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="46" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <dependency id="226">    
+    <end type="SOURCE" refId="13"/>    
+    <end type="TARGET" refId="30"/>  
+  </dependency>  
+  <dependency id="227">    
+    <bendpoint x="3257" y="813"/>    
+    <bendpoint x="3257" y="1569"/>    
+    <bendpoint x="3257" y="1845"/>    
+    <bendpoint x="3257" y="2021"/>    
+    <bendpoint x="3257" y="2717"/>    
+    <end type="SOURCE" refId="14"/>    
+    <end type="TARGET" refId="17"/>  
+  </dependency>  
+  <dependency id="228">    
+    <bendpoint x="-387" y="2021"/>    
+    <bendpoint x="-387" y="2717"/>    
+    <bendpoint x="-387" y="3073"/>    
+    <bendpoint x="-387" y="3629"/>    
+    <bendpoint x="-387" y="4345"/>    
+    <end type="SOURCE" refId="42"/>    
+    <end type="TARGET" refId="31"/>  
+  </dependency>  
+  <dependency id="229">    
+    <bendpoint x="2815" y="813"/>    
+    <bendpoint x="2815" y="1569"/>    
+    <end type="SOURCE" refId="14"/>    
+    <end type="TARGET" refId="23"/>  
+  </dependency>  
+  <classifier-display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+    sort-features="false" accessors="true" visibility="true">    
+    <attributes public="true" package="true" protected="true" private="true" static="true"/>    
+    <operations public="true" package="true" protected="true" private="true" static="true"/>  
+  </classifier-display>  
+  <association-display labels="true" multiplicity="true"/>
+</class-diagram>

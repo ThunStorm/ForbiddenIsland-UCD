@@ -173,9 +173,8 @@ public class Controllers {
                 }
             }
             else {
-                LogAgent.logMessenger("Exceeded Maixmum Actions");
+                LogAgent.logMessenger("Exceeded Maximum Actions");
             }
-
         });
     }
 
@@ -289,15 +288,30 @@ public class Controllers {
             if (Constant.AUDIO_ON_OFF) {
                 Audio.NEXT.Play();
             }
-            if (!Game.isStage23Done()) {
-                LogAgent.logMessenger("[Next] Stage");
-                Game.Stage23();
-            } else if (Game.isNeed2save()) {
-                LogAgent.logMessenger("Please save adventures first");
-            } else {
-                LogAgent.logMessenger("[Next] Round");
-                Game.RoundEnd();
+            if(!Game.isInFakeRound()){
+                if (!Game.isStage23Done()) {
+                    LogAgent.logMessenger("[Next] Stage");
+                    Game.Stage23();
+                } else if (Game.isNeed2save()) {
+                    LogAgent.logMessenger("Please save adventures first");
+                } else {
+                    LogAgent.logMessenger("[Next] Round");
+                    Game.RoundEnd();
+                }
             }
+            else {
+                Game.setInFakeRound(false);
+                Game.setRoundNum(Game.getFakeRoundNum());
+                Game.setFakeRoundNum(-1);
+                Game.setActionCount(Game.getFakeActionCount());
+                Game.setFakeActionCount(-1);
+                GameData.resetSpecialActionTile();
+                GameData.resetCardsInRound();
+                GameData.SelectPawn(-1);
+                UpdaterAgent.getBoardUpdater().guiUpdate();
+                UpdaterAgent.getPlayerUpdater().guiUpdate();
+            }
+
         });
     }
 
