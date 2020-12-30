@@ -1,8 +1,19 @@
 package test.com.esr.service.game;
 
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertTrue;
+
+import java.io.ByteArrayOutputStream;
+import java.io.PrintStream;
+import java.util.ArrayList;
+
+import org.junit.After;
+import org.junit.Before;
+import org.junit.Test;
+
 import com.esr.gui.GameFrame;
 import com.esr.gui.listener.Controllers;
-import com.esr.gui.listener.Controllers4TestUse;
 import com.esr.gui.listener.DataListener;
 import com.esr.service.game.Game;
 import com.esr.service.game.GameData;
@@ -10,16 +21,6 @@ import com.esr.service.game.component.adventurer.Diver;
 import com.esr.service.game.component.adventurer.Engineer;
 import com.esr.service.game.component.adventurer.Explorer;
 import com.esr.service.game.component.adventurer.Pilot;
-import org.junit.Test;
-import org.junit.Before;
-import org.junit.After;
-
-import java.io.ByteArrayOutputStream;
-import java.io.PrintStream;
-import java.util.ArrayList;
-
-import static org.hamcrest.CoreMatchers.containsString;
-import static org.junit.Assert.*;
 
 /**
  * Game Tester.
@@ -30,7 +31,7 @@ import static org.junit.Assert.*;
  */
 
 /**
-* Again, the test needed to be run separately
+* Again, the test needed to be run separately due to gui
 * */
 public class GameTest {
 
