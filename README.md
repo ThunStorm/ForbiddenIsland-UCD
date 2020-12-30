@@ -33,7 +33,7 @@ This project is to design and implement a cooperative game, Forbidden Island gam
 
 #### Overview 
 
-Players play a team of adventurers who must work together to avoid Forbidden Island from sinking, in order to buy enough time to capture its four treasures. Once players have captured them, you must make it to Fools’ Landing and escape by helicopter to win. If however, the island sinks before you can complete your tasks, the mission ends in defeat!
+Players play a team of adventurers who must work together to keep Forbidden Island from sinking, in order to buy enough time to capture its four treasures. Once players have captured them, you must make it to Fools’ Landing and escape by helicopter to win. If however, the island sinks before you can complete your tasks, the mission ends in defeat!
 
 #### Player Manual
 
@@ -72,13 +72,13 @@ Players play a team of adventurers who must work together to avoid Forbidden Isl
    - Each Player can take up to 3 actions (some exception of roles have been mentioned):
      - **Move**: Click a  *adjacent existing* `Tile` (Up/Down/Left/Right) and click `Move To`
      - **Shore Up**: Click the *adjacent or on foot* `Tile` and click `Shore Up`
-     - **Give a Treasure Card**: Click the `handcard` which you would like to pass to another player, click his `head portrait` on player panel, and then click `Pass To`. Only one card can only be passed at a time as one action.
+     - **Give a Treasure Card**: Click the `hand` which you would like to pass to another player, click his `head portrait` on player panel, and then click `Pass To`. Only one card can only be passed at a time.
        - If the receiver has 5 cards already, it would turn to receiver's round to require the corresponding player to `Discard` one card. Then try to give treasure card to receiver again.
      - **Capture a Treasure**: With four same treasure cards and standing on the corresponding treasure tile, click `Capture`.
    - Once the actions are finished, click `Next` to enter in stage 2 and 3. Two cards from the treasure deck are drawn and display on the Panel (Left-hand side)
-     - If a `Waters Rise! card` is drawn, water meter rise 1, `Waters Rise! card` is discarded immediately, the flood discards are shuffled and put back to the top of flood deck
+     - If a Waters Rise! card is drawn, water meter rise 1, Waters Rise! is discarded immediately, the flood discards are shuffled and put back to the top of flood deck
    - A number of flood cards (equal to water meter) are drawn and the state of the corresponding land is changed. Then click `Next` for the next player's turn.
-     - If the number of player's hand reaches 5, the player is forced to discard. Click the `handcard` that you want to discard (**including the cards on the treasure card panel**), then click  `Discard`
+     - If the number of player's hand reaches 5, the player is forced to discard. Click the `card` that you want to discard (**including the cards on the treasure card panel**), then use  `Discard`
    - Press `Next` to continue after all operations 
 
 6. Special action
@@ -165,7 +165,6 @@ com.esr
 	│  │    TreasurePanel.java
 	│  ├─listener							# add action listeners to buttons
 	│  │    Controllers.java				# for controllers "Move To", "Next", etc
-	│  │    Controllers4TestUse.java		# anonymous inner functions are not easy to be tested, so we have this for testing 
 	│  │    DataListener.java      			# add action listerners to button in game panel
 	│  ├─tools								# wheels to manipulate graphical interface
 	│  │    ImageRotation.java	
@@ -223,8 +222,6 @@ com.esr
 ```
 ...
 test.com.esr
-	├─gui.listener							# test listeners
-	│  	Controllers4TestUseTest.java  		# test logic in action listeners
 	└─service.game							# test game
 		│  GameDataTest.java				# test GameData.java
 		│  GameTest.java					# test Game.java
