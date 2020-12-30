@@ -172,7 +172,7 @@ com.esr
 	│  │    TwoLayeredIcon.java
 	│  │    VFlowLayout.java
 	│  └─updater				# updaters to read data from Game.java/GameData.java and update gui components
-	│  		BoardUpdater.java
+	│  	BoardUpdater.java
 	│       ControllersUpdater.java
 	│       FloodUpdater.java
 	│       LogAgent.java
@@ -184,26 +184,26 @@ com.esr
     │  ├─audio
     │  └─image   
     ├─service					# game logic and game components
-	│  ├─base				# Interfaces
+    │  ├─base					# Interfaces
     │  │	IExecuter.java
-    │  │    ITimer.java				# Timer Interface
-    │  │    IUpdater.java  			# Updater Interface for all updaters in com.esr.gui.updater 
+    │  │    	ITimer.java			# Timer Interface
+    │  │    	IUpdater.java  			# Updater Interface for all updaters in com.esr.gui.updater 
     │  └─game					# game logic and components design
     │      │	Game.java			# Game.java involves different stages or situations in the game in time domain
     │      │	GameData.java			# GameData.java defines data of components and basic actions in game
     │      ├─component				# game component design
     │      │	├─adventurer			# adventurers implementations
-    │      │  	│      Adventurer.java		# parent class of all roles of adventurers
-    │      │  	│      Diver.java
-    │      │  	│      Engineer.java
-    │      │  	│      Explorer.java
-    │      │  	│      Messenger.java
-    │      │  	│      Navigator.java
-    │      │  	│	      Pilot.java
+    │      │  	│	Adventurer.java		# parent class of all roles of adventurers
+    │      │  	│	Diver.java
+    │      │  	│      	Engineer.java
+    │      │  	│      	Explorer.java
+    │      │  	│      	Messenger.java
+    │      │  	│      	Navigator.java
+    │      │  	│      	Pilot.java
     │      │  	└─cards
-    │      │    	TreasureFigurines.java	# enumeration of Treasure Figurines
+    │      │           	TreasureFigurines.java	# enumeration of Treasure Figurines
     │      └─data
-    │      		Block.java		# data of a tile and basic methods to manipulate data
+    │      	Block.java			# data of a tile and basic methods to manipulate data
     │           BoardData.java			# an array of blocks to present data of board and basic methods
     │           Deck.java			# parent class of flood card deck and treasure card deck
     │           FloodDeck.java			# flood card deck
@@ -228,17 +228,17 @@ test.com.esr
 		└─component			# test different game components
 			└─adventurer					
 			│	AdventurerTest.java
-			│   DiverTest.java
-			│   EngineerTest.java
-			│   ExplorerTest.java
-			│   MessengerTest.java
-			│   NavigatorTest.java
-			│   PilotTest.java        
+			│   	DiverTest.java
+			│   	EngineerTest.java
+			│   	ExplorerTest.java
+			│   	MessengerTest.java
+			│   	NavigatorTest.java
+			│   	PilotTest.java        
 			└─data
-     			BlockTest.java
-     			BoardDataTest.java
-     			FloodDeckTest.java
-     			TreasureDeckTest.java
+     				BlockTest.java
+     				BoardDataTest.java
+     				FloodDeckTest.java
+     				TreasureDeckTest.java
 				WaterMeterTest.java
 ```
 
