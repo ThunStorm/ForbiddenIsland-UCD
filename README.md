@@ -131,10 +131,10 @@ Additionally, we also looked at behavioral design patterns.  We applied **Façad
 
 ```
 .
-│ README.md								# Readme 
-├─docs          							# game rules and project document                 
-├─src									# source code
-└─UML									# modelling diagrams
+│ README.md							# Readme 
+├─docs          						# game rules and project document                 
+├─src								# source code
+└─UML								# modelling diagrams
 ```
 
 #### Source Code
@@ -142,8 +142,8 @@ Additionally, we also looked at behavioral design patterns.  We applied **Façad
 ```
 ...
 ├─src
-|  ├─com								# project implementation
-|  └─test								# automated tests
+|  ├─com							# project implementation
+|  └─test							# automated tests
 ...
 ```
 
@@ -152,26 +152,26 @@ Additionally, we also looked at behavioral design patterns.  We applied **Façad
 ```
 ...
 com.esr
-	Main.java							# main method
-	├─gui								# implement graphical interface
-	│  GameFrame.java						# main frame
-	│  ├─console							# console panel
+	Main.java						# main method
+	├─gui							# implement graphical interface
+	│  GameFrame.java					# main frame
+	│  ├─console						# console panel
 	│  │	ConsolePanel.java
-	│  ├─game							# game panels
+	│  ├─game						# game panels
 	│  │	BoardPanel.java
 	│  │    FloodPanel.java
 	│  │    GamePanel.java
 	│  │    PlayerPanel.java
 	│  │    TreasurePanel.java
-	│  ├─listener							# add action listeners to buttons
-	│  │    Controllers.java					# for controllers "Move To", "Next", etc
-	│  │    DataListener.java      					# add action listerners to button in game panel
-	│  ├─tools							# wheels to manipulate graphical interface
+	│  ├─listener						# add action listeners to buttons
+	│  │    Controllers.java				# for controllers "Move To", "Next", etc
+	│  │    DataListener.java      				# add action listerners to button in game panel
+	│  ├─tools						# wheels to manipulate graphical interface
 	│  │    ImageRotation.java	
 	│  │    JPanelBG.java
 	│  │    TwoLayeredIcon.java
 	│  │    VFlowLayout.java
-	│  └─updater							# updaters to read data from Game.java/GameData.java and update gui components
+	│  └─updater						# updaters to read data from Game.java/GameData.java and update gui components
 	│  		BoardUpdater.java
 	│       ControllersUpdater.java
 	│       FloodUpdater.java
@@ -180,20 +180,20 @@ com.esr
 	│       TreasureUpdater.java
 	│       UpdaterAgent.java
 	│       WaterMeterUpdater.java        
-    ├─resources								# resources files
+    ├─resources							# resources files
     │  ├─audio
     │  └─image   
-    ├─service								# game logic and game components
-	│  ├─base							# Interfaces
+    ├─service							# game logic and game components
+	│  ├─base						# Interfaces
     │  │	IExecuter.java
-    │  │    ITimer.java							# Timer Interface
-    │  │    IUpdater.java  						# Updater Interface for all updaters in com.esr.gui.updater 
-    │  └─game								# game logic and components design
-    │      │	Game.java						# Game.java involves different stages or situations in the game in time domain
-    │      │	GameData.java						# GameData.java defines data of components and basic actions in game
-    │      ├─component							# game component design
-    │      │	├─adventurer						# adventurers implementations
-    │      │  	│      Adventurer.java					# parent class of all roles of adventurers
+    │  │    ITimer.java						# Timer Interface
+    │  │    IUpdater.java  					# Updater Interface for all updaters in com.esr.gui.updater 
+    │  └─game							# game logic and components design
+    │      │	Game.java					# Game.java involves different stages or situations in the game in time domain
+    │      │	GameData.java					# GameData.java defines data of components and basic actions in game
+    │      ├─component						# game component design
+    │      │	├─adventurer					# adventurers implementations
+    │      │  	│      Adventurer.java				# parent class of all roles of adventurers
     │      │  	│      Diver.java
     │      │  	│      Engineer.java
     │      │  	│      Explorer.java
@@ -201,20 +201,20 @@ com.esr
     │      │  	│      Navigator.java
     │      │  	│	      Pilot.java
     │      │  	└─cards
-    │      │    	TreasureFigurines.java	# enumeration of Treasure Figurines
+    │      │    	TreasureFigurines.java			# enumeration of Treasure Figurines
     │      └─data
-    │      		Block.java					# data of a tile and basic methods to manipulate data
-    │           BoardData.java						# an array of blocks to present data of board and basic methods
-    │           Deck.java						# parent class of flood card deck and treasure card deck
-    │           FloodDeck.java						# flood card deck
-    │           TileStatus.java						# enumeration of status of a tile
-    │           TreasureDeck.java					# treasure card deck
-    │           WaterMeter.java   					# water meter 
-    └─utils								# utilities
-    	Audio.java							# enumeration of audios and methods to play and loop-play
-        CommonUtils.java						# utility class to implement timer and method to read resources
-        Constant.java       						# parameter constants
-        Map.java							# used to transform coordinates
+    │      		Block.java				# data of a tile and basic methods to manipulate data
+    │           BoardData.java					# an array of blocks to present data of board and basic methods
+    │           Deck.java					# parent class of flood card deck and treasure card deck
+    │           FloodDeck.java					# flood card deck
+    │           TileStatus.java					# enumeration of status of a tile
+    │           TreasureDeck.java				# treasure card deck
+    │           WaterMeter.java   				# water meter 
+    └─utils							# utilities
+    	Audio.java						# enumeration of audios and methods to play and loop-play
+        CommonUtils.java					# utility class to implement timer and method to read resources
+        Constant.java       					# parameter constants
+        Map.java						# used to transform coordinates
 ```
 
 #### Test Directory
@@ -222,10 +222,10 @@ com.esr
 ```
 ...
 test.com.esr
-	└─service.game							# test game
-		│  GameDataTest.java					# test GameData.java
-		│  GameTest.java					# test Game.java
-		└─component						# test different game components
+	└─service.game						# test game
+		│  GameDataTest.java				# test GameData.java
+		│  GameTest.java				# test Game.java
+		└─component					# test different game components
 			└─adventurer					
 			│	AdventurerTest.java
 			│   DiverTest.java
