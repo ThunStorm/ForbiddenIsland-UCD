@@ -78,7 +78,7 @@ Players play a team of adventurers who must work together to keep Forbidden Isla
    - Once the actions are finished, click `Next` to enter in stage 2 and 3. Two cards from the treasure deck are drawn and display on the Panel (Left-hand side)
      - If a Waters Rise! card is drawn, water meter rise 1, Waters Rise! is discarded immediately, the flood discards are shuffled and put back to the top of flood deck
    - A number of flood cards (equal to water meter) are drawn and the state of the corresponding land is changed. Then click `Next` for the next player's turn.
-     - If the number of player's hand reaches 5, the player is forced to discard. Click the `card` that you want to discard (**including the cards on the treasure card panel**), then use  `Discard`
+     - If the number of player's hand card reaches 5, the player is forced to discard. Click the `card` that you want to discard (**including the cards on the treasure card panel**), then use  `Discard`
    - Press `Next` to continue after all operations 
 
 6. Special action
@@ -90,6 +90,10 @@ Players play a team of adventurers who must work together to keep Forbidden Isla
 7. Lift off
 
    - If four treasure cards are collected and four players are all on *Fools’ Landing* with at least one *helicopter card*, click `Lift Off`
+   
+8.  Clear
+
+   * If player regrets the selection of tile or cards, click `clear` to clear all the selection and reselect.
 
 #### Special Situations
 
