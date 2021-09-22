@@ -19,6 +19,7 @@ v1.0
     + [Special Situations](#special-situations)
 - [Configuration](#configuration)
 - [Architecture](#architecture)
+- [Demo](#demo)
 - [Folder Structure](#folder-structure)
     + [Root Directory](#root-directory)
     + [Source Code](#source-code)
@@ -128,6 +129,10 @@ In general, the project is implemented following the Model-View-Controller (MVC)
 **Controller:** GUI Updaters and button Listeners accepts input and converts it to commands for the Model and the View and make sure the synchronization of them.
 
 Additionally, we also looked at behavioral design patterns.  We applied **Façade Pattern** and **Command Pattern** to decoupling our code and make it more flexible. In detail, for example, the game logic part as a **Receiver** will no longer couple with **Invoker** and **Client(Players)**
+
+## Demo
+
+![demo](/docs/FI-Demo.gif)
 
 ## Folder Structure
 
